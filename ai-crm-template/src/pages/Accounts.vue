@@ -1,11 +1,16 @@
 <script setup>
-import { Card, Status, Tag, TreeView } from '@poluru-labs/enterprise-design-system-vue';
-import { accountTree, accounts, healthTone } from '../data';
+import { Button, Card, Status, Tag, TreeView } from '@poluru-labs/enterprise-design-system-vue';
+import { accountColumns, accountTree, accounts, healthTone } from '../data';
+import { exportToCsv } from '../csv';
 import { go } from '../ui';
 
 function onSelect(id) {
   const match = accounts.find((item) => item.id === id);
   if (match) go(`#/account/${match.id}`);
+}
+
+function downloadCsv() {
+  exportToCsv('accounts.csv', accountColumns, accounts);
 }
 </script>
 
@@ -16,6 +21,7 @@ function onSelect(id) {
       <h1>Accounts</h1>
       <p>Hierarchy, health, and next meetings. Open Harbor to see Meera Poluru’s buying team.</p>
     </div>
+    <Button variant="secondary" icon="download" @click="downloadCsv">Export CSV</Button>
   </header>
 
   <div class="grid-2">

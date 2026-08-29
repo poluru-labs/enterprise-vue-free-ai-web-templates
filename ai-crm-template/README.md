@@ -37,6 +37,13 @@ Default dev server: http://127.0.0.1:5191
 | `#/reports` | Forecast by rep |
 | `#/settings` | Profile, alerts, webhook |
 
+## Features
+
+- **Global command search** (`⌘K` / `Ctrl+K`) — the palette now searches live across deals, leads, accounts, and contacts, in addition to the static page shortcuts.
+- **Notification badge** — the inbox bell shows an unread count and supports "Mark all read" from the popover.
+- **CSV export** — Deals, Leads, and Accounts pages have an "Export CSV" button that downloads the currently filtered rows.
+- **Deal notes history** — saving a note on the deal workspace now appends it to that deal's activity timeline instead of only showing a toast.
+
 ## Stack
 
 - Vue 3

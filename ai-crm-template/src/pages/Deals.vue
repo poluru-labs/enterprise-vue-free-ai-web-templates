@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue';
 import { Button, Card, DataTable, EmptyState, Pagination, Search, Select, Tag } from '@poluru-labs/enterprise-design-system-vue';
 import { dealColumns, deals, ownerOptions, stageOptions } from '../data';
+import { exportToCsv } from '../csv';
 import { go } from '../ui';
 
 const emit = defineEmits(['create-deal']);
@@ -33,6 +34,10 @@ const rows = computed(() =>
     id: deal.id,
   })),
 );
+
+function downloadCsv() {
+  exportToCsv('deals.csv', dealColumns, filtered.value);
+}
 </script>
 
 <template>
@@ -42,7 +47,10 @@ const rows = computed(() =>
       <h1>Deals</h1>
       <p>Filter by owner or stage. Open a row from the board, or scan the table for close dates.</p>
     </div>
-    <Button icon="plus" @click="emit('create-deal')">New deal</Button>
+    <div class="row">
+      <Button variant="secondary" icon="download" :disabled="!filtered.length" @click="downloadCsv">Export CSV</Button>
+      <Button icon="plus" @click="emit('create-deal')">New deal</Button>
+    </div>
   </header>
 
   <Card>

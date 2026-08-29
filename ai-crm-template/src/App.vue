@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, onBeforeUnmount, onMounted, reactive, ref } from 'vue';
 import {
   Autocomplete,
   Avatar,
@@ -38,6 +38,7 @@ import {
   notifications,
   ownerOptions,
   quickLinks,
+  searchAll,
   sourceOptions,
   stageOptions,
 } from './data';
@@ -76,8 +77,19 @@ const sideItems = computed(() =>
 const filteredCommands = computed(() => {
   const q = ui.query.trim().toLowerCase();
   if (!q) return commands;
-  return commands.filter((item) => item.label.toLowerCase().includes(q));
+  const matches = searchAll(ui.query);
+  const staticMatches = commands.filter((item) => item.label.toLowerCase().includes(q));
+  return [...matches, ...staticMatches];
 });
+
+const notificationItems = reactive(notifications.map((item) => ({ ...item, read: false })));
+const unreadCount = computed(() => notificationItems.filter((item) => !item.read).length);
+
+function markAllRead() {
+  notificationItems.forEach((item) => {
+    item.read = true;
+  });
+}
 
 const pages = {
   overview: Overview,
@@ -227,10 +239,17 @@ onBeforeUnmount(() => {
                 </Tooltip>
                 <Popover v-model:open="notesOpen" heading="Inbox" placement="bottom">
                   <template #trigger>
-                    <Button variant="secondary" icon="bell" icon-only accessible-label="Notifications" />
+                    <button type="button" class="profile" style="width: auto; gap: 0.35rem; position: relative">
+                      <Button variant="secondary" icon="bell" icon-only accessible-label="Notifications" />
+                      <span v-if="unreadCount" class="notif-badge">{{ unreadCount }}</span>
+                    </button>
                   </template>
+                  <div class="row" style="justify-content: space-between; margin-bottom: 0.5rem">
+                    <span class="muted">{{ unreadCount }} unread</span>
+                    <Button size="sm" variant="tertiary" :disabled="!unreadCount" @click="markAllRead">Mark all read</Button>
+                  </div>
                   <List
-                    :items="notifications.map((item) => ({ id: item.id, label: item.title, description: `${item.body} · ${item.time}`, icon: 'bell' }))"
+                    :items="notificationItems.map((item) => ({ id: item.id, label: item.read ? item.title : `● ${item.title}`, description: `${item.body} · ${item.time}`, icon: 'bell' }))"
                     divided
                   />
                 </Popover>

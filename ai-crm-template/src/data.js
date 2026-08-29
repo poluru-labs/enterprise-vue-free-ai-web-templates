@@ -603,3 +603,41 @@ export function findDeal(id) {
 export function findAccount(id) {
   return accounts.find((item) => item.id === id) || accounts[0];
 }
+
+export const accountColumns = [
+  { key: 'name', label: 'Account' },
+  { key: 'industry', label: 'Industry' },
+  { key: 'region', label: 'Region' },
+  { key: 'owner', label: 'Owner' },
+  { key: 'arr', label: 'ARR' },
+  { key: 'health', label: 'Health' },
+  { key: 'next', label: 'Next step' },
+];
+
+// Live search across deals, leads, accounts, and contacts for the command palette.
+export function searchAll(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  const results = [];
+  deals.forEach((item) => {
+    if (`${item.name} ${item.account} ${item.owner}`.toLowerCase().includes(q)) {
+      results.push({ id: `deal-${item.id}`, label: `Deal · ${item.name}`, href: `#/deal/${item.id}` });
+    }
+  });
+  leads.forEach((item) => {
+    if (`${item.name} ${item.company} ${item.owner}`.toLowerCase().includes(q)) {
+      results.push({ id: `lead-${item.id}`, label: `Lead · ${item.name} (${item.company})`, href: '#/leads' });
+    }
+  });
+  accounts.forEach((item) => {
+    if (`${item.name} ${item.owner} ${item.industry}`.toLowerCase().includes(q)) {
+      results.push({ id: `account-${item.id}`, label: `Account · ${item.name}`, href: `#/account/${item.id}` });
+    }
+  });
+  contacts.forEach((item) => {
+    if (`${item.name} ${item.account} ${item.title}`.toLowerCase().includes(q)) {
+      results.push({ id: `contact-${item.id}`, label: `Contact · ${item.name} (${item.account})`, href: `#/account/${item.accountId}` });
+    }
+  });
+  return results.slice(0, 8);
+}

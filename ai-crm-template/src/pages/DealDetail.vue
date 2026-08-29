@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref, watch } from 'vue';
+import { computed, reactive, ref, watch } from 'vue';
 import {
   Accordion,
   Badge,
@@ -50,8 +50,15 @@ const facts = computed(() => [
 ]);
 const activeStep = computed(() => Math.max(0, stages.indexOf(deal.value.stage)));
 const steps = stages.map((label, index) => ({ id: String(index), label }));
+const history = reactive([...timelineItems]);
 
 function saveNotes() {
+  history.unshift({
+    id: `note-${Date.now()}`,
+    title: `${deal.value.owner} added a note`,
+    description: notes.value,
+    time: 'Just now',
+  });
   showToast({ title: 'Notes saved', description: 'Priya Poluru’s working session is on the deal.', variant: 'success' });
 }
 </script>
@@ -108,7 +115,7 @@ function saveNotes() {
             <FileUpload label="Add an attachment" multiple hint="PDF, DOCX, or PPTX" />
             <Tag label="Harbor-redlines.pdf" icon="file" removable />
           </div>
-          <Timeline v-else :items="timelineItems" />
+          <Timeline v-else :items="history" />
         </template>
       </Tabs>
     </Card>

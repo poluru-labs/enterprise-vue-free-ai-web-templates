@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue';
 import { Badge, Button, Card, DataTable, EmptyState, Meter, Search, Tabs, Tag } from '@poluru-labs/enterprise-design-system-vue';
 import { leadColumns, leads } from '../data';
+import { exportToCsv } from '../csv';
 
 const emit = defineEmits(['convert-lead']);
 const tab = ref('all');
@@ -15,6 +16,10 @@ const filtered = computed(() => {
     return tabOk && hay.includes(q);
   });
 });
+
+function downloadCsv() {
+  exportToCsv('leads.csv', leadColumns, filtered.value);
+}
 </script>
 
 <template>
@@ -24,7 +29,10 @@ const filtered = computed(() => {
       <h1>Leads</h1>
       <p>Hana Poluru and Aisha Poluru are ready to convert. Scores come from partner, webinar, and outbound motion.</p>
     </div>
-    <Button icon="user" @click="emit('convert-lead')">Convert lead</Button>
+    <div class="row">
+      <Button variant="secondary" icon="download" :disabled="!filtered.length" @click="downloadCsv">Export CSV</Button>
+      <Button icon="user" @click="emit('convert-lead')">Convert lead</Button>
+    </div>
   </header>
 
   <Card>
