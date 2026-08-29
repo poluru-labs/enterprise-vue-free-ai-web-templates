@@ -1,8 +1,23 @@
 <script setup>
-import { Alert, Button, Card, EdsThemeProvider, Stat, ToastProvider, showToast } from '@poluru-labs/enterprise-design-system-vue';
+import { computed } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
+import { EdsThemeProvider, ToastProvider } from '@poluru-labs/enterprise-design-system-vue';
 
-function ping() {
-  showToast({ title: 'Starter ready', description: 'AI Admin Dashboard is using Enterprise Design Systems for Vue.', variant: 'success' });
+const router = useRouter();
+const route = useRoute();
+
+const navLinks = [
+  { path: '/', name: 'Overview', icon: 'graph-up' },
+  { path: '/tenants', name: 'Tenants', icon: 'building' },
+  { path: '/members', name: 'Members', icon: 'people' },
+  { path: '/flags', name: 'Flags', icon: 'flag' },
+  { path: '/settings', name: 'Settings', icon: 'gear' },
+];
+
+const isActive = (path) => route.path === path;
+
+function navigate(path) {
+  router.push(path);
 }
 </script>
 
@@ -11,42 +26,36 @@ function ping() {
     <ToastProvider>
       <div class="shell">
         <aside class="sidebar">
-          <a class="brand" href="#">
+          <a class="brand" href="/">
             <i class="bi bi-grid-1x2" aria-hidden="true"></i>
-            <strong>AI Admin Dashboard</strong>
+            <strong>AI Admin</strong>
           </a>
           <nav class="side-nav" aria-label="Primary">
-            <a class="side-link is-active" href="#">Overview</a>
-            <a class="side-link" href="#">Tenants</a>
-            <a class="side-link" href="#">Members</a>
-            <a class="side-link" href="#">Flags</a>
-            <a class="side-link" href="#">Settings</a>
+            <a
+              v-for="link in navLinks"
+              :key="link.path"
+              class="side-link"
+              :class="{ 'is-active': isActive(link.path) }"
+              @click.prevent="navigate(link.path)"
+              href="#"
+            >
+              <i :class="`bi bi-${link.icon}`" aria-hidden="true"></i>
+              {{ link.name }}
+            </a>
           </nav>
+          <div class="sidebar-footer">
+            <hr class="divider" />
+            <div class="user-info">
+              <div class="user-avatar">A</div>
+              <div class="user-details">
+                <p class="user-name">Admin User</p>
+                <p class="user-email">admin@example.com</p>
+              </div>
+            </div>
+          </div>
         </aside>
         <main class="main">
-          <header class="page-header">
-            <div>
-              <span class="eyebrow">Control plane</span>
-              <h1>AI Admin Dashboard</h1>
-              <p>Organizations, seats, flags, and workspace settings for your AI platform.</p>
-            </div>
-            <Button icon="plus" @click="ping">New record</Button>
-          </header>
-          <Alert class="mb-4" variant="info" title="Vue starter" message="This template is wired to @poluru-labs/enterprise-design-system-vue. Replace the sample metrics with your workspace." />
-          <section class="metrics" aria-label="Key metrics">
-            <Card>
-              <Stat label="Organizations" value="842" hint="+32 this month" trend="up" trend-value="+4.0%" />
-            </Card>
-            <Card>
-              <Stat label="Active seats" value="12,480" hint="82% utilization" trend="up" trend-value="+6.2%" />
-            </Card>
-            <Card>
-              <Stat label="Feature flags" value="64" hint="12 in rollout" trend="flat" trend-value="Stable" />
-            </Card>
-            <Card>
-              <Stat label="Uptime" value="99.98%" hint="Last 30 days" trend="flat" trend-value="SLA" />
-            </Card>
-          </section>
+          <router-view />
         </main>
       </div>
     </ToastProvider>
