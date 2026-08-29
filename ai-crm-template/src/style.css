@@ -326,14 +326,25 @@ body {
 .kanban-col h2 {
   display: flex;
   justify-content: space-between;
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.35rem;
   font-size: 0.82rem;
+}
+
+.kanban-col-total {
+  margin-bottom: 0.5rem;
+  color: var(--bloom-mute);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.deal-card-wrap {
+  position: relative;
+  margin-bottom: 0.55rem;
 }
 
 .deal-card {
   display: block;
-  margin-bottom: 0.55rem;
-  padding: 0.75rem;
+  padding: 0.75rem 2rem 0.75rem 0.75rem;
   border: 1px solid var(--bloom-rule);
   border-radius: 12px;
   color: inherit;
@@ -341,15 +352,53 @@ body {
   background: var(--bloom-paper);
 }
 
+.deal-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
 .deal-card strong {
   display: block;
-  margin-bottom: 0.2rem;
 }
 
 .deal-card span,
 .muted {
   color: var(--bloom-mute);
   font-size: 0.85rem;
+}
+
+.deal-card-meta {
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.deal-menu {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.5rem;
+}
+
+.deal-menu-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--bloom-mute);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.deal-menu-trigger:hover {
+  background: var(--bloom-soft);
+  color: inherit;
 }
 
 .account-grid {
