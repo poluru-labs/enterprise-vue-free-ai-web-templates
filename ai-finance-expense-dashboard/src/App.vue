@@ -1,53 +1,85 @@
 <script setup>
-import { Alert, Button, Card, EdsThemeProvider, Stat, ToastProvider, showToast } from '@poluru-labs/enterprise-design-system-vue';
+import { computed } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
+import { EdsThemeProvider, ToastProvider } from '@poluru-labs/enterprise-design-system-vue';
 
-function ping() {
-  showToast({ title: 'Starter ready', description: 'AI Finance & Expense is using Enterprise Design Systems for Vue.', variant: 'success' });
+const router = useRouter();
+const route = useRoute();
+
+const navLinks = [
+  { path: '/', name: 'Overview', icon: 'graph-up' },
+  { path: '/expenses', name: 'Expenses', icon: 'receipt' },
+  { path: '/invoices', name: 'Invoices', icon: 'file-text' },
+  { path: '/budgets', name: 'Budgets', icon: 'percent' },
+  { path: '/analytics', name: 'Analytics', icon: 'bar-chart' },
+];
+
+const isActive = (path) => route.path === path;
+
+function navigate(path) {
+  router.push(path);
 }
 </script>
 
 <template>
   <EdsThemeProvider default-theme="light">
     <ToastProvider>
-      <div class="shell">
-        <aside class="sidebar">
-          <a class="brand" href="#">
-            <i class="bi bi-cash-stack" aria-hidden="true"></i>
-            <strong>AI Finance & Expense</strong>
-          </a>
-          <nav class="side-nav" aria-label="Primary">
-            <a class="side-link is-active" href="#">Overview</a>
-            <a class="side-link" href="#">Expenses</a>
-            <a class="side-link" href="#">Invoices</a>
-            <a class="side-link" href="#">Budgets</a>
-            <a class="side-link" href="#">Close</a>
-          </nav>
-        </aside>
-        <main class="main">
-          <header class="page-header">
-            <div>
-              <span class="eyebrow">Ledger</span>
-              <h1>AI Finance & Expense</h1>
-              <p>Spend, invoices, and budget vs actual for finance operations.</p>
+      <div class="app-container">
+        <!-- Sticky Header -->
+        <header class="sticky-header">
+          <div class="header-content">
+            <div class="header-logo">
+              <i class="bi bi-cash-stack"></i>
+              <span class="logo-text">AI Finance</span>
             </div>
-            <Button icon="plus" @click="ping">New record</Button>
-          </header>
-          <Alert class="mb-4" variant="info" title="Vue starter" message="This template is wired to @poluru-labs/enterprise-design-system-vue. Replace the sample metrics with your workspace." />
-          <section class="metrics" aria-label="Key metrics">
-            <Card>
-              <Stat label="Spend MTD" value="$428k" hint="72% of budget" trend="up" trend-value="+6.4%" />
-            </Card>
-            <Card>
-              <Stat label="Open invoices" value="128" hint="$186k outstanding" trend="down" trend-value="-12" />
-            </Card>
-            <Card>
-              <Stat label="Close progress" value="64%" hint="Month-end checklist" trend="up" trend-value="+18 pts" />
-            </Card>
-            <Card>
-              <Stat label="Exceptions" value="19" hint="Need review" trend="down" trend-value="-5" />
-            </Card>
-          </section>
-        </main>
+            <nav class="header-nav">
+              <a
+                v-for="link in navLinks"
+                :key="link.path"
+                class="nav-link"
+                :class="{ active: isActive(link.path) }"
+                @click.prevent="navigate(link.path)"
+                href="#"
+              >
+                <i :class="`bi bi-${link.icon}`"></i>
+                {{ link.name }}
+              </a>
+            </nav>
+            <div class="header-actions">
+              <button class="action-btn" title="Settings">
+                <i class="bi bi-gear"></i>
+              </button>
+              <div class="user-avatar">P</div>
+            </div>
+          </div>
+        </header>
+
+        <div class="main-layout">
+          <!-- Simple Sidebar -->
+          <aside class="sidebar">
+            <div class="sidebar-content">
+              <div class="sidebar-section">
+                <p class="sidebar-label">Navigation</p>
+                <a
+                  v-for="link in navLinks"
+                  :key="link.path"
+                  class="sidebar-link"
+                  :class="{ active: isActive(link.path) }"
+                  @click.prevent="navigate(link.path)"
+                  href="#"
+                >
+                  <i :class="`bi bi-${link.icon}`"></i>
+                  {{ link.name }}
+                </a>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <main class="main-content">
+            <router-view />
+          </main>
+        </div>
       </div>
     </ToastProvider>
   </EdsThemeProvider>
