@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { Alert, Badge, Button, Card, CircularProgress, List, Meter, ProgressBar, SegmentedControl, Stat, Status, Tabs, Timeline } from '@poluru-labs/enterprise-design-system-vue';
+import { Accordion, Alert, Badge, Button, Card, CircularProgress, List, Meter, ProgressBar, SegmentedControl, Stat, Status, Tabs, Timeline } from '@poluru-labs/enterprise-design-system-vue';
 import { agenda, atRisk, kpis, pipelineMonths, playbooks, sparkPoints, teamBoard, timelineItems } from '../data';
 import { go } from '../ui';
 
@@ -11,11 +11,11 @@ const spark = sparkPoints(pipelineMonths);
 </script>
 
 <template>
-  <header class="page-head">
-    <div>
+  <header class="page-head hero">
+    <div class="hero-copy">
       <span class="eyebrow">Workspace</span>
       <h1>Overview</h1>
-      <p>Priya Poluru’s Q3 book is 78% to quota. Bloom flags Harbor for a same-day working session and keeps Nimbus out of commit.</p>
+      <p>FY26 Q3 · Priya Poluru · 78% to quota</p>
     </div>
     <div class="row">
       <SegmentedControl
@@ -67,8 +67,9 @@ const spark = sparkPoints(pipelineMonths);
       </Card>
     </div>
     <div class="stack">
-      <Card title="AI coaching">
+      <Card title="AI coaching" description="Next actions for Priya Poluru this afternoon">
         <Tabs
+          class="coach-tabs"
           v-model="tab"
           :items="[
             { id: 'commit', label: 'Commit' },
@@ -77,7 +78,10 @@ const spark = sparkPoints(pipelineMonths);
           ]"
         >
           <template #default="{ active }">
-            <p v-if="active === 'commit'" class="note">Keep Harbor and Fieldwork in commit. Weighted coverage is 1.4×.</p>
+            <div v-if="active === 'commit'" class="stack">
+              <p class="note">Keep Harbor and Fieldwork in commit. Weighted coverage is 1.4×.</p>
+              <Accordion :items="playbooks" />
+            </div>
             <List v-else-if="active === 'risk'" :items="atRisk.map((item) => ({ ...item, icon: 'alert-triangle' }))" divided />
             <Timeline v-else :items="timelineItems.slice(0, 3)" />
           </template>

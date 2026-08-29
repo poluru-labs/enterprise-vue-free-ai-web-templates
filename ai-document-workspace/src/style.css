@@ -5,6 +5,25 @@
   --muted: #657087;
   --paper: #f5f7fb;
   --rule: #e4e8f0;
+  --accent: #ebf400;
+  --accent-ink: #1a1d00;
+
+  /* Theme the design system's brand ramp around the #EBF400 accent. */
+  --eds-color-brand-50: #fdfeef;
+  --eds-color-brand-100: #f8fbd1;
+  --eds-color-brand-200: #f2f8a3;
+  --eds-color-brand-300: #e2f157;
+  --eds-color-brand-400: #ebf400;
+  --eds-color-brand-500: #c7d400;
+  --eds-color-brand-600: #9aa300;
+  --eds-color-brand-700: #6b7300;
+  --eds-color-brand-800: #4d5200;
+  --eds-color-brand-900: #333600;
+
+  --eds-color-focus: var(--eds-color-brand-500);
+  --eds-color-primary: var(--eds-color-brand-700);
+  --eds-color-primary-hover: var(--eds-color-brand-800);
+  --eds-color-primary-active: var(--eds-color-brand-900);
 }
 
 *,
@@ -83,8 +102,65 @@ body {
   color: var(--ink);
 }
 
+.side-link.is-active {
+  position: relative;
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.side-link.is-active::before {
+  content: '';
+  position: absolute;
+  left: -0.35rem;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.sidebar-storage {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.sidebar-user-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  font-size: 0.82rem;
+}
+
+.sidebar-user-meta strong {
+  font-size: 0.85rem;
+}
+
+.sidebar-user-meta span {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
 .main {
   padding: 1.5rem 1.75rem 2.5rem;
+}
+
+.page-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Force readable dark text on the bright accent primary button. */
+.btn-accent-text {
+  color: var(--accent-ink) !important;
 }
 
 .page-header {
@@ -130,6 +206,107 @@ body {
   }
 }
 
+.library-toolbar {
+  margin-bottom: 0.9rem;
+}
+
+.library-toolbar [role='radiogroup'] [role='radio'] {
+  white-space: nowrap;
+}
+
+.library-search {
+  min-width: 16rem;
+}
+
+.library-status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.library-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.library-count {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.card-heading {
+  margin: 0 0 0.9rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.secondary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 0.9rem;
+}
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.review-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.review-item-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  font-size: 0.85rem;
+}
+
+.review-item-body span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.sources-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.sources-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 @media (max-width: 860px) {
   .shell {
     grid-template-columns: 1fr;
@@ -138,5 +315,9 @@ body {
   .sidebar {
     border-right: 0;
     border-bottom: 1px solid var(--rule);
+  }
+
+  .secondary-grid {
+    grid-template-columns: 1fr;
   }
 }
