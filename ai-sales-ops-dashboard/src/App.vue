@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import {
   Accordion,
   Alert,
@@ -37,6 +37,7 @@ import {
   Toolbar,
   Tooltip,
   ToastProvider,
+  setEdsTheme,
   showToast,
 } from '@poluru-labs/enterprise-design-system-vue';
 import {
@@ -64,9 +65,13 @@ const query = ref('');
 const profileOpen = ref(false);
 const notifOpen = ref(false);
 const requestOpen = ref(false);
+const commandOpen = ref(false);
+const commandQuery = ref('');
+const isDark = ref(false);
 const range = ref('month');
 const coachTab = ref('commit');
 const requestTab = ref('all');
+const ownerFilter = ref('all');
 const page = ref(1);
 const perPage = 4;
 
@@ -82,10 +87,25 @@ const requestDue = ref('2026-09-15');
 const requestEstimate = ref(3);
 const requestNotes = ref('');
 
+const ownerFilterOptions = computed(() => [{ value: 'all', label: 'All owners' }, ...ownerOptions]);
+
+const quickActions = [
+  { id: 'new-request', label: 'Add feature or enhancement', action: () => { requestOpen.value = true; } },
+  { id: 'toggle-theme', label: 'Toggle light / dark theme', action: () => toggleTheme() },
+];
+
+const filteredCommands = computed(() => {
+  const q = commandQuery.value.trim().toLowerCase();
+  const navMatches = navItems.filter((item) => !q || item.label.toLowerCase().includes(q));
+  const actionMatches = quickActions.filter((item) => !q || item.label.toLowerCase().includes(q));
+  return [...navMatches, ...actionMatches];
+});
+
 const filteredRequests = computed(() => {
   const list = requestTab.value === 'all' ? requests : requests.filter((item) => item.type.toLowerCase() === requestTab.value);
+  const ownerOk = (item) => ownerFilter.value === 'all' || item.owner === ownerFilterOptions.value.find((o) => o.value === ownerFilter.value)?.label;
   const q = query.value.trim().toLowerCase();
-  return q ? list.filter((item) => `${item.title} ${item.owner}`.toLowerCase().includes(q)) : list;
+  return list.filter((item) => ownerOk(item) && (!q || `${item.title} ${item.owner}`.toLowerCase().includes(q)));
 });
 
 const pagedRequests = computed(() => {
@@ -99,9 +119,47 @@ function markAllRead() {
   });
 }
 
+function toggleTheme() {
+  isDark.value = !isDark.value;
+  setEdsTheme(isDark.value ? 'dark' : 'light');
+}
+
+function runCommand(item) {
+  commandOpen.value = false;
+  commandQuery.value = '';
+  if (item.action) {
+    item.action();
+  } else if (item.href) {
+    window.location.hash = item.href;
+  }
+}
+
+function exportRequestsCsv() {
+  const header = requestColumns.map((c) => c.label).join(',');
+  const rows = filteredRequests.value.map((row) => requestColumns.map((c) => `"${String(row[c.key]).replace(/"/g, '""')}"`).join(','));
+  const blob = new Blob([[header, ...rows].join('\n')], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'sales-requests.csv';
+  link.click();
+  URL.revokeObjectURL(url);
+  showToast({ title: 'Exported', description: 'Feature and enhancement requests exported to CSV.', variant: 'success' });
+}
+
 function newDeal() {
   showToast({ title: 'New deal', description: 'Deal composer opened.', variant: 'info' });
 }
+
+function onKey(event) {
+  if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+    event.preventDefault();
+    commandOpen.value = true;
+  }
+}
+
+onMounted(() => window.addEventListener('keydown', onKey));
+onBeforeUnmount(() => window.removeEventListener('keydown', onKey));
 
 function submitRequest() {
   if (!requestTitle.value.trim()) {
@@ -133,19 +191,28 @@ function onMenu(item) {
       <div class="shell">
         <header class="topbar">
           <Toolbar>
-            <a class="brand" href="#overview">
-              <span class="brand-mark" aria-hidden="true">
-                <i class="bi bi-bar-chart-line"></i>
-              </span>
-              <strong>AI Sales Ops</strong>
-            </a>
-            <div class="search-wrap">
-              <Search v-model="query" placeholder="Search deals, people, requests…" />
+            <div class="topbar-start">
+              <a class="brand" href="#overview">
+                <span class="brand-mark" aria-hidden="true">
+                  <i class="bi bi-bar-chart-line"></i>
+                </span>
+                <strong>AI Sales Ops</strong>
+              </a>
+              <div class="search-wrap">
+                <Search v-model="query" placeholder="Search deals, people, requests…" />
+              </div>
             </div>
             <template #end>
               <div class="topbar-end">
+                <Tooltip content="Toggle theme">
+                  <button type="button" class="icon-btn theme-btn" :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'" @click="toggleTheme">
+                    <i :class="isDark ? 'bi bi-sun' : 'bi bi-moon-stars'"></i>
+                  </button>
+                </Tooltip>
                 <Tooltip content="Command palette · ⌘K">
-                  <Kbd :keys="['⌘', 'K']" />
+                  <button type="button" class="icon-btn" aria-label="Command palette" @click="commandOpen = true">
+                    <Kbd :keys="['⌘', 'K']" />
+                  </button>
                 </Tooltip>
                 <DropdownMenu placement="bottom-end">
                   <template #trigger>
@@ -299,10 +366,12 @@ function onMenu(item) {
                     { id: 'fix', label: 'Fixes' },
                   ]"
                 />
-                <div class="row" style="gap: 0.5rem">
+                <div class="row" style="gap: 0.5rem; flex-wrap: wrap">
                   <div style="min-width: 14rem">
                     <Search v-model="query" placeholder="Search requests" />
                   </div>
+                  <Select v-model="ownerFilter" :options="ownerFilterOptions" style="min-width: 10rem" />
+                  <Button icon="download" variant="secondary" :disabled="!filteredRequests.length" @click="exportRequestsCsv">Export CSV</Button>
                   <Button icon="plus" variant="secondary" @click="requestOpen = true">Add request</Button>
                 </div>
               </div>
@@ -365,6 +434,16 @@ function onMenu(item) {
           <Button variant="secondary" @click="requestOpen = false">Cancel</Button>
           <Button @click="submitRequest">Save request</Button>
         </template>
+      </Modal>
+
+      <Modal v-model:open="commandOpen" heading="Jump to anything">
+        <Search v-model="commandQuery" placeholder="Type a section or action" />
+        <EmptyState v-if="!filteredCommands.length" title="No matches" description="Try Overview, Coverage, or Add request." icon="search" />
+        <div v-else class="cmd-list">
+          <a v-for="item in filteredCommands" :key="item.id" :href="item.href || '#'" @click.prevent="runCommand(item)">
+            {{ item.label }}
+          </a>
+        </div>
       </Modal>
     </ToastProvider>
   </EdsThemeProvider>
