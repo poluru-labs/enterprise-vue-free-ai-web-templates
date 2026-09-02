@@ -1,0 +1,249 @@
+{
+  "currentUser": {
+    "name": "Ishaan Poluru",
+    "role": "Head of Growth",
+    "initials": "IP"
+  },
+  "kpis": [
+    {
+      "id": "mrr",
+      "label": "MRR",
+      "value": "$186k",
+      "hint": "Net new $22.4k",
+      "trend": "up",
+      "trendValue": "+13.6%",
+      "spark": [128, 136, 141, 149, 156, 162, 168, 172, 178, 181, 184, 186]
+    },
+    {
+      "id": "active-users",
+      "label": "Active users",
+      "value": "18.4k",
+      "hint": "WAU / MAU 42%",
+      "trend": "up",
+      "trendValue": "+8.1%",
+      "spark": [14.2, 14.8, 15.1, 15.9, 16.4, 16.8, 17.2, 17.6, 17.9, 18.1, 18.3, 18.4]
+    },
+    {
+      "id": "activation",
+      "label": "Activation",
+      "value": "64%",
+      "hint": "First-session aha",
+      "trend": "up",
+      "trendValue": "+4.2 pts",
+      "spark": [52, 54, 55, 57, 58, 59, 60, 61, 62, 63, 63, 64]
+    },
+    {
+      "id": "churn",
+      "label": "Churn",
+      "value": "2.4%",
+      "hint": "Logo churn",
+      "trend": "down",
+      "trendValue": "-0.3 pts",
+      "spark": [3.1, 3.0, 2.9, 2.8, 2.8, 2.7, 2.6, 2.6, 2.5, 2.5, 2.4, 2.4]
+    },
+    {
+      "id": "nps",
+      "label": "NPS",
+      "value": "54",
+      "hint": "Last pulse",
+      "trend": "up",
+      "trendValue": "+6",
+      "spark": [41, 43, 44, 46, 47, 48, 49, 50, 51, 52, 53, 54]
+    },
+    {
+      "id": "expansion",
+      "label": "Expansion",
+      "value": "$18.2k",
+      "hint": "Seat upgrades",
+      "trend": "up",
+      "trendValue": "+9.4%",
+      "spark": [11.2, 12.0, 12.6, 13.1, 13.8, 14.4, 15.1, 15.8, 16.4, 17.1, 17.6, 18.2]
+    }
+  ],
+  "headerSparklines": [
+    {
+      "id": "wau",
+      "label": "WAU",
+      "value": "18.4k",
+      "points": [14.2, 14.8, 15.1, 15.9, 16.4, 16.8, 17.2, 17.6, 17.9, 18.1, 18.3, 18.4]
+    },
+    {
+      "id": "activation",
+      "label": "Activation",
+      "value": "64%",
+      "points": [52, 54, 55, 57, 58, 59, 60, 61, 62, 63, 63, 64]
+    },
+    {
+      "id": "churn",
+      "label": "Churn",
+      "value": "2.4%",
+      "points": [3.1, 3.0, 2.9, 2.8, 2.8, 2.7, 2.6, 2.6, 2.5, 2.5, 2.4, 2.4]
+    },
+    {
+      "id": "nps",
+      "label": "NPS",
+      "value": "54",
+      "points": [41, 43, 44, 46, 47, 48, 49, 50, 51, 52, 53, 54]
+    }
+  ],
+  "mrrMonths": [128, 136, 141, 149, 156, 162, 168, 172, 178, 181, 184, 186],
+  "mrrLabels": ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"],
+  "growthPod": [
+    { "name": "Meera Poluru", "closed": 14, "pipeline": "32 experiments", "quota": 88 },
+    { "name": "Arjun Poluru", "closed": 10, "pipeline": "21 experiments", "quota": 71 },
+    { "name": "Sana Poluru", "closed": 8, "pipeline": "18 experiments", "quota": 64 },
+    { "name": "Rahul Poluru", "closed": 12, "pipeline": "27 experiments", "quota": 82 }
+  ],
+  "agenda": [
+    { "id": 1, "title": "Activation funnel review", "with": "Kiran Poluru", "time": "09:30", "type": "Meeting" },
+    { "id": 2, "title": "Ship onboarding checklist v3", "with": "Dev Poluru", "time": "12:00", "type": "Task" },
+    { "id": 3, "title": "Churn interview — Northwind Co", "with": "Ananya Poluru", "time": "15:00", "type": "Call" }
+  ],
+  "atRisk": [
+    {
+      "id": 1,
+      "account": "Northwind Co",
+      "label": "Trial-to-paid experiment underpowered — needs 4 more days",
+      "health": 58,
+      "icon": "alert-triangle"
+    },
+    {
+      "id": 2,
+      "account": "Harbor Labs",
+      "label": "Retention cohort dashboard has stale data since Tuesday",
+      "health": 61,
+      "icon": "alert-triangle"
+    },
+    {
+      "id": 3,
+      "account": "Fieldwork Co",
+      "label": "NPS survey response rate dropped 9 pts this week",
+      "health": 89,
+      "icon": "alert-triangle"
+    }
+  ],
+  "playbooks": [
+    {
+      "id": "p1",
+      "title": "Activate within the first session",
+      "content": "Surface the aha-moment action inside the first 5 minutes.",
+      "owner": "Meera Poluru",
+      "impact": "Activation +4.2 pts"
+    },
+    {
+      "id": "p2",
+      "title": "Win back at day 14",
+      "content": "Trigger a lifecycle email when usage drops two weeks in a row.",
+      "owner": "Rahul Poluru",
+      "impact": "Churn −0.3 pts"
+    },
+    {
+      "id": "p3",
+      "title": "Expand seats after 3 invites",
+      "content": "Prompt an upgrade nudge once a workspace passes 3 invited members.",
+      "owner": "Arjun Poluru",
+      "impact": "Expansion +$18.2k"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "e1",
+      "title": "Trial-to-paid variant B",
+      "summary": "Pricing page copy that names time-to-value. Trending +6.2% — let it run 4 more days with Meera Poluru before calling it.",
+      "status": "Running",
+      "owner": "Meera Poluru",
+      "lift": "+6.2%",
+      "confidence": "82%"
+    },
+    {
+      "id": "e2",
+      "title": "Onboarding checklist v3",
+      "summary": "First-session checklist that ships the aha action above the fold. Rolled to 100% this morning.",
+      "status": "Shipped",
+      "owner": "Dev Poluru",
+      "lift": "+4.1%",
+      "confidence": "96%"
+    },
+    {
+      "id": "e3",
+      "title": "Self-serve upgrade nudge",
+      "summary": "In-product prompt after three workspace invites. In progress with Arjun Poluru.",
+      "status": "In progress",
+      "owner": "Arjun Poluru",
+      "lift": "+2.8%",
+      "confidence": "61%"
+    },
+    {
+      "id": "e4",
+      "title": "Empty-state first value",
+      "summary": "Replace the blank dashboard with a guided first insight so new workspaces activate in-session.",
+      "status": "Planned",
+      "owner": "Sana Poluru",
+      "lift": "TBD",
+      "confidence": "—"
+    },
+    {
+      "id": "e5",
+      "title": "Invite-to-expand seats",
+      "summary": "Seat upgrade modal when a workspace crosses three invited members. Draft copy in review.",
+      "status": "Draft",
+      "owner": "Rahul Poluru",
+      "lift": "TBD",
+      "confidence": "—"
+    }
+  ],
+  "timelineItems": [
+    { "id": 1, "title": "Experiment shipped to 100%", "description": "Onboarding checklist v3 · Dev Poluru", "time": "3h ago" },
+    { "id": 2, "title": "Cohort report refreshed", "description": "Retention · Meera Poluru", "time": "6h ago" },
+    { "id": 3, "title": "New workspace activated", "description": "Northwind Co · Arjun Poluru", "time": "1d ago" }
+  ],
+  "notifications": [
+    { "id": 1, "title": "Experiment hit significance", "body": "Trial-to-paid variant B is up 6.2%.", "time": "12m ago" },
+    { "id": 2, "title": "Churn risk flagged", "body": "Northwind Co usage dropped 40% this week.", "time": "2h ago" },
+    { "id": 3, "title": "Enhancement shipped", "body": "Cohort export to CSV is live.", "time": "4h ago" }
+  ],
+  "ownerOptions": [
+    { "value": "meera", "label": "Meera Poluru" },
+    { "value": "arjun", "label": "Arjun Poluru" },
+    { "value": "sana", "label": "Sana Poluru" },
+    { "value": "rahul", "label": "Rahul Poluru" },
+    { "value": "kiran", "label": "Kiran Poluru" }
+  ],
+  "requests": [
+    { "id": "r1", "title": "Cohort export to CSV", "type": "Enhancement", "priority": "High", "status": "Shipped", "owner": "Meera Poluru", "due": "Aug 14" },
+    { "id": "r2", "title": "Self-serve upgrade nudge", "type": "Feature", "priority": "High", "status": "In progress", "owner": "Arjun Poluru", "due": "Sep 06" },
+    { "id": "r3", "title": "Experiment power calculator", "type": "Feature", "priority": "Medium", "status": "Planned", "owner": "Sana Poluru", "due": "Sep 20" },
+    { "id": "r4", "title": "NPS survey auto-follow-up", "type": "Enhancement", "priority": "Medium", "status": "In progress", "owner": "Rahul Poluru", "due": "Sep 12" },
+    { "id": "r5", "title": "Slack alert for churn risk", "type": "Enhancement", "priority": "Low", "status": "Planned", "owner": "Kiran Poluru", "due": "Oct 04" },
+    { "id": "r6", "title": "Retention heatmap widget", "type": "Feature", "priority": "Medium", "status": "Shipped", "owner": "Meera Poluru", "due": "Jul 31" }
+  ],
+  "activationFunnel": [
+    { "id": "signups", "label": "Signups", "value": 4820, "rate": 100 },
+    { "id": "first-session", "label": "First session", "value": 3410, "rate": 71 },
+    { "id": "aha", "label": "Aha moment", "value": 2180, "rate": 45 },
+    { "id": "activated", "label": "Activated", "value": 1396, "rate": 29 }
+  ],
+  "retentionWeeks": [
+    { "week": "W0", "value": 100 },
+    { "week": "W1", "value": 62 },
+    { "week": "W2", "value": 48 },
+    { "week": "W4", "value": 39 },
+    { "week": "W8", "value": 31 }
+  ],
+  "cohorts": [
+    { "id": "c1", "name": "Jun 2026", "size": 820, "w1": 64, "w4": 41, "w8": 33 },
+    { "id": "c2", "name": "Jul 2026", "size": 910, "w1": 61, "w4": 38, "w8": 30 },
+    { "id": "c3", "name": "Aug 2026", "size": 1040, "w1": 66, "w4": 42, "w8": 34 }
+  ],
+  "usageFeatures": [
+    { "id": "f1", "name": "Cohort export", "adoption": 78, "delta": "+6 pts" },
+    { "id": "f2", "name": "Experiment board", "adoption": 64, "delta": "+4 pts" },
+    { "id": "f3", "name": "NPS pulse", "adoption": 51, "delta": "-9 pts" },
+    { "id": "f4", "name": "Retention heatmap", "adoption": 44, "delta": "+11 pts" },
+    { "id": "f5", "name": "Slack churn alerts", "adoption": 29, "delta": "+3 pts" }
+  ],
+  "accountHealth": [
+    { "name": "Northwind Co", "value": 58 },
+    { "name": "Fieldwork Co", "value": 89 }
+  ]
+}

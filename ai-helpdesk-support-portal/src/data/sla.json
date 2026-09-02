@@ -1,0 +1,47 @@
+[
+  {
+    "id": "sla-urgent",
+    "name": "Urgent first response",
+    "targetMin": 15,
+    "currentMin": 12,
+    "attainment": 88.4,
+    "tickets": 9,
+    "status": "at_risk"
+  },
+  {
+    "id": "sla-high",
+    "name": "High first response",
+    "targetMin": 45,
+    "currentMin": 38,
+    "attainment": 93.1,
+    "tickets": 18,
+    "status": "on_track"
+  },
+  {
+    "id": "sla-standard",
+    "name": "Standard first response",
+    "targetMin": 120,
+    "currentMin": 54,
+    "attainment": 97.6,
+    "tickets": 26,
+    "status": "on_track"
+  },
+  {
+    "id": "sla-resolution",
+    "name": "Same-day resolution",
+    "targetMin": 480,
+    "currentMin": 312,
+    "attainment": 81.2,
+    "tickets": 14,
+    "status": "watch"
+  },
+  {
+    "id": "sla-enterprise",
+    "name": "Enterprise follow-up",
+    "targetMin": 240,
+    "currentMin": 190,
+    "attainment": 90.5,
+    "tickets": 11,
+    "status": "on_track"
+  }
+]

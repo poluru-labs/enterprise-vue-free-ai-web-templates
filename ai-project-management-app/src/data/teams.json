@@ -1,0 +1,68 @@
+[
+  {
+    "id": "team_platform",
+    "name": "Platform",
+    "lead": "Arjun Poluru",
+    "focus": "Keel core, search, dependencies",
+    "members": 5,
+    "points": 18,
+    "capacity": 20,
+    "load": 90,
+    "status": "Tight"
+  },
+  {
+    "id": "team_product",
+    "name": "Product",
+    "lead": "Maya Poluru",
+    "focus": "Burndown, sprint rituals",
+    "members": 4,
+    "points": 13,
+    "capacity": 16,
+    "load": 81,
+    "status": "On track"
+  },
+  {
+    "id": "team_design",
+    "name": "Design",
+    "lead": "Hana Poluru",
+    "focus": "Roadmap lanes, mast contrast",
+    "members": 3,
+    "points": 8,
+    "capacity": 12,
+    "load": 67,
+    "status": "Headroom"
+  },
+  {
+    "id": "team_qa",
+    "name": "QA",
+    "lead": "Priya Poluru",
+    "focus": "Bugs, capacity overflow",
+    "members": 4,
+    "points": 14,
+    "capacity": 16,
+    "load": 88,
+    "status": "Tight"
+  },
+  {
+    "id": "team_mobile",
+    "name": "Mobile",
+    "lead": "Jordan Poluru",
+    "focus": "Search index, time tracking",
+    "members": 3,
+    "points": 10,
+    "capacity": 14,
+    "load": 71,
+    "status": "On track"
+  },
+  {
+    "id": "team_data",
+    "name": "Data",
+    "lead": "Sahana Poluru",
+    "focus": "Capacity cards, calendar view",
+    "members": 3,
+    "points": 11,
+    "capacity": 14,
+    "load": 79,
+    "status": "On track"
+  }
+]

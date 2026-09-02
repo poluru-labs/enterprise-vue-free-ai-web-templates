@@ -1,0 +1,29 @@
+{
+  "workspace": {
+    "name": "Lumen desk",
+    "slug": "lumen-desk",
+    "region": "us-east-1",
+    "brandColor": "#0284C7",
+    "timezone": "America/Chicago",
+    "firstResponseTarget": 45,
+    "replyEmail": "meera.poluru@polurulabs.example",
+    "webhookUrl": "https://hooks.lumen.example/desk",
+    "aiDrafts": true,
+    "autoAssign": true,
+    "emailNotifications": true,
+    "twoFactorAuth": true
+  },
+  "team": [
+    { "name": "Meera Poluru", "role": "Support lead" },
+    { "name": "Ananya Poluru", "role": "Billing specialist" },
+    { "name": "Madhav Poluru", "role": "Platform engineer" },
+    { "name": "Priya Poluru", "role": "Onboarding guide" }
+  ],
+  "channels": [
+    { "id": "email", "label": "Email intake", "enabled": true },
+    { "id": "chat", "label": "Live chat", "enabled": true },
+    { "id": "portal", "label": "Customer portal", "enabled": true },
+    { "id": "phone", "label": "Phone callbacks", "enabled": true },
+    { "id": "slack", "label": "Slack breach alerts", "enabled": true }
+  ]
+}

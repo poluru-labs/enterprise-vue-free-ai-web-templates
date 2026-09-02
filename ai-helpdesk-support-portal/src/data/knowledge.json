@@ -1,0 +1,74 @@
+[
+  {
+    "id": "kb-mfa",
+    "title": "Reset workspace MFA",
+    "category": "Identity",
+    "status": "published",
+    "updated": "2026-08-28",
+    "views": 412,
+    "summary": "Scoped authenticator reset for contractors without unlocking the whole tenant."
+  },
+  {
+    "id": "kb-sso",
+    "title": "Fix an SSO login loop",
+    "category": "Identity",
+    "status": "published",
+    "updated": "2026-08-26",
+    "views": 388,
+    "summary": "ACS URL, certificate rotation, and mobile redirect checks after IdP changes."
+  },
+  {
+    "id": "kb-credit",
+    "title": "Issue an unused-seat credit",
+    "category": "Billing",
+    "status": "published",
+    "updated": "2026-08-21",
+    "views": 204,
+    "summary": "When finance can post a memo and what the customer should see on the next invoice."
+  },
+  {
+    "id": "kb-webhook",
+    "title": "Replay webhook events after 429",
+    "category": "Platform",
+    "status": "published",
+    "updated": "2026-08-27",
+    "views": 176,
+    "summary": "Honor Retry-After, drain the worker pool, then replay by event type."
+  },
+  {
+    "id": "kb-dns",
+    "title": "Domain verify still pending",
+    "category": "Onboarding",
+    "status": "published",
+    "updated": "2026-08-15",
+    "views": 259,
+    "summary": "TXT propagation windows and how Lumen force-rechecks a live record."
+  },
+  {
+    "id": "kb-export",
+    "title": "Regenerate a usage export",
+    "category": "Platform",
+    "status": "draft",
+    "updated": "2026-08-28",
+    "views": 41,
+    "summary": "Missing chat minutes in August CSV and how to rebuild the file."
+  },
+  {
+    "id": "kb-keys",
+    "title": "Unblock production API key rotation",
+    "category": "Platform",
+    "status": "published",
+    "updated": "2026-08-19",
+    "views": 133,
+    "summary": "Deploy locks that grey out rotate key and the scoped override Meera uses."
+  },
+  {
+    "id": "kb-widget",
+    "title": "Chat launcher covering checkout",
+    "category": "Platform",
+    "status": "review",
+    "updated": "2026-08-28",
+    "views": 67,
+    "summary": "Mobile Safari 18 offset for the launcher so Place order stays tappable."
+  }
+]

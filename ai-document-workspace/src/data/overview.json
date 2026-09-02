@@ -1,0 +1,83 @@
+{
+  "kpis": [
+    {
+      "id": "documents",
+      "label": "Documents",
+      "value": "12.6k",
+      "hint": "840 added this week",
+      "trend": "up",
+      "trendValue": "+7.2%",
+      "icon": "bi-file-earmark-text",
+      "tone": "brand",
+      "sparkline": [9.8, 10.1, 10.4, 10.9, 11.2, 11.8, 12.6]
+    },
+    {
+      "id": "pending",
+      "label": "Pending review",
+      "value": "46",
+      "hint": "Legal + security",
+      "trend": "down",
+      "trendValue": "-9",
+      "icon": "bi-hourglass-split",
+      "tone": "warning",
+      "sparkline": [62, 58, 55, 51, 49, 48, 46]
+    },
+    {
+      "id": "search",
+      "label": "Search success",
+      "value": "91%",
+      "hint": "Cited answers",
+      "trend": "up",
+      "trendValue": "+3 pts",
+      "icon": "bi-quote",
+      "tone": "success",
+      "sparkline": [84, 85, 86, 87, 88, 89, 91]
+    },
+    {
+      "id": "stale",
+      "label": "Stale sources",
+      "value": "28",
+      "hint": "> 180 days",
+      "trend": "down",
+      "trendValue": "-4",
+      "icon": "bi-exclamation-triangle",
+      "tone": "danger",
+      "sparkline": [38, 36, 34, 33, 31, 30, 28]
+    },
+    {
+      "id": "citations",
+      "label": "Linked citations",
+      "value": "4.8k",
+      "hint": "Paragraph anchors",
+      "trend": "up",
+      "trendValue": "+12%",
+      "icon": "bi-link-45deg",
+      "tone": "info",
+      "sparkline": [3.2, 3.5, 3.8, 4.0, 4.3, 4.6, 4.8]
+    },
+    {
+      "id": "storage",
+      "label": "Storage used",
+      "value": "68%",
+      "hint": "of 2.4 TB vault",
+      "trend": "up",
+      "trendValue": "+2 pts",
+      "icon": "bi-hdd",
+      "tone": "brand",
+      "sparkline": [60, 61, 63, 64, 65, 67, 68]
+    }
+  ],
+  "ingest": {
+    "labels": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "series": [
+      { "name": "Ingested", "color": "#B45309", "values": [118, 142, 156, 134, 188, 72, 84] },
+      { "name": "Cited answers", "color": "#D97706", "values": [86, 94, 110, 98, 132, 48, 56] }
+    ]
+  },
+  "typeMix": [
+    { "name": "Contracts", "value": 38, "color": "#B45309" },
+    { "name": "Policies", "value": 24, "color": "#D97706" },
+    { "name": "Reports", "value": 22, "color": "#F59E0B" },
+    { "name": "Memos", "value": 16, "color": "#FDE68A" }
+  ]
+}

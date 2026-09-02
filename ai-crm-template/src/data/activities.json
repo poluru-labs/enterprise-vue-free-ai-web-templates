@@ -1,0 +1,16 @@
+{
+  "agenda": [
+    { "id": "ag_01", "time": "16:20", "title": "Harbor legal walkthrough", "with": "Meera Poluru", "type": "Call" },
+    { "id": "ag_02", "time": "17:00", "title": "Discount approval · Fieldwork", "with": "Elena Poluru", "type": "Task" },
+    { "id": "ag_03", "time": "Tomorrow 10:00", "title": "Brightline technical demo", "with": "Kavya Poluru", "type": "Meeting" },
+    { "id": "ag_04", "time": "Fri 14:30", "title": "Lumen HIPAA intro", "with": "Nikhil Poluru", "type": "Call" },
+    { "id": "ag_05", "time": "Mon 09:30", "title": "Atlas Freight discovery", "with": "Noor Poluru", "type": "Call" },
+    { "id": "ag_06", "time": "Tue 11:00", "title": "Northwind architecture", "with": "Luca Poluru", "type": "Meeting" }
+  ],
+  "sequenceSteps": [
+    { "id": "s1", "label": "Intro" },
+    { "id": "s2", "label": "Value" },
+    { "id": "s3", "label": "Proof" },
+    { "id": "s4", "label": "Ask" }
+  ]
+}

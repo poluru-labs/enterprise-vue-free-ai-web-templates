@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "kicker": "Desk pulse · 28 Aug 2026",
+    "title": "First response is holding at 42 minutes.",
+    "body": "Meera Poluru is covering Identity and Billing. Three tickets have already crossed first-response SLA. Assign next will take the oldest unassigned conversation."
+  },
+  "headerCounts": {
+    "open": 47,
+    "waiting": 11,
+    "breached": 3,
+    "firstResponse": "42m"
+  },
+  "kpis": [
+    {
+      "id": "open",
+      "label": "Open tickets",
+      "value": "47",
+      "hint": "12 created today",
+      "trend": "up",
+      "trendValue": "+6",
+      "icon": "bi-inbox",
+      "tone": "brand",
+      "sparkline": [34, 36, 39, 41, 44, 45, 47]
+    },
+    {
+      "id": "waiting",
+      "label": "Waiting on customer",
+      "value": "11",
+      "hint": "3 idle over 24h",
+      "trend": "down",
+      "trendValue": "-2",
+      "icon": "bi-hourglass-split",
+      "tone": "warning",
+      "sparkline": [16, 15, 14, 13, 12, 12, 11]
+    },
+    {
+      "id": "breached",
+      "label": "SLA breached",
+      "value": "3",
+      "hint": "Identity queue",
+      "trend": "up",
+      "trendValue": "+1",
+      "icon": "bi-exclamation-octagon",
+      "tone": "danger",
+      "sparkline": [1, 1, 2, 2, 2, 3, 3]
+    },
+    {
+      "id": "frt",
+      "label": "First response",
+      "value": "42m",
+      "hint": "Target 45m",
+      "trend": "down",
+      "trendValue": "-8m",
+      "icon": "bi-stopwatch",
+      "tone": "info",
+      "sparkline": [58, 54, 51, 49, 46, 44, 42]
+    },
+    {
+      "id": "csat",
+      "label": "CSAT",
+      "value": "96.4%",
+      "hint": "+1.2 this week",
+      "trend": "up",
+      "trendValue": "+1.2%",
+      "icon": "bi-emoji-smile",
+      "tone": "success",
+      "sparkline": [93.8, 94.1, 94.6, 95.0, 95.4, 96.0, 96.4]
+    },
+    {
+      "id": "resolved",
+      "label": "Resolved today",
+      "value": "28",
+      "hint": "91% within SLA",
+      "trend": "up",
+      "trendValue": "+4",
+      "icon": "bi-check2-circle",
+      "tone": "success",
+      "sparkline": [18, 20, 21, 23, 24, 26, 28]
+    }
+  ],
+  "volumeTrend": {
+    "labels": ["24 Aug", "25 Aug", "26 Aug", "27 Aug", "28 Aug", "29 Aug", "30 Aug"],
+    "series": [
+      { "name": "Created", "color": "#0284C7", "values": [38, 41, 36, 44, 49, 42, 47] },
+      { "name": "Resolved", "color": "#0EA5E9", "values": [31, 34, 33, 39, 41, 36, 40] }
+    ]
+  },
+  "channelMix": [
+    { "name": "Email", "value": 28, "color": "#0284C7" },
+    { "name": "Chat", "value": 12, "color": "#0EA5E9" },
+    { "name": "Portal", "value": 5, "color": "#38BDF8" },
+    { "name": "Phone", "value": 2, "color": "#7DD3FC" }
+  ],
+  "queues": [
+    { "id": "identity", "name": "Identity", "open": 18, "waiting": 4, "breached": 2, "owner": "Meera Poluru" },
+    { "id": "billing", "name": "Billing", "open": 11, "waiting": 3, "breached": 1, "owner": "Ananya Poluru" },
+    { "id": "platform", "name": "Platform", "open": 10, "waiting": 2, "breached": 0, "owner": "Madhav Poluru" },
+    { "id": "onboarding", "name": "Onboarding", "open": 8, "waiting": 2, "breached": 0, "owner": "Priya Poluru" }
+  ],
+  "activity": [
+    {
+      "title": "Assigned LUM-2411",
+      "description": "Meera Poluru took the Northwind SSO loop.",
+      "timestamp": "28 Aug · 4:12 PM"
+    },
+    {
+      "title": "Macro applied",
+      "description": "Ananya used Refund acknowledgment on Beacon Finance.",
+      "timestamp": "28 Aug · 3:48 PM"
+    },
+    {
+      "title": "Article published",
+      "description": "Priya shipped Reset workspace MFA in Knowledge.",
+      "timestamp": "28 Aug · 2:05 PM"
+    },
+    {
+      "title": "SLA watch",
+      "description": "Harbor Legal webhook retries entered at-risk.",
+      "timestamp": "28 Aug · 1:22 PM"
+    }
+  ]
+}

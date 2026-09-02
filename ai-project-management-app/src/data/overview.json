@@ -1,0 +1,111 @@
+{
+  "hero": {
+    "kicker": "Sprint 24 · 8 days left",
+    "title": "34 of 50 points are already through Done — keep the last 16 moving.",
+    "body": "Arjun Poluru’s Platform crew closed the command palette and risk filters. Maya Poluru still owns burndown export; Luca Poluru has the sprint switcher in review."
+  },
+  "kpis": [
+    {
+      "id": "on-track",
+      "label": "On track",
+      "value": "12",
+      "hint": "86% of Sprint 24 scope",
+      "trend": "up",
+      "trendValue": "+3",
+      "icon": "bi-check2-circle",
+      "tone": "success",
+      "sparkline": [7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12]
+    },
+    {
+      "id": "at-risk",
+      "label": "At risk",
+      "value": "3",
+      "hint": "Blocked or slipping",
+      "trend": "down",
+      "trendValue": "-1",
+      "icon": "bi-exclamation-diamond",
+      "tone": "danger",
+      "sparkline": [6, 6, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3]
+    },
+    {
+      "id": "cycle",
+      "label": "Cycle time",
+      "value": "3.8d",
+      "hint": "Story median",
+      "trend": "down",
+      "trendValue": "-0.4d",
+      "icon": "bi-stopwatch",
+      "tone": "info",
+      "sparkline": [5.2, 5.0, 4.8, 4.7, 4.5, 4.4, 4.2, 4.1, 4.0, 3.9, 3.9, 3.8]
+    },
+    {
+      "id": "velocity",
+      "label": "Velocity",
+      "value": "42",
+      "hint": "Trailing three sprints",
+      "trend": "up",
+      "trendValue": "+4 pts",
+      "icon": "bi-speedometer2",
+      "tone": "brand",
+      "sparkline": [31, 32, 34, 35, 36, 37, 38, 39, 40, 40, 41, 42]
+    },
+    {
+      "id": "bugs",
+      "label": "Bugs",
+      "value": "7",
+      "hint": "Open across Keel",
+      "trend": "down",
+      "trendValue": "-2",
+      "icon": "bi-bug",
+      "tone": "warning",
+      "sparkline": [12, 11, 11, 10, 10, 9, 9, 8, 8, 8, 7, 7]
+    },
+    {
+      "id": "capacity",
+      "label": "Capacity",
+      "value": "81%",
+      "hint": "Six teams this sprint",
+      "trend": "up",
+      "trendValue": "+3 pts",
+      "icon": "bi-people",
+      "tone": "brand",
+      "sparkline": [68, 70, 71, 73, 74, 75, 76, 77, 78, 79, 80, 81]
+    }
+  ],
+  "throughput": {
+    "labels": ["S19", "S20", "S21", "S22", "S23", "S24"],
+    "series": [
+      { "name": "Completed pts", "color": "#0F766E", "values": [36, 38, 40, 41, 48, 34] },
+      { "name": "Committed pts", "color": "#14B8A6", "values": [42, 44, 44, 46, 48, 50] }
+    ]
+  },
+  "columnMix": [
+    { "name": "To do", "value": 5, "color": "#99F6E4" },
+    { "name": "In progress", "value": 8, "color": "#5EEAD4" },
+    { "name": "Review", "value": 3, "color": "#14B8A6" },
+    { "name": "Done", "value": 34, "color": "#0F766E" }
+  ],
+  "focus": [
+    {
+      "id": "f1",
+      "title": "Unblock Maya Poluru’s burndown export",
+      "content": "KEEL-124 is the last 5-point story still In progress. Pair with Luca on the switcher so both land before Friday."
+    },
+    {
+      "id": "f2",
+      "title": "Hold QA at 88% — do not pull extra bugs",
+      "content": "Priya Poluru’s crew is already above the 85% load line. Park KEEL-133 until Sprint 25."
+    },
+    {
+      "id": "f3",
+      "title": "Close the auth-service dependency risk",
+      "content": "Identity freeze on Sep 4 would stall KEEL-127. Arjun Poluru needs a written fallback today."
+    }
+  ],
+  "timeline": [
+    { "id": "tl1", "title": "KEEL-121 landed in Done", "description": "Command palette ships with ⌘K.", "time": "2h ago" },
+    { "id": "tl2", "title": "KEEL-123 risk filters merged", "description": "Priya Poluru closed the last 8-point story.", "time": "5h ago" },
+    { "id": "tl3", "title": "QA flagged two P2 bugs", "description": "Both sit in To do until capacity frees.", "time": "Yesterday" },
+    { "id": "tl4", "title": "Sprint 23 closed at 48/48", "description": "First clean finish this quarter.", "time": "6 days ago" }
+  ]
+}

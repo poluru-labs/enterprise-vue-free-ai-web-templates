@@ -1,0 +1,110 @@
+{
+  "generatedAt": "2026-08-28T16:42:00.000Z",
+  "hero": {
+    "kicker": "Friday · 28 Aug 2026 · last sync 3 min ago",
+    "title": "Harbor is running 9 workspaces with 660 of 1,070 seats filled. Three flags are still in rollout.",
+    "body": "Lakshmi Poluru is watching Cascade Retail (health 54) and Atlas Health before the 4 Sep trial lock. Beacon Finance stays offline until Priya restores the card."
+  },
+  "kpis": [
+    {
+      "id": "tenants",
+      "label": "Workspaces",
+      "value": "9",
+      "hint": "7 live · 1 trial · 1 offline",
+      "trend": "up",
+      "trendValue": "+2",
+      "icon": "bi-building",
+      "tone": "brand",
+      "sparkline": [6, 6, 7, 7, 8, 8, 9]
+    },
+    {
+      "id": "members",
+      "label": "Active members",
+      "value": "8",
+      "hint": "1 invite pending",
+      "trend": "up",
+      "trendValue": "+1",
+      "icon": "bi-people",
+      "tone": "info",
+      "sparkline": [5, 6, 6, 7, 7, 8, 8]
+    },
+    {
+      "id": "seats",
+      "label": "Seats used",
+      "value": "660",
+      "hint": "of 1,070 contracted",
+      "trend": "up",
+      "trendValue": "+48",
+      "icon": "bi-person-check",
+      "tone": "success",
+      "sparkline": [520, 548, 572, 598, 620, 642, 660]
+    },
+    {
+      "id": "rollout",
+      "label": "Flags in rollout",
+      "value": "3",
+      "hint": "new-dashboard · analytics · audit",
+      "trend": "flat",
+      "trendValue": "Stable",
+      "icon": "bi-flag",
+      "tone": "warning",
+      "sparkline": [1, 2, 2, 3, 3, 3, 3]
+    },
+    {
+      "id": "audit",
+      "label": "Audit events",
+      "value": "8",
+      "hint": "24–28 Aug 2026",
+      "trend": "up",
+      "trendValue": "+3",
+      "icon": "bi-shield-lock",
+      "tone": "info",
+      "sparkline": [3, 4, 5, 5, 6, 7, 8]
+    },
+    {
+      "id": "health",
+      "label": "Plane health",
+      "value": "91",
+      "hint": "Cascade Retail is the drag",
+      "trend": "down",
+      "trendValue": "-2",
+      "icon": "bi-heart-pulse",
+      "tone": "danger",
+      "sparkline": [96, 95, 94, 93, 93, 92, 91]
+    }
+  ],
+  "seatTrend": {
+    "labels": ["Aug 24", "Aug 25", "Aug 26", "Aug 27", "Aug 28", "Aug 29", "Aug 30"],
+    "series": [
+      { "name": "Seats used", "color": "#38BDF8", "values": [520, 548, 572, 598, 620, 642, 660] },
+      { "name": "Invites pending", "color": "#94A3B8", "values": [4, 3, 3, 2, 2, 1, 1] }
+    ]
+  },
+  "planMix": [
+    { "name": "Starter", "value": 3, "color": "#7DD3FC" },
+    { "name": "Professional", "value": 3, "color": "#38BDF8" },
+    { "name": "Enterprise", "value": 3, "color": "#0284C7" }
+  ],
+  "activity": [
+    {
+      "title": "Invite accepted",
+      "description": "Ananya Poluru joined Northwind Support as Viewer",
+      "timestamp": "12 min ago"
+    },
+    {
+      "title": "Flag in rollout",
+      "description": "new-dashboard · 45% of Professional tenants",
+      "timestamp": "2 hr ago"
+    },
+    {
+      "title": "Tenant restored",
+      "description": "Lotus Education · Lakshmi Poluru",
+      "timestamp": "5 hr ago"
+    },
+    {
+      "title": "Workspace updated",
+      "description": "Harbor production retention set to 365 days",
+      "timestamp": "28 Aug"
+    }
+  ]
+}

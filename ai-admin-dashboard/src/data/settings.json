@@ -1,0 +1,29 @@
+{
+  "workspace": {
+    "name": "Harbor production",
+    "slug": "harbor-prod",
+    "region": "us-east-1",
+    "timezone": "America/Chicago",
+    "retentionDays": 365,
+    "brandColor": "#38BDF8",
+    "apiEndpoint": "https://api.harbor.polurulabs.example",
+    "webhookUrl": "https://hooks.harbor.polurulabs.example",
+    "apiRateLimit": 10000,
+    "emailNotifications": true,
+    "twoFactorAuth": true
+  },
+  "team": [
+    { "name": "Lakshmi Poluru", "role": "Platform admin" },
+    { "name": "Kavya Poluru", "role": "Workspace lead" },
+    { "name": "Harini Poluru", "role": "Success" },
+    { "name": "Madhav Poluru", "role": "Support" },
+    { "name": "Meera Poluru", "role": "Ops" },
+    { "name": "Priya Poluru", "role": "Risk" }
+  ],
+  "channels": [
+    { "id": "digest", "label": "Daily digest to Lakshmi Poluru", "enabled": true },
+    { "id": "rollout", "label": "Page when a flag enters rollout", "enabled": true },
+    { "id": "slack", "label": "Slack #harbor-control", "enabled": true },
+    { "id": "webhook", "label": "Webhook to audit sink", "enabled": false }
+  ]
+}

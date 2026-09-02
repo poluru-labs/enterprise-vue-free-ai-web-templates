@@ -1,0 +1,30 @@
+[
+  {
+    "id": "n-1",
+    "title": "August close is 64% done",
+    "body": "Nine accruals still open before books lock.",
+    "time": "12m ago",
+    "tone": "info"
+  },
+  {
+    "id": "n-2",
+    "title": "SecurityPoluru invoice is overdue",
+    "body": "INV-2026-083 · $2,100 · Hana Poluru owner.",
+    "time": "1h ago",
+    "tone": "danger"
+  },
+  {
+    "id": "n-3",
+    "title": "Five expenses await approval",
+    "body": "IFRS workshop and SOC 2 pack are in your queue.",
+    "time": "3h ago",
+    "tone": "warning"
+  },
+  {
+    "id": "n-4",
+    "title": "Facilities budget at 93%",
+    "body": "CAM estimate is not accrued yet.",
+    "time": "Yesterday",
+    "tone": "warning"
+  }
+]

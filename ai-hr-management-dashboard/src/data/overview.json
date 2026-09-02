@@ -1,0 +1,111 @@
+{
+  "generatedAt": "2026-09-01T16:42:00.000Z",
+  "hero": {
+    "kicker": "Tuesday · 1 Sep 2026 · last sync 4 min ago",
+    "title": "Grove is 18 people strong with 8 open roles. Six teammates are out this week — Labor Day is Monday.",
+    "body": "Sravani Poluru is watching pending PTO from Arjun, Divya, and Kiran, and keeping the People partner req moving while Rohan is on parental leave."
+  },
+  "kpis": [
+    {
+      "id": "headcount",
+      "label": "Headcount",
+      "value": "18",
+      "hint": "12 active · 6 on leave",
+      "trend": "up",
+      "trendValue": "+2",
+      "icon": "bi-people",
+      "tone": "brand",
+      "sparkline": [14, 15, 16, 16, 17, 17, 18]
+    },
+    {
+      "id": "open-roles",
+      "label": "Open roles",
+      "value": "8",
+      "hint": "7 live · 1 on hold",
+      "trend": "up",
+      "trendValue": "+1",
+      "icon": "bi-briefcase",
+      "tone": "info",
+      "sparkline": [5, 5, 6, 6, 7, 8, 8]
+    },
+    {
+      "id": "on-leave",
+      "label": "On leave",
+      "value": "6",
+      "hint": "This week · Labor Day ahead",
+      "trend": "up",
+      "trendValue": "+3",
+      "icon": "bi-calendar-heart",
+      "tone": "warning",
+      "sparkline": [2, 2, 3, 3, 4, 5, 6]
+    },
+    {
+      "id": "enps",
+      "label": "eNPS",
+      "value": "48",
+      "hint": "August pulse",
+      "trend": "up",
+      "trendValue": "+5",
+      "icon": "bi-emoji-smile",
+      "tone": "success",
+      "sparkline": [36, 38, 40, 41, 43, 46, 48]
+    },
+    {
+      "id": "time-to-hire",
+      "label": "Time-to-hire",
+      "value": "26d",
+      "hint": "Median across open reqs",
+      "trend": "down",
+      "trendValue": "-4d",
+      "icon": "bi-hourglass-split",
+      "tone": "info",
+      "sparkline": [34, 32, 31, 29, 28, 27, 26]
+    },
+    {
+      "id": "learning",
+      "label": "Learning hours",
+      "value": "307",
+      "hint": "Q3 logged vs 240 goal",
+      "trend": "up",
+      "trendValue": "+42",
+      "icon": "bi-mortarboard",
+      "tone": "success",
+      "sparkline": [180, 198, 214, 236, 258, 281, 307]
+    }
+  ],
+  "headcountTrend": {
+    "labels": ["Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"],
+    "series": [
+      { "name": "Headcount", "color": "#7C3AED", "values": [14, 15, 16, 16, 17, 17, 18] },
+      { "name": "Open roles", "color": "#C4B5FD", "values": [4, 5, 5, 6, 6, 7, 8] }
+    ]
+  },
+  "deptMix": [
+    { "name": "Engineering", "value": 4, "color": "#5B21B6" },
+    { "name": "People", "value": 3, "color": "#7C3AED" },
+    { "name": "Product", "value": 2, "color": "#8B5CF6" },
+    { "name": "Other", "value": 9, "color": "#C4B5FD" }
+  ],
+  "activity": [
+    {
+      "title": "Leave pending",
+      "description": "Arjun Poluru requested 4 days after Labor Day",
+      "timestamp": "22 min ago"
+    },
+    {
+      "title": "Offer out",
+      "description": "People partner · 1 candidate in offer",
+      "timestamp": "2 hr ago"
+    },
+    {
+      "title": "Course due",
+      "description": "Benefits 2026 · 88 enrolled · due 12 Sep",
+      "timestamp": "5 hr ago"
+    },
+    {
+      "title": "eNPS pulse closed",
+      "description": "August score 48 · +5 vs July",
+      "timestamp": "1 Sep"
+    }
+  ]
+}

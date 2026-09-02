@@ -1,0 +1,59 @@
+{
+  "kpis": [
+    {
+      "id": "spend",
+      "label": "Spend MTD",
+      "hint": "August cards + reimbursements",
+      "trend": "up",
+      "trendValue": "+4.8%"
+    },
+    {
+      "id": "pending",
+      "label": "Pending approvals",
+      "hint": "Hana Poluru queue",
+      "trend": "down",
+      "trendValue": "-3"
+    },
+    {
+      "id": "invoices",
+      "label": "Open invoices",
+      "hint": "Accounts payable",
+      "trend": "down",
+      "trendValue": "-2"
+    },
+    {
+      "id": "remaining",
+      "label": "Budget remaining",
+      "hint": "Across eight cost centers",
+      "trend": "flat",
+      "trendValue": "On plan"
+    },
+    {
+      "id": "close",
+      "label": "Close progress",
+      "hint": "16 of 25 August tasks",
+      "trend": "up",
+      "trendValue": "+8 pts"
+    },
+    {
+      "id": "overdue",
+      "label": "Overdue AP",
+      "hint": "Needs payment this week",
+      "trend": "up",
+      "trendValue": "+1"
+    }
+  ],
+  "monthlyTrend": [
+    { "month": "Mar", "amount": 31200 },
+    { "month": "Apr", "amount": 34800 },
+    { "month": "May", "amount": 36100 },
+    { "month": "Jun", "amount": 33900 },
+    { "month": "Jul", "amount": 41200 },
+    { "month": "Aug", "amount": 42850 }
+  ],
+  "accrualWatch": [
+    { "id": "acc-1", "label": "CloudPoluru annual true-up", "owner": "Hana Poluru", "amount": 4200 },
+    { "id": "acc-2", "label": "Q3 conference travel", "owner": "Michael Poluru", "amount": 1800 },
+    { "id": "acc-3", "label": "Facilities CAM estimate", "owner": "Emily Poluru", "amount": 960 }
+  ]
+}

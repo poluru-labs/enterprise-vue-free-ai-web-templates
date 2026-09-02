@@ -1,0 +1,23 @@
+[
+  {
+    "id": "n1",
+    "title": "Review overdue",
+    "body": "Owen Poluru — Incident response runbook",
+    "time": "12m ago",
+    "unread": true
+  },
+  {
+    "id": "n2",
+    "title": "Citation search is live",
+    "body": "Answers now link to the exact source paragraph.",
+    "time": "1h ago",
+    "unread": true
+  },
+  {
+    "id": "n3",
+    "title": "Box source is stale",
+    "body": "Last sync Feb 12, 2026 — 620 documents.",
+    "time": "Yesterday",
+    "unread": false
+  }
+]

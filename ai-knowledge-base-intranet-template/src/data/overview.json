@@ -1,0 +1,85 @@
+{
+  "kpis": [
+    {
+      "id": "articles",
+      "label": "Articles",
+      "value": "1,847",
+      "hint": "64 published this month",
+      "trend": "up",
+      "trendValue": "+8.8%",
+      "icon": "bi-journal-richtext",
+      "tone": "brand",
+      "sparkline": [1620, 1684, 1710, 1748, 1789, 1812, 1847]
+    },
+    {
+      "id": "spaces",
+      "label": "Spaces",
+      "value": "6",
+      "hint": "Even grid of teams",
+      "trend": "flat",
+      "trendValue": "steady",
+      "icon": "bi-diagram-3",
+      "tone": "info",
+      "sparkline": [6, 6, 6, 6, 6, 6, 6]
+    },
+    {
+      "id": "unread",
+      "label": "Unread",
+      "value": "12",
+      "hint": "Comms since Monday",
+      "trend": "down",
+      "trendValue": "-5",
+      "icon": "bi-envelope-open",
+      "tone": "warning",
+      "sparkline": [28, 24, 21, 18, 16, 14, 12]
+    },
+    {
+      "id": "searches",
+      "label": "Searches",
+      "value": "8.4k",
+      "hint": "This month",
+      "trend": "up",
+      "trendValue": "+12%",
+      "icon": "bi-search",
+      "tone": "success",
+      "sparkline": [6.1, 6.4, 6.9, 7.2, 7.6, 8.0, 8.4]
+    },
+    {
+      "id": "drafts",
+      "label": "Drafts",
+      "value": "19",
+      "hint": "Awaiting owners",
+      "trend": "down",
+      "trendValue": "-3",
+      "icon": "bi-pencil-square",
+      "tone": "warning",
+      "sparkline": [28, 26, 24, 23, 21, 20, 19]
+    },
+    {
+      "id": "stale",
+      "label": "Stale",
+      "value": "27",
+      "hint": "Older than 180 days",
+      "trend": "down",
+      "trendValue": "-7",
+      "icon": "bi-exclamation-triangle",
+      "tone": "danger",
+      "sparkline": [41, 38, 36, 33, 31, 29, 27]
+    }
+  ],
+  "reads": {
+    "labels": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "series": [
+      { "name": "Reads", "color": "#3F6212", "values": [420, 512, 488, 610, 574, 186, 142] },
+      { "name": "Searches", "color": "#65A30D", "values": [210, 248, 232, 301, 278, 94, 72] }
+    ]
+  },
+  "spaceMix": [
+    { "name": "Engineering", "value": 28, "color": "#365314" },
+    { "name": "People", "value": 18, "color": "#3F6212" },
+    { "name": "Legal", "value": 16, "color": "#4D7C0F" },
+    { "name": "GTM", "value": 14, "color": "#65A30D" },
+    { "name": "Finance", "value": 12, "color": "#84CC16" },
+    { "name": "Security", "value": 12, "color": "#A3E635" }
+  ]
+}

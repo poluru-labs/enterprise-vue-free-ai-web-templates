@@ -1,0 +1,37 @@
+{
+  "unread": 4,
+  "items": [
+    {
+      "id": "n-1",
+      "title": "SLA breach · LUM-2418",
+      "body": "Northwind SSO loop crossed first response. Still unassigned.",
+      "time": "2026-08-28T16:40:00.000Z",
+      "tone": "danger",
+      "href": "/helpdesk/tickets/LUM-2418"
+    },
+    {
+      "id": "n-2",
+      "title": "Waiting over 24h",
+      "body": "Beacon Finance refund acknowledgment is idle on the customer.",
+      "time": "2026-08-28T15:10:00.000Z",
+      "tone": "warning",
+      "href": "/helpdesk/tickets/LUM-2388"
+    },
+    {
+      "id": "n-3",
+      "title": "Article published",
+      "body": "Priya shipped Reset workspace MFA.",
+      "time": "2026-08-28T14:05:00.000Z",
+      "tone": "info",
+      "href": "/helpdesk/knowledge"
+    },
+    {
+      "id": "n-4",
+      "title": "Assign next ready",
+      "body": "Three unassigned tickets are sitting in Identity and Platform.",
+      "time": "2026-08-28T13:22:00.000Z",
+      "tone": "info",
+      "href": "/helpdesk/inbox"
+    }
+  ]
+}

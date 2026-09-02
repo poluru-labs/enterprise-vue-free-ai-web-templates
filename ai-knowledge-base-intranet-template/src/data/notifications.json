@@ -1,0 +1,23 @@
+[
+  {
+    "id": "n1",
+    "title": "Stale battlecard",
+    "body": "GTM — Competitive battlecard — Northwind needs a Q4 refresh.",
+    "time": "12m ago",
+    "unread": true
+  },
+  {
+    "id": "n2",
+    "title": "New how-to in People",
+    "body": "Meera Poluru published Parental leave: how to start the packet.",
+    "time": "1h ago",
+    "unread": true
+  },
+  {
+    "id": "n3",
+    "title": "Engineering ship note",
+    "body": "Incident severity matrix is the source of truth for weekend pages.",
+    "time": "Yesterday",
+    "unread": false
+  }
+]

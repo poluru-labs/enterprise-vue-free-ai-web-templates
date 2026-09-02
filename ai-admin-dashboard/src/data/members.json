@@ -1,0 +1,102 @@
+[
+  {
+    "id": "m-lakshmi",
+    "name": "Lakshmi Poluru",
+    "email": "lakshmi.poluru@polurulabs.example",
+    "role": "Admin",
+    "org": "Poluru Cloud",
+    "orgId": "poluru-cloud",
+    "status": "active",
+    "joined": "2024-11-08"
+  },
+  {
+    "id": "m-kavya",
+    "name": "Kavya Poluru",
+    "email": "kavya.poluru@harborlegal.example",
+    "role": "Admin",
+    "org": "Harbor Legal",
+    "orgId": "harbor-legal",
+    "status": "active",
+    "joined": "2025-03-12"
+  },
+  {
+    "id": "m-madhav",
+    "name": "Madhav Poluru",
+    "email": "madhav.poluru@northwind.example",
+    "role": "Admin",
+    "org": "Northwind Support",
+    "orgId": "northwind-support",
+    "status": "active",
+    "joined": "2025-06-02"
+  },
+  {
+    "id": "m-harini",
+    "name": "Harini Poluru",
+    "email": "harini.poluru@atlashealth.example",
+    "role": "Editor",
+    "org": "Atlas Health",
+    "orgId": "atlas-health",
+    "status": "active",
+    "joined": "2026-08-04"
+  },
+  {
+    "id": "m-priya",
+    "name": "Priya Poluru",
+    "email": "priya.poluru@beaconfinance.example",
+    "role": "Admin",
+    "org": "Beacon Finance",
+    "orgId": "beacon-finance",
+    "status": "inactive",
+    "joined": "2025-09-18"
+  },
+  {
+    "id": "m-meera",
+    "name": "Meera Poluru",
+    "email": "meera.poluru@cascaderetail.example",
+    "role": "Editor",
+    "org": "Cascade Retail",
+    "orgId": "cascade-retail",
+    "status": "active",
+    "joined": "2025-04-30"
+  },
+  {
+    "id": "m-ananya",
+    "name": "Ananya Poluru",
+    "email": "ananya.poluru@northwind.example",
+    "role": "Viewer",
+    "org": "Northwind Support",
+    "orgId": "northwind-support",
+    "status": "active",
+    "joined": "2026-08-28"
+  },
+  {
+    "id": "m-rohan",
+    "name": "Rohan Poluru",
+    "email": "rohan.poluru@summitlogistics.example",
+    "role": "Admin",
+    "org": "Summit Logistics",
+    "orgId": "summit-logistics",
+    "status": "active",
+    "joined": "2025-02-09"
+  },
+  {
+    "id": "m-subrahmanyam",
+    "name": "Subrahmanyam Poluru",
+    "email": "subrahmanyam.poluru@polurulabs.example",
+    "role": "Viewer",
+    "org": "Poluru Cloud",
+    "orgId": "poluru-cloud",
+    "status": "invited",
+    "joined": "2026-08-26"
+  },
+  {
+    "id": "m-meera-labs",
+    "name": "Meera Poluru",
+    "email": "meera.poluru@meridianlabs.example",
+    "role": "Editor",
+    "org": "Meridian Labs",
+    "orgId": "meridian-labs",
+    "status": "active",
+    "joined": "2025-11-21"
+  }
+]

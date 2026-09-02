@@ -1,0 +1,156 @@
+{
+  "items": [
+    {
+      "id": "acc_harbor",
+      "name": "Harbor & Co.",
+      "industry": "Logistics",
+      "region": "EMEA",
+      "owner": "Priya Poluru",
+      "employees": "2,400",
+      "arr": "$312k",
+      "arrValue": 312000,
+      "health": "Expanding",
+      "next": "QBR · 2 Sep"
+    },
+    {
+      "id": "acc_nimbus",
+      "name": "Nimbus Retail",
+      "industry": "Retail",
+      "region": "Americas",
+      "owner": "Arjun Poluru",
+      "employees": "860",
+      "arr": "$126k",
+      "arrValue": 126000,
+      "health": "At risk",
+      "next": "Renewal · 1 Sep"
+    },
+    {
+      "id": "acc_bright",
+      "name": "Brightline Labs",
+      "industry": "SaaS",
+      "region": "Americas",
+      "owner": "Maya Poluru",
+      "employees": "210",
+      "arr": "$48k",
+      "arrValue": 48000,
+      "health": "Healthy",
+      "next": "Demo · 27 Aug"
+    },
+    {
+      "id": "acc_lumen",
+      "name": "Lumen Health",
+      "industry": "Healthcare",
+      "region": "Americas",
+      "owner": "Jordan Poluru",
+      "employees": "1,120",
+      "arr": "$249k",
+      "arrValue": 249000,
+      "health": "Expanding",
+      "next": "Security review"
+    },
+    {
+      "id": "acc_oak",
+      "name": "Oak & Pine",
+      "industry": "CPG",
+      "region": "Americas",
+      "owner": "Sahana Poluru",
+      "employees": "540",
+      "arr": "$92k",
+      "arrValue": 92000,
+      "health": "Healthy",
+      "next": "Pilot wrap · 4 Sep"
+    },
+    {
+      "id": "acc_fold",
+      "name": "Fold Paper Co.",
+      "industry": "Packaging",
+      "region": "Americas",
+      "owner": "Priya Poluru",
+      "employees": "180",
+      "arr": "$0",
+      "arrValue": 0,
+      "health": "New",
+      "next": "Convert lead"
+    },
+    {
+      "id": "acc_kite",
+      "name": "Kite Studio",
+      "industry": "Media",
+      "region": "APAC",
+      "owner": "Rohan Poluru",
+      "employees": "48",
+      "arr": "$6k",
+      "arrValue": 6000,
+      "health": "New",
+      "next": "Kickoff"
+    },
+    {
+      "id": "acc_field",
+      "name": "Fieldwork Inc",
+      "industry": "Analytics",
+      "region": "Americas",
+      "owner": "Priya Poluru",
+      "employees": "320",
+      "arr": "$42k",
+      "arrValue": 42000,
+      "health": "Healthy",
+      "next": "Discount approval"
+    },
+    {
+      "id": "acc_paper",
+      "name": "Paperplane",
+      "industry": "Collaboration",
+      "region": "EMEA",
+      "owner": "Maya Poluru",
+      "employees": "96",
+      "arr": "$12k",
+      "arrValue": 12600,
+      "health": "At risk",
+      "next": "Set next meeting"
+    },
+    {
+      "id": "acc_atlas",
+      "name": "Atlas Freight",
+      "industry": "Logistics",
+      "region": "Americas",
+      "owner": "Arjun Poluru",
+      "employees": "640",
+      "arr": "$0",
+      "arrValue": 0,
+      "health": "New",
+      "next": "Discovery call"
+    },
+    {
+      "id": "acc_northwind",
+      "name": "Northwind Clinics",
+      "industry": "Healthcare",
+      "region": "Americas",
+      "owner": "Jordan Poluru",
+      "employees": "1,480",
+      "arr": "$88k",
+      "arrValue": 88000,
+      "health": "Healthy",
+      "next": "HIPAA architecture"
+    }
+  ],
+  "tree": [
+    {
+      "id": "acc_harbor",
+      "label": "Harbor & Co.",
+      "children": [
+        { "id": "acc_harbor_eu", "label": "Harbor EU · Meera Poluru" },
+        { "id": "acc_harbor_uk", "label": "Harbor UK legal" }
+      ]
+    },
+    {
+      "id": "acc_nimbus",
+      "label": "Nimbus Retail",
+      "children": [{ "id": "acc_nimbus_west", "label": "West stores · Arjun Poluru" }]
+    },
+    { "id": "acc_bright", "label": "Brightline Labs" },
+    { "id": "acc_lumen", "label": "Lumen Health" },
+    { "id": "acc_oak", "label": "Oak & Pine" },
+    { "id": "acc_atlas", "label": "Atlas Freight" },
+    { "id": "acc_northwind", "label": "Northwind Clinics" }
+  ]
+}

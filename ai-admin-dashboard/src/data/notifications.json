@@ -1,0 +1,29 @@
+{
+  "unread": 3,
+  "items": [
+    {
+      "id": "n-01",
+      "tone": "warning",
+      "title": "Cascade Retail on watch",
+      "body": "Meera Poluru · health 54 · dunning day 5",
+      "time": "2026-08-28T16:01:00.000Z",
+      "href": "/admin/tenants/cascade-retail"
+    },
+    {
+      "id": "n-02",
+      "tone": "warning",
+      "title": "Atlas Health trial ends 4 Sep",
+      "body": "Harini Poluru · 22 of 80 seats used",
+      "time": "2026-08-28T14:20:00.000Z",
+      "href": "/admin/tenants/atlas-health"
+    },
+    {
+      "id": "n-03",
+      "tone": "info",
+      "title": "Ananya Poluru accepted invite",
+      "body": "Northwind Support · Viewer",
+      "time": "2026-08-28T16:30:00.000Z",
+      "href": "/admin/members"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "range": { "start": "2026-06-01", "end": "2026-08-27" },
+  "regionRows": [
+    { "name": "Americas", "closed": "$624k", "pipeline": "$2.84M", "quota": "72%", "trend": "+8%" },
+    { "name": "EMEA", "closed": "$248k", "pipeline": "$1.42M", "quota": "81%", "trend": "+14%" },
+    { "name": "APAC", "closed": "$64k", "pipeline": "$600k", "quota": "48%", "trend": "+2%" }
+  ],
+  "forecastBars": [
+    { "name": "Priya Poluru", "value": 78, "color": "#F13E93" },
+    { "name": "Maya Poluru", "value": 71, "color": "#d62e7e" },
+    { "name": "Arjun Poluru", "value": 64, "color": "#f56bb0" },
+    { "name": "Jordan Poluru", "value": 61, "color": "#f89ac8" },
+    { "name": "Sahana Poluru", "value": 54, "color": "#b81f68" }
+  ],
+  "coverage": {
+    "labels": ["Jun", "Jul", "Aug"],
+    "series": [
+      { "name": "Commit", "color": "#F13E93", "values": [0.9, 1.1, 1.4] },
+      { "name": "Best case", "color": "#f89ac8", "values": [1.6, 1.8, 2.1] }
+    ]
+  }
+}

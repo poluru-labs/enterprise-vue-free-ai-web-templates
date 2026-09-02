@@ -1,0 +1,55 @@
+{
+  "suggested": ["retention period", "limitation of liability", "APAC onboarding", "incident severity"],
+  "hits": [
+    {
+      "id": "hit-1",
+      "documentId": "DOC-3238",
+      "title": "Data retention policy v4",
+      "owner": "Devin Poluru",
+      "page": 4,
+      "paragraph": "§3.2",
+      "snippet": "Customer logs are retained for 18 months unless a longer period is required for an active investigation or legal hold.",
+      "score": 0.94
+    },
+    {
+      "id": "hit-2",
+      "documentId": "DOC-3219",
+      "title": "Master services agreement",
+      "owner": "Talia Poluru",
+      "page": 19,
+      "paragraph": "§12.1",
+      "snippet": "Limitation of liability is capped at twelve months of fees, excluding confidentiality and data-protection obligations.",
+      "score": 0.91
+    },
+    {
+      "id": "hit-3",
+      "documentId": "DOC-3241",
+      "title": "Vendor MSA — Northwind",
+      "owner": "Ariana Poluru",
+      "page": 11,
+      "paragraph": "§8.4",
+      "snippet": "Northwind shall maintain insurance coverage and indemnify Poluru Labs for third-party claims arising from the licensed services.",
+      "score": 0.88
+    },
+    {
+      "id": "hit-4",
+      "documentId": "DOC-3204",
+      "title": "Incident response runbook",
+      "owner": "Owen Poluru",
+      "page": 2,
+      "paragraph": "§1.4",
+      "snippet": "Severity-1 incidents page Knowledge Ops and Security within 15 minutes. Evidence is stored in the Vault incident folder.",
+      "score": 0.86
+    },
+    {
+      "id": "hit-5",
+      "documentId": "DOC-3227",
+      "title": "Onboarding checklist — APAC",
+      "owner": "Rohan Poluru",
+      "page": 1,
+      "paragraph": "§2.1",
+      "snippet": "APAC hires receive workspace access within one business day after People Ops confirms the start date.",
+      "score": 0.81
+    }
+  ]
+}

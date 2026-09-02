@@ -1,0 +1,98 @@
+[
+  {
+    "id": "req-people-partner",
+    "title": "People partner",
+    "department": "People",
+    "location": "Austin",
+    "recruiter": "Ananya Poluru",
+    "hiringManager": "Sravani Poluru",
+    "status": "open",
+    "openings": 1,
+    "posted": "2026-08-04",
+    "pipeline": { "applied": 18, "screen": 7, "interview": 3, "offer": 1, "hired": 0 }
+  },
+  {
+    "id": "req-staff-eng",
+    "title": "Staff engineer",
+    "department": "Engineering",
+    "location": "Austin",
+    "recruiter": "Ananya Poluru",
+    "hiringManager": "Rohan Poluru",
+    "status": "open",
+    "openings": 2,
+    "posted": "2026-07-14",
+    "pipeline": { "applied": 41, "screen": 12, "interview": 5, "offer": 0, "hired": 0 }
+  },
+  {
+    "id": "req-product-designer",
+    "title": "Product designer",
+    "department": "Design",
+    "location": "Remote",
+    "recruiter": "Vikram Poluru",
+    "hiringManager": "Harini Poluru",
+    "status": "open",
+    "openings": 1,
+    "posted": "2026-08-18",
+    "pipeline": { "applied": 22, "screen": 8, "interview": 2, "offer": 0, "hired": 0 }
+  },
+  {
+    "id": "req-ae",
+    "title": "Account executive",
+    "department": "Sales",
+    "location": "Chicago",
+    "recruiter": "Ananya Poluru",
+    "hiringManager": "Meera Poluru",
+    "status": "open",
+    "openings": 2,
+    "posted": "2026-06-30",
+    "pipeline": { "applied": 33, "screen": 9, "interview": 4, "offer": 1, "hired": 0 }
+  },
+  {
+    "id": "req-data-eng",
+    "title": "Data engineer",
+    "department": "Data",
+    "location": "Hyderabad",
+    "recruiter": "Vikram Poluru",
+    "hiringManager": "Ishaan Poluru",
+    "status": "open",
+    "openings": 1,
+    "posted": "2026-08-11",
+    "pipeline": { "applied": 27, "screen": 6, "interview": 2, "offer": 0, "hired": 0 }
+  },
+  {
+    "id": "req-recruiter",
+    "title": "Technical recruiter",
+    "department": "People",
+    "location": "Austin",
+    "recruiter": "Sravani Poluru",
+    "hiringManager": "Sravani Poluru",
+    "status": "open",
+    "openings": 1,
+    "posted": "2026-08-25",
+    "pipeline": { "applied": 14, "screen": 4, "interview": 1, "offer": 0, "hired": 0 }
+  },
+  {
+    "id": "req-csm",
+    "title": "Customer success manager",
+    "department": "Customer Success",
+    "location": "Remote",
+    "recruiter": "Ananya Poluru",
+    "hiringManager": "Divya Poluru",
+    "status": "on_hold",
+    "openings": 1,
+    "posted": "2026-07-28",
+    "pipeline": { "applied": 19, "screen": 5, "interview": 0, "offer": 0, "hired": 0 }
+  },
+  {
+    "id": "req-fpa",
+    "title": "Finance analyst",
+    "department": "Finance",
+    "location": "Austin",
+    "recruiter": "Vikram Poluru",
+    "hiringManager": "Priya Poluru",
+    "status": "open",
+    "openings": 1,
+    "posted": "2026-08-20",
+    "pipeline": { "applied": 16, "screen": 5, "interview": 2, "offer": 0, "hired": 0 }
+  }
+]

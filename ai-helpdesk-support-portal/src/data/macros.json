@@ -1,0 +1,50 @@
+[
+  {
+    "id": "mac-ack",
+    "name": "First response acknowledgment",
+    "queue": "Identity",
+    "uses": 184,
+    "body": "Thanks for writing Lumen. I have the thread and will confirm status within the first-response window.",
+    "updated": "2026-08-20"
+  },
+  {
+    "id": "mac-refund",
+    "name": "Refund acknowledgment",
+    "queue": "Billing",
+    "uses": 96,
+    "body": "We see the duplicate charge. Finance will post a credit memo and I will send the reference once it lands.",
+    "updated": "2026-08-18"
+  },
+  {
+    "id": "mac-mfa",
+    "name": "Scoped MFA reset",
+    "queue": "Identity",
+    "uses": 71,
+    "body": "I can reset MFA for the named contractors only. Please confirm the four emails and I will send a one-hour reset link.",
+    "updated": "2026-08-22"
+  },
+  {
+    "id": "mac-webhook",
+    "name": "Webhook backoff",
+    "queue": "Platform",
+    "uses": 54,
+    "body": "Delivery is honoring Retry-After. I am checking the worker pool and will replay failed events once the 429s clear.",
+    "updated": "2026-08-26"
+  },
+  {
+    "id": "mac-onboard",
+    "name": "DNS still pending",
+    "queue": "Onboarding",
+    "uses": 42,
+    "body": "The TXT record can take up to 60 minutes to appear. If it is still pending after that, reply with the record value and I will force a recheck.",
+    "updated": "2026-08-15"
+  },
+  {
+    "id": "mac-close",
+    "name": "Resolve and survey",
+    "queue": "Platform",
+    "uses": 210,
+    "body": "Marking this resolved on our side. A one-question CSAT will follow. Reply here if anything is still open.",
+    "updated": "2026-08-12"
+  }
+]

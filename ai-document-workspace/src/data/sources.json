@@ -1,0 +1,50 @@
+[
+  {
+    "id": "src-drive",
+    "name": "Google Drive",
+    "status": "Connected",
+    "docs": 4280,
+    "lastSync": "Aug 24, 2026 · 8:40 AM",
+    "owner": "Ariana Poluru"
+  },
+  {
+    "id": "src-sharepoint",
+    "name": "SharePoint",
+    "status": "Connected",
+    "docs": 3120,
+    "lastSync": "Aug 24, 2026 · 8:12 AM",
+    "owner": "Devin Poluru"
+  },
+  {
+    "id": "src-notion",
+    "name": "Notion",
+    "status": "Connected",
+    "docs": 1864,
+    "lastSync": "Aug 23, 2026 · 6:20 PM",
+    "owner": "Meera Poluru"
+  },
+  {
+    "id": "src-slack",
+    "name": "Slack",
+    "status": "Indexing",
+    "docs": 940,
+    "lastSync": "Aug 23, 2026 · 2:04 PM",
+    "owner": "Rohan Poluru"
+  },
+  {
+    "id": "src-confluence",
+    "name": "Confluence",
+    "status": "Connected",
+    "docs": 1510,
+    "lastSync": "Aug 22, 2026 · 11:18 AM",
+    "owner": "Talia Poluru"
+  },
+  {
+    "id": "src-box",
+    "name": "Box",
+    "status": "Stale",
+    "docs": 620,
+    "lastSync": "Feb 12, 2026 · 4:00 PM",
+    "owner": "Owen Poluru"
+  }
+]

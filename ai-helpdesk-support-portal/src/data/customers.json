@@ -1,0 +1,98 @@
+[
+  {
+    "id": "cust-northwind",
+    "name": "Northwind Support",
+    "plan": "Enterprise",
+    "region": "us-east-1",
+    "owner": "Kavya Rao",
+    "email": "ops@northwind.example",
+    "openTickets": 4,
+    "csat": 95.2,
+    "sla": "at_risk",
+    "joined": "2024-03-12"
+  },
+  {
+    "id": "cust-beacon",
+    "name": "Beacon Finance",
+    "plan": "Enterprise",
+    "region": "eu-west-1",
+    "owner": "Devika Nair",
+    "email": "ap@beacon.example",
+    "openTickets": 2,
+    "csat": 97.1,
+    "sla": "breached",
+    "joined": "2023-11-02"
+  },
+  {
+    "id": "cust-harbor",
+    "name": "Harbor Legal",
+    "plan": "Professional",
+    "region": "us-west-2",
+    "owner": "Rohit Iyer",
+    "email": "platform@harborlegal.example",
+    "openTickets": 3,
+    "csat": 93.8,
+    "sla": "at_risk",
+    "joined": "2025-01-18"
+  },
+  {
+    "id": "cust-poluru",
+    "name": "Poluru Cloud",
+    "plan": "Enterprise",
+    "region": "ap-south-1",
+    "owner": "Saanvi Menon",
+    "email": "it@polurucloud.example",
+    "openTickets": 2,
+    "csat": 98.4,
+    "sla": "on_track",
+    "joined": "2022-08-09"
+  },
+  {
+    "id": "cust-cedar",
+    "name": "Cedar Clinics",
+    "plan": "Professional",
+    "region": "ap-south-1",
+    "owner": "Leela Krishnan",
+    "email": "admin@cedarclinics.example",
+    "openTickets": 2,
+    "csat": 96.0,
+    "sla": "on_track",
+    "joined": "2025-06-21"
+  },
+  {
+    "id": "cust-lumen-labs",
+    "name": "Lumen Labs Internal",
+    "plan": "Internal",
+    "region": "us-east-1",
+    "owner": "Meera Poluru",
+    "email": "desk@lumen.example",
+    "openTickets": 0,
+    "csat": 99.0,
+    "sla": "on_track",
+    "joined": "2022-01-04"
+  },
+  {
+    "id": "cust-sable",
+    "name": "Sable Retail",
+    "plan": "Starter",
+    "region": "eu-central-1",
+    "owner": "Isha Kapoor",
+    "email": "help@sableretail.example",
+    "openTickets": 1,
+    "csat": 91.4,
+    "sla": "on_track",
+    "joined": "2026-04-03"
+  },
+  {
+    "id": "cust-nimbus",
+    "name": "Nimbus Freight",
+    "plan": "Professional",
+    "region": "us-east-1",
+    "owner": "Arjun Desai",
+    "email": "ops@nimbusfreight.example",
+    "openTickets": 0,
+    "csat": 94.6,
+    "sla": "on_track",
+    "joined": "2024-09-15"
+  }
+]

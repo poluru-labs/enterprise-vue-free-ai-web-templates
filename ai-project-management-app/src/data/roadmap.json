@@ -1,0 +1,89 @@
+{
+  "lanes": [
+    {
+      "id": "q3",
+      "label": "FY26 Q3",
+      "window": "Jul – Sep",
+      "epics": [
+        {
+          "id": "ep_rail",
+          "title": "Sprint progress rail",
+          "owner": "Arjun Poluru",
+          "status": "On track",
+          "span": 78,
+          "detail": "Dark teal mast + 34/50 story-point bar."
+        },
+        {
+          "id": "ep_board",
+          "title": "Kanban with move toasts",
+          "owner": "Luca Poluru",
+          "status": "On track",
+          "span": 64,
+          "detail": "Four columns, equal-height issue cards."
+        },
+        {
+          "id": "ep_capacity",
+          "title": "Team capacity cards",
+          "owner": "Sahana Poluru",
+          "status": "Done",
+          "span": 100,
+          "detail": "Six crews, load vs committed points."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "label": "FY26 Q4",
+      "window": "Oct – Dec",
+      "epics": [
+        {
+          "id": "ep_identity",
+          "title": "Identity freeze fallback",
+          "owner": "Arjun Poluru",
+          "status": "At risk",
+          "span": 32,
+          "detail": "Depends on the Sep 4 auth window."
+        },
+        {
+          "id": "ep_fields",
+          "title": "Custom issue fields",
+          "owner": "Priya Poluru",
+          "status": "Planned",
+          "span": 18,
+          "detail": "KEEL-131 still in the ranked backlog."
+        },
+        {
+          "id": "ep_calendar",
+          "title": "Due-date calendar",
+          "owner": "Sahana Poluru",
+          "status": "Planned",
+          "span": 12,
+          "detail": "Not pulled until cycle time stays under 4 days."
+        }
+      ]
+    },
+    {
+      "id": "q1",
+      "label": "FY27 Q1",
+      "window": "Jan – Mar",
+      "epics": [
+        {
+          "id": "ep_time",
+          "title": "Story time tracking",
+          "owner": "Jordan Poluru",
+          "status": "Planned",
+          "span": 8,
+          "detail": "Optional; do not crowd Q4."
+        },
+        {
+          "id": "ep_webhooks",
+          "title": "Public move webhooks",
+          "owner": "Rohan Poluru",
+          "status": "Planned",
+          "span": 10,
+          "detail": "Partner ingest after the rail is stable."
+        }
+      ]
+    }
+  ]
+}

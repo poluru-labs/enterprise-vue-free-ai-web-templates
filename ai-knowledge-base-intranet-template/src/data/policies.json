@@ -1,0 +1,68 @@
+[
+  {
+    "id": "POL-01",
+    "articleId": "ATL-1776",
+    "title": "Expense policy 2026",
+    "spaceId": "finance",
+    "space": "Finance",
+    "status": "Published",
+    "owner": "Devin Poluru",
+    "updated": "Aug 20, 2026",
+    "summary": "Meals, travel, and the 14-day filing window for every team."
+  },
+  {
+    "id": "POL-02",
+    "articleId": "ATL-1760",
+    "title": "Laptop encryption standard",
+    "spaceId": "security",
+    "space": "Security",
+    "status": "Published",
+    "owner": "Owen Poluru",
+    "updated": "Aug 18, 2026",
+    "summary": "FileVault or BitLocker before a device can join Atlas."
+  },
+  {
+    "id": "POL-03",
+    "articleId": "ATL-1804",
+    "title": "Data retention",
+    "spaceId": "legal",
+    "space": "Legal",
+    "status": "Published",
+    "owner": "Talia Poluru",
+    "updated": "Aug 24, 2026",
+    "summary": "18-month log window unless a legal hold is active."
+  },
+  {
+    "id": "POL-04",
+    "articleId": "ATL-1822",
+    "title": "Parental leave",
+    "spaceId": "people",
+    "space": "People",
+    "status": "Published",
+    "owner": "Meera Poluru",
+    "updated": "Aug 26, 2026",
+    "summary": "Packet, coverage, and country addenda live in the People space."
+  },
+  {
+    "id": "POL-05",
+    "articleId": "ATL-1847",
+    "title": "Incident communications",
+    "spaceId": "engineering",
+    "space": "Engineering",
+    "status": "Published",
+    "owner": "Kavya Poluru",
+    "updated": "Aug 28, 2026",
+    "summary": "Sev-1 notes publish from Engineering — not from a personal Slack."
+  },
+  {
+    "id": "POL-06",
+    "articleId": "ATL-1698",
+    "title": "External battlecards",
+    "spaceId": "gtm",
+    "space": "GTM",
+    "status": "Stale",
+    "owner": "Rohan Poluru",
+    "updated": "Feb 3, 2026",
+    "summary": "Northwind card is stale. Refresh before Q4 enterprise deals."
+  }
+]

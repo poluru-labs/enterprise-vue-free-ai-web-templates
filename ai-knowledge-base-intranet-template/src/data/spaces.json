@@ -1,0 +1,74 @@
+[
+  {
+    "id": "engineering",
+    "name": "Engineering",
+    "kicker": "Build & run",
+    "description": "ADRs, on-call, ship notes, and the tools every squad is expected to know.",
+    "owners": ["Kavya Poluru", "Owen Poluru"],
+    "articles": 412,
+    "unread": 3,
+    "stale": 6,
+    "icon": "bi-cpu",
+    "accent": "#365314"
+  },
+  {
+    "id": "people",
+    "name": "People",
+    "kicker": "Work & life",
+    "description": "Benefits, leave, referrals, and the how-tos new hires actually need on day one.",
+    "owners": ["Meera Poluru"],
+    "articles": 286,
+    "unread": 2,
+    "stale": 4,
+    "icon": "bi-people",
+    "accent": "#4D7C0F"
+  },
+  {
+    "id": "legal",
+    "name": "Legal",
+    "kicker": "Hold the line",
+    "description": "Contracts, privacy, holds, and the answers counsel wants in writing.",
+    "owners": ["Talia Poluru"],
+    "articles": 194,
+    "unread": 1,
+    "stale": 5,
+    "icon": "bi-bank",
+    "accent": "#3F6212"
+  },
+  {
+    "id": "gtm",
+    "name": "GTM",
+    "kicker": "Win the room",
+    "description": "Pricing, playbooks, launches, and competitive notes for sales and marketing.",
+    "owners": ["Rohan Poluru"],
+    "articles": 248,
+    "unread": 4,
+    "stale": 3,
+    "icon": "bi-graph-up-arrow",
+    "accent": "#65A30D"
+  },
+  {
+    "id": "finance",
+    "name": "Finance",
+    "kicker": "Close clean",
+    "description": "Expense rules, close calendar, vendor spend, and the monthly numbers desk.",
+    "owners": ["Devin Poluru"],
+    "articles": 168,
+    "unread": 1,
+    "stale": 4,
+    "icon": "bi-cash-stack",
+    "accent": "#15803D"
+  },
+  {
+    "id": "security",
+    "name": "Security",
+    "kicker": "Stay ready",
+    "description": "Access, devices, phishing, and the incident path Internal Comms must never bury.",
+    "owners": ["Owen Poluru"],
+    "articles": 221,
+    "unread": 1,
+    "stale": 5,
+    "icon": "bi-shield-lock",
+    "accent": "#166534"
+  }
+]

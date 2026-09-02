@@ -1,0 +1,62 @@
+[
+  {
+    "id": "agt-meera",
+    "name": "Meera Poluru",
+    "role": "Support lead",
+    "queue": "Identity",
+    "open": 2,
+    "capacity": 8,
+    "csat": 97.8,
+    "status": "online"
+  },
+  {
+    "id": "agt-ananya",
+    "name": "Ananya Poluru",
+    "role": "Billing specialist",
+    "queue": "Billing",
+    "open": 2,
+    "capacity": 7,
+    "csat": 96.4,
+    "status": "online"
+  },
+  {
+    "id": "agt-madhav",
+    "name": "Madhav Poluru",
+    "role": "Platform engineer",
+    "queue": "Platform",
+    "open": 2,
+    "capacity": 6,
+    "csat": 95.1,
+    "status": "busy"
+  },
+  {
+    "id": "agt-priya",
+    "name": "Priya Poluru",
+    "role": "Onboarding guide",
+    "queue": "Onboarding",
+    "open": 3,
+    "capacity": 8,
+    "csat": 98.2,
+    "status": "online"
+  },
+  {
+    "id": "agt-rohan",
+    "name": "Rohan Poluru",
+    "role": "Conversation agent",
+    "queue": "Platform",
+    "open": 3,
+    "capacity": 8,
+    "csat": 94.6,
+    "status": "away"
+  },
+  {
+    "id": "agt-kavya",
+    "name": "Kavya Poluru",
+    "role": "Overflow coverage",
+    "queue": "Identity",
+    "open": 0,
+    "capacity": 6,
+    "csat": 96.0,
+    "status": "offline"
+  }
+]

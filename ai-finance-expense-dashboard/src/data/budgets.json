@@ -1,0 +1,82 @@
+[
+  {
+    "id": "bud-1",
+    "category": "Software",
+    "owner": "Emily Poluru",
+    "allocated": 48000,
+    "spent": 31200,
+    "remaining": 16800,
+    "status": "On Track",
+    "note": "Seat true-up lands in September."
+  },
+  {
+    "id": "bud-2",
+    "category": "Travel",
+    "owner": "Michael Poluru",
+    "allocated": 36000,
+    "spent": 28900,
+    "remaining": 7100,
+    "status": "At Risk",
+    "note": "Partner summit leftover still posting."
+  },
+  {
+    "id": "bud-3",
+    "category": "Marketing",
+    "owner": "Lisa Poluru",
+    "allocated": 54000,
+    "spent": 38100,
+    "remaining": 15900,
+    "status": "On Track",
+    "note": "Paid social rejected against the cap."
+  },
+  {
+    "id": "bud-4",
+    "category": "Supplies",
+    "owner": "John Poluru",
+    "allocated": 18000,
+    "spent": 9400,
+    "remaining": 8600,
+    "status": "On Track",
+    "note": "Office restock is within the run-rate."
+  },
+  {
+    "id": "bud-5",
+    "category": "Equipment",
+    "owner": "Robert Poluru",
+    "allocated": 72000,
+    "spent": 48600,
+    "remaining": 23400,
+    "status": "On Track",
+    "note": "Docking stations closed this week."
+  },
+  {
+    "id": "bud-6",
+    "category": "Training",
+    "owner": "Jessica Poluru",
+    "allocated": 24000,
+    "spent": 6200,
+    "remaining": 17800,
+    "status": "Excellent",
+    "note": "IFRS workshop still pending approval."
+  },
+  {
+    "id": "bud-7",
+    "category": "Facilities",
+    "owner": "Emily Poluru",
+    "allocated": 42000,
+    "spent": 39100,
+    "remaining": 2900,
+    "status": "At Risk",
+    "note": "CAM estimate not accrued yet."
+  },
+  {
+    "id": "bud-8",
+    "category": "Professional services",
+    "owner": "Hana Poluru",
+    "allocated": 50000,
+    "spent": 22400,
+    "remaining": 27600,
+    "status": "On Track",
+    "note": "Audit and payroll implementation in flight."
+  }
+]

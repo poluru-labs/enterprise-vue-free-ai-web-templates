@@ -1,0 +1,102 @@
+[
+  {
+    "id": "con_meera",
+    "name": "Meera Poluru",
+    "title": "VP Operations",
+    "account": "Harbor & Co.",
+    "accountId": "acc_harbor",
+    "email": "meera.poluru@harborco.example",
+    "influence": "Champion",
+    "last": "Yesterday"
+  },
+  {
+    "id": "con_arjun",
+    "name": "Arjun Poluru",
+    "title": "Head of Retail Systems",
+    "account": "Nimbus Retail",
+    "accountId": "acc_nimbus",
+    "email": "arjun.poluru@nimbus.example",
+    "influence": "Decision maker",
+    "last": "3 days ago"
+  },
+  {
+    "id": "con_kavya",
+    "name": "Kavya Poluru",
+    "title": "Director of Product",
+    "account": "Brightline Labs",
+    "accountId": "acc_bright",
+    "email": "kavya.poluru@brightline.example",
+    "influence": "Champion",
+    "last": "Today"
+  },
+  {
+    "id": "con_nikhil",
+    "name": "Nikhil Poluru",
+    "title": "CIO",
+    "account": "Lumen Health",
+    "accountId": "acc_lumen",
+    "email": "nikhil.poluru@lumenhealth.example",
+    "influence": "Economic buyer",
+    "last": "5 days ago"
+  },
+  {
+    "id": "con_sahana",
+    "name": "Sahana Poluru",
+    "title": "Procurement lead",
+    "account": "Oak & Pine",
+    "accountId": "acc_oak",
+    "email": "sahana.poluru@oakpine.example",
+    "influence": "Influencer",
+    "last": "1 week ago"
+  },
+  {
+    "id": "con_rohan",
+    "name": "Rohan Poluru",
+    "title": "Founder",
+    "account": "Kite Studio",
+    "accountId": "acc_kite",
+    "email": "rohan.poluru@kitestudio.example",
+    "influence": "Decision maker",
+    "last": "2 hours ago"
+  },
+  {
+    "id": "con_luca",
+    "name": "Luca Poluru",
+    "title": "Security architect",
+    "account": "Lumen Health",
+    "accountId": "acc_lumen",
+    "email": "luca.poluru@lumenhealth.example",
+    "influence": "Influencer",
+    "last": "Today"
+  },
+  {
+    "id": "con_noor",
+    "name": "Noor Poluru",
+    "title": "Finance partner",
+    "account": "Fieldwork Inc",
+    "accountId": "acc_field",
+    "email": "noor.poluru@fieldwork.example",
+    "influence": "Approver",
+    "last": "Today"
+  },
+  {
+    "id": "con_hana",
+    "name": "Hana Poluru",
+    "title": "Head of Operations",
+    "account": "Fold Paper Co.",
+    "accountId": "acc_fold",
+    "email": "hana.poluru@foldpaper.example",
+    "influence": "Champion",
+    "last": "4h ago"
+  },
+  {
+    "id": "con_elena",
+    "name": "Elena Poluru",
+    "title": "COO",
+    "account": "Paperplane",
+    "accountId": "acc_paper",
+    "email": "elena.poluru@paperplane.example",
+    "influence": "Decision maker",
+    "last": "6 days ago"
+  }
+]

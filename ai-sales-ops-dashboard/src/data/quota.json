@@ -1,0 +1,271 @@
+{
+  "currentUser": {
+    "name": "Priya Poluru",
+    "role": "Head of Revenue Ops",
+    "initials": "PP"
+  },
+  "forecast": {
+    "period": "Q3",
+    "label": "Q3 attainment",
+    "attainment": 86,
+    "closed": 1032,
+    "quota": 1200,
+    "coverage": 3.1,
+    "remaining": 168
+  },
+  "kpis": [
+    {
+      "id": "commit",
+      "label": "Commit",
+      "value": "$936k",
+      "hint": "78% of quota",
+      "trend": "up",
+      "trendValue": "+9.4%",
+      "fill": 78
+    },
+    {
+      "id": "coverage",
+      "label": "Coverage",
+      "value": "1.4×",
+      "hint": "Next quarter",
+      "trend": "flat",
+      "trendValue": "On plan",
+      "fill": 47
+    },
+    {
+      "id": "slippage",
+      "label": "Slippage",
+      "value": "11%",
+      "hint": "Pushed this week",
+      "trend": "down",
+      "trendValue": "-2 pts",
+      "fill": 11
+    },
+    {
+      "id": "hygiene",
+      "label": "Hygiene",
+      "value": "88%",
+      "hint": "Next step set",
+      "trend": "up",
+      "trendValue": "+5 pts",
+      "fill": 88
+    },
+    {
+      "id": "pipeline",
+      "label": "Weighted pipeline",
+      "value": "$4.86M",
+      "hint": "Open pipeline",
+      "trend": "up",
+      "trendValue": "+3.4%",
+      "fill": 81
+    },
+    {
+      "id": "winrate",
+      "label": "Win rate",
+      "value": "34%",
+      "hint": "Trailing two quarters",
+      "trend": "up",
+      "trendValue": "+2 pts",
+      "fill": 34
+    }
+  ],
+  "pipelineMonths": [2.8, 3.0, 3.1, 3.4, 3.6, 3.9, 4.1, 4.2, 4.4, 4.5, 4.7, 4.86],
+  "pipelineLabels": ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"],
+  "forecastBands": [
+    { "id": "closed", "label": "Closed won", "value": "$1.03M", "hint": "86% of the $1.2M Q3 plan", "fill": 86 },
+    { "id": "commit", "label": "Commit", "value": "$936k", "hint": "Harbor Labs + Fieldwork Co", "fill": 78 },
+    { "id": "best", "label": "Best case", "value": "$1.28M", "hint": "Includes upside still in legal", "fill": 107 },
+    { "id": "pipeline", "label": "Open pipeline", "value": "$4.86M", "hint": "3.1× remaining quota", "fill": 100 }
+  ],
+  "pipelineStages": [
+    { "id": "discover", "label": "Discover", "value": "$1.18M", "amount": 1180, "deals": 14, "fill": 24 },
+    { "id": "qualify", "label": "Qualify", "value": "$940k", "amount": 940, "deals": 9, "fill": 19 },
+    { "id": "propose", "label": "Propose", "value": "$1.28M", "amount": 1280, "deals": 8, "fill": 26 },
+    { "id": "negotiate", "label": "Negotiate", "value": "$820k", "amount": 820, "deals": 5, "fill": 17 },
+    { "id": "commit", "label": "Commit", "value": "$640k", "amount": 640, "deals": 3, "fill": 13 }
+  ],
+  "coverageByRep": [
+    { "id": "meera", "name": "Meera Poluru", "coverage": "3.8×", "remaining": "$126k", "pipeline": "$482k", "fill": 96 },
+    { "id": "rahul", "name": "Rahul Poluru", "coverage": "2.9×", "remaining": "$124k", "pipeline": "$361k", "fill": 72 },
+    { "id": "ananya", "name": "Ananya Poluru", "coverage": "2.4×", "remaining": "$124k", "pipeline": "$298k", "fill": 61 },
+    { "id": "dev", "name": "Dev Poluru", "coverage": "3.3×", "remaining": "$124k", "pipeline": "$410k", "fill": 84 }
+  ],
+  "teamBoard": [
+    { "id": "meera", "name": "Meera Poluru", "closed": 12, "pipeline": "$482k", "quota": 92, "region": "Enterprise" },
+    { "id": "rahul", "name": "Rahul Poluru", "closed": 9, "pipeline": "$361k", "quota": 74, "region": "Mid-market" },
+    { "id": "ananya", "name": "Ananya Poluru", "closed": 7, "pipeline": "$298k", "quota": 61, "region": "Expansion" },
+    { "id": "dev", "name": "Dev Poluru", "closed": 11, "pipeline": "$410k", "quota": 85, "region": "Enterprise" }
+  ],
+  "deals": [
+    {
+      "id": "d1",
+      "account": "Harbor Labs",
+      "amount": "$184k",
+      "stage": "Commit",
+      "owner": "Meera Poluru",
+      "nextStep": "Legal redlines",
+      "lastTouch": "6d ago",
+      "staleDays": 6,
+      "health": 86
+    },
+    {
+      "id": "d2",
+      "account": "Nimbus Retail",
+      "amount": "$96k",
+      "stage": "Propose",
+      "owner": "Rahul Poluru",
+      "nextStep": "",
+      "lastTouch": "9d ago",
+      "staleDays": 9,
+      "health": 42
+    },
+    {
+      "id": "d3",
+      "account": "Fieldwork Co",
+      "amount": "$142k",
+      "stage": "Commit",
+      "owner": "Ananya Poluru",
+      "nextStep": "Champion check-in",
+      "lastTouch": "12d ago",
+      "staleDays": 12,
+      "health": 61
+    },
+    {
+      "id": "d4",
+      "account": "Northwind Co",
+      "amount": "$78k",
+      "stage": "Negotiate",
+      "owner": "Dev Poluru",
+      "nextStep": "Security questionnaire",
+      "lastTouch": "3d ago",
+      "staleDays": 3,
+      "health": 71
+    },
+    {
+      "id": "d5",
+      "account": "Cedar Health",
+      "amount": "$210k",
+      "stage": "Qualify",
+      "owner": "Meera Poluru",
+      "nextStep": "",
+      "lastTouch": "14d ago",
+      "staleDays": 14,
+      "health": 38
+    },
+    {
+      "id": "d6",
+      "account": "Atlas Freight",
+      "amount": "$64k",
+      "stage": "Discover",
+      "owner": "Rahul Poluru",
+      "nextStep": "Discovery recap",
+      "lastTouch": "1d ago",
+      "staleDays": 1,
+      "health": 74
+    },
+    {
+      "id": "d7",
+      "account": "Lumen Schools",
+      "amount": "$55k",
+      "stage": "Propose",
+      "owner": "Kiran Poluru",
+      "nextStep": "",
+      "lastTouch": "8d ago",
+      "staleDays": 8,
+      "health": 49
+    },
+    {
+      "id": "d8",
+      "account": "Orbit Media",
+      "amount": "$118k",
+      "stage": "Negotiate",
+      "owner": "Dev Poluru",
+      "nextStep": "Procurement intro",
+      "lastTouch": "11d ago",
+      "staleDays": 11,
+      "health": 57
+    }
+  ],
+  "agenda": [
+    { "id": 1, "title": "Renewal review — Harbor Labs", "with": "Kiran Poluru", "time": "10:00", "type": "Meeting" },
+    { "id": 2, "title": "Send updated proposal", "with": "Arjun Poluru", "time": "13:30", "type": "Task" },
+    { "id": 3, "title": "Discovery call — Fieldwork Co", "with": "Sana Poluru", "time": "16:00", "type": "Call" }
+  ],
+  "atRisk": [
+    {
+      "id": 1,
+      "account": "Harbor Labs",
+      "label": "Legal redlines open 6 days — $184k expansion stays in commit if legal moves today.",
+      "health": 86,
+      "icon": "alert-triangle"
+    },
+    {
+      "id": 2,
+      "account": "Nimbus Retail",
+      "label": "No next step set — $96k propose deal will slip this week without a dated action.",
+      "health": 42,
+      "icon": "alert-triangle"
+    },
+    {
+      "id": 3,
+      "account": "Fieldwork Co",
+      "label": "Champion went quiet — $142k commit needs a multi-thread before Friday.",
+      "health": 61,
+      "icon": "alert-triangle"
+    }
+  ],
+  "playbooks": [
+    {
+      "id": "p1",
+      "title": "Multi-thread before legal review",
+      "content": "Loop in a second economic buyer before redlines start so Harbor Labs cannot stall on a single champion.",
+      "owner": "Meera Poluru",
+      "impact": "Commit risk −6d"
+    },
+    {
+      "id": "p2",
+      "title": "Reset next steps weekly",
+      "content": "Any deal without a dated next step drops out of commit. Nimbus Retail is the current example.",
+      "owner": "Rahul Poluru",
+      "impact": "Hygiene +5 pts"
+    },
+    {
+      "id": "p3",
+      "title": "Expansion motion for health > 80",
+      "content": "Flag accounts above 80 health for the expansion queue. Harbor Labs is already in that band.",
+      "owner": "Ananya Poluru",
+      "impact": "Pipeline +$184k"
+    },
+    {
+      "id": "p4",
+      "title": "Hold a 3× coverage floor",
+      "content": "Remaining quota should sit under 3× weighted pipeline. Escalate any rep below 2.5× in the Monday forecast.",
+      "owner": "Priya Poluru",
+      "impact": "Coverage 3.1×"
+    },
+    {
+      "id": "p5",
+      "title": "Slippage post-mortem in 48 hours",
+      "content": "Every deal that pushes a week gets a written reason and a new next step. Slippage is currently 11%.",
+      "owner": "Dev Poluru",
+      "impact": "Slippage −2 pts"
+    }
+  ],
+  "timelineItems": [
+    { "id": 1, "title": "Deal moved to Commit", "description": "Harbor Labs · $184k", "time": "2h ago" },
+    { "id": 2, "title": "Next step logged", "description": "Fieldwork Co · Meera Poluru", "time": "5h ago" },
+    { "id": 3, "title": "New lead converted", "description": "Nimbus Retail · Arjun Poluru", "time": "1d ago" }
+  ],
+  "notifications": [
+    { "id": 1, "title": "Forecast submitted", "body": "Meera Poluru submitted her Q3 forecast.", "time": "9m ago" },
+    { "id": 2, "title": "Deal at risk", "body": "Nimbus Retail has no activity in 9 days.", "time": "1h ago" },
+    { "id": 3, "title": "Enhancement shipped", "body": "One-click renewal reminders is live.", "time": "3h ago" }
+  ],
+  "ownerOptions": [
+    { "value": "meera", "label": "Meera Poluru" },
+    { "value": "rahul", "label": "Rahul Poluru" },
+    { "value": "ananya", "label": "Ananya Poluru" },
+    { "value": "dev", "label": "Dev Poluru" },
+    { "value": "kiran", "label": "Kiran Poluru" }
+  ]
+}

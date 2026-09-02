@@ -1,0 +1,74 @@
+[
+  {
+    "id": "HT-01",
+    "articleId": "ATL-1822",
+    "title": "Start a parental leave packet",
+    "spaceId": "people",
+    "space": "People",
+    "steps": 5,
+    "minutes": 12,
+    "owner": "Meera Poluru",
+    "icon": "bi-heart",
+    "summary": "Submit 30 days out. Atlas holds the calendar and notifies your manager."
+  },
+  {
+    "id": "HT-02",
+    "articleId": "ATL-1744",
+    "title": "Hand off on-call",
+    "spaceId": "engineering",
+    "space": "Engineering",
+    "steps": 4,
+    "minutes": 8,
+    "owner": "Kavya Poluru",
+    "icon": "bi-telephone-plus",
+    "summary": "Post the Friday handoff in Engineering so weekend pages have a source of truth."
+  },
+  {
+    "id": "HT-03",
+    "articleId": "ATL-1711",
+    "title": "File a vendor DPA",
+    "spaceId": "legal",
+    "space": "Legal",
+    "steps": 6,
+    "minutes": 20,
+    "owner": "Talia Poluru",
+    "icon": "bi-file-earmark-check",
+    "summary": "Attach the DPA before Procurement can cut a PO. Security reviews the data map."
+  },
+  {
+    "id": "HT-04",
+    "articleId": "ATL-1666",
+    "title": "Report a phishing email",
+    "spaceId": "security",
+    "space": "Security",
+    "steps": 3,
+    "minutes": 4,
+    "owner": "Owen Poluru",
+    "icon": "bi-envelope-exclamation",
+    "summary": "Forward, don’t click, and let Internal Comms warn from the Security space."
+  },
+  {
+    "id": "HT-05",
+    "articleId": "ATL-1776",
+    "title": "File an expense report",
+    "spaceId": "finance",
+    "space": "Finance",
+    "steps": 5,
+    "minutes": 10,
+    "owner": "Devin Poluru",
+    "icon": "bi-receipt",
+    "summary": "14-day window. Meals $75. Travel books through the company desk."
+  },
+  {
+    "id": "HT-06",
+    "articleId": "ATL-1791",
+    "title": "Publish a launch note",
+    "spaceId": "gtm",
+    "space": "GTM",
+    "steps": 4,
+    "minutes": 15,
+    "owner": "Rohan Poluru",
+    "icon": "bi-megaphone",
+    "summary": "Draft in GTM, ping Internal Comms, and keep discount floors on the pricing page."
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "suggested": ["parental leave", "severity-1", "expense", "Northwind", "encryption"],
+  "hits": [
+    {
+      "id": "hit-1",
+      "articleId": "ATL-1822",
+      "title": "Parental leave: how to start the packet",
+      "space": "People",
+      "owner": "Meera Poluru",
+      "snippet": "Open the People space, choose Parental leave, and submit 30 days before the planned start.",
+      "score": 0.95
+    },
+    {
+      "id": "hit-2",
+      "articleId": "ATL-1847",
+      "title": "Incident severity matrix",
+      "space": "Engineering",
+      "owner": "Kavya Poluru",
+      "snippet": "Severity-1 pages on-call and Internal Comms within 15 minutes.",
+      "score": 0.92
+    },
+    {
+      "id": "hit-3",
+      "articleId": "ATL-1776",
+      "title": "Expense policy 2026",
+      "space": "Finance",
+      "owner": "Devin Poluru",
+      "snippet": "Meals $75 / person. File within 14 days or the report returns to draft.",
+      "score": 0.88
+    },
+    {
+      "id": "hit-4",
+      "articleId": "ATL-1698",
+      "title": "Competitive battlecard — Northwind",
+      "space": "GTM",
+      "owner": "Rohan Poluru",
+      "snippet": "Last priced against Northwind in February. Refresh before Q4 enterprise deals.",
+      "score": 0.84
+    },
+    {
+      "id": "hit-5",
+      "articleId": "ATL-1760",
+      "title": "Laptop encryption standard",
+      "space": "Security",
+      "owner": "Owen Poluru",
+      "snippet": "FileVault or BitLocker is required before the device joins the intranet.",
+      "score": 0.81
+    }
+  ]
+}

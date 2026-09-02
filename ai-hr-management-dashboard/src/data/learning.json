@@ -1,0 +1,68 @@
+[
+  {
+    "id": "crs-inclusive",
+    "title": "Inclusive interviewing",
+    "category": "Hiring",
+    "hours": 3,
+    "enrolled": 42,
+    "due": "2026-09-30",
+    "status": "enrolled",
+    "instructor": "Sravani Poluru",
+    "summary": "Structured loops, scorecards, and bias interrupts for every open req."
+  },
+  {
+    "id": "crs-manager",
+    "title": "Manager 101",
+    "category": "Leadership",
+    "hours": 6,
+    "enrolled": 18,
+    "due": "2026-10-15",
+    "status": "enrolled",
+    "instructor": "Madhav Poluru",
+    "summary": "One-on-ones, feedback, and leveling conversations for new Grove leads."
+  },
+  {
+    "id": "crs-safety",
+    "title": "Psychological safety",
+    "category": "Culture",
+    "hours": 2,
+    "enrolled": 64,
+    "due": "2026-09-18",
+    "status": "enrolled",
+    "instructor": "Neha Poluru",
+    "summary": "How teams raise risk early without waiting for a pulse survey."
+  },
+  {
+    "id": "crs-benefits",
+    "title": "Benefits 2026",
+    "category": "People ops",
+    "hours": 1.5,
+    "enrolled": 88,
+    "due": "2026-09-12",
+    "status": "published",
+    "instructor": "Ananya Poluru",
+    "summary": "Open enrollment windows, parental leave, and the Labor Day office close."
+  },
+  {
+    "id": "crs-perf",
+    "title": "Performance conversations",
+    "category": "Leadership",
+    "hours": 4,
+    "enrolled": 21,
+    "due": "2026-11-01",
+    "status": "enrolled",
+    "instructor": "Sravani Poluru",
+    "summary": "Calibration language, growth plans, and writing a fair review."
+  },
+  {
+    "id": "crs-ai-people",
+    "title": "AI for people ops",
+    "category": "Skills",
+    "hours": 2.5,
+    "enrolled": 29,
+    "due": "2026-10-08",
+    "status": "published",
+    "instructor": "Ishaan Poluru",
+    "summary": "Drafting job posts and leave notes with Grove’s internal copilots."
+  }
+]

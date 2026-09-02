@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "Kavya Poluru published \"Incident severity matrix\"",
+    "description": "Engineering space — Internal Comms is the fan-out owner",
+    "time": "Today, 10:12 AM"
+  },
+  {
+    "id": "2",
+    "title": "Meera Poluru updated parental leave how-to",
+    "description": "People space — 30-day notice reminder",
+    "time": "Yesterday, 2:40 PM"
+  },
+  {
+    "id": "3",
+    "title": "Rohan Poluru flagged Northwind battlecard as stale",
+    "description": "GTM space — refresh before Q4 deals",
+    "time": "Yesterday, 11:05 AM"
+  },
+  {
+    "id": "4",
+    "title": "Talia Poluru answered a retention question",
+    "description": "Legal space — 18-month window restated",
+    "time": "Mon, 9:05 AM"
+  },
+  {
+    "id": "5",
+    "title": "Devin Poluru locked the September close note",
+    "description": "Finance space — books lock Sep 8",
+    "time": "Mon, 9:00 AM"
+  }
+]

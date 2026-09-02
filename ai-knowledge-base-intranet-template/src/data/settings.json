@@ -1,0 +1,8 @@
+{
+  "workspace": "Poluru Labs Atlas",
+  "digest": "weekday",
+  "defaultSpace": "engineering",
+  "bookmarkDigest": true,
+  "staleReminders": true,
+  "allowDraftsInSearch": false
+}

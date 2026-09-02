@@ -1,0 +1,74 @@
+[
+  {
+    "id": "lead_hana",
+    "name": "Hana Poluru",
+    "company": "Fold Paper Co.",
+    "source": "Partner",
+    "score": 91,
+    "status": "Ready",
+    "owner": "Priya Poluru"
+  },
+  {
+    "id": "lead_luca",
+    "name": "Luca Poluru",
+    "company": "Northwind Clinics",
+    "source": "Webinar",
+    "score": 74,
+    "status": "Working",
+    "owner": "Jordan Poluru"
+  },
+  {
+    "id": "lead_noor",
+    "name": "Noor Poluru",
+    "company": "Atlas Freight",
+    "source": "Outbound",
+    "score": 62,
+    "status": "Working",
+    "owner": "Arjun Poluru"
+  },
+  {
+    "id": "lead_elena",
+    "name": "Elena Poluru",
+    "company": "Paperplane",
+    "source": "Event",
+    "score": 48,
+    "status": "New",
+    "owner": "Maya Poluru"
+  },
+  {
+    "id": "lead_aisha",
+    "name": "Aisha Poluru",
+    "company": "Harbor & Co.",
+    "source": "Referral",
+    "score": 88,
+    "status": "Ready",
+    "owner": "Priya Poluru"
+  },
+  {
+    "id": "lead_dev",
+    "name": "Dev Poluru",
+    "company": "Northstar Logistics",
+    "source": "Inbound",
+    "score": 69,
+    "status": "Working",
+    "owner": "Sahana Poluru"
+  },
+  {
+    "id": "lead_ira",
+    "name": "Ira Poluru",
+    "company": "Brightline Labs",
+    "source": "Webinar",
+    "score": 81,
+    "status": "Ready",
+    "owner": "Maya Poluru"
+  },
+  {
+    "id": "lead_kai",
+    "name": "Kai Poluru",
+    "company": "Lumen Health",
+    "source": "Partner",
+    "score": 57,
+    "status": "New",
+    "owner": "Jordan Poluru"
+  }
+]

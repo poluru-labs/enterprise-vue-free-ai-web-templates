@@ -1,0 +1,37 @@
+{
+  "unread": 4,
+  "items": [
+    {
+      "id": "n-01",
+      "tone": "warning",
+      "title": "3 leave requests waiting",
+      "body": "Arjun, Divya, and Kiran need Sravani’s approval before Labor Day.",
+      "time": "2026-09-01T16:12:00.000Z",
+      "href": "/hr/leave"
+    },
+    {
+      "id": "n-02",
+      "tone": "info",
+      "title": "People partner offer",
+      "body": "Ananya Poluru moved one candidate to offer on the Austin req.",
+      "time": "2026-09-01T14:40:00.000Z",
+      "href": "/hr/hiring"
+    },
+    {
+      "id": "n-03",
+      "tone": "warning",
+      "title": "6 on leave this week",
+      "body": "Kavya, Harini, Rohan, Nisha, Vikram, and Tanvi are out through Friday.",
+      "time": "2026-09-01T13:05:00.000Z",
+      "href": "/hr/leave"
+    },
+    {
+      "id": "n-04",
+      "tone": "info",
+      "title": "Benefits 2026 due 12 Sep",
+      "body": "Neha Poluru · 88 enrolled · open enrollment starts after Labor Day.",
+      "time": "2026-09-01T11:20:00.000Z",
+      "href": "/hr/learning"
+    }
+  ]
+}

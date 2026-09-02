@@ -1,0 +1,26 @@
+{
+  "workspace": {
+    "name": "Grove people ops",
+    "slug": "grove-hr",
+    "region": "us-central-1",
+    "timezone": "America/Chicago",
+    "fiscalYear": "FY26",
+    "brandColor": "#7C3AED",
+    "officeClose": "Labor Day · 7 Sep 2026",
+    "ptoPolicyDays": 20,
+    "emailNotifications": true,
+    "twoFactorAuth": true
+  },
+  "team": [
+    { "name": "Sravani Poluru", "role": "People lead" },
+    { "name": "Ananya Poluru", "role": "People partner" },
+    { "name": "Vikram Poluru", "role": "People ops" },
+    { "name": "Neha Poluru", "role": "L&D manager" }
+  ],
+  "channels": [
+    { "id": "leave", "label": "Slack #grove-leave for pending PTO", "enabled": true },
+    { "id": "hiring", "label": "Hiring digest to Sravani Poluru", "enabled": true },
+    { "id": "pulse", "label": "eNPS pulse reminders", "enabled": true },
+    { "id": "learning", "label": "Course due-date nudges", "enabled": false }
+  ]
+}

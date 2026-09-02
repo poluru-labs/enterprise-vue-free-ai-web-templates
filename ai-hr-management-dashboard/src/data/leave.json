@@ -1,0 +1,112 @@
+[
+  {
+    "id": "lv-01",
+    "personId": "p-kavya",
+    "personName": "Kavya Poluru",
+    "type": "PTO",
+    "start": "2026-09-01",
+    "end": "2026-09-05",
+    "days": 5,
+    "status": "approved",
+    "note": "Family travel · Austin"
+  },
+  {
+    "id": "lv-02",
+    "personId": "p-harini",
+    "personName": "Harini Poluru",
+    "type": "PTO",
+    "start": "2026-09-02",
+    "end": "2026-09-04",
+    "days": 3,
+    "status": "approved",
+    "note": "Design offsite recovery"
+  },
+  {
+    "id": "lv-03",
+    "personId": "p-rohan",
+    "personName": "Rohan Poluru",
+    "type": "Parental",
+    "start": "2026-08-25",
+    "end": "2026-09-12",
+    "days": 15,
+    "status": "approved",
+    "note": "Parental leave week 2"
+  },
+  {
+    "id": "lv-04",
+    "personId": "p-nisha",
+    "personName": "Nisha Poluru",
+    "type": "PTO",
+    "start": "2026-09-01",
+    "end": "2026-09-03",
+    "days": 3,
+    "status": "approved",
+    "note": "Brand shoot wrap"
+  },
+  {
+    "id": "lv-05",
+    "personId": "p-vikram",
+    "personName": "Vikram Poluru",
+    "type": "Sick",
+    "start": "2026-09-01",
+    "end": "2026-09-02",
+    "days": 2,
+    "status": "approved",
+    "note": "Short-term illness"
+  },
+  {
+    "id": "lv-06",
+    "personId": "p-tanvi",
+    "personName": "Tanvi Poluru",
+    "type": "PTO",
+    "start": "2026-08-31",
+    "end": "2026-09-04",
+    "days": 5,
+    "status": "approved",
+    "note": "Chicago long weekend"
+  },
+  {
+    "id": "lv-07",
+    "personId": "p-arjun",
+    "personName": "Arjun Poluru",
+    "type": "PTO",
+    "start": "2026-09-08",
+    "end": "2026-09-11",
+    "days": 4,
+    "status": "pending",
+    "note": "After Labor Day"
+  },
+  {
+    "id": "lv-08",
+    "personId": "p-divya",
+    "personName": "Divya Poluru",
+    "type": "PTO",
+    "start": "2026-09-14",
+    "end": "2026-09-16",
+    "days": 3,
+    "status": "pending",
+    "note": "Customer summit buffer"
+  },
+  {
+    "id": "lv-09",
+    "personId": "p-kiran",
+    "personName": "Kiran Poluru",
+    "type": "Unpaid",
+    "start": "2026-09-21",
+    "end": "2026-09-22",
+    "days": 2,
+    "status": "pending",
+    "note": "Personal appointment"
+  },
+  {
+    "id": "lv-10",
+    "personId": "p-ishaan",
+    "personName": "Ishaan Poluru",
+    "type": "PTO",
+    "start": "2026-08-18",
+    "end": "2026-08-20",
+    "days": 3,
+    "status": "approved",
+    "note": "Taken last month"
+  }
+]

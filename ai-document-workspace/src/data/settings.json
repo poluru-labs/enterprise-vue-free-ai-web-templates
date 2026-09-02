@@ -1,0 +1,8 @@
+{
+  "workspace": "Poluru Labs Vault",
+  "digest": "weekday",
+  "retentionMonths": 18,
+  "requireReviewer": true,
+  "citationSearch": true,
+  "pinEnabled": false
+}

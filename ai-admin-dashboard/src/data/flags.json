@@ -1,0 +1,65 @@
+[
+  {
+    "id": "f-dark-mode",
+    "name": "dark-mode",
+    "description": "Enable the slate theme across Harbor workspaces.",
+    "status": "stable",
+    "rolloutPercent": 100,
+    "owner": "Lakshmi Poluru",
+    "created": "2026-01-20"
+  },
+  {
+    "id": "f-new-dashboard",
+    "name": "new-dashboard",
+    "description": "Redesigned overview with six equal-height KPI cards.",
+    "status": "rollout",
+    "rolloutPercent": 45,
+    "owner": "Kavya Poluru",
+    "created": "2026-03-15"
+  },
+  {
+    "id": "f-advanced-analytics",
+    "name": "advanced-analytics",
+    "description": "Seat and flag trend charts on the control plane.",
+    "status": "rollout",
+    "rolloutPercent": 62,
+    "owner": "Madhav Poluru",
+    "created": "2026-04-01"
+  },
+  {
+    "id": "f-audit-export",
+    "name": "audit-export",
+    "description": "Let platform admins download the security event log.",
+    "status": "rollout",
+    "rolloutPercent": 28,
+    "owner": "Rohan Poluru",
+    "created": "2026-06-12"
+  },
+  {
+    "id": "f-api-v2",
+    "name": "api-v2",
+    "description": "Workspace API version 2 with scoped tokens.",
+    "status": "stable",
+    "rolloutPercent": 100,
+    "owner": "Lakshmi Poluru",
+    "created": "2026-02-10"
+  },
+  {
+    "id": "f-experimental-ai",
+    "name": "experimental-ai",
+    "description": "AI-assisted tenant summaries in overview.",
+    "status": "development",
+    "rolloutPercent": 5,
+    "owner": "Ananya Poluru",
+    "created": "2026-05-20"
+  },
+  {
+    "id": "f-scim-sync",
+    "name": "scim-sync",
+    "description": "Provision and deprovision seats from Okta or Entra.",
+    "status": "beta",
+    "rolloutPercent": 20,
+    "owner": "Harini Poluru",
+    "created": "2026-07-08"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "risk_auth",
+    "title": "Identity service freeze on Sep 4",
+    "severity": "critical",
+    "status": "Open",
+    "owner": "Arjun Poluru",
+    "impact": "KEEL-127 stays blocked if auth has no fallback.",
+    "due": "2026-09-04",
+    "exposure": "Sprint 24 goal"
+  },
+  {
+    "id": "risk_qa",
+    "title": "QA load above the 85% line",
+    "severity": "high",
+    "status": "Watch",
+    "owner": "Priya Poluru",
+    "impact": "Pulling KEEL-133 this sprint overruns capacity.",
+    "due": "2026-09-03",
+    "exposure": "Bugs and reviews"
+  },
+  {
+    "id": "risk_vendor",
+    "title": "Chart export vendor SLA slip",
+    "severity": "medium",
+    "status": "Open",
+    "owner": "Maya Poluru",
+    "impact": "Burndown SVG export (KEEL-124) may miss Done.",
+    "due": "2026-09-05",
+    "exposure": "Sprint review"
+  },
+  {
+    "id": "risk_a11y",
+    "title": "Avatar contrast on the teal mast",
+    "severity": "medium",
+    "status": "Mitigating",
+    "owner": "Hana Poluru",
+    "impact": "Fails WCAG on the dark header without a ring.",
+    "due": "2026-09-08",
+    "exposure": "Release checklist"
+  },
+  {
+    "id": "risk_scope",
+    "title": "Custom fields epic still unshaped",
+    "severity": "low",
+    "status": "Open",
+    "owner": "Jordan Poluru",
+    "impact": "KEEL-131 can crowd Sprint 25 if it lands uncut.",
+    "due": "2026-09-12",
+    "exposure": "Q4 plan"
+  },
+  {
+    "id": "risk_digest",
+    "title": "Slack digest token expires Friday",
+    "severity": "low",
+    "status": "Watch",
+    "owner": "Rohan Poluru",
+    "impact": "Standup notes stop posting to #keel-delivery.",
+    "due": "2026-09-04",
+    "exposure": "Rituals"
+  }
+]

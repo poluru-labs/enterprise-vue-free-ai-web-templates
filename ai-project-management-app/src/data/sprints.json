@@ -1,0 +1,40 @@
+[
+  {
+    "id": "sp23",
+    "name": "Sprint 23",
+    "goal": "Close the equal-height card system and land the first search index.",
+    "status": "closed",
+    "start": "2026-08-10",
+    "end": "2026-08-23",
+    "committed": 48,
+    "completed": 48,
+    "daysLeft": 0
+  },
+  {
+    "id": "sp24",
+    "name": "Sprint 24",
+    "goal": "Ship the teal sprint rail and keep 50 points on a 3.8-day cycle.",
+    "status": "active",
+    "start": "2026-08-27",
+    "end": "2026-09-09",
+    "committed": 50,
+    "completed": 34,
+    "daysLeft": 8,
+    "burndown": {
+      "labels": ["27", "28", "31", "1", "2", "3", "4", "7", "8", "9"],
+      "ideal": [50, 44, 39, 33, 28, 22, 17, 11, 6, 0],
+      "actual": [50, 46, 38, 28, 16]
+    }
+  },
+  {
+    "id": "sp25",
+    "name": "Sprint 25",
+    "goal": "Identity freeze fallback and Q4 epic rollups.",
+    "status": "planned",
+    "start": "2026-09-10",
+    "end": "2026-09-23",
+    "committed": 10,
+    "completed": 0,
+    "daysLeft": 22
+  }
+]
