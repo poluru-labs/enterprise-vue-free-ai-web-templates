@@ -140,7 +140,7 @@ body {
 
 .atlas-header-search .eds-search,
 .atlas-header-search input {
-  background: #1a2e05;
+  /* background: #1a2e05; */
   color: var(--atlas-canvas);
   border-color: #4d7c0f;
 }

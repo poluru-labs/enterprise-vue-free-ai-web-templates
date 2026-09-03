@@ -52,12 +52,12 @@ const paletteHits = computed(() =>
   searchRecords(COMMAND_ITEMS, paletteQuery.value, ['label', 'hint', 'group']),
 );
 
-const seatUsed = computed(() => store.seatsUsed.value);
-const seatLimit = computed(() => store.seatsLimit.value);
+const seatUsed = computed(() => store.seatsUsed);
+const seatLimit = computed(() => store.seatsLimit);
 const seatPct = computed(() =>
   seatLimit.value ? Math.round((seatUsed.value / seatLimit.value) * 100) : 0,
 );
-const rolloutCount = computed(() => store.rolloutFlags.value.length);
+const rolloutCount = computed(() => store.rolloutFlags.length);
 
 watch(
   () => store.state.inviteOpen,

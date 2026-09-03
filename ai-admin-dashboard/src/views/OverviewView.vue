@@ -24,16 +24,16 @@ const kpis = computed(() => [
   },
   {
     ...overview.kpis[1],
-    value: String(store.activeMembers.value),
+    value: String(store.activeMembers),
   },
   {
     ...overview.kpis[2],
-    value: formatNumber(store.seatsUsed.value),
-    hint: `of ${formatNumber(store.seatsLimit.value)} contracted`,
+    value: formatNumber(store.seatsUsed),
+    hint: `of ${formatNumber(store.seatsLimit)} contracted`,
   },
   {
     ...overview.kpis[3],
-    value: String(store.rolloutFlags.value.length),
+    value: String(store.rolloutFlags.length),
   },
   overview.kpis[4],
   overview.kpis[5],

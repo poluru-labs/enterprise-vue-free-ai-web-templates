@@ -1,4 +1,4 @@
-import { computed, reactive } from 'vue';
+import { computed, proxyRefs, reactive } from 'vue';
 import tenantsSeed from '../data/tenants.json';
 import membersSeed from '../data/members.json';
 import flagsSeed from '../data/flags.json';
@@ -250,7 +250,7 @@ const actions = {
 };
 
 export function useWorkspace() {
-  return { state, ...getters, ...actions };
+  return proxyRefs({ state, ...getters, ...actions });
 }
 
 export function useStore() {
