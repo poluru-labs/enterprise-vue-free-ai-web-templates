@@ -4,6 +4,10 @@ Vue 3 admin dashboard for tenants, members, feature flags, and audit. Built with
 
 Signed in as **Lakshmi Poluru**, platform admin.
 
+## Screenshot
+<img width="3360" height="3874" alt="image" src="https://github.com/user-attachments/assets/cc9e460f-9a1d-4b5e-939a-a7966e1f19ec" />
+
+
 ## Setup
 
 Requires Node.js 20+.
