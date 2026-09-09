@@ -2,6 +2,10 @@
 
 Company intranet for team spaces, policies, and how-tos. Vue 3 + Vite + Bootstrap + [`@poluru-labs/enterprise-design-system-vue`](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-vue) + vue-router.
 
+## Screenshot
+<img width="3360" height="3378" alt="ai-knowledge-base-intranet-template" src="https://github.com/user-attachments/assets/50be435d-b8f3-4a31-a2ac-0e9cfa00fe8f" />
+
+
 ## Product
 
 - **Name:** Atlas
