@@ -1,47 +1,36 @@
-# Marketing Command Center
+# AI Marketing Command Center
 
-AI-powered marketing dashboard for managing campaigns, audiences, performance insights, and automated marketing operations.
+A responsive Vue 3 + TypeScript marketing workspace for Poluru Labs, featuring the #5FACD3 brand palette and Google Roboto / Open Sans fonts.
 
-## Overview
-
-The Marketing Command Center helps teams plan and optimize digital marketing efforts from a single workspace. It is designed to centralize campaign workflows, audience targeting, content performance, and automation so marketing leaders can make faster, data-driven decisions.
-
-## Key Features
-
-- Campaign planning and performance tracking
-- Audience segmentation and engagement insights
-- Content performance analytics
-- Automation and workflow orchestration
-- KPI dashboards for reporting and optimization
-
-## Tech Stack
-
-- Vue 3
-- Vite
-- TypeScript
-- Modern dashboard UI patterns
-
-## Getting Started
-
-### Install dependencies
+## Run locally
 
 ```sh
 npm install
-```
-
-### Run in development mode
-
-```sh
 npm run dev
 ```
 
-### Build for production
+## Validate and build
 
 ```sh
 npm run build
 ```
 
-## Use Case
+The build runs Vue TypeScript checks and produces a static site in `dist/`.
 
-This template is ideal for marketing teams, growth leaders, agencies, and SaaS companies that want a centralized view of campaign health, audience engagement, content performance, and automation workflows.
+## Included
 
+- Overview with revenue trends, channel breakdown, and campaign metrics
+- Searchable campaigns, status filters, draft creation, and activation/pause controls
+- CSV campaign report export
+- Audience segments with campaign creation shortcuts
+- Content studio with sample creatives and demo publication
+- Automation workflows with pause/resume controls
+- Sample AI insights, workspace preferences, and help
+- Responsive navigation, keyboard search (Cmd/Ctrl+K), keyboard-accessible campaign details, and focus-trapped dialogs
+- Optional WebMCP campaign filtering when supported by the browser
+
+## Demo scope
+
+All records and insights are sample data. Edits last for the current browser session and reset on reload. Campaign activation and content publication do not send emails or publish ads. Live analytics, AI generation, authentication, and durable storage require backend and marketing-platform integrations. Reporting periods illustrate sample aggregates.
+
+WebMCP registration is feature detected. A supporting browser is required to validate its runtime contract.

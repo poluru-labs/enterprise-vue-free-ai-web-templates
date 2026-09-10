@@ -1,47 +1,107 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { computed, ref, watch, nextTick, onMounted, onUnmounted } from 'vue'
+import 'bootstrap-icons/font/bootstrap-icons.css'
+const nav = [{name:'Overview',icon:'grid'}, {name:'Campaigns',icon:'megaphone'}, {name:'Audiences',icon:'people'}, {name:'Content studio',icon:'collection'}, {name:'Automations',icon:'diagram-3'}, {name:'Analytics',icon:'bar-chart-line'}]
+const page = ref('Overview'), query = ref(''), period = ref('Last 30 days'), campaignFilter = ref('All campaigns'), modal = ref(false), selected = ref<any>(null), notice = ref(''), mobileNav = ref(false)
+const workspaceName = ref('Poluru Labs'), displayName = ref('Subbu Poluru'), emailAddress = ref('subbu@example.com')
+const name = ref(''), channel = ref('Email'), objective = ref('Lead generation'), budget = ref(2500)
+const campaigns = ref([
+{id:1,name:'Fall into something great',desc:'Fall collection · Sep 01 – Sep 30',channel:'Email',icon:'envelope',status:'Active',budget:8500,spent:5840,reach:'124,580',conversions:1248,roi:'4.8x',owner:'SP',color:'blue'},
+{id:2,name:'Meet your next favorite',desc:'Brand awareness · Sep 05 – Oct 05',channel:'Social',icon:'instagram',status:'Active',budget:12000,spent:7200,reach:'286,420',conversions:2156,roi:'5.2x',owner:'PK',color:'pink'},
+{id:3,name:'A little nudge, a big impact',desc:'Retargeting · Sep 02 – Sep 25',channel:'Paid ads',icon:'cursor',status:'Active',budget:6500,spent:4210,reach:'89,340',conversions:842,roi:'3.9x',owner:'SR',color:'purple'},
+{id:4,name:'The Poluru insider',desc:'Newsletter · Sep 12 – Sep 12',channel:'Email',icon:'envelope',status:'Scheduled',budget:2000,spent:0,reach:'32,150',conversions:0,roi:'—',owner:'SP',color:'orange'},
+{id:5,name:'Good things come back',desc:'Customer win-back · Aug 15 – Aug 31',channel:'Email',icon:'envelope',status:'Completed',budget:4500,spent:4320,reach:'56,890',conversions:623,roi:'4.1x',owner:'AK',color:'teal'}])
+const filtered = computed(()=>campaigns.value.filter(c=>(campaignFilter.value==='All campaigns'||c.status===campaignFilter.value)&&(`${c.name} ${c.channel}`).toLowerCase().includes(query.value.toLowerCase())))
+const automations=ref([{name:'Welcome to the community',desc:'New subscriber → Welcome series → First purchase',icon:'hand-thumbs-up',audience:'New subscribers',runs:'12,840',rate:'32.4%',active:true},{name:'A second look',desc:'Cart abandoned → Wait 2 hours → Send reminder',icon:'bag',audience:'Cart abandoners',runs:'8,216',rate:'24.8%',active:true},{name:'We’ve missed you',desc:'Inactive for 60 days → Offer → Follow-up',icon:'arrow-repeat',audience:'Lapsed customers',runs:'3,429',rate:'18.6%',active:false}])
+const audiences=[{name:'Your biggest fans',desc:'Returning customers with 3+ purchases',size:'24,680',growth:'+18.2%',color:'blue',icon:'heart'},{name:'Ready for their first hello',desc:'Engaged subscribers, no purchases yet',size:'48,210',growth:'+12.4%',color:'purple',icon:'hand-thumbs-up'},{name:'Worth another conversation',desc:'Customers inactive for the past 60 days',size:'18,940',growth:'+6.8%',color:'orange',icon:'chat-dots'},{name:'The next generation',desc:'New visitors from social campaigns',size:'86,420',growth:'+24.6%',color:'teal',icon:'stars'}]
+const contents=ref([{name:'Small changes. Big possibilities.',type:'Instagram post',status:'Published',engagement:'8.4%',views:'24,810',theme:'social'},{name:'Your next favorite is here.',type:'Email newsletter',status:'Draft',engagement:'—',views:'—',theme:'email'},{name:'Made for your everyday.',type:'Display ad',status:'Published',engagement:'6.2%',views:'42,680',theme:'ads'}])
+function toast(message:string){notice.value=message;setTimeout(()=>notice.value='',4500)}
+function go(value:string){page.value=value;query.value='';mobileNav.value=false}
+function create(){campaigns.value.unshift({id:Date.now(),name:name.value,desc:`${objective.value} · Created Sep 09`,channel:channel.value,icon:channel.value==='Email'?'envelope':channel.value==='Social'?'instagram':'cursor',status:'Draft',budget:budget.value,spent:0,reach:'0',conversions:0,roi:'—',owner:'SP',color:'blue'});modal.value=false;name.value='';go('Campaigns');campaignFilter.value='All campaigns';toast('Campaign created. Your draft is ready to review.')}
+function exportReport(){const rows=[['Campaign','Channel','Status','Budget','Spent','Reach','Conversions','ROAS'],...filtered.value.map(c=>[c.name,c.channel,c.status,c.budget,c.spent,c.reach,c.conversions,c.roi])];const csv=rows.map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));const a=document.createElement('a');a.href=url;a.download='poluru-campaign-report.csv';a.click();URL.revokeObjectURL(url);toast('Your campaign report has been exported.')}
+let restoreFocus: HTMLElement | null = null
+watch(() => modal.value || Boolean(selected.value), async (open) => {
+  if (open) {
+    restoreFocus = document.activeElement as HTMLElement
+    await nextTick()
+    document.querySelector<HTMLElement>('.modal input, .modal button')?.focus()
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = ''
+    restoreFocus?.focus()
+  }
+})
+function keyboard(event: KeyboardEvent) {
+  if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+    event.preventDefault()
+    if (!['Overview', 'Campaigns'].includes(page.value)) go('Campaigns')
+    void nextTick(() => document.querySelector<HTMLInputElement>('.search input')?.focus())
+  }
+  if (!(modal.value || selected.value) || event.key !== 'Tab') return
+  const elements = Array.from(document.querySelectorAll<HTMLElement>('.modal button, .modal input, .modal select'))
+  const first = elements[0], last = elements[elements.length - 1]
+  if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus() }
+  else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus() }
+}
+const lifecycle = new AbortController()
+onMounted(() => {
+  document.addEventListener('keydown', keyboard)
+  const context = (document as Document & {modelContext?: {registerTool: (tool: Record<string, unknown>, options: {signal: AbortSignal}) => void | Promise<void>}}).modelContext
+  if (!context?.registerTool) return
+  try {
+    void Promise.resolve(context.registerTool({
+      name: 'filter_campaigns',
+      description: 'Open campaigns and filter the sample campaign list by name and status.',
+      inputSchema: {type: 'object', properties: {search: {type: 'string'}, status: {type: 'string', enum: ['All campaigns','Active','Scheduled','Draft']}}, required: ['search','status'], additionalProperties: false},
+      annotations: {readOnlyHint: true},
+      async execute(input: unknown) {
+        const value = input as {search?: unknown; status?: unknown}
+        if (!value || typeof value.search !== 'string' || typeof value.status !== 'string' || !['All campaigns','Active','Scheduled','Draft'].includes(value.status)) throw new Error('Provide a search string and supported status.')
+        go('Campaigns'); query.value = value.search; campaignFilter.value = value.status
+        await nextTick()
+        return filtered.value.map(c => ({id:c.id,name:c.name,status:c.status,channel:c.channel}))
+      }
+    }, {signal:lifecycle.signal})).catch(() => {})
+  } catch { /* Optional browser capability. */ }
+})
+onUnmounted(() => {document.removeEventListener('keydown', keyboard); lifecycle.abort()})
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="app-shell">
+    <aside class="sidebar" :class="{open:mobileNav}">
+      <a class="brand" href="#" @click.prevent="go('Overview')"><span class="brand-symbol"><i class="bi bi-intersect"></i></span><span>command<span class="brand-dot">.</span><small>AI MARKETING CENTER</small></span></a>
+      <button class="workspace" @click="toast('You’re in the Poluru Labs demo workspace.')"><span class="workspace-avatar">P</span><span>{{workspaceName}}<small>Marketing workspace</small></span><i class="bi bi-chevron-expand"></i></button>
+      <div class="nav-label">WORKSPACE</div>
+      <nav><button v-for="item in nav" :key="item.name" :class="{active:page===item.name}" @click="go(item.name)"><i :class="`bi bi-${item.icon}`"></i>{{item.name}}<span v-if="item.name==='Campaigns'" class="nav-count">{{campaigns.length}}</span><span v-if="item.name==='Automations'" class="tiny-dot"></span></button></nav>
+      <div class="sidebar-bottom"><div class="assistant-promo"><span class="sparkle"><i class="bi bi-stars"></i></span><h4>A little AI. A lot of possibility.</h4><p>Turn your next big idea into your best campaign yet.</p><button @click="page='AI assistant'">Meet your AI assistant <i class="bi bi-arrow-up-right"></i></button></div><button class="utility" @click="page='Settings'"><i class="bi bi-gear"></i> Settings</button><button class="utility" @click="page='Help & resources'"><i class="bi bi-question-circle"></i> Help & resources <i class="bi bi-arrow-up-right"></i></button><div class="profile"><span class="avatar">SP</span><span><b>{{displayName}}</b><small>Workspace admin</small></span><i class="bi bi-chevron-expand"></i></div></div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar"><div class="breadcrumb"><button class="mobile-toggle icon-button" aria-label="Toggle navigation" @click="mobileNav=!mobileNav"><i class="bi bi-list"></i></button><span>Workspace</span><i class="bi bi-chevron-right"></i><b>{{page}}</b></div><div class="header-actions"><span class="demo-label"><span></span> Demo workspace</span><button class="icon-button" aria-label="Notifications" @click="toast('You’re all caught up. Your campaigns are running smoothly.')"><i class="bi bi-bell"></i><em></em></button><span class="header-divider"></span><span class="avatar small">SP</span></div></header>
+      <main>
+        <div class="page-heading"><div><div class="eyebrow">YOUR MARKETING, IN SYNC</div><h1>{{page==='Overview'?'Good morning, Subbu':page}}<span v-if="page==='Overview'" class="greeting-dot">.</span></h1><p>{{page==='Overview'?"Here’s what’s happening with your marketing today.":page==='Campaigns'?'Big ideas, measurable impact. Manage every campaign in one place.':page==='Audiences'?'Get to know the people behind your next great campaign.':page==='Content studio'?'Create, organize, and measure content that connects.':page==='Automations'?'Keep meaningful conversations moving, automatically.':page==='Analytics'?'A clearer picture of what’s working for your brand.':page==='AI assistant'?'Find your next opportunity in your marketing data.':'Your workspace, your way.'}}</p></div><div class="heading-actions"><button class="button secondary" @click="exportReport"><i class="bi bi-download"></i> Export report</button><button class="button primary" @click="modal=true"><i class="bi bi-plus-lg"></i> Create campaign</button></div></div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+        <template v-if="page==='Overview'||page==='Analytics'">
+          <div class="overview-toolbar"><div class="section-tabs"><button class="selected">Performance overview</button></div><select v-model="period" aria-label="Report period"><option>Last 30 days</option><option>Last 7 days</option><option>Last 90 days</option></select></div>
+          <div class="metrics"><article v-for="(metric,i) in [{label:'Total revenue',value:period==='Last 7 days'?'$31,864':period==='Last 90 days'?'$362,450':'$128,430',growth:'18.6%',icon:'currency-dollar',note:'vs. previous period',data:'0,32 12,29 23,34 35,19 47,24 60,14 72,18 85,6 97,9 110,1'},{label:'Active campaigns',value:String(campaigns.filter(c=>c.status==='Active').length),growth:'2 new',icon:'megaphone',note:'this month',data:'0,30 17,30 17,22 39,22 39,26 58,26 58,14 80,14 80,6 110,6'},{label:'Audience reach',value:period==='Last 7 days'?'218.6K':period==='Last 90 days'?'2.4M':'842.6K',growth:'24.8%',icon:'people',note:'vs. previous period',data:'0,33 12,25 24,29 37,18 49,22 61,13 73,16 86,4 97,8 110,0'},{label:'Avg. conversion rate',value:'4.86%',growth:'1.2%',icon:'bullseye',note:'vs. previous period',data:'0,31 13,22 25,25 38,14 50,23 61,12 73,16 85,5 98,10 110,0'}]" :key="metric.label" class="metric-card"><div class="metric-top"><span>{{metric.label}}</span><span class="metric-icon"><i :class="`bi bi-${metric.icon}`"></i></span></div><div class="metric-value">{{metric.value}}<svg class="sparkline" viewBox="0 0 112 42" aria-hidden="true"><polyline :points="metric.data" fill="none" :stroke="i===1?'#83b9ce':'#5FACD3'" stroke-width="2.3"/></svg></div><div class="metric-bottom"><span><i class="bi bi-arrow-up-right"></i> {{metric.growth}}</span> {{metric.note}}</div></article></div>
+          <div class="chart-grid"><section class="panel performance"><div class="panel-heading"><div><h2>Campaign performance</h2><p>A little momentum. A lot of growth.</p></div><div class="chart-legend"><span><b class="legend-dot blue"></b>Revenue</span><span><b class="legend-dot pale"></b>Spend</span></div></div><div class="chart"><div class="y-labels"><span>$40k</span><span>$30k</span><span>$20k</span><span>$10k</span><span>$0</span></div><div class="chart-body"><svg viewBox="0 0 740 185" preserveAspectRatio="none" role="img" :aria-label="`Revenue and spend trend for ${period}: revenue consistently exceeds spend`"><defs><linearGradient id="revenue-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5FACD3" stop-opacity=".19"/><stop offset="100%" stop-color="#5FACD3" stop-opacity="0"/></linearGradient></defs><g stroke="#edf0f3" stroke-dasharray="4 5"><path d="M0 4H740 M0 48H740 M0 92H740 M0 136H740 M0 180H740"/></g><path d="M0 142 C25 143 37 112 66 119 S113 136 140 111 S183 104 209 110 S251 77 282 85 S316 107 351 75 S395 64 424 69 S458 42 490 55 S532 57 563 34 S604 51 634 29 S687 32 713 14 L740 9 L740 185 L0 185Z" fill="url(#revenue-fill)"/><path d="M0 142 C25 143 37 112 66 119 S113 136 140 111 S183 104 209 110 S251 77 282 85 S316 107 351 75 S395 64 424 69 S458 42 490 55 S532 57 563 34 S604 51 634 29 S687 32 713 14 L740 9" fill="none" stroke="#5FACD3" stroke-width="3"/><path d="M0 168 C35 170 44 154 70 160 S115 162 143 152 S188 162 215 146 S261 154 286 143 S328 153 358 138 S398 148 426 132 S472 142 498 125 S545 137 571 119 S611 132 642 114 S695 122 740 103" fill="none" stroke="#b5ccd9" stroke-width="2.5" stroke-dasharray="5 5"/></svg><div class="x-labels"><span v-for="day in (period==='Last 7 days'?['Sep 3','Sep 4','Sep 5','Sep 6','Sep 7','Sep 8','Sep 9']:period==='Last 90 days'?['Jun 12','Jun 27','Jul 12','Jul 27','Aug 11','Aug 26','Sep 9']:['Aug 11','Aug 16','Aug 21','Aug 26','Aug 31','Sep 5','Sep 9'])" :key="day">{{day}}</span></div></div></div><div class="chart-footer"><span><i class="bi bi-arrow-up-right"></i> Revenue is up <b>18.6%</b> from the previous period</span><button class="text-button" @click="exportReport">View report <i class="bi bi-arrow-right"></i></button></div></section>
+          <section class="panel channels"><div class="panel-heading"><h2>Revenue by channel</h2><i class="bi bi-pie-chart"></i></div><div class="donut"><div><span>Total revenue</span><strong>{{period==='Last 7 days'?'$31,864':period==='Last 90 days'?'$362,450':'$128,430'}}</strong></div></div><div class="channel-list"><div v-for="(c,i) in [{name:'Email marketing',percent:42,value:'$53,941'},{name:'Social media',percent:28,value:'$35,960'},{name:'Paid advertising',percent:20,value:'$25,686'},{name:'Organic search',percent:10,value:'$12,843'}]" :key="c.name"><span :class="`channel-dot channel-${i}`"></span><span>{{c.name}}</span><b>{{c.percent}}%</b></div></div></section></div>
+          <section class="ai-banner"><span class="ai-banner-icon"><i class="bi bi-stars"></i></span><div><div class="ai-title">Your next opportunity, spotted.<span class="ai-badge">AI INSIGHT</span></div><p>Your email campaigns deliver 42% of revenue. Give your next send a head start with a high-engagement audience.</p></div><button @click="page='AI assistant'">Explore insights <i class="bi bi-arrow-right"></i></button></section>
+        </template>
+
+        <section v-if="page==='Overview'||page==='Campaigns'" class="panel campaign-panel"><div class="panel-heading"><div><h2>{{page==='Overview'?'Your campaigns':'All campaigns'}} <span class="total-badge">{{campaigns.length}}</span></h2><p>Every campaign. One clear picture.</p></div><button v-if="page==='Overview'" class="text-button" @click="go('Campaigns')">View all campaigns <i class="bi bi-arrow-right"></i></button></div><div class="table-toolbar"><div class="filter-tabs"><button v-for="f in ['All campaigns','Active','Scheduled','Draft']" :key="f" :class="{selected:campaignFilter===f}" @click="campaignFilter=f">{{f}}<span v-if="f==='Active'">{{campaigns.filter(c=>c.status==='Active').length}}</span></button></div><label class="search"><i class="bi bi-search"></i><input v-model="query" placeholder="Search campaigns..." aria-label="Search campaigns"/><span>⌘ K</span></label></div><div class="table-scroll"><table><thead><tr><th>Campaign name <i class="bi bi-arrow-down"></i></th><th>Channel</th><th>Status</th><th>Budget spent</th><th>Reach</th><th>Conversions</th><th>ROAS <i class="bi bi-info-circle"></i></th><th>Owner</th><th></th></tr></thead><tbody><tr v-for="c in (page==='Overview'?filtered.slice(0,4):filtered)" :key="c.id" @click="selected=c" tabindex="0" @keydown.enter="selected=c"><td><div class="campaign-name"><span :class="`campaign-icon ${c.color}`"><i :class="`bi bi-${c.icon}`"></i></span><span><b>{{c.name}}</b><small>{{c.desc}}</small></span></div></td><td>{{c.channel}}</td><td><span :class="`status ${c.status.toLowerCase()}`"><b></b>{{c.status}}</span></td><td><div class="budget"><b>${{c.spent.toLocaleString()}}</b><span> / ${{c.budget.toLocaleString()}}</span><div class="budget-bar"><span :style="{width:`${Math.min(c.spent/c.budget*100,100)}%`}"></span></div></div></td><td>{{c.reach}}</td><td>{{c.conversions.toLocaleString()}}</td><td><b>{{c.roi}}</b></td><td><span class="owner-avatar" :class="c.color">{{c.owner}}</span></td><td><button class="icon-button" :aria-label="`View ${c.name}`" @click.stop="selected=c"><i class="bi bi-three-dots"></i></button></td></tr><tr v-if="!filtered.length"><td colspan="9" class="empty">No campaigns found. Try another search or create a new campaign.</td></tr></tbody></table></div><div class="table-footer"><span>Showing {{page==='Overview'?Math.min(filtered.length,4):filtered.length}} of {{filtered.length}} campaigns</span><span><i class="bi bi-arrow-repeat"></i> Updated just now</span></div></section>
+
+        <template v-if="page==='Audiences'"><div class="audience-summary"><span class="large-icon blue"><i class="bi bi-people"></i></span><div><span>Your connected audience</span><h2>178,250 <small>+16.4% this month</small></h2></div><span class="muted">Across 4 segments</span></div><div class="audience-grid"><article v-for="a in audiences" :key="a.name" class="panel audience-card"><span :class="`large-icon ${a.color}`"><i :class="`bi bi-${a.icon}`"></i></span><h2>{{a.name}}</h2><p>{{a.desc}}</p><div class="audience-size">{{a.size}}<span>{{a.growth}} <i class="bi bi-arrow-up-right"></i></span></div><div class="card-bottom"><span>Contacts in segment</span><button class="text-button" @click="name=`${a.name} campaign`;modal=true">Create campaign <i class="bi bi-arrow-right"></i></button></div></article></div></template>
+        <template v-if="page==='Content studio'"><div class="content-grid"><article class="panel content-card" v-for="c in contents" :key="c.name"><div :class="`content-art ${c.theme}`"><span>POLURU STUDIO / 2026</span><h2>{{c.name}}</h2><span class="content-pill">A fresh perspective <i class="bi bi-arrow-up-right"></i></span></div><div class="content-info"><span class="muted">{{c.type}}</span><span :class="`status ${c.status==='Draft'?'draft':'active'}`">{{c.status}}</span><h3>{{c.name}}</h3><div class="content-stats"><div><small>Views</small><b>{{c.views}}</b></div><div><small>Engagement</small><b>{{c.engagement}}</b></div></div><button class="button secondary" @click="c.status==='Draft'?(c.status='Published',toast('Content published in your demo workspace.')):(name=c.name,modal=true)">{{c.status==='Draft'?'Publish content':'Use in campaign'}} <i class="bi bi-arrow-right"></i></button></div></article></div></template>
+        <template v-if="page==='Automations'"><div class="automation-summary"><span class="status active"><b></b>{{automations.filter(a=>a.active).length}} workflows running</span><span class="muted">Built for the right message, at the right moment.</span></div><section class="panel automation" v-for="a in automations" :key="a.name"><span class="large-icon blue"><i :class="`bi bi-${a.icon}`"></i></span><div class="automation-name"><h2>{{a.name}}</h2><p>{{a.audience}}</p></div><div><small>People reached</small><b>{{a.runs}}</b></div><div><small>Conversion rate</small><b>{{a.rate}}</b></div><button class="switch" role="switch" :aria-checked="a.active" :aria-label="`Enable ${a.name}`" :class="{on:a.active}" @click="a.active=!a.active;toast(a.active?'Automation resumed.':'Automation paused.')"><span></span></button><div class="flow"><template v-for="(step,i) in a.desc.split(' → ')" :key="step"><i v-if="i" class="bi bi-arrow-right"></i><span><i :class="`bi bi-${i===0?'lightning':i===1?'clock':'envelope'}`"></i>{{step}}</span></template><span :class="`status ${a.active?'active':'draft'}`"><b></b>{{a.active?'Running':'Paused'}}</span></div></section></template>
+        <template v-if="page==='AI assistant'"><section class="panel insight-detail"><span class="large-icon blue"><i class="bi bi-stars"></i></span><span class="ai-badge">CAMPAIGN INTELLIGENCE · DEMO</span><h2>More connection. More conversion.</h2><p>Your email campaigns are your strongest revenue channel. Here are three opportunities based on the sample campaign data.</p><div class="insight-row"><span>01</span><div><h3>Make your next email count</h3><p>Target “Your biggest fans” with an exclusive early-access message. Returning customers are your most engaged audience.</p></div><button class="button primary" @click="name='Early access for our biggest fans';channel='Email';modal=true">Create campaign</button></div><div class="insight-row"><span>02</span><div><h3>Build on your social momentum</h3><p>“Meet your next favorite” has the highest return at 5.2x. Reuse the creative for a follow-up campaign.</p></div><button class="button secondary" @click="go('Content studio')">Explore content</button></div><div class="insight-row"><span>03</span><div><h3>Reconnect with familiar faces</h3><p>Your win-back automation is paused. Review it and reconnect with customers who haven’t visited in a while.</p></div><button class="button secondary" @click="go('Automations')">View workflow</button></div></section></template>
+        <section v-if="page==='Settings'" class="panel settings"><h2>Workspace settings</h2><p>This is a demo workspace. Changes apply to this session.</p><label>Workspace name<input v-model="workspaceName" /></label><label>Display name<input v-model="displayName" /></label><label>Email address<input type="email" v-model="emailAddress" /></label><button class="button primary" @click="toast('Workspace preferences saved for this session.')">Save preferences</button></section>
+        <section v-if="page==='Help & resources'" class="panel help"><h2>A good place to start</h2><details open><summary>How do I create a campaign?</summary><p>Select Create campaign, choose a channel, give your campaign a name and budget, then save your draft. Open a campaign to activate or pause it.</p></details><details><summary>How do automation workflows work?</summary><p>Each workflow shows a trigger, a wait or action, and a next step. Use the switch to pause or resume a workflow in this demo.</p></details><details><summary>Is this live marketing data?</summary><p>This project uses sample data. Campaigns and edits remain in the current session; no emails or ads are sent. Connect your marketing services and a backend to use production data.</p></details></section>
+        <footer class="page-footer"><span><i class="bi bi-intersect"></i> A little clarity. A lot of possibility.</span><span>Made for your next big idea <span class="footer-dot">·</span> Poluru Labs</span></footer>
+      </main>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <div v-if="notice" class="toast" role="status"><i class="bi bi-check-circle-fill"></i>{{notice}}<button @click="notice=''" aria-label="Dismiss notification"><i class="bi bi-x"></i></button></div>
+    <div v-if="modal" class="modal-overlay" @click.self="modal=false" @keydown.esc="modal=false"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="close-button icon-button" aria-label="Close dialog" @click="modal=false"><i class="bi bi-x-lg"></i></button><span class="large-icon blue"><i class="bi bi-megaphone"></i></span><h2 id="modal-title">Start something great.</h2><p>Create a campaign and bring your next idea to life.</p><form @submit.prevent="create"><label>Campaign name<input v-model="name" required maxlength="80" placeholder="Give your campaign a memorable name" autofocus /></label><div class="form-row"><label>Channel<select v-model="channel"><option>Email</option><option>Social</option><option>Paid ads</option></select></label><label>Budget ($)<input v-model="budget" type="number" min="1" max="10000000" required /></label></div><label>Campaign objective<select v-model="objective"><option>Lead generation</option><option>Brand awareness</option><option>Customer retention</option><option>Product launch</option></select></label><div class="form-note"><i class="bi bi-info-circle"></i> Your campaign will be saved as a draft in this demo.</div><div class="modal-actions"><button type="button" class="button secondary" @click="modal=false">Cancel</button><button class="button primary" type="submit">Create campaign <i class="bi bi-arrow-right"></i></button></div></form></section></div>
+    <div v-if="selected" class="modal-overlay" @click.self="selected=null" @keydown.esc="selected=null"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="detail-title"><button class="close-button icon-button" aria-label="Close campaign" @click="selected=null"><i class="bi bi-x-lg"></i></button><span :class="`large-icon ${selected.color}`"><i :class="`bi bi-${selected.icon}`"></i></span><h2 id="detail-title">{{selected.name}}</h2><p>{{selected.desc}}</p><span :class="`status ${selected.status.toLowerCase()}`"><b></b>{{selected.status}}</span><div class="detail-metrics"><div><small>People reached</small><b>{{selected.reach}}</b></div><div><small>Conversions</small><b>{{selected.conversions}}</b></div><div><small>Return on ad spend</small><b>{{selected.roi}}</b></div><div><small>Budget</small><b>${{selected.budget.toLocaleString()}}</b></div></div><p>Owned by {{selected.owner==='SP'?'Subbu Poluru':selected.owner==='PK'?'Priya Kumar':selected.owner==='SR'?'Subbu Rao':'Ananya Kapoor'}} · {{selected.channel}}</p><div class="modal-actions"><button class="button secondary" @click="selected=null">Close</button><button v-if="selected.status!=='Completed'" class="button primary" @click="selected.status=selected.status==='Active'?'Paused':'Active';toast('Campaign status updated.')">{{selected.status==='Active'?'Pause campaign':'Activate campaign'}}</button></div></section></div>
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
