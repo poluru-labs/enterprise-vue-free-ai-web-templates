@@ -2,6 +2,11 @@
 
 Vue 3 project management for sprints, boards, capacity, and risks. Built with Vite, Bootstrap, Vue Router, and [@poluru-labs/enterprise-design-system-vue](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-vue).
 
+## Screenshot
+
+<img width="3360" height="3394" alt="ai-project-management-app" src="https://github.com/user-attachments/assets/03cd8dc1-c175-44dc-930d-788c2289f533" />
+
+
 Signed in as **Arjun Poluru**, delivery lead.
 
 ## Setup
