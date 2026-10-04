@@ -1,42 +1,66 @@
-# vue-boiler
+# Aegis · Compliance desk
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue 3 dashboard for controls, audits, policies, risks, and regulatory requirements. Built with Vite, Bootstrap, Vue Router, and [@poluru-labs/enterprise-design-system-vue](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-vue).
 
-## Recommended IDE Setup
+Signed in as **Kavya Poluru**, compliance lead.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Setup
 
-## Recommended Browser Setup
+Requires Node.js 20+.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
+cd ai-compliance-management-dashboard
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Default dev server: **http://localhost:5200**
 
-```sh
-npm run build
-```
+| Script | Description |
+| --- | --- |
+| `npm run dev` | Vite development server (port 5200) |
+| `npm run build` | Production build (ES2022 target) |
+| `npm run preview` | Preview production build (port 4200) |
+| `npm test` | Vitest unit tests |
+
+## Unique header
+
+Light sticky bar (`#FFFFFF`) with a **4px `#FF5722` stripe on the top**:
+
+- Shield **Aegis** mark on the left
+- Center **audit calendar chip** plus a **coverage meter**
+- Search, **⌘K**, **Add control**, notifications, Kavya avatar
+
+## Theme
+
+- Orange `#FF5722` / `#E64A19` / `#BF360C`
+- Canvas `#FFF7F4`
+- Fonts: Roboto (UI) + Lato (headings)
+- CSS prefix: `aeg-`
+- Light theme only
+- Equal-height cards: `.aeg-stat-card, .aeg-panel { display:flex; flex-direction:column; height:100%; }`
+
+## Routes
+
+Base path: `/compliance`
+
+| Path | Page |
+| --- | --- |
+| `/compliance/overview` | Six KPIs, coverage trend, framework mix, audits, evidence |
+| `/compliance/controls` | Control library with filters and CRUD |
+| `/compliance/controls/:id` | Control detail — score, mapping, notes |
+| `/compliance/audits` | Audit calendar, timeline, evidence upload |
+| `/compliance/audits/:id` | Audit detail |
+| `/compliance/policies` | Policy cards and acknowledgments |
+| `/compliance/risks` | Risk register with residual bands |
+| `/compliance/requirements` | Framework tree and clause mapping |
+| `/compliance/search` | Cross-search controls, audits, risks |
+| `/compliance/settings` | Workspace defaults and alert routing |
+
+## Stack
+
+- Vue 3 + Vue Router
+- Vite
+- Bootstrap 5 + Bootstrap Icons
+- `@poluru-labs/enterprise-design-system-vue`
+- Vitest

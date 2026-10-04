@@ -1,0 +1,24 @@
+{
+  "workspace": {
+    "name": "Aegis production",
+    "slug": "aegis-prod",
+    "region": "US-East",
+    "brandColor": "#FF5722",
+    "retentionDays": 365,
+    "evidenceWindow": 14,
+    "twoFactorAuth": true,
+    "emailNotifications": true
+  },
+  "team": [
+    { "name": "Kavya Poluru", "role": "Compliance lead" },
+    { "name": "Lakshmi Poluru", "role": "Access owner" },
+    { "name": "Meera Poluru", "role": "Privacy counsel" },
+    { "name": "Divya Poluru", "role": "Vendor risk" }
+  ],
+  "channels": [
+    { "id": "digest", "label": "Daily digest to Kavya Poluru", "enabled": true },
+    { "id": "gaps", "label": "Page when a control gap opens", "enabled": true },
+    { "id": "slack", "label": "Slack #aegis-control", "enabled": true },
+    { "id": "webhook", "label": "Webhook to audit sink", "enabled": false }
+  ]
+}

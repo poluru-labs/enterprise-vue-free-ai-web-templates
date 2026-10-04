@@ -16,6 +16,7 @@ A curated collection of free Vue 3 templates for AI dashboards, SaaS products, a
 | [Vault Documents](ai-document-workspace/README.md) | Library, reviews, and search. Theme `#B45309`. Paper file-path header. | 5197 |
 | [Quota Sales Ops](ai-sales-ops-dashboard/README.md) | Forecast, coverage, and hygiene. Theme `#1E3A8A`. Navy circular forecast gauge. | 5198 |
 | [Atlas Intranet](ai-knowledge-base-intranet-template/README.md) | Spaces, how-tos, and policies. Theme `#3F6212`. Olive + lime space-switcher. | 5199 |
+| [Aegis Compliance](ai-compliance-management-dashboard/README.md) | Controls, audits, policies, risks, and requirements. Theme `#FF5722`. Light header with coverage meter. | 5200 |
 
 ## Getting started
 

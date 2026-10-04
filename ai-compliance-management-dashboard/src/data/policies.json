@@ -1,0 +1,68 @@
+[
+  {
+    "id": "pol-is",
+    "title": "Information security policy",
+    "version": "4.2",
+    "owner": "Kavya Poluru",
+    "status": "published",
+    "audience": "All staff",
+    "acknowledgments": 94,
+    "updated": "2026-07-14",
+    "summary": "Acceptable use, access, and incident reporting for every Harbor workspace."
+  },
+  {
+    "id": "pol-access",
+    "title": "Access control policy",
+    "version": "3.1",
+    "owner": "Lakshmi Poluru",
+    "status": "published",
+    "audience": "Engineering",
+    "acknowledgments": 88,
+    "updated": "2026-08-02",
+    "summary": "MFA, privileged access, and quarterly recertification."
+  },
+  {
+    "id": "pol-privacy",
+    "title": "Privacy notice",
+    "version": "2.8",
+    "owner": "Meera Poluru",
+    "status": "review",
+    "audience": "Legal + CS",
+    "acknowledgments": 41,
+    "updated": "2026-08-28",
+    "summary": "DSAR windows, lawful basis, and transfer clauses."
+  },
+  {
+    "id": "pol-vendor",
+    "title": "Vendor risk policy",
+    "version": "1.9",
+    "owner": "Divya Poluru",
+    "status": "published",
+    "audience": "Procurement",
+    "acknowledgments": 76,
+    "updated": "2026-06-20",
+    "summary": "Due diligence, SOC report collection, and annual reviews."
+  },
+  {
+    "id": "pol-backup",
+    "title": "Backup and recovery",
+    "version": "2.0",
+    "owner": "Rohan Poluru",
+    "status": "published",
+    "audience": "Operations",
+    "acknowledgments": 91,
+    "updated": "2026-05-11",
+    "summary": "Daily snapshots, restore tests, and RTO of 4 hours."
+  },
+  {
+    "id": "pol-phi",
+    "title": "Protected health information",
+    "version": "1.4",
+    "owner": "Tara Poluru",
+    "status": "draft",
+    "audience": "Atlas Health",
+    "acknowledgments": 12,
+    "updated": "2026-08-30",
+    "summary": "Minimum necessary access and audit logging for PHI."
+  }
+]

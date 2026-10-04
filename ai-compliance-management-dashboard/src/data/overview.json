@@ -1,0 +1,120 @@
+{
+  "hero": {
+    "kicker": "FY26 Q3 · Program pulse",
+    "title": "Aegis is tracking 12 controls across five frameworks. Two gaps still sit on Kavya Poluru’s desk.",
+    "body": "SOC 2 fieldwork is at 74%. Retention and PCI segmentation need owners before the 28 Sep evidence window."
+  },
+  "kpis": [
+    {
+      "id": "controls",
+      "label": "Controls",
+      "icon": "bi-shield-check",
+      "tone": "brand",
+      "trend": "up",
+      "trendValue": "+2",
+      "sparkline": [8, 9, 10, 11, 12, 12]
+    },
+    {
+      "id": "effective",
+      "label": "Effective",
+      "icon": "bi-check2-circle",
+      "tone": "success",
+      "trend": "up",
+      "trendValue": "+1",
+      "sparkline": [4, 5, 5, 6, 6, 7]
+    },
+    {
+      "id": "gaps",
+      "label": "Open gaps",
+      "icon": "bi-exclamation-octagon",
+      "tone": "danger",
+      "trend": "down",
+      "trendValue": "-1",
+      "sparkline": [5, 4, 4, 3, 3, 2]
+    },
+    {
+      "id": "audits",
+      "label": "Live audits",
+      "icon": "bi-clipboard-check",
+      "tone": "warning",
+      "trend": "flat",
+      "trendValue": "3 open",
+      "sparkline": [1, 2, 2, 3, 3, 3]
+    },
+    {
+      "id": "policies",
+      "label": "Policies live",
+      "icon": "bi-journal-text",
+      "tone": "info",
+      "trend": "up",
+      "trendValue": "94% ack",
+      "sparkline": [4, 4, 5, 5, 5, 5]
+    },
+    {
+      "id": "risks",
+      "label": "Open risks",
+      "icon": "bi-exclamation-triangle",
+      "tone": "warning",
+      "trend": "down",
+      "trendValue": "-1",
+      "sparkline": [8, 7, 7, 6, 6, 5]
+    }
+  ],
+  "coverageTrend": {
+    "labels": ["Apr", "May", "Jun", "Jul", "Aug", "Sep"],
+    "series": [
+      { "name": "Control coverage", "color": "#FF5722", "values": [62, 68, 71, 76, 81, 84] },
+      { "name": "Evidence ready", "color": "#BF360C", "values": [48, 52, 58, 63, 70, 74] }
+    ]
+  },
+  "frameworkMix": [
+    { "name": "SOC 2", "value": 5, "color": "#FF5722" },
+    { "name": "ISO 27001", "value": 3, "color": "#FF8A65" },
+    { "name": "GDPR", "value": 2, "color": "#E64A19" },
+    { "name": "HIPAA", "value": 1, "color": "#FFCCBC" },
+    { "name": "PCI DSS", "value": 1, "color": "#BF360C" }
+  ],
+  "activity": [
+    {
+      "title": "SOC 2 sample pull",
+      "description": "Kavya Poluru requested change tickets for 12–26 Aug.",
+      "timestamp": "12 min ago"
+    },
+    {
+      "title": "Vendor exception drafted",
+      "description": "Divya Poluru filed a 45-day exception for Helix Mail.",
+      "timestamp": "2 hr ago"
+    },
+    {
+      "title": "Policy sent for review",
+      "description": "Meera Poluru opened Privacy notice 2.8.",
+      "timestamp": "5 hr ago"
+    },
+    {
+      "title": "Restore test passed",
+      "description": "Rohan Poluru closed the August backup control.",
+      "timestamp": "28 Aug"
+    }
+  ],
+  "exceptions": [
+    {
+      "id": "ex-helix",
+      "title": "Helix Mail SOC report",
+      "owner": "Divya Poluru",
+      "due": "2026-10-15",
+      "status": "open"
+    },
+    {
+      "id": "ex-vlan",
+      "title": "Beacon VLAN split",
+      "owner": "Vikram Poluru",
+      "due": "2026-09-22",
+      "status": "open"
+    }
+  ],
+  "evidence": [
+    { "label": "Access recert pack", "owner": "Priya Poluru", "due": "2026-10-02" },
+    { "label": "Retention deletion log", "owner": "Meera Poluru", "due": "2026-09-28" },
+    { "label": "PCI network diagram", "owner": "Vikram Poluru", "due": "2026-09-22" }
+  ]
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "rsk-retention",
+    "title": "Over-retention of support tickets",
+    "domain": "Privacy",
+    "owner": "Meera Poluru",
+    "likelihood": 4,
+    "impact": 4,
+    "inherent": 16,
+    "residual": 12,
+    "status": "open",
+    "linkedControl": "ctl-data-retention",
+    "notes": "Cascade Retail tickets sit past 90 days."
+  },
+  {
+    "id": "rsk-vlan",
+    "title": "Shared management VLAN",
+    "domain": "Data",
+    "owner": "Vikram Poluru",
+    "likelihood": 3,
+    "impact": 5,
+    "inherent": 15,
+    "residual": 12,
+    "status": "mitigating",
+    "linkedControl": "ctl-pci-seg",
+    "notes": "Beacon Finance CDE is not fully segmented."
+  },
+  {
+    "id": "rsk-vendor",
+    "title": "Missing vendor SOC reports",
+    "domain": "Vendor",
+    "owner": "Divya Poluru",
+    "likelihood": 3,
+    "impact": 3,
+    "inherent": 12,
+    "residual": 9,
+    "status": "mitigating",
+    "linkedControl": "ctl-vendor-review",
+    "notes": "Three critical vendors overdue."
+  },
+  {
+    "id": "rsk-access",
+    "title": "Stale privileged accounts",
+    "domain": "Access",
+    "owner": "Priya Poluru",
+    "likelihood": 3,
+    "impact": 4,
+    "inherent": 12,
+    "residual": 8,
+    "status": "open",
+    "linkedControl": "ctl-access-joiner",
+    "notes": "Harbor Legal recertification still open."
+  },
+  {
+    "id": "rsk-change",
+    "title": "Emergency changes without tickets",
+    "domain": "Operations",
+    "owner": "Harini Poluru",
+    "likelihood": 2,
+    "impact": 3,
+    "inherent": 8,
+    "residual": 6,
+    "status": "accepted",
+    "linkedControl": "ctl-ops-change",
+    "notes": "Accepted until CAB same-day form ships."
+  },
+  {
+    "id": "rsk-dpia",
+    "title": "Stale privacy assessments",
+    "domain": "Privacy",
+    "owner": "Isha Poluru",
+    "likelihood": 2,
+    "impact": 3,
+    "inherent": 8,
+    "residual": 6,
+    "status": "open",
+    "linkedControl": "ctl-privacy-dpia",
+    "notes": "Template rewrite is in review."
+  },
+  {
+    "id": "rsk-backup",
+    "title": "Restore window drift",
+    "domain": "Operations",
+    "owner": "Rohan Poluru",
+    "likelihood": 2,
+    "impact": 2,
+    "inherent": 6,
+    "residual": 4,
+    "status": "closed",
+    "linkedControl": "ctl-ops-backup",
+    "notes": "August restore met the 4-hour RTO."
+  }
+]
