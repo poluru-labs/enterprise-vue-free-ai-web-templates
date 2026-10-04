@@ -1,6 +1,7 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
+import AppFooter from './AppFooter.vue';
 import AppHeader from './AppHeader.vue';
 import AppSidebar from './AppSidebar.vue';
 
@@ -27,9 +28,12 @@ watch(
         aria-label="Close navigation"
         @click="sidebarOpen = false"
       />
-      <main id="main" class="hbr-content">
-        <router-view />
-      </main>
+      <div class="hbr-main">
+        <main id="main" class="hbr-content">
+          <router-view />
+        </main>
+        <AppFooter />
+      </div>
     </div>
   </div>
 </template>

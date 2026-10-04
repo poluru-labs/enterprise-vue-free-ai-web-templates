@@ -433,10 +433,53 @@ html.hbr-dark body {
   box-shadow: 0 0 0 4px rgb(56 189 248 / 0.2);
 }
 
+.hbr-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .hbr-content {
   flex: 1;
   min-width: 0;
   padding: 1.25rem 1.4rem 2rem;
+}
+
+.hbr-footer {
+  margin-top: auto;
+  padding: 0.85rem 1.4rem;
+  border-top: 1px solid var(--hbr-line);
+  background: var(--hbr-white);
+  color: var(--hbr-muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.hbr-footer p {
+  margin: 0;
+  max-width: 1440px;
+  overflow-wrap: break-word;
+}
+
+.hbr-footer a {
+  color: var(--hbr-accent-600);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hbr-footer a:hover {
+  text-decoration: underline;
+}
+
+html.hbr-dark .hbr-footer {
+  background: #0f172a;
+  border-top-color: #1e293b;
+  color: #94a3b8;
+}
+
+html.hbr-dark .hbr-footer a {
+  color: #7dd3fc;
 }
 
 .hbr-page {
