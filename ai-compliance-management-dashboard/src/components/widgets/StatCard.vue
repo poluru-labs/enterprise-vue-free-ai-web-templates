@@ -10,11 +10,11 @@ const TONE_COLOR = {
 };
 
 const TONE_SURFACE = {
-  brand: '#FBE9E7',
-  info: '#FFF3E0',
-  success: '#D1FAE5',
-  warning: '#FEF3C7',
-  danger: '#FFE4E6',
+  brand: '#ffffff',
+  info: '#ffffff',
+  success: '#ffffff',
+  warning: '#ffffff',
+  danger: '#ffffff',
 };
 
 const props = defineProps({

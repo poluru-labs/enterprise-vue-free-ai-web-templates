@@ -75,7 +75,7 @@ const timeline = computed(() =>
     </section>
 
     <div class="row g-3 mb-3">
-      <div v-for="kpi in kpis" :key="kpi.id" class="col-12 col-sm-6 col-xl-4 col-xxl-2">
+      <div v-for="kpi in kpis" :key="kpi.id" class="col-12 col-sm-6 col-xl-4">
         <StatCard
           :label="kpi.label"
           :value="kpi.value"
