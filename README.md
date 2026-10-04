@@ -1,4 +1,4 @@
-# Enterprise Vue Free AI Web Templates
+# Download Enterprise Vue Free AI Web Templates
 
 A curated collection of free Vue 3 templates for AI dashboards, SaaS products, admin panels, and internal tools. Each template is a self-contained Vite app that uses [`@poluru-labs/enterprise-design-system-vue`](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-vue).
 
