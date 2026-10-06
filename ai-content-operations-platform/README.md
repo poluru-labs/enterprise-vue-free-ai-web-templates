@@ -1,42 +1,58 @@
-# vue-boiler
+# Folio · Content operations
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue 3 dashboard to plan, create, review, publish, and measure content across channels. Built with Vite, Bootstrap, Vue Router, and [@poluru-labs/enterprise-design-system-vue](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-vue).
 
-## Recommended IDE Setup
+Signed in as **Ananya Poluru**, content lead.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Setup
 
-## Recommended Browser Setup
+Requires Node.js 20+.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
+cd ai-content-operations-platform
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Default dev server: **http://localhost:5201**
 
-```sh
-npm run build
-```
+| Script | Description |
+| --- | --- |
+| `npm run dev` | Vite development server (port 5201) |
+| `npm run build` | Production build (ES2022 target) |
+| `npm run preview` | Preview production build (port 4201) |
+| `npm test` | Vitest unit tests |
+
+## Unique header
+
+Light sticky bar (`#FFFFFF`) with **Folio** brand type in `#102E50` and a search field. New brief, reviews, notifications, and profile live in the sidebar.
+
+## Theme
+
+- Navy `#102E50` / `#1A406B` / `#3D6A96`
+- Canvas `#F4F7FB`
+- Fonts: Roboto (UI) + Lato (headings)
+- CSS prefix: `flo-`
+- Light theme only
+- No borders — cards and chrome use soft shadow only
+
+## Routes
+
+Base path: `/content`
+
+| Path | Page |
+| --- | --- |
+| `/content/overview` | Desk pulse, publish trend, channel mix, reviews |
+| `/content/calendar` | Editorial calendar and asset drop |
+| `/content/drafts` | Brief library with filters |
+| `/content/drafts/:id` | Piece detail |
+| `/content/reviews` | Approval queue |
+| `/content/library` | Published pieces |
+| `/content/channels` | Channel tree and fill |
+| `/content/analytics` | Output and reach |
+| `/content/search` | Cross-search pieces and channels |
+| `/content/settings` | Workspace defaults |
+
+## Stack
+
+Vue 3, Vite, Vue Router, Bootstrap 5, Bootstrap Icons, Vitest, `@poluru-labs/enterprise-design-system-vue`.

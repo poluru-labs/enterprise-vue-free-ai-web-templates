@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "kicker": "October desk",
+    "title": "Folio is lining up 12 pieces across six channels this week.",
+    "body": "Ananya Poluru owns the launch window. Two reviews sit with Tara Poluru, and the pricing page is ready for 9 Oct."
+  },
+  "kpis": [
+    { "id": "pipeline", "label": "In flight", "trend": "up", "trendValue": "+3", "icon": "bi-layers", "tone": "brand", "sparkline": [6, 7, 8, 8, 9, 12] },
+    { "id": "reviews", "label": "In review", "trend": "flat", "trendValue": "0", "icon": "bi-inboxes", "tone": "warning", "sparkline": [4, 3, 2, 3, 2, 2] },
+    { "id": "scheduled", "label": "Scheduled", "trend": "up", "trendValue": "+1", "icon": "bi-clock", "tone": "info", "sparkline": [1, 1, 2, 2, 2, 2] },
+    { "id": "published", "label": "Published", "trend": "up", "trendValue": "+2", "icon": "bi-check2-circle", "tone": "success", "sparkline": [1, 1, 2, 2, 3, 3] },
+    { "id": "channels", "label": "Channels live", "trend": "flat", "trendValue": "5", "icon": "bi-broadcast", "tone": "brand", "sparkline": [5, 5, 6, 5, 5, 5] },
+    { "id": "fill", "label": "Calendar fill", "trend": "up", "trendValue": "68%", "icon": "bi-calendar3", "tone": "info", "sparkline": [48, 52, 55, 60, 64, 68] }
+  ],
+  "publishTrend": {
+    "labels": ["May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+    "series": [
+      { "name": "Published", "color": "#102E50", "values": [8, 9, 11, 10, 13, 12] },
+      { "name": "Scheduled", "color": "#3D6A96", "values": [3, 4, 4, 5, 4, 6] }
+    ]
+  },
+  "channelMix": [
+    { "name": "Web", "value": 4, "color": "#102E50" },
+    { "name": "Email", "value": 2, "color": "#1A406B" },
+    { "name": "LinkedIn", "value": 2, "color": "#3D6A96" },
+    { "name": "YouTube", "value": 2, "color": "#6B8FB0" },
+    { "name": "Help", "value": 1, "color": "#9BB4C9" },
+    { "name": "Instagram", "value": 1, "color": "#C5D4E2" }
+  ],
+  "activity": [
+    { "title": "Pricing page approved", "description": "Divya Poluru signed the 9 Oct window.", "timestamp": "18 min ago" },
+    { "title": "Launch note in review", "description": "Meera Poluru sent WEB-14 to Tara Poluru.", "timestamp": "1 hr ago" },
+    { "title": "Digest published", "description": "Kavya Poluru closed Friday’s email.", "timestamp": "2 days ago" },
+    { "title": "Reel still drafting", "description": "Rohan Poluru is waiting on captions.", "timestamp": "3 days ago" }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "unread": 3,
+  "items": [
+    {
+      "id": "n1",
+      "title": "Two reviews waiting",
+      "body": "Tara Poluru still has the launch note and webinar page.",
+      "time": "2026-10-04T14:20:00.000Z",
+      "tone": "warning",
+      "href": "/content/reviews"
+    },
+    {
+      "id": "n2",
+      "title": "Hiring story ships tomorrow",
+      "body": "Priya Poluru scheduled the LinkedIn post for 6 Oct.",
+      "time": "2026-10-04T11:05:00.000Z",
+      "tone": "info",
+      "href": "/content/calendar"
+    },
+    {
+      "id": "n3",
+      "title": "Instagram channel paused",
+      "body": "Divya Poluru held October carousel until assets land.",
+      "time": "2026-10-04T09:40:00.000Z",
+      "tone": "danger",
+      "href": "/content/channels"
+    }
+  ]
+}

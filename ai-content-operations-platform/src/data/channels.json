@@ -1,0 +1,30 @@
+{
+  "tree": [
+    {
+      "id": "owned",
+      "label": "Owned",
+      "children": [
+        { "id": "web", "label": "Web" },
+        { "id": "email", "label": "Email" },
+        { "id": "help", "label": "Help center" }
+      ]
+    },
+    {
+      "id": "social",
+      "label": "Social",
+      "children": [
+        { "id": "linkedin", "label": "LinkedIn" },
+        { "id": "instagram", "label": "Instagram" },
+        { "id": "youtube", "label": "YouTube" }
+      ]
+    }
+  ],
+  "items": [
+    { "id": "web", "name": "Web", "owner": "Meera Poluru", "status": "live", "reach": 18400, "fill": 78 },
+    { "id": "email", "name": "Email", "owner": "Kavya Poluru", "status": "live", "reach": 9200, "fill": 64 },
+    { "id": "help", "name": "Help center", "owner": "Vikram Poluru", "status": "live", "reach": 4100, "fill": 71 },
+    { "id": "linkedin", "name": "LinkedIn", "owner": "Priya Poluru", "status": "live", "reach": 12600, "fill": 58 },
+    { "id": "instagram", "name": "Instagram", "owner": "Priya Poluru", "status": "paused", "reach": 7400, "fill": 32 },
+    { "id": "youtube", "name": "YouTube", "owner": "Rohan Poluru", "status": "live", "reach": 5100, "fill": 44 }
+  ]
+}

@@ -1,34 +1,31 @@
 {
-  "name": "vue-boiler",
-  "version": "0.0.0",
+  "name": "ai-content-operations-platform",
   "private": true,
+  "version": "0.1.0",
+  "description": "Folio — content operations. Vue 3 starter with @poluru-labs/enterprise-design-system-vue.",
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "vite build",
     "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build"
+    "test": "vitest run"
   },
   "dependencies": {
     "@poluru-labs/enterprise-design-system-vue": "^1.0.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
-    "vue": "^3.5.40",
-    "vue-router": "^4.2.8"
+    "vue": "^3.5.17",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
-    "@tsconfig/node24": "^24.0.4",
-    "@types/node": "^24.13.3",
-    "@vitejs/plugin-vue": "^6.0.8",
-    "@vue/tsconfig": "^0.9.1",
-    "npm-run-all2": "^9.0.2",
-    "typescript": "~6.0.0",
-    "vite": "^8.1.5",
-    "vite-plugin-vue-devtools": "^8.1.5",
-    "vue-tsc": "^3.3.7"
+    "@vitejs/plugin-vue": "^5.2.4",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^25.0.1",
+    "vite": "^6.3.5",
+    "vitest": "^2.1.9"
   },
   "engines": {
-    "node": "^22.18.0 || >=24.12.0"
+    "node": ">=20"
   }
 }

@@ -1,0 +1,25 @@
+{
+  "workspace": {
+    "name": "Folio production",
+    "slug": "folio",
+    "region": "Austin",
+    "timezone": "America/Chicago",
+    "retainDrafts": 180,
+    "reviewSlaHours": 48,
+    "emailNotifications": true,
+    "twoFactorAuth": true
+  },
+  "channels": [
+    { "id": "email", "label": "Email Ananya Poluru", "enabled": true },
+    { "id": "slack", "label": "Desk digest", "enabled": true },
+    { "id": "sms", "label": "Publish-day SMS", "enabled": false }
+  ],
+  "members": [
+    { "name": "Ananya Poluru", "role": "Content lead" },
+    { "name": "Kavya Poluru", "role": "Editor" },
+    { "name": "Meera Poluru", "role": "Writer" },
+    { "name": "Tara Poluru", "role": "Reviewer" },
+    { "name": "Priya Poluru", "role": "Social" },
+    { "name": "Rohan Poluru", "role": "Design" }
+  ]
+}
