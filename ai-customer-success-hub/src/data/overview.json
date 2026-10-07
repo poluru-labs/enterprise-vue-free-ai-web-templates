@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "kicker": "October book",
+    "title": "Keep renewals warm and onboarding on the calendar.",
+    "body": "Track customer health, renewals, onboarding, and success activities. Meera Poluru reviews the book each Thursday."
+  },
+  "healthTrend": {
+    "labels": ["May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+    "series": [
+      { "name": "Healthy accounts", "color": "#F2C46A", "values": [4, 5, 5, 6, 6, 5] },
+      { "name": "At risk", "color": "#8A6410", "values": [1, 1, 2, 2, 2, 2] }
+    ]
+  },
+  "segmentMix": [
+    { "name": "Enterprise", "value": 4, "color": "#F2C46A" },
+    { "name": "Mid-market", "value": 3, "color": "#C47B4A" },
+    { "name": "Growth", "value": 3, "color": "#8A6410" }
+  ]
+}

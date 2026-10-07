@@ -1,0 +1,12 @@
+{
+  "workspace": "Marigold book",
+  "slug": "marigold-book",
+  "region": "North America",
+  "digest": "weekday",
+  "digestTime": "08:15",
+  "cadence": "weekly",
+  "healthThreshold": 50,
+  "emailDigest": true,
+  "compactCards": false,
+  "pin": ""
+}

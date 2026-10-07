@@ -1,0 +1,90 @@
+[
+  {
+    "id": "ren-orchard",
+    "accountId": "acc-orchard",
+    "account": "Orchard Media",
+    "owner": "Harini Poluru",
+    "arr": 27000,
+    "date": "2026-10-16",
+    "stage": "at_risk",
+    "probability": 35,
+    "note": "New editor meeting on Thursday."
+  },
+  {
+    "id": "ren-copperline",
+    "accountId": "acc-copperline",
+    "account": "Copperline Retail",
+    "owner": "Arjun Poluru",
+    "arr": 74000,
+    "date": "2026-10-22",
+    "stage": "negotiating",
+    "probability": 60,
+    "note": "Seat true-up still open."
+  },
+  {
+    "id": "ren-sable",
+    "accountId": "acc-sable",
+    "account": "Sable Freight",
+    "owner": "Lakshmi Poluru",
+    "arr": 96000,
+    "date": "2026-10-29",
+    "stage": "committed",
+    "probability": 80,
+    "note": "Quote sent to procurement."
+  },
+  {
+    "id": "ren-brightline",
+    "accountId": "acc-brightline",
+    "account": "Brightline Health",
+    "owner": "Kavya Poluru",
+    "arr": 242000,
+    "date": "2026-11-06",
+    "stage": "at_risk",
+    "probability": 40,
+    "note": "Sponsor change needs an exec briefing."
+  },
+  {
+    "id": "ren-northwind",
+    "accountId": "acc-northwind",
+    "account": "Northwind Labs",
+    "owner": "Meera Poluru",
+    "arr": 186000,
+    "date": "2026-11-18",
+    "stage": "committed",
+    "probability": 90,
+    "note": "QBR on 12 Nov, then signature."
+  },
+  {
+    "id": "ren-harbor",
+    "accountId": "acc-harbor",
+    "account": "Harbor & Co",
+    "owner": "Rohan Poluru",
+    "arr": 164000,
+    "date": "2026-12-02",
+    "stage": "negotiating",
+    "probability": 75,
+    "note": "Expansion quote in draft."
+  },
+  {
+    "id": "ren-kinship",
+    "accountId": "acc-kinship",
+    "account": "Kinship Bank",
+    "owner": "Madhav Poluru",
+    "arr": 310000,
+    "date": "2026-12-14",
+    "stage": "committed",
+    "probability": 85,
+    "note": "Business review on the 4th."
+  },
+  {
+    "id": "ren-pebble",
+    "accountId": "acc-pebble",
+    "account": "Pebble Civic",
+    "owner": "Priya Poluru",
+    "arr": 54000,
+    "date": "2027-01-09",
+    "stage": "renewed",
+    "probability": 100,
+    "note": "Early renewal signed in September."
+  }
+]

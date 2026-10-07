@@ -1,0 +1,50 @@
+[
+  {
+    "id": "onb-lumen",
+    "accountId": "acc-lumen",
+    "account": "Lumen Schools",
+    "owner": "Ananya Poluru",
+    "stage": "train",
+    "progress": 68,
+    "kickoff": "2026-09-18",
+    "goLive": "2026-10-28",
+    "time": "15:30",
+    "note": "Cohort two is the last training block before go-live."
+  },
+  {
+    "id": "onb-nimbus",
+    "accountId": "acc-nimbus",
+    "account": "Nimbus Travel",
+    "owner": "Sana Poluru",
+    "stage": "integrate",
+    "progress": 46,
+    "kickoff": "2026-09-30",
+    "goLive": "2026-11-12",
+    "time": "16:30",
+    "note": "Booking feed is live. Desk-lead training is Friday."
+  },
+  {
+    "id": "onb-pebble",
+    "accountId": "acc-pebble",
+    "account": "Pebble Civic",
+    "owner": "Priya Poluru",
+    "stage": "live",
+    "progress": 100,
+    "kickoff": "2026-06-02",
+    "goLive": "2026-07-20",
+    "time": "07:30",
+    "note": "Live since July. Office hours continue monthly."
+  },
+  {
+    "id": "onb-harbor",
+    "accountId": "acc-harbor",
+    "account": "Harbor & Co",
+    "owner": "Rohan Poluru",
+    "stage": "kickoff",
+    "progress": 18,
+    "kickoff": "2026-10-09",
+    "goLive": "2026-11-27",
+    "time": "08:30",
+    "note": "Second workspace kickoff is this Friday."
+  }
+]

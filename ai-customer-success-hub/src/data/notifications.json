@@ -1,0 +1,37 @@
+{
+  "unread": 3,
+  "items": [
+    {
+      "id": "nt-1",
+      "title": "Orchard Media renewal is in 10 days",
+      "body": "Harini Poluru still needs the new editor on a call.",
+      "time": "2026-10-06T08:10:00",
+      "tone": "danger",
+      "href": "/success/renewals"
+    },
+    {
+      "id": "nt-2",
+      "title": "Lumen Schools training is confirmed",
+      "body": "Ananya Poluru has twelve admins for 21 Oct.",
+      "time": "2026-10-05T17:25:00",
+      "tone": "info",
+      "href": "/success/onboarding"
+    },
+    {
+      "id": "nt-3",
+      "title": "Brightline Health sponsor changed",
+      "body": "Kavya Poluru asked for an executive briefing.",
+      "time": "2026-10-05T09:05:00",
+      "tone": "warning",
+      "href": "/success/accounts/acc-brightline"
+    },
+    {
+      "id": "nt-4",
+      "title": "Harbor workspace kickoff Friday",
+      "body": "Rohan Poluru sent the London studio agenda.",
+      "time": "2026-10-04T12:40:00",
+      "tone": "info",
+      "href": "/success/onboarding"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "tree": [
+    {
+      "id": "play-kickoff",
+      "label": "Kickoff",
+      "children": [
+        { "id": "play-kickoff-agenda", "label": "Agenda · Meera Poluru" },
+        { "id": "play-kickoff-sponsors", "label": "Sponsors · Rohan Poluru" }
+      ]
+    },
+    {
+      "id": "play-integrate",
+      "label": "Integrate",
+      "children": [
+        { "id": "play-integrate-access", "label": "Access · Sana Poluru" },
+        { "id": "play-integrate-data", "label": "Data feed · Harini Poluru" }
+      ]
+    },
+    {
+      "id": "play-train",
+      "label": "Train",
+      "children": [
+        { "id": "play-train-admins", "label": "Admins · Ananya Poluru" },
+        { "id": "play-train-champions", "label": "Champions · Priya Poluru" }
+      ]
+    },
+    {
+      "id": "play-live",
+      "label": "Go live",
+      "children": [
+        { "id": "play-live-value", "label": "First value · Lakshmi Poluru" },
+        { "id": "play-live-review", "label": "Week-two review · Madhav Poluru" }
+      ]
+    }
+  ],
+  "notes": {
+    "play-kickoff": "Agree on the outcome, the sponsor, and the first date the team will use the workspace.",
+    "play-kickoff-agenda": "Meera Poluru sends a one-page agenda two days before kickoff.",
+    "play-kickoff-sponsors": "Rohan Poluru confirms the executive sponsor and a backup.",
+    "play-integrate": "Connect the system of record and confirm who can invite users.",
+    "play-integrate-access": "Sana Poluru provisions admin seats before the first workshop.",
+    "play-integrate-data": "Harini Poluru checks the feed after the first overnight sync.",
+    "play-train": "Train admins first, then the people who will champion daily use.",
+    "play-train-admins": "Ananya Poluru runs a 90-minute admin lab.",
+    "play-train-champions": "Priya Poluru hosts a shorter session for team leads.",
+    "play-live": "Go live only after the first real workflow is staffed.",
+    "play-live-value": "Lakshmi Poluru records the first completed workflow.",
+    "play-live-review": "Madhav Poluru schedules a review 14 days after go-live."
+  }
+}

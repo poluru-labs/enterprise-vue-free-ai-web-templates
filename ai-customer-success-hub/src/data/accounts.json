@@ -1,0 +1,212 @@
+[
+  {
+    "id": "acc-northwind",
+    "name": "Northwind Labs",
+    "segment": "Enterprise",
+    "owner": "Meera Poluru",
+    "health": 86,
+    "arr": 186000,
+    "renewal": "2026-11-18",
+    "region": "North America",
+    "seats": 420,
+    "sentiment": 5,
+    "stage": "Adopt",
+    "nextCall": "09:30",
+    "notes": "QBR is locked for 12 Nov. Expansion talk follows the security review.",
+    "sparkline": [72, 74, 78, 80, 83, 86],
+    "externalId": "nw-1842",
+    "contacts": [
+      { "name": "Lila Poluru", "role": "VP Operations" },
+      { "name": "Dev Poluru", "role": "Program lead" }
+    ]
+  },
+  {
+    "id": "acc-copperline",
+    "name": "Copperline Retail",
+    "segment": "Mid-market",
+    "owner": "Arjun Poluru",
+    "health": 62,
+    "arr": 74000,
+    "renewal": "2026-10-22",
+    "region": "North America",
+    "seats": 160,
+    "sentiment": 3,
+    "stage": "Renew",
+    "nextCall": "14:00",
+    "notes": "Usage dipped after the holiday freeze. Arjun Poluru is rebuilding the champion map.",
+    "sparkline": [78, 74, 70, 66, 64, 62],
+    "externalId": "cl-2201",
+    "contacts": [
+      { "name": "Nikhil Poluru", "role": "Director of stores" },
+      { "name": "Sana Poluru", "role": "Operations manager" }
+    ]
+  },
+  {
+    "id": "acc-brightline",
+    "name": "Brightline Health",
+    "segment": "Enterprise",
+    "owner": "Kavya Poluru",
+    "health": 41,
+    "arr": 242000,
+    "renewal": "2026-11-06",
+    "region": "North America",
+    "seats": 880,
+    "sentiment": 2,
+    "stage": "Renew",
+    "nextCall": "11:00",
+    "notes": "Executive sponsor changed in September. Kavya Poluru needs a recovery plan this week.",
+    "sparkline": [68, 61, 55, 49, 44, 41],
+    "externalId": "bh-0904",
+    "contacts": [
+      { "name": "Harini Poluru", "role": "Clinical ops" },
+      { "name": "Madhav Poluru", "role": "Procurement" }
+    ]
+  },
+  {
+    "id": "acc-harbor",
+    "name": "Harbor & Co",
+    "segment": "Enterprise",
+    "owner": "Rohan Poluru",
+    "health": 91,
+    "arr": 164000,
+    "renewal": "2026-12-02",
+    "region": "Europe",
+    "seats": 310,
+    "sentiment": 5,
+    "stage": "Expand",
+    "nextCall": "08:30",
+    "notes": "Second workspace is ready. Rohan Poluru is lining up a December expansion quote.",
+    "sparkline": [80, 84, 86, 88, 90, 91],
+    "externalId": "hb-4410",
+    "contacts": [
+      { "name": "Priya Poluru", "role": "COO" },
+      { "name": "Ananya Poluru", "role": "Finance partner" }
+    ]
+  },
+  {
+    "id": "acc-lumen",
+    "name": "Lumen Schools",
+    "segment": "Growth",
+    "owner": "Ananya Poluru",
+    "health": 74,
+    "arr": 38000,
+    "renewal": "2027-03-12",
+    "region": "Europe",
+    "seats": 90,
+    "sentiment": 4,
+    "stage": "Onboard",
+    "nextCall": "15:30",
+    "notes": "Training cohort two is booked. Go-live target is 28 Oct.",
+    "sparkline": [40, 48, 55, 62, 70, 74],
+    "externalId": "ls-1188",
+    "contacts": [
+      { "name": "Lakshmi Poluru", "role": "District lead" },
+      { "name": "Meera Poluru", "role": "Success partner" }
+    ]
+  },
+  {
+    "id": "acc-sable",
+    "name": "Sable Freight",
+    "segment": "Mid-market",
+    "owner": "Lakshmi Poluru",
+    "health": 58,
+    "arr": 96000,
+    "renewal": "2026-10-29",
+    "region": "Asia Pacific",
+    "seats": 210,
+    "sentiment": 3,
+    "stage": "Renew",
+    "nextCall": "18:00",
+    "notes": "Procurement asked for a seat true-up. Lakshmi Poluru owns the quote.",
+    "sparkline": [64, 63, 60, 59, 58, 58],
+    "externalId": "sf-3077",
+    "contacts": [
+      { "name": "Arjun Poluru", "role": "Logistics lead" },
+      { "name": "Rohan Poluru", "role": "IT manager" }
+    ]
+  },
+  {
+    "id": "acc-kinship",
+    "name": "Kinship Bank",
+    "segment": "Enterprise",
+    "owner": "Madhav Poluru",
+    "health": 88,
+    "arr": 310000,
+    "renewal": "2026-12-14",
+    "region": "Europe",
+    "seats": 1240,
+    "sentiment": 4,
+    "stage": "Adopt",
+    "nextCall": "10:00",
+    "notes": "Control review passed. Madhav Poluru is scheduling the December business review.",
+    "sparkline": [76, 79, 82, 84, 86, 88],
+    "externalId": "kb-5502",
+    "contacts": [
+      { "name": "Kavya Poluru", "role": "Risk partner" },
+      { "name": "Sana Poluru", "role": "Platform owner" }
+    ]
+  },
+  {
+    "id": "acc-orchard",
+    "name": "Orchard Media",
+    "segment": "Growth",
+    "owner": "Harini Poluru",
+    "health": 36,
+    "arr": 27000,
+    "renewal": "2026-10-16",
+    "region": "North America",
+    "seats": 48,
+    "sentiment": 2,
+    "stage": "Renew",
+    "nextCall": "13:00",
+    "notes": "Champion left in August. Harini Poluru is meeting the new editor on Thursday.",
+    "sparkline": [70, 62, 54, 46, 40, 36],
+    "externalId": "om-6621",
+    "contacts": [
+      { "name": "Priya Poluru", "role": "Managing editor" },
+      { "name": "Nikhil Poluru", "role": "Studio manager" }
+    ]
+  },
+  {
+    "id": "acc-pebble",
+    "name": "Pebble Civic",
+    "segment": "Mid-market",
+    "owner": "Priya Poluru",
+    "health": 79,
+    "arr": 54000,
+    "renewal": "2027-01-09",
+    "region": "Asia Pacific",
+    "seats": 130,
+    "sentiment": 4,
+    "stage": "Adopt",
+    "nextCall": "07:30",
+    "notes": "Case volume is steady. Priya Poluru added a monthly office hour.",
+    "sparkline": [70, 72, 74, 76, 78, 79],
+    "externalId": "pc-2290",
+    "contacts": [
+      { "name": "Lakshmi Poluru", "role": "City services" },
+      { "name": "Dev Poluru", "role": "IT lead" }
+    ]
+  },
+  {
+    "id": "acc-nimbus",
+    "name": "Nimbus Travel",
+    "segment": "Growth",
+    "owner": "Sana Poluru",
+    "health": 67,
+    "arr": 41000,
+    "renewal": "2027-02-20",
+    "region": "Asia Pacific",
+    "seats": 75,
+    "sentiment": 4,
+    "stage": "Onboard",
+    "nextCall": "16:30",
+    "notes": "Booking feed is connected. Training for desk leads is Friday.",
+    "sparkline": [30, 38, 46, 54, 61, 67],
+    "externalId": "nt-7740",
+    "contacts": [
+      { "name": "Ananya Poluru", "role": "Guest experience" },
+      { "name": "Harini Poluru", "role": "Integrations" }
+    ]
+  }
+]

@@ -1,7 +1,8 @@
 {
-  "name": "vue-boiler",
-  "version": "0.0.0",
+  "name": "ai-customer-success-hub",
+  "version": "0.1.0",
   "private": true,
+  "description": "Marigold — customer success hub. Vue 3 starter with @poluru-labs/enterprise-design-system-vue.",
   "type": "module",
   "scripts": {
     "dev": "vite",
