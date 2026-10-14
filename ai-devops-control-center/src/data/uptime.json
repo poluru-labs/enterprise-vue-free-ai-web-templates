@@ -1,0 +1,62 @@
+[
+  {
+    "id": "up-checkout",
+    "service": "Checkout API",
+    "owner": "Kavya Poluru",
+    "region": "us-east",
+    "uptime": 99.98,
+    "status": "healthy",
+    "lastCheck": "2026-10-14T09:20:00",
+    "incident": "None this month"
+  },
+  {
+    "id": "up-ledger",
+    "service": "Ledger workers",
+    "owner": "Arjun Poluru",
+    "region": "eu-central",
+    "uptime": 99.91,
+    "status": "healthy",
+    "lastCheck": "2026-10-14T09:18:00",
+    "incident": "None this month"
+  },
+  {
+    "id": "up-catalog",
+    "service": "Catalog web",
+    "owner": "Rohan Poluru",
+    "region": "us-west",
+    "uptime": 99.72,
+    "status": "healthy",
+    "lastCheck": "2026-10-14T09:16:00",
+    "incident": "Brief index lag on Oct 9"
+  },
+  {
+    "id": "up-payments",
+    "service": "Payment tokens",
+    "owner": "Lakshmi Poluru",
+    "region": "us-east",
+    "uptime": 98.4,
+    "status": "watch",
+    "lastCheck": "2026-10-14T09:12:00",
+    "incident": "Failed deploy on Oct 13"
+  },
+  {
+    "id": "up-campaigns",
+    "service": "Campaign ingest",
+    "owner": "Harini Poluru",
+    "region": "us-west",
+    "uptime": 96.1,
+    "status": "down",
+    "lastCheck": "2026-10-14T09:05:00",
+    "incident": "Ingest queue stalled overnight"
+  },
+  {
+    "id": "up-clinic",
+    "service": "Clinic API",
+    "owner": "Priya Poluru",
+    "region": "us-east",
+    "uptime": 99.2,
+    "status": "watch",
+    "lastCheck": "2026-10-14T09:00:00",
+    "incident": "Facility code mismatch on Oct 11"
+  }
+]

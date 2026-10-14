@@ -1,0 +1,49 @@
+{
+  "tree": [
+    {
+      "id": "svc-store",
+      "label": "Store",
+      "children": [
+        { "id": "pipe-checkout", "label": "Checkout API · Kavya Poluru" },
+        { "id": "pipe-catalog", "label": "Catalog web · Rohan Poluru" },
+        { "id": "pipe-sessions", "label": "Web sessions · Nikhil Poluru" }
+      ]
+    },
+    {
+      "id": "svc-finance",
+      "label": "Finance",
+      "children": [
+        { "id": "pipe-ledger", "label": "Ledger workers · Arjun Poluru" },
+        { "id": "pipe-payments", "label": "Payment tokens · Lakshmi Poluru" }
+      ]
+    },
+    {
+      "id": "svc-people",
+      "label": "People",
+      "children": [
+        { "id": "pipe-roster", "label": "People sync · Ananya Poluru" },
+        { "id": "pipe-visits", "label": "Clinic API · Priya Poluru" }
+      ]
+    },
+    {
+      "id": "svc-growth",
+      "label": "Growth",
+      "children": [
+        { "id": "pipe-campaigns", "label": "Campaign ingest · Harini Poluru" },
+        { "id": "pipe-tickets", "label": "Support API · Meera Poluru" }
+      ]
+    },
+    {
+      "id": "svc-platform",
+      "label": "Platform",
+      "children": [{ "id": "pipe-contracts", "label": "Vendor files · Madhav Poluru" }]
+    }
+  ],
+  "notes": {
+    "svc-store": "Kavya Poluru owns checkout. Public catalog pages ship with Rohan Poluru.",
+    "svc-finance": "Arjun Poluru and Lakshmi Poluru share the close window.",
+    "svc-people": "Restricted. Sana Poluru signs every people export.",
+    "svc-growth": "Campaign volume is high. Harini Poluru watches the queue.",
+    "svc-platform": "Vendor files stay on the EU cluster."
+  }
+}

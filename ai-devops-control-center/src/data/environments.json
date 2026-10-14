@@ -1,0 +1,57 @@
+[
+  {
+    "id": "env-prod",
+    "name": "Production",
+    "owner": "Meera Poluru",
+    "status": "healthy",
+    "version": "4.18.2",
+    "region": "us-east",
+    "services": 6,
+    "uptime": 99.95,
+    "note": "Meera Poluru holds the weekday release window."
+  },
+  {
+    "id": "env-stage",
+    "name": "Staging",
+    "owner": "Kavya Poluru",
+    "status": "healthy",
+    "version": "4.19.0",
+    "region": "us-east",
+    "services": 5,
+    "uptime": 99.4,
+    "note": "Kavya Poluru promotes staging after the morning checks."
+  },
+  {
+    "id": "env-preview",
+    "name": "Preview",
+    "owner": "Rohan Poluru",
+    "status": "watch",
+    "version": "4.20.0-rc1",
+    "region": "us-west",
+    "services": 3,
+    "uptime": 97.8,
+    "note": "Preview is waiting on the campaign ingest fix."
+  },
+  {
+    "id": "env-eu",
+    "name": "EU production",
+    "owner": "Arjun Poluru",
+    "status": "healthy",
+    "version": "4.18.2",
+    "region": "eu-central",
+    "services": 4,
+    "uptime": 99.9,
+    "note": "Arjun Poluru ships the ledger after the US window."
+  },
+  {
+    "id": "env-sandbox",
+    "name": "Sandbox",
+    "owner": "Nikhil Poluru",
+    "status": "down",
+    "version": "4.17.4",
+    "region": "us-west",
+    "services": 2,
+    "uptime": 94.2,
+    "note": "Sandbox runners were stopped after the session flake."
+  }
+]

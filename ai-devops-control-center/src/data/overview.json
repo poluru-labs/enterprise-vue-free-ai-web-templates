@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "kicker": "October release",
+    "title": "Keep pipelines green and environments named.",
+    "body": "Manage pipelines, environments, deployments, uptime, and infrastructure health. Meera Poluru reviews the board each weekday morning."
+  },
+  "deployTrend": {
+    "labels": ["May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+    "series": [
+      { "name": "Shipped", "color": "#086288", "values": [18, 21, 19, 24, 22, 16] },
+      { "name": "Failed", "color": "#8FB8C6", "values": [1, 1, 2, 1, 2, 2] }
+    ]
+  }
+}

@@ -20,6 +20,7 @@ A curated collection of free Vue 3 templates for AI dashboards, SaaS products, a
 | [Folio Content Ops](ai-content-operations-platform/README.md) | Plan, create, review, publish, and measure content. Theme `#102E50`. Light header, no borders. | 5201 |
 | [Marigold Success](ai-customer-success-hub/README.md) | Customer health, renewals, onboarding, and success activities. Theme `#F2C46A`. Light header, no borders. | 5202 |
 | [Cobalt Governance](ai-data-governance-platform/README.md) | Data ownership, quality, catalogs, policies, and access requests. Theme `#3368A0`. Light header. | 5203 |
+| [Tide DevOps](ai-devops-control-center/README.md) | Pipelines, environments, deployments, uptime, and infrastructure health. Theme `#086288`. Light header. | 5204 |
 
 ## Getting started
 

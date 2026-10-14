@@ -1,0 +1,37 @@
+{
+  "unread": 3,
+  "items": [
+    {
+      "id": "nt-1",
+      "title": "Payment tokens failed",
+      "body": "Lakshmi Poluru’s hotfix stopped in the build step.",
+      "time": "2026-10-13T22:48:00",
+      "href": "/devops/pipelines/pipe-payments",
+      "tone": "danger"
+    },
+    {
+      "id": "nt-2",
+      "title": "Catalog is rolling",
+      "body": "Rohan Poluru is shipping 4.20.0-rc1 to staging.",
+      "time": "2026-10-14T09:05:00",
+      "href": "/devops/deployments",
+      "tone": "info"
+    },
+    {
+      "id": "nt-3",
+      "title": "Event queue is full",
+      "body": "Harini Poluru’s ingest backlog needs a runner.",
+      "time": "2026-10-14T06:20:00",
+      "href": "/devops/infrastructure",
+      "tone": "warning"
+    },
+    {
+      "id": "nt-4",
+      "title": "Checkout shipped",
+      "body": "Kavya Poluru closed the morning window.",
+      "time": "2026-10-14T08:22:00",
+      "href": "/devops/pipelines/pipe-checkout",
+      "tone": "info"
+    }
+  ]
+}

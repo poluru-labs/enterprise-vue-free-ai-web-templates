@@ -1,6 +1,7 @@
 {
-  "name": "vue-boiler",
-  "version": "0.0.0",
+  "name": "ai-devops-control-center",
+  "version": "0.1.0",
+  "description": "Tide DevOps control center for pipelines, environments, deployments, uptime, and infrastructure health.",
   "private": true,
   "type": "module",
   "scripts": {

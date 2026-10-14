@@ -1,0 +1,68 @@
+[
+  {
+    "id": "inf-cluster-east",
+    "name": "Cluster east",
+    "kind": "cluster",
+    "owner": "Sana Poluru",
+    "region": "us-east",
+    "cpu": 62,
+    "memory": 71,
+    "status": "healthy",
+    "note": "Six production services. Room for the catalog roll."
+  },
+  {
+    "id": "inf-cluster-west",
+    "name": "Cluster west",
+    "kind": "cluster",
+    "owner": "Nikhil Poluru",
+    "region": "us-west",
+    "cpu": 81,
+    "memory": 77,
+    "status": "watch",
+    "note": "Preview runners are crowded after the campaign retries."
+  },
+  {
+    "id": "inf-cluster-eu",
+    "name": "Cluster EU",
+    "kind": "cluster",
+    "owner": "Arjun Poluru",
+    "region": "eu-central",
+    "cpu": 48,
+    "memory": 55,
+    "status": "healthy",
+    "note": "Ledger and vendor files share this cluster."
+  },
+  {
+    "id": "inf-db-ledger",
+    "name": "Ledger database",
+    "kind": "database",
+    "owner": "Lakshmi Poluru",
+    "region": "us-east",
+    "cpu": 44,
+    "memory": 68,
+    "status": "healthy",
+    "note": "Primary is current. Replica lag is under a second."
+  },
+  {
+    "id": "inf-queue-events",
+    "name": "Event queue",
+    "kind": "queue",
+    "owner": "Harini Poluru",
+    "region": "us-west",
+    "cpu": 73,
+    "memory": 84,
+    "status": "down",
+    "note": "Campaign backlog grew after the failed ingest."
+  },
+  {
+    "id": "inf-cache-catalog",
+    "name": "Catalog cache",
+    "kind": "cache",
+    "owner": "Rohan Poluru",
+    "region": "us-west",
+    "cpu": 36,
+    "memory": 52,
+    "status": "healthy",
+    "note": "Warm for the public catalog pages."
+  }
+]

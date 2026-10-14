@@ -1,0 +1,12 @@
+{
+  "workspace": "Tide control",
+  "slug": "tide-control",
+  "region": "North America",
+  "digest": "weekday",
+  "digestTime": "07:30",
+  "cadence": "daily",
+  "uptimeLine": 99,
+  "emailDigest": true,
+  "compactCards": false,
+  "pin": ""
+}

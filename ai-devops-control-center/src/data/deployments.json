@@ -1,0 +1,74 @@
+[
+  {
+    "id": "dep-1",
+    "pipelineId": "pipe-checkout",
+    "service": "Checkout API",
+    "owner": "Kavya Poluru",
+    "environment": "Production",
+    "status": "shipped",
+    "step": "shipped",
+    "version": "4.18.2",
+    "started": "2026-10-14",
+    "note": "Morning window. Cart totals matched staging."
+  },
+  {
+    "id": "dep-2",
+    "pipelineId": "pipe-payments",
+    "service": "Payment tokens",
+    "owner": "Lakshmi Poluru",
+    "environment": "Production",
+    "status": "failed",
+    "step": "building",
+    "version": "4.17.9",
+    "started": "2026-10-13",
+    "note": "Token migration failed the freshness check."
+  },
+  {
+    "id": "dep-3",
+    "pipelineId": "pipe-catalog",
+    "service": "Catalog web",
+    "owner": "Rohan Poluru",
+    "environment": "Staging",
+    "status": "rolling",
+    "step": "staged",
+    "version": "4.20.0-rc1",
+    "started": "2026-10-14",
+    "note": "Search index is rolling across two replicas."
+  },
+  {
+    "id": "dep-4",
+    "pipelineId": "pipe-campaigns",
+    "service": "Campaign ingest",
+    "owner": "Harini Poluru",
+    "environment": "Preview",
+    "status": "queued",
+    "step": "queued",
+    "version": "4.19.4",
+    "started": "2026-10-14",
+    "note": "Waiting on a free preview runner."
+  },
+  {
+    "id": "dep-5",
+    "pipelineId": "pipe-ledger",
+    "service": "Ledger workers",
+    "owner": "Arjun Poluru",
+    "environment": "EU production",
+    "status": "shipped",
+    "step": "shipped",
+    "version": "4.18.2",
+    "started": "2026-10-13",
+    "note": "EU close matched the US ledger."
+  },
+  {
+    "id": "dep-6",
+    "pipelineId": "pipe-visits",
+    "service": "Clinic API",
+    "owner": "Priya Poluru",
+    "environment": "Staging",
+    "status": "building",
+    "step": "building",
+    "version": "4.19.1",
+    "started": "2026-10-14",
+    "note": "Facility code tests are still running."
+  }
+]
