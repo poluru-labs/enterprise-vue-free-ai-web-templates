@@ -1,6 +1,7 @@
 {
-  "name": "vue-boiler",
-  "version": "0.0.0",
+  "name": "ai-data-governance-platform",
+  "version": "0.1.0",
+  "description": "Cobalt data governance dashboard for ownership, quality, catalogs, policies, and access requests.",
   "private": true,
   "type": "module",
   "scripts": {

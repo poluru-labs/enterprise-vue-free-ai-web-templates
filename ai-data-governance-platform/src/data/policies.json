@@ -1,0 +1,68 @@
+[
+  {
+    "id": "pol-retention",
+    "title": "Finance retention",
+    "summary": "Keep the order ledger and payment references for seven years.",
+    "owner": "Lakshmi Poluru",
+    "domain": "Finance",
+    "status": "published",
+    "version": "3.2",
+    "coverage": 86,
+    "updated": "2026-09-18"
+  },
+  {
+    "id": "pol-pii",
+    "title": "Customer PII access",
+    "summary": "Named stewards approve any export of account email or phone.",
+    "owner": "Kavya Poluru",
+    "domain": "Customer",
+    "status": "published",
+    "version": "2.1",
+    "coverage": 92,
+    "updated": "2026-08-30"
+  },
+  {
+    "id": "pol-public",
+    "title": "Public catalog",
+    "summary": "Product fields marked public can ship without a second review.",
+    "owner": "Rohan Poluru",
+    "domain": "Product",
+    "status": "published",
+    "version": "1.4",
+    "coverage": 100,
+    "updated": "2026-07-12"
+  },
+  {
+    "id": "pol-restricted",
+    "title": "Restricted export",
+    "summary": "Roster and clinic files leave the workspace only with Sana Poluru’s sign-off.",
+    "owner": "Sana Poluru",
+    "domain": "People",
+    "status": "review",
+    "version": "0.9",
+    "coverage": 64,
+    "updated": "2026-10-04"
+  },
+  {
+    "id": "pol-vendor",
+    "title": "Vendor file handling",
+    "summary": "Contracts stay in the files system and keep their renewal date.",
+    "owner": "Madhav Poluru",
+    "domain": "Platform",
+    "status": "draft",
+    "version": "0.3",
+    "coverage": 40,
+    "updated": "2026-10-08"
+  },
+  {
+    "id": "pol-marketing",
+    "title": "Campaign retention",
+    "summary": "Event rows older than 18 months move to cold storage.",
+    "owner": "Harini Poluru",
+    "domain": "Marketing",
+    "status": "review",
+    "version": "1.0",
+    "coverage": 55,
+    "updated": "2026-10-01"
+  }
+]

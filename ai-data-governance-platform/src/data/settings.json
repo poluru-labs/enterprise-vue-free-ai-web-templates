@@ -1,0 +1,12 @@
+{
+  "workspace": "Cobalt registry",
+  "slug": "cobalt-registry",
+  "region": "North America",
+  "digest": "weekday",
+  "digestTime": "08:00",
+  "cadence": "weekly",
+  "qualityLine": 70,
+  "emailDigest": true,
+  "compactCards": false,
+  "pin": ""
+}

@@ -1,0 +1,54 @@
+{
+  "tree": [
+    {
+      "id": "dom-customer",
+      "label": "Customer",
+      "children": [
+        { "id": "ast-customers", "label": "Customer accounts · Kavya Poluru" },
+        { "id": "ast-tickets", "label": "Support tickets · Meera Poluru" }
+      ]
+    },
+    {
+      "id": "dom-finance",
+      "label": "Finance",
+      "children": [
+        { "id": "ast-orders", "label": "Order ledger · Arjun Poluru" },
+        { "id": "ast-payments", "label": "Payment tokens · Lakshmi Poluru" }
+      ]
+    },
+    {
+      "id": "dom-people",
+      "label": "People",
+      "children": [
+        { "id": "ast-roster", "label": "Employee roster · Ananya Poluru" },
+        { "id": "ast-visits", "label": "Clinic visits · Priya Poluru" }
+      ]
+    },
+    {
+      "id": "dom-product",
+      "label": "Product",
+      "children": [{ "id": "ast-catalog", "label": "Product catalog · Rohan Poluru" }]
+    },
+    {
+      "id": "dom-marketing",
+      "label": "Marketing",
+      "children": [
+        { "id": "ast-campaigns", "label": "Campaign events · Harini Poluru" },
+        { "id": "ast-sessions", "label": "Website sessions · Nikhil Poluru" }
+      ]
+    },
+    {
+      "id": "dom-platform",
+      "label": "Platform",
+      "children": [{ "id": "ast-contracts", "label": "Vendor contracts · Madhav Poluru" }]
+    }
+  ],
+  "notes": {
+    "dom-customer": "Kavya Poluru owns customer records. Exports need a named purpose.",
+    "dom-finance": "Arjun Poluru and Lakshmi Poluru share the close calendar.",
+    "dom-people": "Restricted. Sana Poluru signs every export.",
+    "dom-product": "Public fields can ship. Everything else stays internal.",
+    "dom-marketing": "Event volume is high. Freshness is the check that matters.",
+    "dom-platform": "Vendor files live in the file system, not the warehouse."
+  }
+}

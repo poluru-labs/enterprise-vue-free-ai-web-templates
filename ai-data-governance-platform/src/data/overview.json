@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "kicker": "October registry",
+    "title": "Keep owners named and quality checks current.",
+    "body": "Manage data ownership, quality, catalogs, policies, and access requests. Meera Poluru reviews the registry each Monday."
+  },
+  "qualityTrend": {
+    "labels": ["May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+    "series": [
+      { "name": "Passing assets", "color": "#3368A0", "values": [5, 6, 6, 7, 6, 5] },
+      { "name": "Failing checks", "color": "#8AA8C8", "values": [1, 1, 2, 2, 3, 3] }
+    ]
+  }
+}

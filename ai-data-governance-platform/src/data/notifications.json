@@ -1,0 +1,37 @@
+{
+  "unread": 3,
+  "items": [
+    {
+      "id": "nt-1",
+      "title": "Payment tokens failed freshness",
+      "body": "Lakshmi Poluru has not had a clean run since 28 Sep.",
+      "time": "2026-10-13T06:40:00",
+      "tone": "danger",
+      "href": "/governance/quality"
+    },
+    {
+      "id": "nt-2",
+      "title": "Access request from Nikhil Poluru",
+      "body": "Customer accounts, needed by 16 Oct.",
+      "time": "2026-10-12T15:10:00",
+      "tone": "info",
+      "href": "/governance/access"
+    },
+    {
+      "id": "nt-3",
+      "title": "Restricted export is in review",
+      "body": "Sana Poluru asked for comments by Friday.",
+      "time": "2026-10-11T09:20:00",
+      "tone": "warning",
+      "href": "/governance/policies"
+    },
+    {
+      "id": "nt-4",
+      "title": "Product catalog published",
+      "body": "Rohan Poluru marked the public fields complete.",
+      "time": "2026-10-09T11:05:00",
+      "tone": "info",
+      "href": "/governance/catalog/ast-catalog"
+    }
+  ]
+}

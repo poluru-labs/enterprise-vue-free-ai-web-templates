@@ -1,0 +1,74 @@
+[
+  {
+    "id": "req-1",
+    "assetId": "ast-customers",
+    "asset": "Customer accounts",
+    "requester": "Nikhil Poluru",
+    "owner": "Kavya Poluru",
+    "purpose": "Region report for the October review",
+    "status": "review",
+    "step": "review",
+    "needed": "2026-10-16",
+    "opened": "2026-10-10"
+  },
+  {
+    "id": "req-2",
+    "assetId": "ast-roster",
+    "asset": "Employee roster",
+    "requester": "Dev Poluru",
+    "owner": "Ananya Poluru",
+    "purpose": "Manager map for the platform directory",
+    "status": "requested",
+    "step": "requested",
+    "needed": "2026-10-20",
+    "opened": "2026-10-12"
+  },
+  {
+    "id": "req-3",
+    "assetId": "ast-payments",
+    "asset": "Payment tokens",
+    "requester": "Arjun Poluru",
+    "owner": "Lakshmi Poluru",
+    "purpose": "Close the September token gap",
+    "status": "review",
+    "step": "review",
+    "needed": "2026-10-15",
+    "opened": "2026-10-08"
+  },
+  {
+    "id": "req-4",
+    "assetId": "ast-catalog",
+    "asset": "Product catalog",
+    "requester": "Harini Poluru",
+    "owner": "Rohan Poluru",
+    "purpose": "Public product list for the site",
+    "status": "granted",
+    "step": "granted",
+    "needed": "2026-10-06",
+    "opened": "2026-09-28"
+  },
+  {
+    "id": "req-5",
+    "assetId": "ast-visits",
+    "asset": "Clinic visits",
+    "requester": "Priya Poluru",
+    "owner": "Sana Poluru",
+    "purpose": "Facility code repair",
+    "status": "approved",
+    "step": "approved",
+    "needed": "2026-10-18",
+    "opened": "2026-10-05"
+  },
+  {
+    "id": "req-6",
+    "assetId": "ast-contracts",
+    "asset": "Vendor contracts",
+    "requester": "Rohan Poluru",
+    "owner": "Madhav Poluru",
+    "purpose": "Renewal dates for the vendor review",
+    "status": "denied",
+    "step": "review",
+    "needed": "2026-10-11",
+    "opened": "2026-10-01"
+  }
+]
