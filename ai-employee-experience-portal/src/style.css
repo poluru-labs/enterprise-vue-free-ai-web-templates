@@ -7,7 +7,7 @@
   --hrt-soft: #FFE8D6;
   --hrt-ink: #3A1C08;
   --hrt-muted: #7A5340;
-  --hrt-canvas: #FFF6F0;
+  --hrt-canvas: #ffffff;
   --hrt-white: #ffffff;
   --hrt-header-h: 4.35rem;
   --hrt-shadow: 0 10px 28px rgb(255 101 0 / 0.10);
@@ -22,8 +22,8 @@
   --eds-color-brand-300: #E8C4A8;
   --eds-color-brand-200: #FFE8D6;
   --eds-color-brand-100: #FFE8D6;
-  --eds-color-brand-50: #FFF6F0;
-  --eds-color-bg: #FFF6F0;
+  --eds-color-brand-50: #ffffff;
+  --eds-color-bg: #ffffff;
   --eds-color-surface: #ffffff;
   --eds-color-primary: #FF6500;
   --eds-color-primary-hover: #C24100;
@@ -392,8 +392,8 @@ textarea {
 .hrt-inline-badges {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 0.75rem 1rem;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .hrt-page-header-row,
@@ -421,8 +421,7 @@ textarea {
   gap: 1rem;
   margin-bottom: 1rem;
   padding: 1.25rem 1.35rem;
-  background: linear-gradient(120deg, #FFE8D6 0%, #ffffff 58%, #FFF6F0 100%);
-  border-left: 4px solid var(--hrt-brand);
+  background: var(--hrt-white);
 }
 
 .hrt-kicker {
@@ -850,4 +849,77 @@ textarea {
 .hrt-shell button[class*='primary'],
 .hrt-shell button[class*='primary'] span {
   color: var(--hrt-ink);
+}
+
+.hrt-page-actions,
+.hrt-header-end,
+.hrt-inline-badges,
+.hrt-page-actions > * {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hrt-filter-bar {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+.hrt-filter-bar > * {
+  flex: 0 1 auto;
+  width: auto !important;
+  max-width: 100%;
+}
+
+.hrt-filter-bar > *:first-child:has(input[placeholder*='Search']) {
+  flex: 1 1 18rem;
+  min-width: 16rem;
+}
+
+.hrt-page-actions button,
+.hrt-header-end button,
+.hrt-filter-bar button,
+.hrt-inline-badges button,
+.hrt-panel-body > button,
+.hrt-stack > button {
+  margin: 0;
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.hrt-shell button[class*='secondary'] {
+  background: var(--hrt-soft);
+  color: var(--hrt-ink);
+}
+
+.hrt-shell,
+.hrt-shell * {
+  border-width: 0 !important;
+  border-style: none !important;
+}
+
+.hrt-shell input,
+.hrt-shell select,
+.hrt-shell textarea {
+  background-color: var(--hrt-soft);
+}
+
+.hrt-inset-search input,
+.hrt-palette-search input {
+  background-color: transparent;
+}
+
+.hrt-filter-bar > *:first-child,
+.hrt-search-lg {
+  border-radius: 12px;
+  background: var(--hrt-soft);
+}
+
+.hrt-filter-bar > *:first-child input,
+.hrt-search-lg input {
+  width: 100%;
+  background-color: transparent;
 }
