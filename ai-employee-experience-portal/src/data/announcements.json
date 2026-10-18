@@ -1,0 +1,56 @@
+[
+  {
+    "id": "an-1",
+    "title": "Austin floor move",
+    "author": "Meera Poluru",
+    "audience": "Austin",
+    "status": "posted",
+    "date": "2026-10-14",
+    "summary": "Desks on level 4 move to level 3 on Monday. Badges still work."
+  },
+  {
+    "id": "an-2",
+    "title": "Benefits window",
+    "author": "Kavya Poluru",
+    "audience": "Everyone",
+    "status": "posted",
+    "date": "2026-10-12",
+    "summary": "Open enrollment closes Friday. Kavya Poluru holds office hours at 10."
+  },
+  {
+    "id": "an-3",
+    "title": "Holiday calendar",
+    "author": "Sana Poluru",
+    "audience": "Everyone",
+    "status": "scheduled",
+    "date": "2026-10-20",
+    "summary": "November holidays and the London office closure."
+  },
+  {
+    "id": "an-4",
+    "title": "Laptop pickup hours",
+    "author": "Rohan Poluru",
+    "audience": "Austin",
+    "status": "posted",
+    "date": "2026-10-11",
+    "summary": "Refresh pickups run Tuesday and Thursday, 9 to 11."
+  },
+  {
+    "id": "an-5",
+    "title": "Wellness credit",
+    "author": "Priya Poluru",
+    "audience": "Remote",
+    "status": "draft",
+    "date": "2026-10-18",
+    "summary": "The monthly wellness credit resets on the first."
+  },
+  {
+    "id": "an-6",
+    "title": "Chicago garage",
+    "author": "Nikhil Poluru",
+    "audience": "Chicago",
+    "status": "scheduled",
+    "date": "2026-10-22",
+    "summary": "Parking passes return when the November lot opens."
+  }
+]

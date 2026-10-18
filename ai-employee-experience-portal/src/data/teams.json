@@ -1,0 +1,47 @@
+{
+  "tree": [
+    {
+      "id": "cat-workplace",
+      "label": "Workplace",
+      "children": [
+        { "id": "svc-desks", "label": "Desk booking · Meera Poluru" },
+        { "id": "svc-travel", "label": "Travel booking · Harini Poluru" },
+        { "id": "svc-parking", "label": "Parking passes · Nikhil Poluru" },
+        { "id": "svc-supplies", "label": "Office supplies · Madhav Poluru" }
+      ]
+    },
+    {
+      "id": "cat-people",
+      "label": "People",
+      "children": [
+        { "id": "svc-benefits", "label": "Benefits desk · Kavya Poluru" },
+        { "id": "svc-visa", "label": "Visa letters · Sana Poluru" }
+      ]
+    },
+    {
+      "id": "cat-it",
+      "label": "IT",
+      "children": [{ "id": "svc-laptops", "label": "Laptop refresh · Rohan Poluru" }]
+    },
+    {
+      "id": "cat-finance",
+      "label": "Finance",
+      "children": [{ "id": "svc-payroll", "label": "Payroll questions · Lakshmi Poluru" }]
+    },
+    {
+      "id": "cat-learning",
+      "label": "Learning",
+      "children": [
+        { "id": "svc-learning", "label": "Learning stipends · Ananya Poluru" },
+        { "id": "svc-wellness", "label": "Wellness stipend · Priya Poluru" }
+      ]
+    }
+  ],
+  "notes": {
+    "cat-workplace": "Meera Poluru owns the Austin floor. Travel sits with Harini Poluru.",
+    "cat-people": "Kavya Poluru runs enrollment. Sana Poluru signs letters.",
+    "cat-it": "Rohan Poluru handles laptop pickup at the Austin hub.",
+    "cat-finance": "Lakshmi Poluru answers payroll during the close.",
+    "cat-learning": "Ananya Poluru and Priya Poluru share stipends."
+  }
+}

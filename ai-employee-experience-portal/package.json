@@ -1,6 +1,7 @@
 {
-  "name": "vue-boiler",
-  "version": "0.0.0",
+  "name": "ai-employee-experience-portal",
+  "version": "0.1.0",
+  "description": "Hearth employee experience portal for services, feedback, announcements, and workplace resources.",
   "private": true,
   "type": "module",
   "scripts": {

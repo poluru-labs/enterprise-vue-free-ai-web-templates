@@ -1,0 +1,56 @@
+[
+  {
+    "id": "res-handbook",
+    "title": "Employee handbook",
+    "owner": "Sana Poluru",
+    "kind": "Guide",
+    "status": "current",
+    "updated": "2026-09-02",
+    "summary": "Policies, holidays, and how to ask for a letter."
+  },
+  {
+    "id": "res-floors",
+    "title": "Austin floor map",
+    "owner": "Meera Poluru",
+    "kind": "Map",
+    "status": "current",
+    "updated": "2026-10-14",
+    "summary": "Level 3 desks after the Monday move."
+  },
+  {
+    "id": "res-benefits",
+    "title": "Benefits comparison",
+    "owner": "Kavya Poluru",
+    "kind": "Form",
+    "status": "current",
+    "updated": "2026-10-01",
+    "summary": "Plan grid for open enrollment."
+  },
+  {
+    "id": "res-travel",
+    "title": "Travel checklist",
+    "owner": "Harini Poluru",
+    "kind": "Guide",
+    "status": "review",
+    "updated": "2026-08-19",
+    "summary": "What to book, and who approves a client week."
+  },
+  {
+    "id": "res-stipend",
+    "title": "Stipend form",
+    "owner": "Ananya Poluru",
+    "kind": "Form",
+    "status": "current",
+    "updated": "2026-07-08",
+    "summary": "Course and conference request."
+  },
+  {
+    "id": "res-welcome",
+    "title": "Welcome kit list",
+    "owner": "Madhav Poluru",
+    "kind": "List",
+    "status": "draft",
+    "updated": "2026-10-09",
+    "summary": "Badge, notebook, and dock for a new hire."
+  }
+]

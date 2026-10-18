@@ -1,0 +1,12 @@
+{
+  "workspace": "Hearth lobby",
+  "slug": "hearth-lobby",
+  "region": "North America",
+  "digest": "weekday",
+  "digestTime": "08:30",
+  "cadence": "weekly",
+  "pulseLine": 4,
+  "emailDigest": true,
+  "compactCards": false,
+  "pin": ""
+}

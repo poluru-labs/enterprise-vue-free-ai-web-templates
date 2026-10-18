@@ -1,0 +1,37 @@
+{
+  "unread": 3,
+  "items": [
+    {
+      "id": "nt-1",
+      "title": "Travel hold expired",
+      "body": "Harini Poluru’s London week needs a new hotel hold.",
+      "time": "2026-10-17T09:10:00",
+      "href": "/experience/feedback",
+      "tone": "warning"
+    },
+    {
+      "id": "nt-2",
+      "title": "Floor map note",
+      "body": "Kavya Poluru flagged a desk that was removed.",
+      "time": "2026-10-16T14:20:00",
+      "href": "/experience/services/svc-desks",
+      "tone": "info"
+    },
+    {
+      "id": "nt-3",
+      "title": "Benefits window",
+      "body": "Enrollment closes Friday. Kavya Poluru holds office hours.",
+      "time": "2026-10-12T08:00:00",
+      "href": "/experience/announcements",
+      "tone": "info"
+    },
+    {
+      "id": "nt-4",
+      "title": "Laptop pickup",
+      "body": "Rohan Poluru posted Tuesday and Thursday hours.",
+      "time": "2026-10-11T11:00:00",
+      "href": "/experience/announcements",
+      "tone": "info"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "fb-1",
+    "serviceId": "svc-desks",
+    "service": "Desk booking",
+    "author": "Kavya Poluru",
+    "owner": "Meera Poluru",
+    "score": 5,
+    "status": "new",
+    "step": "asked",
+    "topic": "Floor map",
+    "note": "The Tuesday map still shows a desk that was removed.",
+    "opened": "2026-10-16"
+  },
+  {
+    "id": "fb-2",
+    "serviceId": "svc-payroll",
+    "service": "Payroll questions",
+    "author": "Arjun Poluru",
+    "owner": "Lakshmi Poluru",
+    "score": 3,
+    "status": "review",
+    "step": "scheduled",
+    "topic": "October statement",
+    "note": "The October statement is missing the stipend line.",
+    "opened": "2026-10-15"
+  },
+  {
+    "id": "fb-3",
+    "serviceId": "svc-laptops",
+    "service": "Laptop refresh",
+    "author": "Dev Poluru",
+    "owner": "Rohan Poluru",
+    "score": 5,
+    "status": "closed",
+    "step": "closed",
+    "topic": "Dock pickup",
+    "note": "Pickup at Austin was quick and labeled.",
+    "opened": "2026-10-10"
+  },
+  {
+    "id": "fb-4",
+    "serviceId": "svc-travel",
+    "service": "Travel booking",
+    "author": "Harini Poluru",
+    "owner": "Harini Poluru",
+    "score": 2,
+    "status": "new",
+    "step": "asked",
+    "topic": "London week",
+    "note": "The hotel hold expired before approval.",
+    "opened": "2026-10-17"
+  },
+  {
+    "id": "fb-5",
+    "serviceId": "svc-learning",
+    "service": "Learning stipends",
+    "author": "Ananya Poluru",
+    "owner": "Ananya Poluru",
+    "score": 4,
+    "status": "review",
+    "step": "done",
+    "topic": "Course credit",
+    "note": "The course posted. Waiting on the receipt.",
+    "opened": "2026-10-12"
+  },
+  {
+    "id": "fb-6",
+    "serviceId": "svc-visa",
+    "service": "Visa letters",
+    "author": "Priya Poluru",
+    "owner": "Sana Poluru",
+    "score": 4,
+    "status": "closed",
+    "step": "closed",
+    "topic": "Travel letter",
+    "note": "Letter arrived in time for the London trip.",
+    "opened": "2026-10-08"
+  }
+]

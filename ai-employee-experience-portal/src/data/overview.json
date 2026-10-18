@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "kicker": "October workplace",
+    "title": "Keep services named and feedback answered.",
+    "body": "Centralize employee services, feedback, announcements, and workplace resources. Meera Poluru reviews the lobby each Monday."
+  },
+  "pulseTrend": {
+    "labels": ["May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+    "series": [
+      { "name": "Service score", "color": "#FF6500", "values": [4.1, 4.2, 4.3, 4.2, 4.3, 4.2] },
+      { "name": "Open notes", "color": "#F6B27A", "values": [6, 5, 4, 5, 4, 3] }
+    ]
+  }
+}
