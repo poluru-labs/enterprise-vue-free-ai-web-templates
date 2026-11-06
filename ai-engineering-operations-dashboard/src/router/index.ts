@@ -3,9 +3,10 @@ import { BASE_PATH } from '@/constants/navigation'
 import DeploysView from '@/views/DeploysView.vue'
 import IncidentsView from '@/views/IncidentsView.vue'
 import OverviewView from '@/views/OverviewView.vue'
-import PlaceholderView from '@/views/PlaceholderView.vue'
+import PeopleView from '@/views/PeopleView.vue'
 import ServiceDetailView from '@/views/ServiceDetailView.vue'
 import ServicesView from '@/views/ServicesView.vue'
+import SettingsView from '@/views/SettingsView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/overview` },
@@ -43,13 +44,13 @@ export const routes = [
   {
     path: `${BASE_PATH}/people`,
     name: 'people',
-    component: PlaceholderView,
+    component: PeopleView,
     meta: { title: 'People' },
   },
   {
     path: `${BASE_PATH}/settings`,
     name: 'settings',
-    component: PlaceholderView,
+    component: SettingsView,
     meta: { title: 'Settings' },
   },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/overview` },

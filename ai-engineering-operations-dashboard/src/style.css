@@ -323,6 +323,40 @@ a {
   cursor: pointer;
 }
 
+.nl-skel,
+.nl-upload,
+.nl-tree,
+.nl-rating {
+  margin-top: 12px;
+}
+
+.nl-person {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.nl-person-shift {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin: 0 0 6px;
+  color: var(--nl-muted);
+}
+
+.nl-identity {
+  margin: 0;
+  font-family: Lato, Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nl-form h2 {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
 .nl-footer {
   padding: 8px 20px 16px;
 }

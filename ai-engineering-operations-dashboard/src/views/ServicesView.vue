@@ -1,16 +1,22 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import {
+  Button,
   DataTable,
+  EmptyState,
+  Kbd,
   Link,
   Pagination,
   Search,
   SegmentedControl,
   Select,
+  Skeleton,
+  Spinner,
   Status,
   Tag,
   Toolbar,
+  Tooltip,
 } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
 import { BASE_PATH, BREADCRUMB_ROOT } from '@/constants/navigation'
@@ -23,6 +29,25 @@ const status = ref('all')
 const region = ref('all')
 const page = ref(1)
 const pageSize = 4
+const refreshing = ref(false)
+
+function refresh() {
+  refreshing.value = true
+  window.setTimeout(() => {
+    refreshing.value = false
+  }, 500)
+}
+
+function onSlash(event: KeyboardEvent) {
+  if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return
+  const target = event.target
+  if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement) return
+  event.preventDefault()
+  document.querySelector<HTMLInputElement>('.nl-toolbar input')?.focus()
+}
+
+onMounted(() => window.addEventListener('keydown', onSlash))
+onUnmounted(() => window.removeEventListener('keydown', onSlash))
 
 const regionOptions = [
   { value: 'all', label: 'All regions' },
@@ -67,7 +92,14 @@ function tone(value: string) {
 </script>
 
 <template>
-  <PageHead title="Services" :crumbs="[BREADCRUMB_ROOT, { label: 'Services' }]" />
+  <PageHead title="Services" :crumbs="[BREADCRUMB_ROOT, { label: 'Services' }]">
+    <template #actions>
+      <Tooltip content="Reload the catalog">
+        <Button size="sm" variant="secondary" :loading="refreshing" @click="refresh">Refresh</Button>
+      </Tooltip>
+      <Kbd :keys="['/']" />
+    </template>
+  </PageHead>
 
   <Toolbar class="nl-toolbar">
     <template #start>
@@ -87,7 +119,17 @@ function tone(value: string) {
     </template>
   </Toolbar>
 
-  <p v-if="!filtered.length" class="nl-muted">No services match.</p>
+  <div v-if="refreshing" class="nl-panel">
+    <Spinner label="Refreshing services" show-label />
+    <Skeleton class="nl-skel" variant="rectangular" width="100%" height="120px" />
+  </div>
+
+  <EmptyState
+    v-else-if="!filtered.length"
+    title="No services match"
+    description="Try another owner, or clear the status filter."
+    icon="search"
+  />
 
   <section v-else class="nl-panel">
     <DataTable

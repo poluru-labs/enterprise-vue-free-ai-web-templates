@@ -5,6 +5,7 @@ import {
   DataTable,
   DateRangePicker,
   Drawer,
+  EmptyState,
   Status,
   Textarea,
   showToast,
@@ -65,7 +66,12 @@ function saveWriteup() {
     <DateRangePicker v-model:start="rangeStart" v-model:end="rangeEnd" label="Opened" />
   </div>
 
-  <p v-if="!filtered.length" class="nl-muted">No incidents in this window.</p>
+  <EmptyState
+    v-if="!filtered.length"
+    title="No incidents in this window"
+    description="Widen the opened dates to see Checkout, Directory, and Billing."
+    icon="search"
+  />
 
   <section v-else class="nl-panel">
     <DataTable

@@ -214,6 +214,19 @@ export const desk = reactive({
       writeup: 'Retries recovered after the staging deploy. No open customer impact.',
     },
   ] as IncidentRecord[],
+  settings: {
+    deskName: 'Northline',
+    pager: true,
+    mail: true,
+    quiet: false,
+    cadence: 'daily',
+    digest: 'weekday',
+    holdMinutes: 15,
+    digestTime: '09:00',
+    pin: '',
+    reviewDate: '2026-11-09',
+    slug: 'northline',
+  },
 })
 
 export const onCall = [
