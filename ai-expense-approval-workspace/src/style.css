@@ -1,0 +1,277 @@
+:root {
+  --cl-copper: #ff6500;
+  --cl-copper-deep: #c24100;
+  --cl-ink: #3a2418;
+  --cl-quiet: #8a6452;
+  --cl-line: #f0ddd0;
+  --cl-canvas: #fff8f3;
+  --cl-rail: 248px;
+  --eds-font-sans: Roboto, 'Segoe UI', sans-serif;
+  --eds-font-display: Lato, Roboto, sans-serif;
+  --eds-color-brand-900: #7a2e00;
+  --eds-color-brand-800: #9a3400;
+  --eds-color-brand-700: #c24100;
+  --eds-color-brand-600: #e05a00;
+  --eds-color-brand-500: #ff6500;
+  --eds-color-brand-400: #ff8a3d;
+  --eds-color-brand-300: #ffc199;
+  --eds-color-brand-200: #ffe0cc;
+  --eds-color-brand-100: #fff0e6;
+  --eds-color-brand-50: #fff8f3;
+  --eds-color-bg: #fff8f3;
+  --eds-color-surface: #ffffff;
+  --eds-color-primary: #ff6500;
+  --eds-color-primary-hover: #e05a00;
+  --eds-color-primary-active: #c24100;
+  --eds-color-focus: #ff6500;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--cl-ink);
+  background: var(--cl-canvas);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+.cl-brand,
+.cl-amount {
+  font-family: Lato, Roboto, sans-serif;
+  color: var(--cl-ink);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: var(--cl-copper-deep);
+}
+
+.cl-shell {
+  display: grid;
+  grid-template-columns: var(--cl-rail) minmax(0, 1fr);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--cl-canvas);
+}
+
+.cl-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  width: var(--cl-rail);
+  height: 100vh;
+  height: 100dvh;
+  padding: 28px 18px 20px;
+  background: #fff;
+  border-right: 1px solid var(--cl-line);
+}
+
+.cl-brand {
+  margin: 0 0 22px;
+  padding: 0 8px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.cl-brand span {
+  display: block;
+  margin-top: 4px;
+  color: var(--cl-quiet);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.cl-nav {
+  flex: 1;
+}
+
+.cl-nav nav {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cl-sidebar-foot {
+  padding-top: 16px;
+  border-top: 1px solid var(--cl-line);
+}
+
+.cl-profile {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding: 8px 4px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cl-profile strong,
+.cl-profile span span {
+  display: block;
+}
+
+.cl-profile strong {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cl-profile span span {
+  color: var(--cl-quiet);
+  font-size: 12px;
+}
+
+.cl-main {
+  min-width: 0;
+}
+
+.cl-column {
+  display: flex;
+  flex-direction: column;
+  width: min(760px, 100%);
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 36px 40px 24px;
+}
+
+.cl-column main {
+  flex: 1;
+}
+
+.cl-topbar {
+  display: none;
+}
+
+.cl-head h1 {
+  margin: 6px 0 0;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.cl-head p {
+  margin: 8px 0 0;
+  color: var(--cl-quiet);
+}
+
+.cl-head-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.cl-head-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.cl-quiet {
+  margin: 12px 0 0;
+  color: var(--cl-quiet);
+}
+
+.cl-footer {
+  padding-top: 28px;
+}
+
+.cl-footer p {
+  margin: 0;
+  color: var(--cl-quiet);
+  font-size: 13px;
+}
+
+.cl-footer a {
+  color: var(--cl-copper-deep);
+}
+
+.cl-backdrop {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .cl-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .cl-topbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 20px;
+    background: #fff;
+    border-bottom: 1px solid var(--cl-line);
+  }
+
+  .cl-topbar p {
+    margin: 0;
+    font-family: Lato, Roboto, sans-serif;
+    font-weight: 700;
+  }
+
+  .cl-menu {
+    padding: 6px 10px;
+    border: 1px solid var(--cl-line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--cl-ink);
+  }
+
+  .cl-sidebar {
+    position: fixed;
+    z-index: 30;
+    transform: translateX(-105%);
+    transition: transform 160ms ease;
+  }
+
+  .cl-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .cl-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: block;
+    border: 0;
+    background: rgb(58 36 24 / 0.28);
+  }
+
+  .cl-column {
+    width: 100%;
+    padding: 24px 20px 20px;
+  }
+}
