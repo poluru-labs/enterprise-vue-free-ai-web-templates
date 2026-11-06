@@ -111,7 +111,9 @@ const timeline = computed(() =>
     <aside class="nl-panel">
       <h2>Recent deploys</h2>
       <div class="nl-health">
-        <CircularProgress :value="deployHealth" show-value label="Healthy" />
+        <div class="nl-dial">
+          <CircularProgress :value="deployHealth" show-value label="Healthy" />
+        </div>
         <div class="nl-stack">
           <Meter :value="healthy.length" :max="desk.services.length" label="Healthy services" show-value />
           <ProgressBar label="Deploy health" :value="deployHealth" show-value />

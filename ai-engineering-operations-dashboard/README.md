@@ -1,42 +1,33 @@
-# vue-boiler
+# Northline
 
-This template should help get you started developing with Vue 3 in Vite.
+Engineering desk for Northline. A light, spruce-colored Vue 3 app for services, deploys, incidents, and the on-call roster.
 
-## Recommended IDE Setup
+People in the sample data use the surname Poluru. Status values are Healthy, Degraded, and Paused.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Pages
 
-## Recommended Browser Setup
+- Overview — open incidents, deploy health, and the service table beside the deploy timeline
+- Services — searchable catalog
+- Service detail — facts, runbook, and the latest release
+- Deploys — timeline and a release window
+- Incidents — table and a write-up drawer
+- People — teams and the on-call list
+- Settings — desk profile
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Stack
 
-## Type Support for `.vue` Imports in TS
+Vue 3, Vite, TypeScript, vue-router, and [@poluru-labs/enterprise-design-system-vue](https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-vue).
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+Fonts are Roboto and Lato. The accent is `#0F6E56`.
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## Scripts
 
 ```sh
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
 npm run build
 ```
+
+The dev server listens on port 5218. Open `/northline/overview`.
+
+Created by [Subrahmanyam Poluru](https://polurus.com).

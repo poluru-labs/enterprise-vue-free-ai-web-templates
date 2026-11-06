@@ -113,11 +113,17 @@ a {
   min-height: 0;
 }
 
-.nl-nav :deep(nav) {
+.nl-nav nav {
   padding: 0;
   border: 0;
   border-radius: 0;
   background: transparent;
+  box-shadow: none;
+}
+
+.nl-nav a {
+  min-height: 2rem;
+  padding: 6px 8px;
 }
 
 .nl-sidebar-foot {
@@ -209,7 +215,7 @@ a {
 
 .nl-ribbon > * {
   min-width: 0;
-  padding: 8px 12px;
+  padding: 2px 10px 6px;
   border-right: 1px solid var(--nl-line);
 }
 
@@ -262,10 +268,21 @@ a {
 
 .nl-health {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: 84px minmax(0, 1fr);
   gap: 12px;
   align-items: center;
   margin-bottom: 12px;
+}
+
+.nl-dial {
+  width: 84px;
+  height: 84px;
+  overflow: hidden;
+}
+
+.nl-dial > * {
+  width: 84px;
+  max-width: 84px;
 }
 
 .nl-stack {
