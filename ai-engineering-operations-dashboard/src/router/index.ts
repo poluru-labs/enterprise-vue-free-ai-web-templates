@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
+import OverviewView from '@/views/OverviewView.vue'
 import PlaceholderView from '@/views/PlaceholderView.vue'
+import ServicesView from '@/views/ServicesView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/overview` },
@@ -8,13 +10,13 @@ export const routes = [
   {
     path: `${BASE_PATH}/overview`,
     name: 'overview',
-    component: PlaceholderView,
+    component: OverviewView,
     meta: { title: 'Overview' },
   },
   {
     path: `${BASE_PATH}/services`,
     name: 'services',
-    component: PlaceholderView,
+    component: ServicesView,
     meta: { title: 'Services' },
   },
   {
