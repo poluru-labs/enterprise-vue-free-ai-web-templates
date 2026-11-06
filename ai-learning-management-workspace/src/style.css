@@ -1,0 +1,259 @@
+:root {
+  --cy-iris: #7c3aed;
+  --cy-iris-deep: #6d28d9;
+  --cy-ink: #2a2140;
+  --cy-quiet: #6b6280;
+  --cy-line: #e4dff0;
+  --cy-canvas: #f6f4fb;
+  --cy-rail: 200px;
+  --eds-font-sans: Roboto, 'Segoe UI', sans-serif;
+  --eds-font-display: Lato, Roboto, sans-serif;
+  --eds-color-brand-900: #4c1d95;
+  --eds-color-brand-800: #5b21b6;
+  --eds-color-brand-700: #6d28d9;
+  --eds-color-brand-600: #7c3aed;
+  --eds-color-brand-500: #7c3aed;
+  --eds-color-brand-400: #a78bfa;
+  --eds-color-brand-300: #c4b5fd;
+  --eds-color-brand-200: #ddd6fe;
+  --eds-color-brand-100: #ede9fe;
+  --eds-color-brand-50: #f5f3ff;
+  --eds-color-bg: #f6f4fb;
+  --eds-color-surface: #ffffff;
+  --eds-color-primary: #7c3aed;
+  --eds-color-primary-hover: #6d28d9;
+  --eds-color-primary-active: #5b21b6;
+  --eds-color-focus: #7c3aed;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--cy-ink);
+  background: var(--cy-canvas);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+.cy-brand {
+  font-family: Lato, Roboto, sans-serif;
+  color: var(--cy-ink);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: var(--cy-iris-deep);
+}
+
+.cy-shell {
+  display: grid;
+  grid-template-columns: var(--cy-rail) minmax(0, 1fr);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--cy-canvas);
+}
+
+.cy-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  padding: 20px 12px 16px;
+  background: #fff;
+  border-right: 1px solid var(--cy-line);
+}
+
+.cy-brand {
+  margin: 0 8px 18px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.cy-brand span {
+  display: block;
+  margin-top: 4px;
+  color: var(--cy-quiet);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.cy-nav {
+  flex: 1;
+}
+
+.cy-nav nav {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.cy-sidebar-foot {
+  margin-top: 12px;
+}
+
+.cy-profile {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  padding: 6px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cy-profile strong,
+.cy-profile span span {
+  display: block;
+}
+
+.cy-profile strong {
+  font-size: 13px;
+}
+
+.cy-profile span span {
+  color: var(--cy-quiet);
+  font-size: 12px;
+}
+
+.cy-main {
+  min-width: 0;
+}
+
+.cy-topbar {
+  display: none;
+}
+
+.cy-page {
+  padding: 28px 36px 24px;
+}
+
+.cy-head h1 {
+  margin: 8px 0 0;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.cy-head p {
+  margin: 6px 0 0;
+  color: var(--cy-quiet);
+}
+
+.cy-head-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.cy-head-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 10px;
+  align-items: center;
+}
+
+.cy-footer {
+  margin-top: 40px;
+}
+
+.cy-footer p {
+  margin: 0;
+  color: var(--cy-quiet);
+  font-size: 13px;
+}
+
+.cy-backdrop {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .cy-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .cy-topbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 16px;
+    background: #fff;
+    border-bottom: 1px solid var(--cy-line);
+  }
+
+  .cy-topbar p {
+    margin: 0;
+    font-family: Lato, Roboto, sans-serif;
+    font-weight: 700;
+  }
+
+  .cy-menu {
+    padding: 6px 10px;
+    border: 1px solid var(--cy-line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--cy-ink);
+  }
+
+  .cy-sidebar {
+    position: fixed;
+    z-index: 30;
+    width: var(--cy-rail);
+    transform: translateX(-105%);
+    transition: transform 160ms ease;
+  }
+
+  .cy-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .cy-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: block;
+    border: 0;
+    background: rgb(42 33 64 / 0.28);
+  }
+
+  .cy-page {
+    padding: 22px 16px 20px;
+  }
+
+  .cy-head-row {
+    flex-wrap: wrap;
+  }
+}
