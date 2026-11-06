@@ -210,7 +210,7 @@ a {
 }
 
 .pw-pipeline {
-  padding: 14px 16px 4px;
+  padding: 12px 0 0;
   background: #fffdf6;
   border-bottom: 1px solid var(--pw-line);
 }
@@ -237,7 +237,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding: 10px 16px;
+  padding: 10px 12px;
   border-bottom: 1px solid var(--pw-line);
 }
 
