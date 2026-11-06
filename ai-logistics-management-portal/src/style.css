@@ -202,6 +202,19 @@ a {
   font-weight: 700;
 }
 
+.wy-stage ol {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wy-stage li {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
 .wy-toolbar {
   margin: 16px 0;
 }
@@ -407,6 +420,14 @@ a {
 
   .wy-page {
     padding: 20px 16px 20px;
+  }
+
+  .wy-stage {
+    overflow-x: auto;
+  }
+
+  .wy-stage ol {
+    min-width: 640px;
   }
 
   .wy-row,
