@@ -51,7 +51,7 @@ const record = computed(() => school.learners.find((learner) => learner.name ===
 
 function openRecord(value: string) {
   picked.value = value
-  drawerOpen.value = Boolean(value)
+  drawerOpen.value = school.learners.some((learner) => learner.name === value)
 }
 </script>
 
