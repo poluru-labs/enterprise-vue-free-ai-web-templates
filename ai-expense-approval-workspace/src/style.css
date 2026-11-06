@@ -200,8 +200,77 @@ a {
 }
 
 .cl-quiet {
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   color: var(--cl-quiet);
+}
+
+.cl-alert,
+.cl-toolbar {
+  margin-top: 22px;
+}
+
+.cl-list {
+  margin-top: 8px;
+}
+
+.cl-claim {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  padding: 20px 8px;
+  border: 0;
+  border-bottom: 1px solid var(--cl-line);
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cl-claim:hover {
+  background: #fff;
+}
+
+.cl-claim strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.cl-meta {
+  display: block;
+  margin-top: 2px;
+  color: var(--cl-quiet);
+  font-size: 13px;
+}
+
+.cl-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.cl-amount {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.cl-receipt {
+  margin-top: 18px;
+}
+
+.cl-section {
+  margin: 22px 0 10px;
+  font-size: 16px;
+}
+
+.cl-timeline,
+.cl-actions {
+  margin-top: 16px;
 }
 
 .cl-footer {
