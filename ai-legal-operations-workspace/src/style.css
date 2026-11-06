@@ -196,7 +196,75 @@ a {
   border-top: 1px solid var(--bw-line);
 }
 
-.bw-footer {
+.bw-toolbar {
+  margin: 28px 0 18px;
+}
+
+.bw-ledger {
+  border-top: 1px solid var(--bw-line);
+}
+
+.bw-ledger-head,
+.bw-ledger-row {
+  display: grid;
+  grid-template-columns: 108px minmax(0, 1.4fr) minmax(0, 1fr) 110px 120px;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--bw-line);
+  text-align: left;
+}
+
+.bw-ledger-head {
+  color: var(--bw-quiet);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.bw-ledger-row {
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.bw-ledger-row:hover {
+  background: #fff;
+}
+
+.bw-number {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.bw-doc {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.bw-doc h2 {
+  margin: 12px 0 0;
+  font-size: 28px;
+  letter-spacing: -0.03em;
+}
+
+.bw-party {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.bw-quiet {
+  margin: 0;
+  color: var(--bw-quiet);
+}
   margin-top: 72px;
   padding-top: 18px;
   border-top: 1px solid var(--bw-line);
@@ -267,6 +335,15 @@ a {
 
   .bw-head h1 {
     font-size: 36px;
+  }
+
+  .bw-ledger-head {
+    display: none;
+  }
+
+  .bw-ledger-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 
   .bw-head-row {
