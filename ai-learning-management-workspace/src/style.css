@@ -186,6 +186,66 @@ a {
   align-items: center;
 }
 
+.cy-tabs {
+  margin: 22px 0 8px;
+}
+
+.cy-toolbar {
+  margin: 16px 0 20px;
+}
+
+.cy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.cy-course {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 280px;
+}
+
+.cy-course-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.cy-owner,
+.cy-quiet {
+  margin: 8px 0;
+  color: var(--cy-quiet);
+  font-size: 13px;
+}
+
+.cy-course-action {
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.cy-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 720px;
+  margin-top: 8px;
+}
+
+.cy-detail h2 {
+  margin: 8px 0 0;
+  font-size: 22px;
+}
+
+.cy-detail-top {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
 .cy-footer {
   margin-top: 40px;
 }
@@ -255,5 +315,9 @@ a {
 
   .cy-head-row {
     flex-wrap: wrap;
+  }
+
+  .cy-grid {
+    grid-template-columns: 1fr;
   }
 }

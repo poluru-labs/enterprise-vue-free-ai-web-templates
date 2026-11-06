@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
+import { findCourse } from '@/data/school'
+import CatalogView from '@/views/CatalogView.vue'
+import CourseView from '@/views/CourseView.vue'
 import PlaceholderView from '@/views/PlaceholderView.vue'
 
 const page = (title: string) => ({
@@ -10,7 +13,13 @@ const page = (title: string) => ({
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/catalog` },
   { path: BASE_PATH, redirect: `${BASE_PATH}/catalog` },
-  { path: `${BASE_PATH}/catalog`, name: 'catalog', ...page('Catalog') },
+  { path: `${BASE_PATH}/catalog`, name: 'catalog', component: CatalogView, meta: { title: 'Catalog' } },
+  {
+    path: `${BASE_PATH}/catalog/:id`,
+    name: 'course',
+    component: CourseView,
+    meta: { title: 'Course' },
+  },
   { path: `${BASE_PATH}/paths`, name: 'paths', ...page('Paths') },
   { path: `${BASE_PATH}/people`, name: 'people', ...page('People') },
   { path: `${BASE_PATH}/sessions`, name: 'sessions', ...page('Sessions') },
@@ -27,6 +36,11 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
+  if (to.name === 'course') {
+    const course = findCourse(String(to.params.id ?? ''))
+    document.title = `${course?.title ?? 'Course'} · Courtyard`
+    return
+  }
   const title = typeof to.meta.title === 'string' ? to.meta.title : 'Catalog'
   document.title = `${title} · Courtyard`
 })
