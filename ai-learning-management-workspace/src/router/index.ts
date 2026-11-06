@@ -3,7 +3,10 @@ import { BASE_PATH } from '@/constants/navigation'
 import { findCourse } from '@/data/school'
 import CatalogView from '@/views/CatalogView.vue'
 import CourseView from '@/views/CourseView.vue'
+import PathsView from '@/views/PathsView.vue'
+import PeopleView from '@/views/PeopleView.vue'
 import PlaceholderView from '@/views/PlaceholderView.vue'
+import SessionsView from '@/views/SessionsView.vue'
 
 const page = (title: string) => ({
   component: PlaceholderView,
@@ -20,9 +23,9 @@ export const routes = [
     component: CourseView,
     meta: { title: 'Course' },
   },
-  { path: `${BASE_PATH}/paths`, name: 'paths', ...page('Paths') },
-  { path: `${BASE_PATH}/people`, name: 'people', ...page('People') },
-  { path: `${BASE_PATH}/sessions`, name: 'sessions', ...page('Sessions') },
+  { path: `${BASE_PATH}/paths`, name: 'paths', component: PathsView, meta: { title: 'Paths' } },
+  { path: `${BASE_PATH}/people`, name: 'people', component: PeopleView, meta: { title: 'People' } },
+  { path: `${BASE_PATH}/sessions`, name: 'sessions', component: SessionsView, meta: { title: 'Sessions' } },
   { path: `${BASE_PATH}/settings`, name: 'settings', ...page('Settings') },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/catalog` },
 ]

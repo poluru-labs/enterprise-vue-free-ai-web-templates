@@ -29,6 +29,16 @@ export type PathStep = {
   description: string
 }
 
+export type Booking = {
+  id: string
+  title: string
+  course: string
+  room: string
+  date: string
+  time: string
+  note: string
+}
+
 export const school = reactive({
   reminder: '1 day before',
   passMark: 80,
@@ -138,6 +148,26 @@ export const school = reactive({
     { id: 'p4', label: 'Desk tools', description: 'Mail, calendar, and the printer.' },
   ] as PathStep[],
   rooms: ['Room A', 'Room B', 'Room C', 'Courtyard'],
+  bookings: [
+    {
+      id: 'bk-1',
+      title: 'Morning welcome',
+      course: 'Onboarding',
+      room: 'Room A',
+      date: '2026-11-09',
+      time: '09:00',
+      note: 'First hour.',
+    },
+    {
+      id: 'bk-2',
+      title: 'Drill',
+      course: 'Safety',
+      room: 'Courtyard',
+      date: '2026-11-10',
+      time: '14:00',
+      note: 'Meet outside.',
+    },
+  ] as Booking[],
 })
 
 export function findCourse(id: string) {
