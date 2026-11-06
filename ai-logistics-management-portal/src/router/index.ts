@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
+import CarriersView from '@/views/CarriersView.vue'
+import ExceptionsView from '@/views/ExceptionsView.vue'
+import HubsView from '@/views/HubsView.vue'
 import { findLoad } from '@/data/yard'
 import LoadView from '@/views/LoadView.vue'
 import LoadsView from '@/views/LoadsView.vue'
@@ -20,9 +23,9 @@ export const routes = [
     component: LoadView,
     meta: { title: 'Load' },
   },
-  { path: `${BASE_PATH}/hubs`, name: 'hubs', ...page('Hubs') },
-  { path: `${BASE_PATH}/carriers`, name: 'carriers', ...page('Carriers') },
-  { path: `${BASE_PATH}/exceptions`, name: 'exceptions', ...page('Exceptions') },
+  { path: `${BASE_PATH}/hubs`, name: 'hubs', component: HubsView, meta: { title: 'Hubs' } },
+  { path: `${BASE_PATH}/carriers`, name: 'carriers', component: CarriersView, meta: { title: 'Carriers' } },
+  { path: `${BASE_PATH}/exceptions`, name: 'exceptions', component: ExceptionsView, meta: { title: 'Exceptions' } },
   { path: `${BASE_PATH}/settings`, name: 'settings', ...page('Settings') },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/loads` },
 ]
