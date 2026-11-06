@@ -198,6 +198,95 @@ a {
   align-items: center;
 }
 
+.ay-band {
+  margin-top: 22px;
+}
+
+.ay-count {
+  color: var(--ay-quiet);
+  font-size: 13px;
+}
+
+.ay-directory {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ay-strip-btn {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) 120px 110px;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ay-strip.is-open {
+  box-shadow: inset 4px 0 0 var(--ay-lagoon);
+}
+
+.ay-firm,
+.ay-meta {
+  display: block;
+}
+
+.ay-firm {
+  font-family: Lato, Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.ay-meta,
+.ay-quiet {
+  color: var(--ay-quiet);
+}
+
+.ay-meta {
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+.ay-pages {
+  margin-top: 8px;
+}
+
+.ay-subhead {
+  margin: 28px 0 12px;
+  font-size: 22px;
+}
+
+.ay-record {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.ay-record > div {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  align-items: center;
+}
+
+.ay-block {
+  margin-top: 20px;
+}
+
+.ay-drawer-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .ay-footer {
   margin-top: 40px;
 }
@@ -265,7 +354,12 @@ a {
     padding: 20px 16px 24px;
   }
 
-  .ay-head-row {
+  .ay-head-row,
+  .ay-band {
     flex-wrap: wrap;
+  }
+
+  .ay-strip-btn {
+    grid-template-columns: 52px minmax(0, 1fr);
   }
 }
