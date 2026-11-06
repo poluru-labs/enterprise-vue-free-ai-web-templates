@@ -1,15 +1,39 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { Alert, Avatar, Card, DescriptionList, Status } from '@poluru-labs/enterprise-design-system-vue'
+import {
+  Accordion,
+  Alert,
+  Avatar,
+  Card,
+  CircularProgress,
+  DescriptionList,
+  Divider,
+  ProgressBar,
+  Status,
+} from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
 import { BASE_PATH, BREADCRUMB_ROOT } from '@/constants/navigation'
-import { desk } from '@/data/board'
+import { desk, occupiedCount } from '@/data/board'
 import { roomTone } from '@/utils/status'
 
 const route = useRoute()
 
 const unit = computed(() => desk.units.find((item) => item.id === route.params.id) ?? desk.units[0])
+
+const occupancy = computed(() => {
+  const current = unit.value
+  if (!current?.rooms.length) return 0
+  return Math.round((occupiedCount(current) / current.rooms.length) * 100)
+})
+
+const notes = computed(() =>
+  (unit.value?.alerts ?? []).map((alert) => ({
+    id: alert.id,
+    title: alert.item,
+    content: alert.note,
+  })),
+)
 
 const facts = computed(() => {
   const current = unit.value
@@ -34,7 +58,14 @@ const facts = computed(() => {
   <section v-if="unit" class="wl-charge">
     <Avatar :name="unit.charge" size="md" />
     <DescriptionList :items="facts" />
+    <div class="wl-dial">
+      <CircularProgress :value="occupancy" show-value label="Occupied" />
+    </div>
   </section>
+
+  <ProgressBar class="wl-alert" label="Occupied" :value="occupancy" show-value />
+  <Divider />
+  <Accordion v-if="notes.length" class="wl-alert" :items="notes" />
 
   <Alert
     v-for="alert in unit?.alerts ?? []"

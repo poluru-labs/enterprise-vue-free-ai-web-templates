@@ -35,6 +35,7 @@ export interface SupplyItem {
   unit: string
   onHand: number
   par: number
+  counted: string
 }
 
 export interface StaffMember {
@@ -47,6 +48,11 @@ export interface StaffMember {
 export const desk = reactive({
   admissionsToday: 6,
   delayedDischarges: 2,
+  targetOpen: 4,
+  pager: true,
+  quietHours: false,
+  pin: '',
+  handoff: '15:00',
   units: [
     {
       id: 'cedar',
@@ -94,11 +100,11 @@ export const desk = reactive({
     { id: 's4', title: 'Night lead', description: 'Neel Poluru', time: '19:00' },
   ] as ShiftMark[],
   supplies: [
-    { id: 'gowns', item: 'Isolation gowns', unit: 'Cedar', onHand: 2, par: 12 },
-    { id: 'linen', item: 'Bed linen', unit: 'Maple', onHand: 4, par: 20 },
-    { id: 'gloves', item: 'Exam gloves', unit: 'Harbor', onHand: 6, par: 24 },
-    { id: 'masks', item: 'Procedure masks', unit: 'Cedar', onHand: 18, par: 30 },
-    { id: 'basins', item: 'Wash basins', unit: 'Maple', onHand: 9, par: 10 },
+    { id: 'gowns', item: 'Isolation gowns', unit: 'Cedar', onHand: 2, par: 12, counted: '2026-11-05' },
+    { id: 'linen', item: 'Bed linen', unit: 'Maple', onHand: 4, par: 20, counted: '2026-11-05' },
+    { id: 'gloves', item: 'Exam gloves', unit: 'Harbor', onHand: 6, par: 24, counted: '2026-11-04' },
+    { id: 'masks', item: 'Procedure masks', unit: 'Cedar', onHand: 18, par: 30, counted: '2026-11-03' },
+    { id: 'basins', item: 'Wash basins', unit: 'Maple', onHand: 9, par: 10, counted: '2026-11-02' },
   ] as SupplyItem[],
   staff: [
     { id: 'isha', name: 'Isha Poluru', role: 'House lead', unit: 'House' },
