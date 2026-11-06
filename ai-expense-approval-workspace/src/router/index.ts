@@ -2,14 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
 import InboxView from '@/views/InboxView.vue'
 import MineView from '@/views/MineView.vue'
-import PlaceholderView from '@/views/PlaceholderView.vue'
 import ReportsView from '@/views/ReportsView.vue'
+import SettingsView from '@/views/SettingsView.vue'
 import VendorsView from '@/views/VendorsView.vue'
-
-const page = (title: string) => ({
-  component: PlaceholderView,
-  meta: { title },
-})
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/inbox` },
@@ -18,7 +13,7 @@ export const routes = [
   { path: `${BASE_PATH}/mine`, name: 'mine', component: MineView, meta: { title: 'Mine' } },
   { path: `${BASE_PATH}/reports`, name: 'reports', component: ReportsView, meta: { title: 'Reports' } },
   { path: `${BASE_PATH}/vendors`, name: 'vendors', component: VendorsView, meta: { title: 'Vendors' } },
-  { path: `${BASE_PATH}/settings`, name: 'settings', ...page('Settings') },
+  { path: `${BASE_PATH}/settings`, name: 'settings', component: SettingsView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/inbox` },
 ]
 

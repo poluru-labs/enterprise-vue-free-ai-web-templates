@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { Avatar, DescriptionList, List, TreeView } from '@poluru-labs/enterprise-design-system-vue'
+import { Avatar, DescriptionList, List, Rating, TreeView } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
 import { BREADCRUMB_ROOT } from '@/constants/navigation'
 import { desk } from '@/data/claims'
@@ -64,6 +64,7 @@ const directory = computed(() =>
       </div>
     </div>
     <DescriptionList :items="facts" />
+    <Rating class="cl-rating" :model-value="4" label="Ease of filing" read-only />
   </section>
 
   <h2 class="cl-section">Directory</h2>

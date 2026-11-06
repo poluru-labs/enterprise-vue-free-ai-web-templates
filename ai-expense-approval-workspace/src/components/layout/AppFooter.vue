@@ -1,15 +1,16 @@
+<script setup lang="ts">
+import { Link } from '@poluru-labs/enterprise-design-system-vue'
+</script>
+
 <template>
   <footer class="cl-footer">
     <p>
       Created by
-      <a href="https://polurus.com" target="_blank" rel="noopener noreferrer">Subrahmanyam Poluru</a>
+      <Link href="https://polurus.com" target="_blank">Subrahmanyam Poluru</Link>
       · Built with
-      <a
-        href="https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-vue"
-        target="_blank"
-        rel="noopener noreferrer"
-        >@poluru-labs/enterprise-design-system-vue</a
-      >
+      <Link href="https://www.npmjs.com/package/@poluru-labs/enterprise-design-system-vue" target="_blank">
+        @poluru-labs/enterprise-design-system-vue
+      </Link>
     </p>
   </footer>
 </template>

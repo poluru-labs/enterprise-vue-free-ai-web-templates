@@ -4,6 +4,7 @@ import {
   Autocomplete,
   Button,
   Checkbox,
+  SplitButton,
   Combobox,
   DatePicker,
   FileUpload,
@@ -133,7 +134,7 @@ function onFiles(detail: { files?: File[] }) {
       <Radio value="no" label="No" />
       <Radio value="yes" label="Yes" />
     </RadioGroup>
-    <Button type="submit">Submit claim</Button>
+    <SplitButton label="Submit claim" @click="confirmOpen = true" @select="save" />
   </form>
 
   <Modal :open="confirmOpen" heading="Submit this claim?" @update:open="confirmOpen = $event">

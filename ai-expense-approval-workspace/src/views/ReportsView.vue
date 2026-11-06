@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import {
   CircularProgress,
   DataTable,
   DateRangePicker,
   Divider,
+  EmptyState,
   Meter,
+  Pagination,
   ProgressBar,
   Stat,
   Tabs,
@@ -17,6 +19,12 @@ import { desk, money, type Category } from '@/data/claims'
 const start = ref('2026-10-01')
 const end = ref('2026-11-30')
 const tab = ref('all')
+const page = ref(1)
+const pageSize = 4
+
+watch([tab, start, end], () => {
+  page.value = 1
+})
 
 const inRange = computed(() =>
   desk.claims.filter((claim) => claim.submitted >= start.value && claim.submitted <= end.value),
@@ -38,15 +46,17 @@ function categoryTotal(category: Category) {
   return inRange.value.filter((claim) => claim.category === category).reduce((sum, claim) => sum + claim.amount, 0)
 }
 
-const rows = computed(() =>
-  shown.value.map((claim) => ({
+const pageCount = computed(() => Math.max(1, Math.ceil(shown.value.length / pageSize)))
+const rows = computed(() => {
+  const startAt = (page.value - 1) * pageSize
+  return shown.value.slice(startAt, startAt + pageSize).map((claim) => ({
     number: claim.number,
     owner: claim.owner,
     category: claim.category,
     status: claim.status,
     amount: money(claim.amount),
-  })),
-)
+  }))
+})
 
 const rangeMax = computed(() => Math.max(total.value, 1))
 </script>
@@ -95,6 +105,14 @@ const rangeMax = computed(() => Math.max(total.value, 1))
     ]"
   />
 
+  <EmptyState
+    v-if="!shown.length"
+    title="Nothing in these dates"
+    description="Widen the range to see travel, software, and meals."
+    icon="search"
+  />
+
+  <template v-else>
   <DataTable
     compact
     striped
@@ -107,4 +125,8 @@ const rangeMax = computed(() => Math.max(total.value, 1))
     ]"
     :rows="rows"
   />
+  <div class="cl-pager">
+    <Pagination v-model:page="page" :page-count="pageCount" />
+  </div>
+  </template>
 </template>

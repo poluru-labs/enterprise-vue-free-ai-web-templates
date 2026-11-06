@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import {
+  Accordion,
   Alert,
   Avatar,
   Badge,
@@ -10,15 +11,21 @@ import {
   DataTable,
   DescriptionList,
   Drawer,
+  EmptyState,
+  Kbd,
   Modal,
+  Popover,
   Search,
   SegmentedControl,
+  Skeleton,
+  Spinner,
   Status,
   Stepper,
   Tag,
   Textarea,
   Timeline,
   Toolbar,
+  Tooltip,
   showToast,
 } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
@@ -27,6 +34,15 @@ import { REVIEWER, desk, money, type Claim, type ClaimStatus } from '@/data/clai
 
 const query = ref('')
 const category = ref('all')
+const refreshing = ref(false)
+const noteOpen = ref(false)
+
+function refresh() {
+  refreshing.value = true
+  window.setTimeout(() => {
+    refreshing.value = false
+  }, 450)
+}
 const drawerOpen = ref(false)
 const modalOpen = ref(false)
 const decision = ref<'Approved' | 'Sent back'>('Approved')
@@ -115,14 +131,27 @@ function applyDecision() {
     title="Inbox"
     lede="Claims waiting on Farah Poluru."
     :crumbs="[BREADCRUMB_ROOT, { label: 'Inbox' }]"
-  />
+  >
+    <template #actions>
+      <Popover v-model:open="noteOpen" heading="Approval line" placement="bottom">
+        <template #trigger>
+          <button type="button" class="cl-text-btn">Line {{ money(desk.threshold) }}</button>
+        </template>
+        <p class="cl-quiet">Claims above the line stay here until Farah Poluru decides.</p>
+      </Popover>
+      <Tooltip content="Reload the inbox">
+        <Button size="sm" variant="secondary" :loading="refreshing" @click="refresh">Refresh</Button>
+      </Tooltip>
+      <Kbd :keys="['/']" />
+    </template>
+  </PageHead>
 
   <Alert
     v-if="overLine.length"
     class="cl-alert"
     variant="warning"
     title="Over the approval line"
-    :message="`${overLine.length} waiting claim is above ${money(desk.threshold)}.`"
+    :message="`${overLine.length} waiting ${overLine.length === 1 ? 'claim is' : 'claims are'} above ${money(desk.threshold)}.`"
   />
 
   <Toolbar class="cl-toolbar">
@@ -142,7 +171,18 @@ function applyDecision() {
     </template>
   </Toolbar>
 
-  <p v-if="!visible.length" class="cl-quiet">No claims match.</p>
+  <div v-if="refreshing" class="cl-skeleton">
+    <Spinner label="Refreshing inbox" show-label />
+    <Skeleton variant="rectangular" width="100%" height="72px" />
+    <Skeleton variant="rectangular" width="100%" height="72px" />
+  </div>
+
+  <EmptyState
+    v-else-if="!visible.length"
+    :title="waiting.length ? 'No claims match' : 'Inbox is clear'"
+    :description="waiting.length ? 'Try another name, or clear the category.' : 'Nothing is waiting on Farah Poluru.'"
+    icon="search"
+  />
 
   <div v-else class="cl-list">
     <button v-for="claim in visible" :key="claim.id" type="button" class="cl-claim" @click="openClaim(claim)">
@@ -168,6 +208,7 @@ function applyDecision() {
         <Badge :label="active.category" variant="warning" soft />
         <p class="cl-quiet">{{ active.notes }}</p>
       </Card>
+      <Accordion class="cl-section" :items="[{ id: 'note', title: 'Owner note', content: active.notes }]" />
       <h2 class="cl-section">Line items</h2>
       <DataTable compact :columns="[{ key: 'item', label: 'Item' }, { key: 'amount', label: 'Amount' }]" :rows="lineRows" />
       <h2 class="cl-section">Review</h2>

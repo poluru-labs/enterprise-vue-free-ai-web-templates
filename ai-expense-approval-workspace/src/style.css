@@ -338,6 +338,32 @@ a {
   margin-bottom: 16px;
 }
 
+.cl-text-btn {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cl-copper-deep);
+  cursor: pointer;
+}
+
+.cl-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.cl-pager,
+.cl-rating {
+  margin-top: 16px;
+}
+
+.cl-form h2 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
 @media (max-width: 860px) {
   .cl-report-stats,
   .cl-claim {
