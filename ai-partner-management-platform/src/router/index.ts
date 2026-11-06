@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
 import { findPartner } from '@/data/directory'
+import ContactsView from '@/views/ContactsView.vue'
+import DealsView from '@/views/DealsView.vue'
+import EnablementView from '@/views/EnablementView.vue'
 import PartnerView from '@/views/PartnerView.vue'
 import PartnersView from '@/views/PartnersView.vue'
 import PlaceholderView from '@/views/PlaceholderView.vue'
@@ -15,9 +18,9 @@ export const routes = [
     component: PartnerView,
     meta: { title: 'Partner' },
   },
-  { path: `${BASE_PATH}/deals`, name: 'deals', component: PlaceholderView, meta: { title: 'Deals' } },
-  { path: `${BASE_PATH}/enablement`, name: 'enablement', component: PlaceholderView, meta: { title: 'Enablement' } },
-  { path: `${BASE_PATH}/contacts`, name: 'contacts', component: PlaceholderView, meta: { title: 'Contacts' } },
+  { path: `${BASE_PATH}/deals`, name: 'deals', component: DealsView, meta: { title: 'Deals' } },
+  { path: `${BASE_PATH}/enablement`, name: 'enablement', component: EnablementView, meta: { title: 'Enablement' } },
+  { path: `${BASE_PATH}/contacts`, name: 'contacts', component: ContactsView, meta: { title: 'Contacts' } },
   { path: `${BASE_PATH}/settings`, name: 'settings', component: PlaceholderView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/partners` },
 ]
