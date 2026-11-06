@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
+import DeploysView from '@/views/DeploysView.vue'
+import IncidentsView from '@/views/IncidentsView.vue'
 import OverviewView from '@/views/OverviewView.vue'
 import PlaceholderView from '@/views/PlaceholderView.vue'
+import ServiceDetailView from '@/views/ServiceDetailView.vue'
 import ServicesView from '@/views/ServicesView.vue'
 
 export const routes = [
@@ -20,15 +23,21 @@ export const routes = [
     meta: { title: 'Services' },
   },
   {
+    path: `${BASE_PATH}/services/:id`,
+    name: 'service-detail',
+    component: ServiceDetailView,
+    meta: { title: 'Service' },
+  },
+  {
     path: `${BASE_PATH}/deploys`,
     name: 'deploys',
-    component: PlaceholderView,
+    component: DeploysView,
     meta: { title: 'Deploys' },
   },
   {
     path: `${BASE_PATH}/incidents`,
     name: 'incidents',
-    component: PlaceholderView,
+    component: IncidentsView,
     meta: { title: 'Incidents' },
   },
   {
