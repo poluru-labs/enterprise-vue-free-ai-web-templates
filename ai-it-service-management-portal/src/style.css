@@ -1,0 +1,254 @@
+:root {
+  --dk-cobalt: #1d4ed8;
+  --dk-cobalt-deep: #1e40af;
+  --dk-ink: #1a2340;
+  --dk-quiet: #5c6780;
+  --dk-line: #d9deea;
+  --dk-canvas: #f5f6fb;
+  --dk-rail: 220px;
+  --eds-font-sans: Roboto, 'Segoe UI', sans-serif;
+  --eds-font-display: Lato, Roboto, sans-serif;
+  --eds-color-brand-900: #1e3a8a;
+  --eds-color-brand-800: #1e40af;
+  --eds-color-brand-700: #1d4ed8;
+  --eds-color-brand-600: #2563eb;
+  --eds-color-brand-500: #1d4ed8;
+  --eds-color-brand-400: #60a5fa;
+  --eds-color-brand-300: #93c5fd;
+  --eds-color-brand-200: #bfdbfe;
+  --eds-color-brand-100: #dbeafe;
+  --eds-color-brand-50: #eff6ff;
+  --eds-color-bg: #f5f6fb;
+  --eds-color-surface: #ffffff;
+  --eds-color-primary: #1d4ed8;
+  --eds-color-primary-hover: #1e40af;
+  --eds-color-primary-active: #1e3a8a;
+  --eds-color-focus: #1d4ed8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--dk-ink);
+  background: var(--dk-canvas);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+.dk-brand {
+  font-family: Lato, Roboto, sans-serif;
+  color: var(--dk-ink);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: var(--dk-cobalt-deep);
+}
+
+.dk-shell {
+  display: grid;
+  grid-template-columns: var(--dk-rail) minmax(0, 1fr);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--dk-canvas);
+}
+
+.dk-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  padding: 24px 16px 18px;
+  background: #fff;
+  border-right: 1px solid var(--dk-line);
+}
+
+.dk-brand {
+  margin: 0 8px 22px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.dk-brand span {
+  display: block;
+  margin-top: 4px;
+  color: var(--dk-quiet);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.dk-nav {
+  flex: 1;
+}
+
+.dk-nav nav {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.dk-sidebar-foot {
+  margin-top: 16px;
+}
+
+.dk-profile {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding: 8px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dk-profile strong,
+.dk-profile span span {
+  display: block;
+}
+
+.dk-profile span span {
+  color: var(--dk-quiet);
+  font-size: 12px;
+}
+
+.dk-main {
+  min-width: 0;
+}
+
+.dk-topbar {
+  display: none;
+}
+
+.dk-page {
+  padding: 28px 32px 24px;
+}
+
+.dk-head h1 {
+  margin: 8px 0 0;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.dk-head p {
+  margin: 6px 0 0;
+  color: var(--dk-quiet);
+}
+
+.dk-head-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.dk-head-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 10px;
+  align-items: center;
+}
+
+.dk-footer {
+  margin-top: 40px;
+}
+
+.dk-footer p {
+  margin: 0;
+  color: var(--dk-quiet);
+  font-size: 13px;
+}
+
+.dk-backdrop {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .dk-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .dk-topbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 18px;
+    background: #fff;
+    border-bottom: 1px solid var(--dk-line);
+  }
+
+  .dk-topbar p {
+    margin: 0;
+    font-family: Lato, Roboto, sans-serif;
+    font-weight: 700;
+  }
+
+  .dk-menu {
+    padding: 6px 10px;
+    border: 1px solid var(--dk-line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--dk-ink);
+  }
+
+  .dk-sidebar {
+    position: fixed;
+    z-index: 30;
+    transform: translateX(-105%);
+    transition: transform 160ms ease;
+  }
+
+  .dk-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .dk-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: block;
+    border: 0;
+    background: rgb(26 35 64 / 0.28);
+  }
+
+  .dk-page {
+    padding: 24px 18px 20px;
+  }
+
+  .dk-head-row {
+    flex-wrap: wrap;
+  }
+}
