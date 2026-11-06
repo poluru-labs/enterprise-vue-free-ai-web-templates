@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
+import BoardView from '@/views/BoardView.vue'
 import PlaceholderView from '@/views/PlaceholderView.vue'
+import UnitDetailView from '@/views/UnitDetailView.vue'
+import UnitsView from '@/views/UnitsView.vue'
 
 const page = (title: string) => ({
   component: PlaceholderView,
@@ -10,8 +13,9 @@ const page = (title: string) => ({
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/board` },
   { path: BASE_PATH, redirect: `${BASE_PATH}/board` },
-  { path: `${BASE_PATH}/board`, name: 'board', ...page('Board') },
-  { path: `${BASE_PATH}/units`, name: 'units', ...page('Units') },
+  { path: `${BASE_PATH}/board`, name: 'board', component: BoardView, meta: { title: 'Board' } },
+  { path: `${BASE_PATH}/units`, name: 'units', component: UnitsView, meta: { title: 'Units' } },
+  { path: `${BASE_PATH}/units/:id`, name: 'unit', component: UnitDetailView, meta: { title: 'Unit' } },
   { path: `${BASE_PATH}/shifts`, name: 'shifts', ...page('Shifts') },
   { path: `${BASE_PATH}/supplies`, name: 'supplies', ...page('Supplies') },
   { path: `${BASE_PATH}/directory`, name: 'directory', ...page('Directory') },

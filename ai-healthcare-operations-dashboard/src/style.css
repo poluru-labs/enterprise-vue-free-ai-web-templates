@@ -185,8 +185,57 @@ a {
 }
 
 .wl-footer {
-  margin-top: 56px;
+  margin-top: 64px;
   padding-top: 8px;
+}
+
+.wl-quiet {
+  margin: 4px 0 0;
+  color: var(--wl-quiet);
+}
+
+.wl-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.wl-unit-block {
+  margin-top: 48px;
+}
+
+.wl-unit-block h2,
+.wl-shift h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.wl-rooms,
+.wl-unit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.wl-shift {
+  margin-top: 64px;
+}
+
+.wl-card-action {
+  margin-top: 18px;
+}
+
+.wl-charge {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 32px;
+}
+
+.wl-alert {
+  margin-top: 20px;
 }
 
 .wl-footer p {
@@ -255,7 +304,12 @@ a {
     font-size: 32px;
   }
 
-  .wl-head-row {
+  .wl-head-row,
+  .wl-stats {
     flex-wrap: wrap;
+  }
+
+  .wl-stats {
+    grid-template-columns: 1fr;
   }
 }
