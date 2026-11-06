@@ -441,4 +441,13 @@ a {
     width: 100%;
     padding: 24px 20px 20px;
   }
+
+  .cl-head-row,
+  .cl-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .cl-toolbar > * {
+    flex: 1 1 100%;
+  }
 }
