@@ -25,6 +25,7 @@ export interface Asset {
   kind: 'Laptop' | 'License'
   holder: string
   state: 'In use' | 'Ready'
+  assigned: string
 }
 
 export interface Ticket {
@@ -41,6 +42,11 @@ export interface Ticket {
 }
 
 export const desk = reactive({
+  hoursStart: '08:00',
+  hoursEnd: '18:00',
+  pageUrgent: true,
+  afterHours: false,
+  pin: '',
   tickets: [
     {
       id: 'tk-2401',
@@ -112,10 +118,10 @@ export const desk = reactive({
     { id: 'ch3', title: 'Badge printer', window: 'Wednesday 12:00', owner: 'Rhea Poluru', note: 'Front desk uses the spare.' },
   ] as ChangeWindow[],
   assets: [
-    { id: 'lp14', name: 'Laptop LP-14', kind: 'Laptop', holder: 'Tara Poluru', state: 'In use' },
-    { id: 'lp22', name: 'Laptop LP-22', kind: 'Laptop', holder: 'Vikas Poluru', state: 'In use' },
-    { id: 'lp30', name: 'Laptop LP-30', kind: 'Laptop', holder: 'Spare', state: 'Ready' },
-    { id: 'lic3', name: 'Design seat', kind: 'License', holder: 'Yamini Poluru', state: 'In use' },
-    { id: 'lic8', name: 'Editor seat', kind: 'License', holder: 'Uma Poluru', state: 'In use' },
+    { id: 'lp14', name: 'Laptop LP-14', kind: 'Laptop', holder: 'Tara Poluru', state: 'In use', assigned: '2026-09-02' },
+    { id: 'lp22', name: 'Laptop LP-22', kind: 'Laptop', holder: 'Vikas Poluru', state: 'In use', assigned: '2026-10-14' },
+    { id: 'lp30', name: 'Laptop LP-30', kind: 'Laptop', holder: 'Spare', state: 'Ready', assigned: '2026-11-01' },
+    { id: 'lic3', name: 'Design seat', kind: 'License', holder: 'Yamini Poluru', state: 'In use', assigned: '2026-08-20' },
+    { id: 'lic8', name: 'Editor seat', kind: 'License', holder: 'Uma Poluru', state: 'In use', assigned: '2026-07-11' },
   ] as Asset[],
 })

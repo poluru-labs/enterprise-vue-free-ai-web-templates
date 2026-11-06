@@ -318,6 +318,56 @@ a {
   margin: 4px 0 0;
 }
 
+.dk-text-btn {
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--dk-cobalt-deep);
+  cursor: pointer;
+}
+
+.dk-stat {
+  max-width: 240px;
+  margin-top: 18px;
+}
+
+.dk-skeleton,
+.dk-alert,
+.dk-prep,
+.dk-tree,
+.dk-list,
+.dk-pager {
+  margin-top: 18px;
+}
+
+.dk-prep {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 420px;
+}
+
+.dk-dial {
+  width: 84px;
+}
+
+.dk-asset-top {
+  display: grid;
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  gap: 20px;
+  align-items: end;
+  margin-top: 22px;
+}
+
+.dk-form h2 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+  font-size: 22px;
+}
+
 .dk-footer p {
   margin: 0;
   color: var(--dk-quiet);
@@ -386,7 +436,8 @@ a {
   }
 
   .dk-split,
-  .dk-row {
+  .dk-row,
+  .dk-asset-top {
     grid-template-columns: 1fr;
   }
 

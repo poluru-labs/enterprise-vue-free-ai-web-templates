@@ -3,24 +3,37 @@ import { computed, ref } from 'vue'
 import {
   Badge,
   Button,
+  ButtonGroup,
   DescriptionList,
+  EmptyState,
+  Kbd,
+  Popover,
   Search,
   SegmentedControl,
+  Skeleton,
+  Spinner,
+  Stat,
   Status,
   Tag,
   Textarea,
   Timeline,
   Toolbar,
+  Tooltip,
+  showToast,
 } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
 import { BREADCRUMB_ROOT, SIGNED_IN_USER } from '@/constants/navigation'
-import { desk } from '@/data/desk'
+import { desk, type TicketStatus } from '@/data/desk'
 import { priorityTone, ticketTone } from '@/utils/status'
 
 const query = ref('')
 const filter = ref('open')
 const selectedId = ref('tk-2411')
 const reply = ref('')
+const refreshing = ref(false)
+const noteOpen = ref(false)
+
+const openCount = computed(() => desk.tickets.filter((ticket) => ticket.status === 'Open').length)
 
 const visible = computed(() =>
   desk.tickets.filter((ticket) => {
@@ -69,6 +82,29 @@ function sendReply() {
     time: 'Now',
   })
   reply.value = ''
+  showToast({
+    title: 'Reply sent',
+    description: `${ticket.number} · ${ticket.requester}`,
+    variant: 'success',
+  })
+}
+
+function refresh() {
+  refreshing.value = true
+  window.setTimeout(() => {
+    refreshing.value = false
+  }, 450)
+}
+
+function setStatus(status: TicketStatus) {
+  const ticket = selected.value
+  if (!ticket) return
+  ticket.status = status
+  showToast({
+    title: 'Ticket updated',
+    description: `${ticket.number} is ${status}.`,
+    variant: 'info',
+  })
 }
 </script>
 
@@ -77,7 +113,24 @@ function sendReply() {
     title="Queue"
     lede="Open tickets on the left. The selected ticket stays on the right."
     :crumbs="[BREADCRUMB_ROOT, { label: 'Queue' }]"
-  />
+  >
+    <template #actions>
+      <Popover v-model:open="noteOpen" heading="Open queue" placement="bottom">
+        <template #trigger>
+          <button type="button" class="dk-text-btn">What is open</button>
+        </template>
+        <p class="dk-quiet">Open keeps tickets that are not closed. Waiting is a subset.</p>
+      </Popover>
+      <Tooltip content="Reload the queue">
+        <Button size="sm" variant="secondary" :loading="refreshing" @click="refresh">Refresh</Button>
+      </Tooltip>
+      <Kbd :keys="['/']" />
+    </template>
+  </PageHead>
+
+  <div class="dk-stat">
+    <Stat label="Open now" :value="String(openCount)" hint="Not closed" />
+  </div>
 
   <Toolbar class="dk-toolbar">
     <template #start>
@@ -95,7 +148,19 @@ function sendReply() {
     </template>
   </Toolbar>
 
-  <div class="dk-split">
+  <div v-if="refreshing" class="dk-skeleton">
+    <Spinner label="Refreshing the queue" show-label />
+    <Skeleton variant="rectangular" width="100%" height="180px" />
+  </div>
+
+  <EmptyState
+    v-else-if="!visible.length"
+    :title="query.trim() ? 'No tickets match' : 'Queue is clear'"
+    description="Nothing matches this filter."
+    icon="search"
+  />
+
+  <div v-else class="dk-split">
     <div class="dk-table" role="table">
       <div class="dk-row dk-row-head" role="row">
         <span>Ticket</span>
@@ -118,7 +183,6 @@ function sendReply() {
         <Status :label="ticket.priority" :tone="priorityTone(ticket.priority)" />
         <span>{{ ticket.assignee.split(' ')[0] }}</span>
       </button>
-      <p v-if="!visible.length" class="dk-quiet">No tickets in this view.</p>
     </div>
 
     <aside v-if="selected" class="dk-detail">
@@ -134,6 +198,10 @@ function sendReply() {
       <form class="dk-reply" @submit.prevent="sendReply">
         <Textarea v-model="reply" label="Reply" placeholder="Short note for the requester" />
         <Button type="submit">Send reply</Button>
+        <ButtonGroup>
+          <Button variant="secondary" type="button" @click="setStatus('Waiting')">Mark waiting</Button>
+          <Button variant="secondary" type="button" @click="setStatus('Closed')">Close</Button>
+        </ButtonGroup>
       </form>
     </aside>
   </div>

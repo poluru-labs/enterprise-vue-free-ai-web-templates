@@ -3,13 +3,8 @@ import { BASE_PATH } from '@/constants/navigation'
 import AssetsView from '@/views/AssetsView.vue'
 import CatalogView from '@/views/CatalogView.vue'
 import ChangesView from '@/views/ChangesView.vue'
-import PlaceholderView from '@/views/PlaceholderView.vue'
 import QueueView from '@/views/QueueView.vue'
-
-const page = (title: string) => ({
-  component: PlaceholderView,
-  meta: { title },
-})
+import SettingsView from '@/views/SettingsView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/queue` },
@@ -18,7 +13,7 @@ export const routes = [
   { path: `${BASE_PATH}/changes`, name: 'changes', component: ChangesView, meta: { title: 'Changes' } },
   { path: `${BASE_PATH}/assets`, name: 'assets', component: AssetsView, meta: { title: 'Assets' } },
   { path: `${BASE_PATH}/catalog`, name: 'catalog', component: CatalogView, meta: { title: 'Catalog' } },
-  { path: `${BASE_PATH}/settings`, name: 'settings', ...page('Settings') },
+  { path: `${BASE_PATH}/settings`, name: 'settings', component: SettingsView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/queue` },
 ]
 
