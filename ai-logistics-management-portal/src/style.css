@@ -187,7 +187,83 @@ a {
   align-items: center;
 }
 
-.wy-footer {
+.wy-stage {
+  margin-top: 20px;
+  padding: 16px 18px 8px;
+  background: #fff;
+  border: 1px solid var(--wy-line);
+  border-radius: 14px;
+}
+
+.wy-stage-label {
+  margin: 0 0 8px;
+  font-family: Lato, Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.wy-toolbar {
+  margin: 16px 0;
+}
+
+.wy-board {
+  border-top: 1px solid var(--wy-line);
+}
+
+.wy-row {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1.2fr) 120px minmax(0, 1fr) 90px;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 12px 8px;
+  border: 0;
+  border-bottom: 1px solid var(--wy-line);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.wy-row.is-selected {
+  background: #fff;
+  box-shadow: inset 3px 0 0 var(--wy-clay);
+}
+
+.wy-number {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.wy-scans {
+  margin-top: 28px;
+}
+
+.wy-scans h2,
+.wy-detail h2 {
+  margin: 0 0 12px;
+  font-size: 24px;
+}
+
+.wy-scans-head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.wy-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.wy-quiet {
+  color: var(--wy-quiet);
+}
   margin-top: 36px;
 }
 
@@ -252,6 +328,11 @@ a {
 
   .wy-page {
     padding: 20px 16px 20px;
+  }
+
+  .wy-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 
   .wy-head-row {

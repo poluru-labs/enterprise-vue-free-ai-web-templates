@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
+import { findLoad } from '@/data/yard'
+import LoadView from '@/views/LoadView.vue'
+import LoadsView from '@/views/LoadsView.vue'
 import PlaceholderView from '@/views/PlaceholderView.vue'
 
 const page = (title: string) => ({
@@ -10,7 +13,13 @@ const page = (title: string) => ({
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/loads` },
   { path: BASE_PATH, redirect: `${BASE_PATH}/loads` },
-  { path: `${BASE_PATH}/loads`, name: 'loads', ...page('Loads') },
+  { path: `${BASE_PATH}/loads`, name: 'loads', component: LoadsView, meta: { title: 'Loads' } },
+  {
+    path: `${BASE_PATH}/loads/:id`,
+    name: 'load',
+    component: LoadView,
+    meta: { title: 'Load' },
+  },
   { path: `${BASE_PATH}/hubs`, name: 'hubs', ...page('Hubs') },
   { path: `${BASE_PATH}/carriers`, name: 'carriers', ...page('Carriers') },
   { path: `${BASE_PATH}/exceptions`, name: 'exceptions', ...page('Exceptions') },
@@ -27,6 +36,11 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
+  if (to.name === 'load') {
+    const load = findLoad(String(to.params.id ?? ''))
+    document.title = `${load?.number ?? 'Load'} · Waybill`
+    return
+  }
   const title = typeof to.meta.title === 'string' ? to.meta.title : 'Loads'
   document.title = `${title} · Waybill`
 })
