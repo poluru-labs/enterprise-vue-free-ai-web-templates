@@ -4,13 +4,19 @@ import { useRouter } from 'vue-router'
 import {
   Badge,
   Button,
+  EmptyState,
+  Kbd,
+  Popover,
   Search,
   SegmentedControl,
+  Skeleton,
+  Stat,
   Status,
   Stepper,
   Tag,
   Timeline,
   Toolbar,
+  Tooltip,
 } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
 import { BREADCRUMB_ROOT, STAGES } from '@/constants/navigation'
@@ -20,6 +26,10 @@ const router = useRouter()
 const query = ref('')
 const scope = ref('active')
 const selectedId = ref('wb-3381')
+const loading = ref(false)
+const helpOpen = ref(false)
+
+const moving = computed(() => yard.loads.filter((load) => load.status === 'Moving').length)
 
 const visible = computed(() => {
   const term = query.value.trim().toLowerCase()
@@ -41,6 +51,13 @@ const selected = computed(() => {
   return current ?? visible.value[0] ?? null
 })
 
+function refresh() {
+  loading.value = true
+  window.setTimeout(() => {
+    loading.value = false
+  }, 400)
+}
+
 function tone(status: LoadStatus) {
   if (status === 'Delivered') return 'success' as const
   if (status === 'Held') return 'warning' as const
@@ -59,6 +76,7 @@ function openLoad(id: string) {
     <p class="wy-stage-label">{{ selected.number }} · {{ selected.from }} → {{ selected.to }}</p>
     <Stepper :steps="[...STAGES]" :active-index="selected.stage" />
   </section>
+  <Stat class="wy-block" label="Moving" :value="String(moving)" hint="On a lane right now" />
   <Toolbar class="wy-toolbar">
     <template #start>
       <Search v-model="query" placeholder="Find a load" />
@@ -71,8 +89,30 @@ function openLoad(id: string) {
         ]"
       />
     </template>
+    <template #end>
+      <Kbd :keys="['/']" />
+      <Popover v-model:open="helpOpen" heading="Stages" placement="bottom">
+        <template #trigger>
+          <Button type="button" variant="secondary" size="sm">About stages</Button>
+        </template>
+        <p>The bar shows where the selected load is, from pickup to delivery.</p>
+      </Popover>
+      <Tooltip content="Reload the board">
+        <Button type="button" variant="secondary" size="sm" @click="refresh">Refresh</Button>
+      </Tooltip>
+    </template>
   </Toolbar>
-  <div v-if="visible.length" class="wy-board">
+  <div v-if="loading" class="wy-board">
+    <Skeleton variant="rectangular" width="100%" height="48px" />
+    <Skeleton variant="rectangular" width="100%" height="48px" />
+  </div>
+  <EmptyState
+    v-else-if="visible.length === 0"
+    title="No loads match"
+    description="Try another city, or show every load."
+    icon="search"
+  />
+  <div v-else class="wy-board">
     <button
       v-for="load in visible"
       :key="load.id"
@@ -88,8 +128,7 @@ function openLoad(id: string) {
       <Badge :label="`${load.pieces} pcs`" variant="neutral" soft />
     </button>
   </div>
-  <p v-else class="wy-quiet">No loads match.</p>
-  <section v-if="selected" class="wy-scans">
+  <section v-if="selected && !loading" class="wy-scans">
     <div class="wy-scans-head">
       <h2>Scans</h2>
       <Button type="button" variant="secondary" @click="openLoad(selected.id)">Open load</Button>

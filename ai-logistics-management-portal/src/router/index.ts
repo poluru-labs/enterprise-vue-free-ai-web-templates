@@ -6,12 +6,7 @@ import HubsView from '@/views/HubsView.vue'
 import { findLoad } from '@/data/yard'
 import LoadView from '@/views/LoadView.vue'
 import LoadsView from '@/views/LoadsView.vue'
-import PlaceholderView from '@/views/PlaceholderView.vue'
-
-const page = (title: string) => ({
-  component: PlaceholderView,
-  meta: { title },
-})
+import SettingsView from '@/views/SettingsView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/loads` },
@@ -26,7 +21,7 @@ export const routes = [
   { path: `${BASE_PATH}/hubs`, name: 'hubs', component: HubsView, meta: { title: 'Hubs' } },
   { path: `${BASE_PATH}/carriers`, name: 'carriers', component: CarriersView, meta: { title: 'Carriers' } },
   { path: `${BASE_PATH}/exceptions`, name: 'exceptions', component: ExceptionsView, meta: { title: 'Exceptions' } },
-  { path: `${BASE_PATH}/settings`, name: 'settings', ...page('Settings') },
+  { path: `${BASE_PATH}/settings`, name: 'settings', component: SettingsView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/loads` },
 ]
 

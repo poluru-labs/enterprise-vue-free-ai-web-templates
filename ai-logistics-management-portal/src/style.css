@@ -324,8 +324,25 @@ a {
   border: 1px solid var(--wy-line);
   border-radius: 12px;
 }
+
+.wy-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 440px;
+  margin-top: 12px;
+}
+
+.wy-subhead {
+  margin: 28px 0 12px;
+  font-size: 24px;
+}
+
+.wy-quiet {
   color: var(--wy-quiet);
 }
+
+.wy-footer {
   margin-top: 36px;
 }
 
@@ -398,7 +415,9 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .wy-head-row {
+  .wy-head-row,
+  .wy-toolbar,
+  .wy-scans-head {
     flex-wrap: wrap;
   }
 }
