@@ -1,0 +1,271 @@
+:root {
+  --ay-lagoon: #0f766e;
+  --ay-lagoon-deep: #115e59;
+  --ay-ink: #132421;
+  --ay-quiet: #5b6e6a;
+  --ay-line: #d7e6e3;
+  --ay-wash: #e7f4f2;
+  --ay-floor: #f3f8f7;
+  --ay-rail: 228px;
+  --eds-font-sans: Roboto, 'Segoe UI', sans-serif;
+  --eds-font-display: Lato, Roboto, sans-serif;
+  --eds-color-brand-900: #134e4a;
+  --eds-color-brand-800: #115e59;
+  --eds-color-brand-700: #0f766e;
+  --eds-color-brand-600: #0d9488;
+  --eds-color-brand-500: #0f766e;
+  --eds-color-brand-400: #2dd4bf;
+  --eds-color-brand-300: #5eead4;
+  --eds-color-brand-200: #99f6e4;
+  --eds-color-brand-100: #ccfbf1;
+  --eds-color-brand-50: #f0fdfa;
+  --eds-color-bg: #f3f8f7;
+  --eds-color-surface: #ffffff;
+  --eds-color-primary: #0f766e;
+  --eds-color-primary-hover: #115e59;
+  --eds-color-primary-active: #134e4a;
+  --eds-color-focus: #0f766e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ay-ink);
+  background: var(--ay-floor);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+.ay-brand {
+  font-family: Lato, Roboto, sans-serif;
+  color: var(--ay-ink);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: var(--ay-lagoon-deep);
+}
+
+.ay-shell {
+  display: grid;
+  grid-template-columns: var(--ay-rail) minmax(0, 1fr);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--ay-floor);
+}
+
+.ay-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  padding: 22px 14px 16px;
+  background: #fff;
+  border-right: 1px solid var(--ay-line);
+}
+
+.ay-brand {
+  margin: 0 8px 22px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.ay-brand span {
+  display: block;
+  margin-top: 6px;
+  color: var(--ay-lagoon);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ay-nav {
+  flex: 1;
+}
+
+.ay-nav nav {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.ay-sidebar-foot {
+  margin-top: 12px;
+}
+
+.ay-profile {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  padding: 6px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ay-profile strong,
+.ay-profile span span {
+  display: block;
+}
+
+.ay-profile strong {
+  font-size: 13px;
+}
+
+.ay-profile span span {
+  color: var(--ay-quiet);
+  font-size: 12px;
+}
+
+.ay-main {
+  min-width: 0;
+}
+
+.ay-topbar {
+  display: none;
+}
+
+.ay-page {
+  padding: 28px 36px 32px;
+}
+
+.ay-head h1 {
+  margin: 8px 0 0;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.ay-head h1::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin-top: 10px;
+  background: var(--ay-lagoon);
+  border-radius: 99px;
+}
+
+.ay-head p {
+  margin: 8px 0 0;
+  color: var(--ay-quiet);
+}
+
+.ay-head-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.ay-head-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 10px;
+  align-items: center;
+}
+
+.ay-footer {
+  margin-top: 40px;
+}
+
+.ay-footer p {
+  margin: 0;
+  color: var(--ay-quiet);
+  font-size: 13px;
+}
+
+.ay-backdrop {
+  display: none;
+}
+
+@media (max-width: 880px) {
+  .ay-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .ay-topbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 16px;
+    background: #fff;
+    border-bottom: 1px solid var(--ay-line);
+  }
+
+  .ay-topbar p {
+    margin: 0;
+    font-family: Lato, Roboto, sans-serif;
+    font-weight: 700;
+  }
+
+  .ay-menu {
+    padding: 6px 10px;
+    border: 1px solid var(--ay-line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ay-ink);
+  }
+
+  .ay-sidebar {
+    position: fixed;
+    z-index: 30;
+    width: var(--ay-rail);
+    transform: translateX(-105%);
+    transition: transform 160ms ease;
+  }
+
+  .ay-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .ay-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: block;
+    border: 0;
+    background: rgb(19 36 33 / 0.32);
+  }
+
+  .ay-page {
+    padding: 20px 16px 24px;
+  }
+
+  .ay-head-row {
+    flex-wrap: wrap;
+  }
+}
