@@ -11,6 +11,22 @@ export interface Comment {
   time: string
 }
 
+export interface ChangeWindow {
+  id: string
+  title: string
+  window: string
+  owner: string
+  note: string
+}
+
+export interface Asset {
+  id: string
+  name: string
+  kind: 'Laptop' | 'License'
+  holder: string
+  state: 'In use' | 'Ready'
+}
+
 export interface Ticket {
   id: string
   number: string
@@ -90,4 +106,16 @@ export const desk = reactive({
       comments: [{ id: 'c1', author: 'Rhea Poluru', body: 'Printed and left at the desk.', time: '14:05' }],
     },
   ] as Ticket[],
+  changes: [
+    { id: 'ch1', title: 'Network closet', window: 'Friday 18:00', owner: 'Suresh Poluru', note: 'One hour. Phones stay up.' },
+    { id: 'ch2', title: 'Mail cutover', window: 'Monday 06:00', owner: 'Wasim Poluru', note: 'Mail pauses for twenty minutes.' },
+    { id: 'ch3', title: 'Badge printer', window: 'Wednesday 12:00', owner: 'Rhea Poluru', note: 'Front desk uses the spare.' },
+  ] as ChangeWindow[],
+  assets: [
+    { id: 'lp14', name: 'Laptop LP-14', kind: 'Laptop', holder: 'Tara Poluru', state: 'In use' },
+    { id: 'lp22', name: 'Laptop LP-22', kind: 'Laptop', holder: 'Vikas Poluru', state: 'In use' },
+    { id: 'lp30', name: 'Laptop LP-30', kind: 'Laptop', holder: 'Spare', state: 'Ready' },
+    { id: 'lic3', name: 'Design seat', kind: 'License', holder: 'Yamini Poluru', state: 'In use' },
+    { id: 'lic8', name: 'Editor seat', kind: 'License', holder: 'Uma Poluru', state: 'In use' },
+  ] as Asset[],
 })

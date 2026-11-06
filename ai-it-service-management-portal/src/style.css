@@ -288,6 +288,36 @@ a {
   margin-top: 16px;
 }
 
+.dk-stepper,
+.dk-tabs,
+.dk-table-wrap,
+.dk-form {
+  margin-top: 22px;
+}
+
+.dk-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 460px;
+}
+
+.dk-change-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.dk-change-list h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.dk-change-list p {
+  margin: 4px 0 0;
+}
+
 .dk-footer p {
   margin: 0;
   color: var(--dk-quiet);
