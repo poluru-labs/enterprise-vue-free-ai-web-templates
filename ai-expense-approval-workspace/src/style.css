@@ -273,6 +273,78 @@ a {
   margin-top: 16px;
 }
 
+.cl-claim-static {
+  grid-template-columns: minmax(0, 1fr) auto;
+  cursor: default;
+}
+
+.cl-claim-static:hover {
+  background: transparent;
+}
+
+.cl-claim-end {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.cl-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 36px;
+  padding-top: 8px;
+}
+
+.cl-form h2,
+.cl-vendor h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.cl-report-range,
+.cl-tabs,
+.cl-tree {
+  margin-top: 22px;
+}
+
+.cl-report-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 18px;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.cl-dial {
+  width: 84px;
+}
+
+.cl-meters {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 18px 0 8px;
+}
+
+.cl-vendor {
+  margin-top: 28px;
+}
+
+.cl-person {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 860px) {
+  .cl-report-stats,
+  .cl-claim {
+    grid-template-columns: 1fr;
+  }
+}
+
 .cl-footer {
   padding-top: 28px;
 }
