@@ -29,6 +29,21 @@ export interface ShiftMark {
   time: string
 }
 
+export interface SupplyItem {
+  id: string
+  item: string
+  unit: string
+  onHand: number
+  par: number
+}
+
+export interface StaffMember {
+  id: string
+  name: string
+  role: string
+  unit: string
+}
+
 export const desk = reactive({
   admissionsToday: 6,
   delayedDischarges: 2,
@@ -78,6 +93,23 @@ export const desk = reactive({
     { id: 's3', title: 'Evening handoff', description: 'Manu Poluru', time: '15:00' },
     { id: 's4', title: 'Night lead', description: 'Neel Poluru', time: '19:00' },
   ] as ShiftMark[],
+  supplies: [
+    { id: 'gowns', item: 'Isolation gowns', unit: 'Cedar', onHand: 2, par: 12 },
+    { id: 'linen', item: 'Bed linen', unit: 'Maple', onHand: 4, par: 20 },
+    { id: 'gloves', item: 'Exam gloves', unit: 'Harbor', onHand: 6, par: 24 },
+    { id: 'masks', item: 'Procedure masks', unit: 'Cedar', onHand: 18, par: 30 },
+    { id: 'basins', item: 'Wash basins', unit: 'Maple', onHand: 9, par: 10 },
+  ] as SupplyItem[],
+  staff: [
+    { id: 'isha', name: 'Isha Poluru', role: 'House lead', unit: 'House' },
+    { id: 'jaya', name: 'Jaya Poluru', role: 'Charge', unit: 'Cedar' },
+    { id: 'kiran', name: 'Kiran Poluru', role: 'Charge', unit: 'Maple' },
+    { id: 'lata', name: 'Lata Poluru', role: 'Charge', unit: 'Harbor' },
+    { id: 'manu', name: 'Manu Poluru', role: 'Evening lead', unit: 'House' },
+    { id: 'neel', name: 'Neel Poluru', role: 'Night lead', unit: 'House' },
+    { id: 'ovi', name: 'Ovi Poluru', role: 'Supply lead', unit: 'House' },
+    { id: 'preethi', name: 'Preethi Poluru', role: 'Unit clerk', unit: 'Cedar' },
+  ] as StaffMember[],
 })
 
 export function occupiedCount(unit: Unit) {

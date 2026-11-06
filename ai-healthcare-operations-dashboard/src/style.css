@@ -238,6 +238,98 @@ a {
   margin-top: 20px;
 }
 
+.wl-stepper,
+.wl-toolbar,
+.wl-form,
+.wl-table {
+  margin-top: 32px;
+}
+
+.wl-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 440px;
+}
+
+.wl-form h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.wl-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.wl-roster {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.wl-person {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--wl-line);
+}
+
+.wl-person strong {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.wl-room-btn {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.wl-text-btn {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--wl-tide-deep);
+  cursor: pointer;
+}
+
+.wl-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.wl-dial {
+  width: 84px;
+  margin-left: auto;
+}
+
+.wl-room-status {
+  margin: 16px 0;
+}
+
+.wl-range,
+.wl-tabs,
+.wl-tree,
+.wl-pager {
+  margin-top: 24px;
+}
+
+.wl-form h2 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
 .wl-footer p {
   margin: 0;
   color: var(--wl-quiet);
@@ -311,5 +403,13 @@ a {
 
   .wl-stats {
     grid-template-columns: 1fr;
+  }
+
+  .wl-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .wl-toolbar > * {
+    flex: 1 1 100%;
   }
 }
