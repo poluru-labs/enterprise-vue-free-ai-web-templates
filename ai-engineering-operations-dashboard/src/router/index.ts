@@ -1,0 +1,60 @@
+import { createRouter, createWebHistory } from 'vue-router'
+import { BASE_PATH } from '@/constants/navigation'
+import PlaceholderView from '@/views/PlaceholderView.vue'
+
+export const routes = [
+  { path: '/', redirect: `${BASE_PATH}/overview` },
+  { path: BASE_PATH, redirect: `${BASE_PATH}/overview` },
+  {
+    path: `${BASE_PATH}/overview`,
+    name: 'overview',
+    component: PlaceholderView,
+    meta: { title: 'Overview' },
+  },
+  {
+    path: `${BASE_PATH}/services`,
+    name: 'services',
+    component: PlaceholderView,
+    meta: { title: 'Services' },
+  },
+  {
+    path: `${BASE_PATH}/deploys`,
+    name: 'deploys',
+    component: PlaceholderView,
+    meta: { title: 'Deploys' },
+  },
+  {
+    path: `${BASE_PATH}/incidents`,
+    name: 'incidents',
+    component: PlaceholderView,
+    meta: { title: 'Incidents' },
+  },
+  {
+    path: `${BASE_PATH}/people`,
+    name: 'people',
+    component: PlaceholderView,
+    meta: { title: 'People' },
+  },
+  {
+    path: `${BASE_PATH}/settings`,
+    name: 'settings',
+    component: PlaceholderView,
+    meta: { title: 'Settings' },
+  },
+  { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/overview` },
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+  scrollBehavior() {
+    return { top: 0 }
+  },
+})
+
+router.afterEach((to) => {
+  const title = typeof to.meta.title === 'string' ? to.meta.title : 'Desk'
+  document.title = `${title} · Northline`
+})
+
+export default router

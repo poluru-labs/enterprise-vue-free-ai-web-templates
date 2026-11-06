@@ -1,6 +1,7 @@
 {
-  "name": "vue-boiler",
-  "version": "0.0.0",
+  "name": "ai-engineering-operations-dashboard",
+  "version": "0.1.0",
+  "description": "Northline engineering desk for services, deploys, incidents, and on-call.",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,7 +9,7 @@
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build"
+    "type-check": "node scripts/repair-eds-types.mjs && vue-tsc --build"
   },
   "dependencies": {
     "@poluru-labs/enterprise-design-system-vue": "^1.0.0",
