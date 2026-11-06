@@ -1,0 +1,260 @@
+:root {
+  --wy-clay: #c2410c;
+  --wy-clay-deep: #9a3412;
+  --wy-ink: #2a2118;
+  --wy-quiet: #6d6256;
+  --wy-line: #e4ddd4;
+  --wy-floor: #f3f1ec;
+  --wy-rail: 204px;
+  --eds-font-sans: Roboto, 'Segoe UI', sans-serif;
+  --eds-font-display: Lato, Roboto, sans-serif;
+  --eds-color-brand-900: #7c2d12;
+  --eds-color-brand-800: #9a3412;
+  --eds-color-brand-700: #c2410c;
+  --eds-color-brand-600: #ea580c;
+  --eds-color-brand-500: #c2410c;
+  --eds-color-brand-400: #fb923c;
+  --eds-color-brand-300: #fdba74;
+  --eds-color-brand-200: #fed7aa;
+  --eds-color-brand-100: #ffedd5;
+  --eds-color-brand-50: #fff7ed;
+  --eds-color-bg: #f3f1ec;
+  --eds-color-surface: #ffffff;
+  --eds-color-primary: #c2410c;
+  --eds-color-primary-hover: #9a3412;
+  --eds-color-primary-active: #7c2d12;
+  --eds-color-focus: #c2410c;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--wy-ink);
+  background: var(--wy-floor);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+.wy-brand {
+  font-family: Lato, Roboto, sans-serif;
+  color: var(--wy-ink);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: var(--wy-clay-deep);
+}
+
+.wy-shell {
+  display: grid;
+  grid-template-columns: var(--wy-rail) minmax(0, 1fr);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--wy-floor);
+}
+
+.wy-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  padding: 18px 12px 14px;
+  background: #fff;
+  border-right: 1px solid var(--wy-line);
+}
+
+.wy-brand {
+  margin: 0 8px 20px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.wy-brand span {
+  display: block;
+  margin-top: 4px;
+  color: var(--wy-quiet);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.wy-nav {
+  flex: 1;
+}
+
+.wy-nav nav {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.wy-sidebar-foot {
+  margin-top: 12px;
+}
+
+.wy-profile {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  padding: 6px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.wy-profile strong,
+.wy-profile span span {
+  display: block;
+}
+
+.wy-profile strong {
+  font-size: 13px;
+}
+
+.wy-profile span span {
+  color: var(--wy-quiet);
+  font-size: 12px;
+}
+
+.wy-main {
+  min-width: 0;
+}
+
+.wy-topbar {
+  display: none;
+}
+
+.wy-page {
+  padding: 24px 28px 28px;
+}
+
+.wy-head h1 {
+  margin: 6px 0 0;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.wy-head p {
+  margin: 6px 0 0;
+  color: var(--wy-quiet);
+}
+
+.wy-head-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.wy-head-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 10px;
+  align-items: center;
+}
+
+.wy-footer {
+  margin-top: 36px;
+}
+
+.wy-footer p {
+  margin: 0;
+  color: var(--wy-quiet);
+  font-size: 13px;
+}
+
+.wy-backdrop {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .wy-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .wy-topbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 16px;
+    background: #fff;
+    border-bottom: 1px solid var(--wy-line);
+  }
+
+  .wy-topbar p {
+    margin: 0;
+    font-family: Lato, Roboto, sans-serif;
+    font-weight: 700;
+  }
+
+  .wy-menu {
+    padding: 6px 10px;
+    border: 1px solid var(--wy-line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--wy-ink);
+  }
+
+  .wy-sidebar {
+    position: fixed;
+    z-index: 30;
+    width: var(--wy-rail);
+    transform: translateX(-105%);
+    transition: transform 160ms ease;
+  }
+
+  .wy-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .wy-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: block;
+    border: 0;
+    background: rgb(42 33 24 / 0.32);
+  }
+
+  .wy-page {
+    padding: 20px 16px 20px;
+  }
+
+  .wy-head-row {
+    flex-wrap: wrap;
+  }
+}
