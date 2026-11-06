@@ -6,7 +6,7 @@ import DealsView from '@/views/DealsView.vue'
 import EnablementView from '@/views/EnablementView.vue'
 import PartnerView from '@/views/PartnerView.vue'
 import PartnersView from '@/views/PartnersView.vue'
-import PlaceholderView from '@/views/PlaceholderView.vue'
+import SettingsView from '@/views/SettingsView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/partners` },
@@ -21,7 +21,7 @@ export const routes = [
   { path: `${BASE_PATH}/deals`, name: 'deals', component: DealsView, meta: { title: 'Deals' } },
   { path: `${BASE_PATH}/enablement`, name: 'enablement', component: EnablementView, meta: { title: 'Enablement' } },
   { path: `${BASE_PATH}/contacts`, name: 'contacts', component: ContactsView, meta: { title: 'Contacts' } },
-  { path: `${BASE_PATH}/settings`, name: 'settings', component: PlaceholderView, meta: { title: 'Settings' } },
+  { path: `${BASE_PATH}/settings`, name: 'settings', component: SettingsView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/partners` },
 ]
 

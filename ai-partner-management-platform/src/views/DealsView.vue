@@ -6,6 +6,7 @@ import {
   DateRangePicker,
   EmptyState,
   Search,
+  Stat,
   Tabs,
 } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
@@ -68,6 +69,7 @@ const columns = [
     <Search v-model="query" placeholder="Find a deal" />
     <DateRangePicker v-model:start="start" v-model:end="end" label="Filed" />
   </div>
+  <Stat class="ay-stat" label="On this list" :value="String(rows.length)" hint="After the date filter" />
   <Tabs v-model="scope" :items="tabs" />
   <Alert
     v-if="waiting"

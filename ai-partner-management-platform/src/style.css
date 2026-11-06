@@ -370,6 +370,19 @@ a {
   padding: 8px 12px 12px;
 }
 
+.ay-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 460px;
+  margin-top: 18px;
+}
+
+.ay-stat {
+  max-width: 220px;
+  margin-bottom: 12px;
+}
+
 .ay-footer {
   margin-top: 40px;
 }
