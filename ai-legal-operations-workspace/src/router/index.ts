@@ -6,12 +6,7 @@ import CounselView from '@/views/CounselView.vue'
 import { findMatter } from '@/data/ledger'
 import MatterView from '@/views/MatterView.vue'
 import MattersView from '@/views/MattersView.vue'
-import PlaceholderView from '@/views/PlaceholderView.vue'
-
-const page = (title: string) => ({
-  component: PlaceholderView,
-  meta: { title },
-})
+import SettingsView from '@/views/SettingsView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/matters` },
@@ -26,7 +21,7 @@ export const routes = [
   { path: `${BASE_PATH}/contracts`, name: 'contracts', component: ContractsView, meta: { title: 'Contracts' } },
   { path: `${BASE_PATH}/calendar`, name: 'calendar', component: CalendarView, meta: { title: 'Calendar' } },
   { path: `${BASE_PATH}/counsel`, name: 'counsel', component: CounselView, meta: { title: 'Counsel' } },
-  { path: `${BASE_PATH}/settings`, name: 'settings', ...page('Settings') },
+  { path: `${BASE_PATH}/settings`, name: 'settings', component: SettingsView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/matters` },
 ]
 

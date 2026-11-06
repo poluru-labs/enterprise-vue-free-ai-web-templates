@@ -399,7 +399,8 @@ a {
     gap: 4px;
   }
 
-  .bw-head-row {
+  .bw-head-row,
+  .bw-toolbar {
     flex-wrap: wrap;
   }
 }

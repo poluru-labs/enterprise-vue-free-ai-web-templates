@@ -2,10 +2,15 @@
 import { reactive, ref } from 'vue'
 import {
   Button,
+  Checkbox,
   DatePicker,
+  FileUpload,
   Input,
   Modal,
+  Radio,
+  RadioGroup,
   Select,
+  SplitButton,
   TimePicker,
   Timeline,
   showToast,
@@ -15,6 +20,7 @@ import { BREADCRUMB_ROOT } from '@/constants/navigation'
 import { ledger } from '@/data/ledger'
 
 const open = ref(false)
+const roomReady = ref(true)
 const form = reactive({
   title: 'Desk hearing',
   kind: 'Hearing',
@@ -23,10 +29,6 @@ const form = reactive({
   matter: 'bw-1042',
 })
 
-const kindOptions = [
-  { value: 'Hearing', label: 'Hearing' },
-  { value: 'Signature', label: 'Signature' },
-]
 const matterOptions = ledger.matters.map((matter) => ({ value: matter.id, label: matter.number }))
 
 const items = () =>
@@ -64,11 +66,16 @@ function addDeadline() {
   />
   <form class="bw-form" @submit.prevent="open = true">
     <Input v-model="form.title" label="Title" />
-    <Select v-model="form.kind" label="Kind" :options="kindOptions" />
+    <RadioGroup v-model="form.kind" label="Kind" orientation="horizontal">
+      <Radio value="Hearing" label="Hearing" />
+      <Radio value="Signature" label="Signature" />
+    </RadioGroup>
     <Select v-model="form.matter" label="Matter" :options="matterOptions" />
     <DatePicker v-model="form.date" label="Date" />
     <TimePicker v-model="form.time" label="Time" />
-    <Button type="submit">Add date</Button>
+    <Checkbox v-model="roomReady" label="The room is free" />
+    <FileUpload label="Page" @files-change="() => undefined" />
+    <SplitButton label="Add date" @click="open = true" @select="addDeadline" />
   </form>
   <section class="bw-doc">
     <h2>On the docket</h2>

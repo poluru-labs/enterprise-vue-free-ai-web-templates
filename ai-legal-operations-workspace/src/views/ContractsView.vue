@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { Alert, DataTable, DateRangePicker, Pagination } from '@poluru-labs/enterprise-design-system-vue'
+import { computed, ref, watch } from 'vue'
+import { Alert, DataTable, DateRangePicker, EmptyState, Pagination } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
 import { BREADCRUMB_ROOT } from '@/constants/navigation'
 import { ledger } from '@/data/ledger'
@@ -28,6 +28,10 @@ const rows = computed(() => {
 })
 
 const next = computed(() => filtered.value[0])
+
+watch([start, end], () => {
+  page.value = 1
+})
 </script>
 
 <template>
@@ -42,7 +46,12 @@ const next = computed(() => filtered.value[0])
   <Alert v-if="next" class="bw-block" :title="`${next.number} renews ${next.renews}.`">
     {{ next.title }} · {{ next.party }}
   </Alert>
-  <p v-else class="bw-quiet">No renewals in these dates.</p>
+  <EmptyState
+    v-if="filtered.length === 0"
+    title="No renewals in these dates"
+    description="Widen the range to see the rest of the list."
+    icon="search"
+  />
   <div v-if="rows.length" class="bw-table">
     <DataTable
       :columns="[
