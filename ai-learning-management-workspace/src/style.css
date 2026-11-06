@@ -194,6 +194,14 @@ a {
   margin: 16px 0 20px;
 }
 
+.cy-people-top {
+  display: grid;
+  grid-template-columns: 180px 160px minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  margin-top: 18px;
+}
+
 .cy-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -369,7 +377,12 @@ a {
     flex-wrap: wrap;
   }
 
-  .cy-grid {
+  .cy-grid,
+  .cy-people-top {
     grid-template-columns: 1fr;
+  }
+
+  .cy-toolbar {
+    flex-wrap: wrap;
   }
 }

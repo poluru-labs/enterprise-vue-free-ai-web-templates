@@ -5,13 +5,8 @@ import CatalogView from '@/views/CatalogView.vue'
 import CourseView from '@/views/CourseView.vue'
 import PathsView from '@/views/PathsView.vue'
 import PeopleView from '@/views/PeopleView.vue'
-import PlaceholderView from '@/views/PlaceholderView.vue'
 import SessionsView from '@/views/SessionsView.vue'
-
-const page = (title: string) => ({
-  component: PlaceholderView,
-  meta: { title },
-})
+import SettingsView from '@/views/SettingsView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/catalog` },
@@ -26,7 +21,7 @@ export const routes = [
   { path: `${BASE_PATH}/paths`, name: 'paths', component: PathsView, meta: { title: 'Paths' } },
   { path: `${BASE_PATH}/people`, name: 'people', component: PeopleView, meta: { title: 'People' } },
   { path: `${BASE_PATH}/sessions`, name: 'sessions', component: SessionsView, meta: { title: 'Sessions' } },
-  { path: `${BASE_PATH}/settings`, name: 'settings', ...page('Settings') },
+  { path: `${BASE_PATH}/settings`, name: 'settings', component: SettingsView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/catalog` },
 ]
 

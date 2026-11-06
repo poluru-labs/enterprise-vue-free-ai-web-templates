@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import {
   Accordion,
   Avatar,
   Badge,
   Button,
+  ButtonGroup,
   DescriptionList,
+  Divider,
+  Drawer,
+  ProgressBar,
   Rating,
   Status,
   Tag,
@@ -19,6 +23,7 @@ import { findCourse, type CourseStatus } from '@/data/school'
 
 const route = useRoute()
 const router = useRouter()
+const notesOpen = ref(false)
 
 const course = computed(() => findCourse(String(route.params.id ?? '')))
 
@@ -35,6 +40,16 @@ function enroll() {
     title: 'Enrolled',
     description: `${current.title} is on your list.`,
     variant: 'success',
+  })
+}
+
+function remind() {
+  const current = course.value
+  if (!current) return
+  showToast({
+    title: 'Reminder sent',
+    description: `${current.owner} will hear about ${current.title}.`,
+    variant: 'info',
   })
 }
 </script>
@@ -70,11 +85,20 @@ function enroll() {
         { term: 'Seats', description: course.status },
       ]"
     />
+    <ProgressBar label="Class progress" :value="course.completion" show-value />
+    <Divider />
     <h2>Outline</h2>
     <Accordion :items="course.outline" />
     <h2>Sessions</h2>
     <Timeline :items="course.sessions" />
+    <ButtonGroup>
+      <Button type="button" variant="secondary" @click="notesOpen = true">Room notes</Button>
+      <Button type="button" variant="secondary" @click="remind">Send reminder</Button>
+    </ButtonGroup>
     <Button type="button" variant="secondary" @click="router.push('/courtyard/catalog')">Back to catalog</Button>
+    <Drawer v-model:open="notesOpen" heading="Room notes" size="md">
+      <p v-for="session in course.sessions" :key="session.id">{{ session.title }} — {{ session.description }}</p>
+    </Drawer>
   </section>
   <p v-else class="cy-quiet">That course is not on the shelf.</p>
 </template>
