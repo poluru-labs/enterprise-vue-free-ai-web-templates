@@ -48,7 +48,11 @@ const visible = computed(() =>
   }),
 )
 
-const selected = computed(() => desk.tickets.find((ticket) => ticket.id === selectedId.value) ?? visible.value[0] ?? null)
+const selected = computed(() => {
+  const current = desk.tickets.find((ticket) => ticket.id === selectedId.value)
+  if (current && visible.value.some((ticket) => ticket.id === current.id)) return current
+  return visible.value[0] ?? null
+})
 
 const facts = computed(() => {
   const ticket = selected.value
@@ -161,8 +165,8 @@ function setStatus(status: TicketStatus) {
   />
 
   <div v-else class="dk-split">
-    <div class="dk-table" role="table">
-      <div class="dk-row dk-row-head" role="row">
+    <div class="dk-table">
+      <div class="dk-row dk-row-head">
         <span>Ticket</span>
         <span>Priority</span>
         <span>Assignee</span>
@@ -173,7 +177,6 @@ function setStatus(status: TicketStatus) {
         type="button"
         class="dk-row"
         :class="{ 'is-selected': ticket.id === selected?.id }"
-        role="row"
         @click="selectedId = ticket.id"
       >
         <span>
