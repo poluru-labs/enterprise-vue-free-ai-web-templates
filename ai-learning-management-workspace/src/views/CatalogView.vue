@@ -93,15 +93,17 @@ function openCourse(id: string) {
   />
   <div v-else class="cy-grid">
     <Card v-for="course in visible" :key="course.id" :title="course.title" :description="course.summary" class="cy-course">
-      <div class="cy-course-meta">
-        <Tag :label="`${course.hours} hours`" />
-        <Badge :label="course.status" :variant="tone(course.status)" soft />
-      </div>
-      <p class="cy-owner">{{ course.owner }}</p>
-      <Meter :value="course.completion" :max="100" label="Completion" show-value />
-      <Rating :model-value="course.rating" label="Rating" read-only />
-      <div class="cy-course-action">
-        <Button type="button" variant="secondary" @click="openCourse(course.id)">Open course</Button>
+      <div class="cy-course-body">
+        <div class="cy-course-meta">
+          <Tag :label="`${course.hours} hours`" />
+          <Badge :label="course.status" :variant="tone(course.status)" soft />
+        </div>
+        <p class="cy-owner">{{ course.owner }}</p>
+        <Meter :value="course.completion" :max="100" label="Completion" show-value />
+        <Rating :model-value="course.rating" label="Rating" read-only />
+        <div class="cy-course-action">
+          <Button type="button" variant="secondary" @click="openCourse(course.id)">Open course</Button>
+        </div>
       </div>
     </Card>
   </div>
