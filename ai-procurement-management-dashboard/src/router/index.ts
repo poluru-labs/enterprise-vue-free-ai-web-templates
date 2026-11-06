@@ -4,8 +4,8 @@ import { findOrder } from '@/data/ledger'
 import ApprovalsView from '@/views/ApprovalsView.vue'
 import OrderView from '@/views/OrderView.vue'
 import OrdersView from '@/views/OrdersView.vue'
-import PlaceholderView from '@/views/PlaceholderView.vue'
 import ReceiptsView from '@/views/ReceiptsView.vue'
+import SettingsView from '@/views/SettingsView.vue'
 import SuppliersView from '@/views/SuppliersView.vue'
 
 export const routes = [
@@ -21,7 +21,7 @@ export const routes = [
   { path: `${BASE_PATH}/suppliers`, name: 'suppliers', component: SuppliersView, meta: { title: 'Suppliers' } },
   { path: `${BASE_PATH}/approvals`, name: 'approvals', component: ApprovalsView, meta: { title: 'Approvals' } },
   { path: `${BASE_PATH}/receipts`, name: 'receipts', component: ReceiptsView, meta: { title: 'Receipts' } },
-  { path: `${BASE_PATH}/settings`, name: 'settings', component: PlaceholderView, meta: { title: 'Settings' } },
+  { path: `${BASE_PATH}/settings`, name: 'settings', component: SettingsView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/orders` },
 ]
 

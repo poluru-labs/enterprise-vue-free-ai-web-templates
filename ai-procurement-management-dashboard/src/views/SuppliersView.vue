@@ -4,6 +4,7 @@ import {
   Autocomplete,
   Avatar,
   Button,
+  Card,
   Combobox,
   DescriptionList,
   Drawer,
@@ -97,14 +98,15 @@ function addSupplier() {
     :crumbs="[BREADCRUMB_ROOT, { label: 'Suppliers' }]"
   />
   <div class="pw-split">
-    <form class="pw-form" @submit.prevent="addSupplier">
-      <h2 class="pw-subhead">New supplier</h2>
+    <Card title="New supplier" description="Add a firm to the book.">
+      <form class="pw-form" @submit.prevent="addSupplier">
       <Input v-model="name" label="Firm" />
       <Select v-model="category" label="Category" :options="categories" />
       <Select v-model="site" label="Site" :options="sites" />
       <Combobox v-model="contact" label="Contact" :options="people" />
       <Button type="submit">Add supplier</Button>
-    </form>
+      </form>
+    </Card>
     <div>
       <div class="pw-tools pw-tools-tight">
         <Search v-model="query" placeholder="Find a supplier" />

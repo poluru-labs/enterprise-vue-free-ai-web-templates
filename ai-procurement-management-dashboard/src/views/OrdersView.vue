@@ -11,6 +11,7 @@ import {
   Search,
   SegmentedControl,
   Skeleton,
+  Stat,
   Stepper,
   Toolbar,
   Tooltip,
@@ -49,6 +50,7 @@ const filtered = computed(() => {
 })
 
 const activeIndex = computed(() => STAGES.findIndex((item) => item.label === stage.value))
+const inReview = computed(() => book.orders.filter((order) => order.stage === 'Review').length)
 
 const rows = computed(() =>
   filtered.value.map((order) => ({
@@ -124,6 +126,7 @@ function isStage(value: string): value is Stage {
       </Tooltip>
     </template>
   </Toolbar>
+  <Stat class="pw-stat" label="In review" :value="String(inReview)" hint="Waiting on a named approver" />
 
   <div v-if="loading" class="pw-ledger">
     <Skeleton variant="rectangular" width="100%" height="220px" />
