@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
 import PlaceholderView from '@/views/PlaceholderView.vue'
+import QueueView from '@/views/QueueView.vue'
 
 const page = (title: string) => ({
   component: PlaceholderView,
@@ -10,7 +11,7 @@ const page = (title: string) => ({
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/queue` },
   { path: BASE_PATH, redirect: `${BASE_PATH}/queue` },
-  { path: `${BASE_PATH}/queue`, name: 'queue', ...page('Queue') },
+  { path: `${BASE_PATH}/queue`, name: 'queue', component: QueueView, meta: { title: 'Queue' } },
   { path: `${BASE_PATH}/changes`, name: 'changes', ...page('Changes') },
   { path: `${BASE_PATH}/assets`, name: 'assets', ...page('Assets') },
   { path: `${BASE_PATH}/catalog`, name: 'catalog', ...page('Catalog') },
