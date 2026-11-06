@@ -1,0 +1,261 @@
+:root {
+  --pw-gold: #ca8a04;
+  --pw-gold-deep: #a16207;
+  --pw-ink: #2a2416;
+  --pw-quiet: #6f6758;
+  --pw-line: #e7dfcc;
+  --pw-wash: #f8f1d8;
+  --pw-floor: #f6f3e8;
+  --pw-rail: 236px;
+  --eds-font-sans: Roboto, 'Segoe UI', sans-serif;
+  --eds-font-display: Lato, Roboto, sans-serif;
+  --eds-color-brand-900: #713f12;
+  --eds-color-brand-800: #854d0e;
+  --eds-color-brand-700: #a16207;
+  --eds-color-brand-600: #ca8a04;
+  --eds-color-brand-500: #ca8a04;
+  --eds-color-brand-400: #eab308;
+  --eds-color-brand-300: #facc15;
+  --eds-color-brand-200: #fde047;
+  --eds-color-brand-100: #fef08a;
+  --eds-color-brand-50: #fefce8;
+  --eds-color-bg: #f6f3e8;
+  --eds-color-surface: #ffffff;
+  --eds-color-primary: #ca8a04;
+  --eds-color-primary-hover: #a16207;
+  --eds-color-primary-active: #854d0e;
+  --eds-color-focus: #ca8a04;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--pw-ink);
+  background: var(--pw-floor);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+.pw-brand {
+  font-family: Lato, Roboto, sans-serif;
+  color: var(--pw-ink);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: var(--pw-gold-deep);
+}
+
+.pw-shell {
+  display: grid;
+  grid-template-columns: var(--pw-rail) minmax(0, 1fr);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--pw-floor);
+}
+
+.pw-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  padding: 20px 14px 16px;
+  background: #fff;
+  border-right: 1px solid var(--pw-line);
+}
+
+.pw-brand {
+  margin: 0 8px 22px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.pw-brand span {
+  display: block;
+  margin-top: 6px;
+  color: var(--pw-gold-deep);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pw-nav {
+  flex: 1;
+}
+
+.pw-nav nav {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.pw-sidebar-foot {
+  margin-top: 12px;
+}
+
+.pw-profile {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  padding: 6px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pw-profile strong,
+.pw-profile span span {
+  display: block;
+}
+
+.pw-profile strong {
+  font-size: 13px;
+}
+
+.pw-profile span span {
+  color: var(--pw-quiet);
+  font-size: 12px;
+}
+
+.pw-main {
+  min-width: 0;
+}
+
+.pw-topbar {
+  display: none;
+}
+
+.pw-page {
+  padding: 22px 32px 32px;
+}
+
+.pw-head h1 {
+  margin: 8px 0 0;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.pw-head p {
+  margin: 6px 0 0;
+  color: var(--pw-quiet);
+}
+
+.pw-head-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.pw-head-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 10px;
+  align-items: center;
+}
+
+.pw-footer {
+  margin-top: 36px;
+}
+
+.pw-footer p {
+  margin: 0;
+  color: var(--pw-quiet);
+  font-size: 13px;
+}
+
+.pw-backdrop {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .pw-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .pw-topbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 16px;
+    background: #fff;
+    border-bottom: 1px solid var(--pw-line);
+  }
+
+  .pw-topbar p {
+    margin: 0;
+    font-family: Lato, Roboto, sans-serif;
+    font-weight: 700;
+  }
+
+  .pw-menu {
+    padding: 6px 10px;
+    border: 1px solid var(--pw-line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--pw-ink);
+  }
+
+  .pw-sidebar {
+    position: fixed;
+    z-index: 30;
+    width: var(--pw-rail);
+    transform: translateX(-105%);
+    transition: transform 160ms ease;
+  }
+
+  .pw-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .pw-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: block;
+    border: 0;
+    background: rgb(42 36 22 / 0.32);
+  }
+
+  .pw-page {
+    padding: 20px 16px 24px;
+  }
+
+  .pw-head-row {
+    flex-wrap: wrap;
+  }
+}
