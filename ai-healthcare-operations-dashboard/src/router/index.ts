@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
+import { desk } from '@/data/board'
 import BoardView from '@/views/BoardView.vue'
 import DirectoryView from '@/views/DirectoryView.vue'
 import SettingsView from '@/views/SettingsView.vue'
@@ -30,6 +31,12 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
+  if (to.name === 'unit') {
+    const id = typeof to.params.id === 'string' ? to.params.id : ''
+    const unit = desk.units.find((item) => item.id === id)
+    document.title = `${unit?.name ?? 'Unit'} · Wardline`
+    return
+  }
   const title = typeof to.meta.title === 'string' ? to.meta.title : 'Board'
   document.title = `${title} · Wardline`
 })

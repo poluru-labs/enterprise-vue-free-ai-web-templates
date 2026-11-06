@@ -153,7 +153,7 @@ a {
 }
 
 .wl-board {
-  padding: 40px 48px 32px;
+  padding: 48px 56px 36px;
 }
 
 .wl-head h1 {
@@ -197,12 +197,12 @@ a {
 .wl-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
-  margin-top: 36px;
+  gap: 32px;
+  margin-top: 40px;
 }
 
 .wl-unit-block {
-  margin-top: 48px;
+  margin-top: 56px;
 }
 
 .wl-unit-block h2,
@@ -215,12 +215,12 @@ a {
 .wl-unit-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 28px;
-  margin-top: 20px;
+  gap: 32px;
+  margin-top: 24px;
 }
 
 .wl-shift {
-  margin-top: 64px;
+  margin-top: 72px;
 }
 
 .wl-card-action {
