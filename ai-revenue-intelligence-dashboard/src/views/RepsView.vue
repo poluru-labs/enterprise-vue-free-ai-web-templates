@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { CircularProgress, DateRangePicker, Meter, Toolbar } from '@poluru-labs/enterprise-design-system-vue'
+import { Accordion, Avatar, CircularProgress, DateRangePicker, Divider, Meter, Tag, Toolbar, TreeView } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
 import { BREADCRUMB_ROOT } from '@/constants/navigation'
 import { book, inRange, isBooked, money, sumAmounts } from '@/data/book'
@@ -22,6 +22,19 @@ function attainment(repId: string, amount: number) {
   if (amount === 0) return 0
   return Math.round((repBooked(repId) / amount) * 100)
 }
+
+const regions = [
+  { id: 'austin', title: 'Austin', content: 'Charu Poluru and Dinesh Poluru.' },
+  { id: 'denver', title: 'Denver', content: 'Elina Poluru and Farhan Poluru.' },
+]
+
+const tree = computed(() =>
+  ['Austin', 'Denver'].map((region) => ({
+    id: region,
+    label: region,
+    children: book.reps.filter((rep) => rep.region === region).map((rep) => ({ id: rep.id, label: rep.name })),
+  })),
+)
 </script>
 
 <template>
@@ -40,11 +53,19 @@ function attainment(repId: string, amount: number) {
   <div class="ll-reps">
     <article v-for="rep in book.reps" :key="rep.id" class="ll-rep">
       <div class="ll-quota-head">
-        <span>{{ rep.name }}</span>
+        <span class="ll-who">
+          <Avatar :name="rep.name" size="sm" />
+          {{ rep.name }}
+        </span>
+        <Tag :label="rep.region" />
         <span class="ll-num">{{ money(rep.quota) }}</span>
       </div>
       <Meter :value="repBooked(rep.id)" :max="rep.quota" :label="`${attainment(rep.id, rep.quota)}%`" show-value />
-      <p class="ll-num ll-quiet">{{ money(repBooked(rep.id)) }} booked · {{ rep.region }}</p>
+      <Divider />
+      <p class="ll-num ll-quiet">{{ money(repBooked(rep.id)) }} booked</p>
     </article>
   </div>
+  <h2 class="ll-section">Regions</h2>
+  <TreeView :nodes="tree" />
+  <Accordion class="ll-filters" :items="regions" />
 </template>

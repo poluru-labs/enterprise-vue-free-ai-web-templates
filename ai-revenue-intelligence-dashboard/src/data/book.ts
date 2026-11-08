@@ -29,6 +29,7 @@ export interface Invoice {
 }
 
 export const book = reactive({
+  deskName: 'Ledgerline',
   currency: 'USD',
   fiscalStart: '2026-01-01',
   closeTime: '17:00',

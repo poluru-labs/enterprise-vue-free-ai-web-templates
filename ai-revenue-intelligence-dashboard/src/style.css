@@ -342,6 +342,28 @@ a {
   margin: 8px 0 0;
 }
 
+.ll-who {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.ll-jump {
+  margin-top: 12px;
+}
+
+.ll-modal,
+.ll-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ll-settings {
+  max-width: 460px;
+  margin-top: 16px;
+}
+
 .ll-backdrop {
   display: none;
 }

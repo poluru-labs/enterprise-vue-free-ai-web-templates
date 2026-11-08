@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { Button, DataTable, DateRangePicker, Pagination, Search, Toolbar } from '@poluru-labs/enterprise-design-system-vue'
+import { Autocomplete, Button, DataTable, DateRangePicker, EmptyState, Pagination, Search, Toolbar } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
 import { BASE_PATH, BREADCRUMB_ROOT } from '@/constants/navigation'
 import { accountBalance, book, inRange, money, repName } from '@/data/book'
@@ -12,6 +12,8 @@ const query = ref('')
 const start = ref('2026-08-01')
 const end = ref('2027-12-31')
 const page = ref(1)
+const jump = ref('')
+const names = computed(() => book.accounts.map((account) => ({ value: account.name, label: account.name })))
 
 const columns = [
   { key: 'account', label: 'Account' },
@@ -48,6 +50,10 @@ watch([query, start, end], () => {
   page.value = 1
 })
 
+function onJump(value: string) {
+  openAccount(value)
+}
+
 function openAccount(name: string) {
   const account = book.accounts.find((item) => item.name === name)
   if (account) router.push(`${BASE_PATH}/accounts/${account.id}`)
@@ -70,13 +76,22 @@ function onTableClick(event: MouseEvent) {
       <DateRangePicker v-model:start="start" v-model:end="end" label="Renewal" />
     </template>
   </Toolbar>
-  <div class="ll-opens">
-    <Button v-for="account in visible" :key="account.id" type="button" size="sm" variant="secondary" @click="openAccount(account.name)">
-      {{ account.name }}
-    </Button>
-  </div>
-  <div class="ll-table" @click="onTableClick">
-    <DataTable :columns="columns" :rows="rows" compact />
-  </div>
-  <Pagination v-if="pageCount > 1" v-model:page="page" :page-count="pageCount" class="ll-pages" />
+  <Autocomplete v-model="jump" class="ll-jump" label="Jump to an account" :options="names" @update:model-value="onJump" />
+  <EmptyState
+    v-if="filtered.length === 0"
+    title="No accounts"
+    description="Nothing on the books matches that search."
+    icon="search"
+  />
+  <template v-else>
+    <div class="ll-opens">
+      <Button v-for="account in visible" :key="account.id" type="button" size="sm" variant="secondary" @click="openAccount(account.name)">
+        {{ account.name }}
+      </Button>
+    </div>
+    <div class="ll-table" @click="onTableClick">
+      <DataTable :columns="columns" :rows="rows" compact />
+    </div>
+    <Pagination v-if="pageCount > 1" v-model:page="page" :page-count="pageCount" class="ll-pages" />
+  </template>
 </template>

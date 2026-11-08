@@ -5,8 +5,8 @@ import AccountView from '@/views/AccountView.vue'
 import AccountsView from '@/views/AccountsView.vue'
 import InvoicesView from '@/views/InvoicesView.vue'
 import OverviewView from '@/views/OverviewView.vue'
-import PlaceholderView from '@/views/PlaceholderView.vue'
 import RepsView from '@/views/RepsView.vue'
+import SettingsView from '@/views/SettingsView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/overview` },
@@ -16,7 +16,7 @@ export const routes = [
   { path: `${BASE_PATH}/accounts/:id`, name: 'account', component: AccountView, meta: { title: 'Account' } },
   { path: `${BASE_PATH}/invoices`, name: 'invoices', component: InvoicesView, meta: { title: 'Invoices' } },
   { path: `${BASE_PATH}/reps`, name: 'reps', component: RepsView, meta: { title: 'Reps' } },
-  { path: `${BASE_PATH}/settings`, name: 'settings', component: PlaceholderView, meta: { title: 'Settings' } },
+  { path: `${BASE_PATH}/settings`, name: 'settings', component: SettingsView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/overview` },
 ]
 
