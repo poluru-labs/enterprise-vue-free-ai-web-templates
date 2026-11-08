@@ -1,0 +1,262 @@
+:root {
+  --sh-harbor: #0369a1;
+  --sh-harbor-deep: #075985;
+  --sh-ink: #122028;
+  --sh-quiet: #5c6d78;
+  --sh-line: #d7e2e8;
+  --sh-wash: #e8f2f7;
+  --sh-floor: #f4f7f8;
+  --sh-rail: 176px;
+  --eds-font-sans: Roboto, 'Segoe UI', sans-serif;
+  --eds-font-display: Lato, Roboto, sans-serif;
+  --eds-color-brand-900: #082f49;
+  --eds-color-brand-800: #0c4a6e;
+  --eds-color-brand-700: #075985;
+  --eds-color-brand-600: #0369a1;
+  --eds-color-brand-500: #0369a1;
+  --eds-color-brand-400: #0284c7;
+  --eds-color-brand-300: #7dd3fc;
+  --eds-color-brand-200: #bae6fd;
+  --eds-color-brand-100: #e0f2fe;
+  --eds-color-brand-50: #f0f9ff;
+  --eds-color-bg: #f4f7f8;
+  --eds-color-surface: #ffffff;
+  --eds-color-primary: #0369a1;
+  --eds-color-primary-hover: #075985;
+  --eds-color-primary-active: #0c4a6e;
+  --eds-color-focus: #0369a1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--sh-ink);
+  background: var(--sh-floor);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+.sh-brand {
+  font-family: Lato, Roboto, sans-serif;
+  font-weight: 400;
+  color: var(--sh-ink);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: var(--sh-harbor);
+}
+
+.sh-shell {
+  display: grid;
+  grid-template-columns: var(--sh-rail) minmax(0, 1fr);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--sh-floor);
+}
+
+.sh-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  padding: 28px 16px 16px;
+  background: #fff;
+  border-right: 1px solid var(--sh-line);
+}
+
+.sh-brand {
+  margin: 0 8px 28px;
+  color: var(--sh-harbor);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.sh-brand span {
+  display: block;
+  margin-top: 6px;
+  color: var(--sh-quiet);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.sh-nav {
+  flex: 1;
+}
+
+.sh-nav nav {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.sh-sidebar-foot {
+  margin-top: 12px;
+}
+
+.sh-profile {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  padding: 6px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sh-profile strong,
+.sh-profile span span {
+  display: block;
+}
+
+.sh-profile strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.sh-profile span span {
+  color: var(--sh-quiet);
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.sh-main {
+  min-width: 0;
+}
+
+.sh-topbar {
+  display: none;
+}
+
+.sh-page {
+  max-width: 760px;
+  padding: 48px 56px 36px;
+}
+
+.sh-head h1 {
+  margin: 10px 0 0;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+.sh-head p {
+  margin: 6px 0 0;
+  color: var(--sh-quiet);
+}
+
+.sh-footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--sh-line);
+}
+
+.sh-footer p {
+  margin: 0;
+  color: var(--sh-quiet);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.sh-quiet {
+  color: var(--sh-quiet);
+}
+
+.sh-backdrop {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .sh-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sh-topbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid var(--sh-line);
+  }
+
+  .sh-topbar p {
+    margin: 0;
+    color: var(--sh-harbor);
+    font-family: Lato, Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .sh-menu {
+    padding: 6px 10px;
+    border: 1px solid var(--sh-line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--sh-ink);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .sh-sidebar {
+    position: fixed;
+    z-index: 30;
+    width: var(--sh-rail);
+    transform: translateX(-105%);
+    transition: transform 160ms ease;
+  }
+
+  .sh-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .sh-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: block;
+    border: 0;
+    background: rgb(18 32 40 / 0.28);
+  }
+
+  .sh-page {
+    padding: 24px 18px 20px;
+  }
+}
