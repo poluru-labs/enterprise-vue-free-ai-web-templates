@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { Avatar, Card, Status, Tabs } from '@poluru-labs/enterprise-design-system-vue'
+import { Avatar, Button, Card, Status, Tabs } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
 import { BASE_PATH, BREADCRUMB_ROOT, HORIZONS } from '@/constants/navigation'
 import { board, type Horizon, type SpecStatus } from '@/data/board'
@@ -30,7 +30,11 @@ function openSpec(id: string) {
     title="Roadmap"
     lede="Now, next, and later for the workplace desk."
     :crumbs="[BREADCRUMB_ROOT, { label: 'Roadmap' }]"
-  />
+  >
+    <template #actions>
+      <Button type="button" @click="router.push(`${BASE_PATH}/specs/new`)">New spec</Button>
+    </template>
+  </PageHead>
   <Tabs v-model="horizon" :items="tabs" class="sb-tabs" />
   <div class="sb-board">
     <Card v-for="spec in visible" :key="spec.id" class="sb-spec">

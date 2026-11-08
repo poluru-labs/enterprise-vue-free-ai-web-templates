@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
 import { findSpec } from '@/data/board'
+import BacklogView from '@/views/BacklogView.vue'
+import NewSpecView from '@/views/NewSpecView.vue'
 import PlaceholderView from '@/views/PlaceholderView.vue'
+import ReleasesView from '@/views/ReleasesView.vue'
 import RoadmapView from '@/views/RoadmapView.vue'
 import SpecView from '@/views/SpecView.vue'
 
@@ -10,14 +13,15 @@ export const routes = [
   { path: BASE_PATH, redirect: `${BASE_PATH}/roadmap` },
   { path: `${BASE_PATH}/roadmap`, name: 'roadmap', component: RoadmapView, meta: { title: 'Roadmap' } },
   { path: `${BASE_PATH}/specs`, name: 'specs', component: PlaceholderView, meta: { title: 'Specs' } },
+  { path: `${BASE_PATH}/specs/new`, name: 'new-spec', component: NewSpecView, meta: { title: 'New spec' } },
   {
     path: `${BASE_PATH}/specs/:id`,
     name: 'spec',
     component: SpecView,
     meta: { title: 'Spec' },
   },
-  { path: `${BASE_PATH}/backlog`, name: 'backlog', component: PlaceholderView, meta: { title: 'Backlog' } },
-  { path: `${BASE_PATH}/releases`, name: 'releases', component: PlaceholderView, meta: { title: 'Releases' } },
+  { path: `${BASE_PATH}/backlog`, name: 'backlog', component: BacklogView, meta: { title: 'Backlog' } },
+  { path: `${BASE_PATH}/releases`, name: 'releases', component: ReleasesView, meta: { title: 'Releases' } },
   { path: `${BASE_PATH}/settings`, name: 'settings', component: PlaceholderView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/roadmap` },
 ]
