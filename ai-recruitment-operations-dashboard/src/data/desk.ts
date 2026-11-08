@@ -17,6 +17,7 @@ export interface Candidate {
   roleId: string
   stage: Stage
   rating: number
+  applied: string
   note: string
   events: { id: string; title: string; description: string; time: string }[]
 }
@@ -49,6 +50,7 @@ export const desk = reactive({
       roleId: 'accountant',
       stage: 'Applied',
       rating: 0,
+      applied: '2026-11-02',
       note: '',
       events: [{ id: 'e1', title: 'Applied', description: 'Juhi Poluru sent a resume.', time: 'Nov 2' }],
     },
@@ -58,6 +60,7 @@ export const desk = reactive({
       roleId: 'accountant',
       stage: 'Screen',
       rating: 3,
+      applied: '2026-11-01',
       note: 'Clear on the books.',
       events: [{ id: 'e2', title: 'Screen', description: 'Kunal Poluru took the first call.', time: 'Nov 5' }],
     },
@@ -67,6 +70,7 @@ export const desk = reactive({
       roleId: 'accountant',
       stage: 'Interview',
       rating: 4,
+      applied: '2026-10-28',
       note: 'Strong on the close.',
       events: [{ id: 'e3', title: 'Interview', description: 'Lila Poluru sat with the desk.', time: 'Nov 7' }],
     },
@@ -76,6 +80,7 @@ export const desk = reactive({
       roleId: 'accountant',
       stage: 'Offer',
       rating: 5,
+      applied: '2026-10-20',
       note: 'Offer is out.',
       events: [{ id: 'e4', title: 'Offer', description: 'Manoj Poluru has the terms.', time: 'Nov 6' }],
     },
@@ -85,6 +90,7 @@ export const desk = reactive({
       roleId: 'facilities',
       stage: 'Applied',
       rating: 0,
+      applied: '2026-11-03',
       note: '',
       events: [{ id: 'e5', title: 'Applied', description: 'Nandini Poluru applied for Denver.', time: 'Nov 3' }],
     },
@@ -94,6 +100,7 @@ export const desk = reactive({
       roleId: 'facilities',
       stage: 'Screen',
       rating: 3,
+      applied: '2026-11-04',
       note: 'Knows the building.',
       events: [{ id: 'e6', title: 'Screen', description: 'Omkar Poluru took the screen.', time: 'Nov 8' }],
     },
@@ -103,6 +110,7 @@ export const desk = reactive({
       roleId: 'support',
       stage: 'Interview',
       rating: 4,
+      applied: '2026-11-05',
       note: 'Calm on the phone.',
       events: [{ id: 'e7', title: 'Interview', description: 'Pallavi Poluru met the desk.', time: 'Nov 9' }],
     },

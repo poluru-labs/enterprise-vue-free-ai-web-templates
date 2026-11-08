@@ -1,14 +1,30 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { Button, Stepper, Tag } from '@poluru-labs/enterprise-design-system-vue'
+import { Button, EmptyState, Search, SegmentedControl, Stepper, Tag } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
 import { BASE_PATH, BREADCRUMB_ROOT, STAGES } from '@/constants/navigation'
 import { candidatesFor, desk, type Stage } from '@/data/desk'
 
 const router = useRouter()
+const query = ref('')
+const scope = ref('open')
 const steps = STAGES.map((stage) => ({ id: stage.id, label: stage.label, description: stage.description }))
-const openRoles = computed(() => desk.roles.filter((role) => role.status === 'Open'))
+const segments = [
+  { value: 'open', label: 'Open' },
+  { value: 'closed', label: 'Closed' },
+  { value: 'all', label: 'All' },
+]
+
+const visible = computed(() => {
+  const q = query.value.trim().toLowerCase()
+  return desk.roles.filter((role) => {
+    const scopeOk =
+      scope.value === 'all' || (scope.value === 'open' ? role.status === 'Open' : role.status === 'Closed')
+    const text = `${role.title} ${role.location}`.toLowerCase()
+    return scopeOk && (q.length === 0 || text.includes(q))
+  })
+})
 
 function stageIndex(focus: Stage) {
   const index = STAGES.findIndex((stage) => stage.label === focus)
@@ -22,8 +38,18 @@ function stageIndex(focus: Stage) {
     lede="Open jobs and where each one sits."
     :crumbs="[BREADCRUMB_ROOT, { label: 'Roles' }]"
   />
-  <div class="hw-pipeline">
-    <article v-for="role in openRoles" :key="role.id" class="hw-role">
+  <div class="hw-filters">
+    <Search v-model="query" placeholder="Find a role" />
+    <SegmentedControl v-model="scope" :segments="segments" />
+  </div>
+  <EmptyState
+    v-if="visible.length === 0"
+    title="No open roles"
+    description="Nothing on the desk matches that search."
+    icon="search"
+  />
+  <div v-else class="hw-pipeline">
+    <article v-for="role in visible" :key="role.id" class="hw-role">
       <div>
         <h2>{{ role.title }}</h2>
         <p>

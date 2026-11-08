@@ -5,7 +5,7 @@ import CandidateView from '@/views/CandidateView.vue'
 import CandidatesView from '@/views/CandidatesView.vue'
 import InterviewsView from '@/views/InterviewsView.vue'
 import OffersView from '@/views/OffersView.vue'
-import PlaceholderView from '@/views/PlaceholderView.vue'
+import SettingsView from '@/views/SettingsView.vue'
 import RoleView from '@/views/RoleView.vue'
 import RolesView from '@/views/RolesView.vue'
 
@@ -18,7 +18,7 @@ export const routes = [
   { path: `${BASE_PATH}/candidates/:id`, name: 'candidate', component: CandidateView, meta: { title: 'Candidate' } },
   { path: `${BASE_PATH}/interviews`, name: 'interviews', component: InterviewsView, meta: { title: 'Interviews' } },
   { path: `${BASE_PATH}/offers`, name: 'offers', component: OffersView, meta: { title: 'Offers' } },
-  { path: `${BASE_PATH}/settings`, name: 'settings', component: PlaceholderView, meta: { title: 'Settings' } },
+  { path: `${BASE_PATH}/settings`, name: 'settings', component: SettingsView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/roles` },
 ]
 
