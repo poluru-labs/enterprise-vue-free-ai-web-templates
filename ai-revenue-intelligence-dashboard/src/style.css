@@ -295,6 +295,53 @@ a {
   padding-top: 12px;
 }
 
+.ll-filters {
+  margin-top: 12px;
+}
+
+.ll-record {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.ll-step ol {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: 0;
+}
+
+.ll-step li {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.ll-team {
+  width: 140px;
+  margin-top: 16px;
+}
+
+.ll-reps {
+  margin-top: 16px;
+  background: #fff;
+  border: 1px solid var(--ll-line);
+}
+
+.ll-rep {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--ll-line);
+}
+
+.ll-rep:last-child {
+  border-bottom: 0;
+}
+
+.ll-rep p {
+  margin: 8px 0 0;
+}
+
 .ll-backdrop {
   display: none;
 }
@@ -368,5 +415,13 @@ a {
   .ll-stats > *:nth-child(-n + 2),
   .ll-quota:nth-child(-n + 2) {
     border-bottom: 1px solid var(--ll-line);
+  }
+
+  .ll-step {
+    overflow-x: auto;
+  }
+
+  .ll-step ol {
+    min-width: 520px;
   }
 }
