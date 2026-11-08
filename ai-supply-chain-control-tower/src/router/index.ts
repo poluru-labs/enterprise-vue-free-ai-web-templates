@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
 import PlaceholderView from '@/views/PlaceholderView.vue'
+import TowerView from '@/views/TowerView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/tower` },
   { path: BASE_PATH, redirect: `${BASE_PATH}/tower` },
-  { path: `${BASE_PATH}/tower`, name: 'tower', component: PlaceholderView, meta: { title: 'Tower' } },
+  { path: `${BASE_PATH}/tower`, name: 'tower', component: TowerView, meta: { title: 'Tower' } },
   { path: `${BASE_PATH}/orders`, name: 'orders', component: PlaceholderView, meta: { title: 'Orders' } },
   { path: `${BASE_PATH}/suppliers`, name: 'suppliers', component: PlaceholderView, meta: { title: 'Suppliers' } },
   { path: `${BASE_PATH}/sites`, name: 'sites', component: PlaceholderView, meta: { title: 'Sites' } },
