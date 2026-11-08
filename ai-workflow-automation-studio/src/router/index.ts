@@ -1,9 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
 import { findProcess } from '@/data/studio'
+import FormsView from '@/views/FormsView.vue'
+import OwnersView from '@/views/OwnersView.vue'
 import PlaceholderView from '@/views/PlaceholderView.vue'
 import ProcessView from '@/views/ProcessView.vue'
 import ProcessesView from '@/views/ProcessesView.vue'
+import RunsView from '@/views/RunsView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/processes` },
@@ -23,22 +26,19 @@ export const routes = [
   {
     path: `${BASE_PATH}/runs`,
     name: 'runs',
-    component: PlaceholderView,
-    props: { title: 'Runs', lede: 'In progress and finished.' },
+    component: RunsView,
     meta: { title: 'Runs' },
   },
   {
     path: `${BASE_PATH}/forms`,
     name: 'forms',
-    component: PlaceholderView,
-    props: { title: 'Forms', lede: 'Fields used by the processes.' },
+    component: FormsView,
     meta: { title: 'Forms' },
   },
   {
     path: `${BASE_PATH}/owners`,
     name: 'owners',
-    component: PlaceholderView,
-    props: { title: 'Owners', lede: 'Who approves each process.' },
+    component: OwnersView,
     meta: { title: 'Owners' },
   },
   {
