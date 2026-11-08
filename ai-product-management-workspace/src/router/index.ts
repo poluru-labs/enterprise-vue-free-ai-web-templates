@@ -1,12 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
+import { findSpec } from '@/data/board'
 import PlaceholderView from '@/views/PlaceholderView.vue'
+import RoadmapView from '@/views/RoadmapView.vue'
+import SpecView from '@/views/SpecView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/roadmap` },
   { path: BASE_PATH, redirect: `${BASE_PATH}/roadmap` },
-  { path: `${BASE_PATH}/roadmap`, name: 'roadmap', component: PlaceholderView, meta: { title: 'Roadmap' } },
+  { path: `${BASE_PATH}/roadmap`, name: 'roadmap', component: RoadmapView, meta: { title: 'Roadmap' } },
   { path: `${BASE_PATH}/specs`, name: 'specs', component: PlaceholderView, meta: { title: 'Specs' } },
+  {
+    path: `${BASE_PATH}/specs/:id`,
+    name: 'spec',
+    component: SpecView,
+    meta: { title: 'Spec' },
+  },
   { path: `${BASE_PATH}/backlog`, name: 'backlog', component: PlaceholderView, meta: { title: 'Backlog' } },
   { path: `${BASE_PATH}/releases`, name: 'releases', component: PlaceholderView, meta: { title: 'Releases' } },
   { path: `${BASE_PATH}/settings`, name: 'settings', component: PlaceholderView, meta: { title: 'Settings' } },
@@ -22,6 +31,11 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
+  if (to.name === 'spec') {
+    const spec = findSpec(String(to.params.id ?? ''))
+    document.title = `${spec?.number ?? 'Spec'} · Specboard`
+    return
+  }
   const title = typeof to.meta.title === 'string' ? to.meta.title : 'Roadmap'
   document.title = `${title} · Specboard`
 })
