@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { List, Meter } from '@poluru-labs/enterprise-design-system-vue'
+import { DataTable, List, Meter } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
 import { BREADCRUMB_ROOT } from '@/constants/navigation'
 import { board, type Horizon } from '@/data/board'
@@ -11,6 +11,20 @@ function inHorizon(horizon: Horizon) {
 function locked(horizon: Horizon) {
   return inHorizon(horizon).filter((spec) => spec.status === 'Locked' || spec.status === 'Shipped').length
 }
+
+const columns = [
+  { key: 'number', label: 'Spec', sortable: true },
+  { key: 'title', label: 'Title' },
+  { key: 'horizon', label: 'Horizon' },
+  { key: 'status', label: 'Status' },
+]
+
+const rows = board.specs.map((spec) => ({
+  number: spec.number,
+  title: spec.title,
+  horizon: spec.horizon,
+  status: spec.status,
+}))
 </script>
 
 <template>
@@ -41,5 +55,8 @@ function locked(horizon: Horizon) {
         "
       />
     </article>
+  </div>
+  <div class="sb-sheet">
+    <DataTable :columns="columns" :rows="rows" compact striped />
   </div>
 </template>
