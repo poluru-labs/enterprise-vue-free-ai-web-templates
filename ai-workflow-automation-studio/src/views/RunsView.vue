@@ -2,14 +2,21 @@
 import { computed, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import {
+  Autocomplete,
   Button,
   DataTable,
   DescriptionList,
   Drawer,
+  EmptyState,
+  Kbd,
   Pagination,
+  Popover,
   Search,
   SegmentedControl,
+  Skeleton,
   Timeline,
+  Toolbar,
+  Tooltip,
 } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
 import { BASE_PATH, BREADCRUMB_ROOT } from '@/constants/navigation'
@@ -22,6 +29,10 @@ const scope = ref('all')
 const page = ref(1)
 const open = ref(false)
 const activeId = ref('')
+const jump = ref('')
+const helpOpen = ref(false)
+const loading = ref(false)
+const numbers = computed(() => studio.runs.map((run) => ({ value: run.number, label: `${run.number} ${processName(run.processId)}` })))
 
 const segments = [
   { value: 'all', label: 'All' },
@@ -87,6 +98,20 @@ watch([query, scope], () => {
   page.value = 1
 })
 
+function onJump(value: string) {
+  const run = studio.runs.find((item) => item.number === value)
+  if (!run) return
+  activeId.value = run.id
+  open.value = true
+}
+
+function refresh() {
+  loading.value = true
+  window.setTimeout(() => {
+    loading.value = false
+  }, 400)
+}
+
 function showRun(token: string) {
   const run = studio.runs.find((item) => item.number === token || item.requester === token)
   if (!run) return
@@ -105,19 +130,38 @@ function onTableClick(event: MouseEvent) {
 
 <template>
   <PageHead title="Runs" lede="In progress and finished." :crumbs="[BREADCRUMB_ROOT, { label: 'Runs' }]" />
-  <div class="fw-tools">
-    <Search v-model="query" label="Find a run" placeholder="Find a run" />
-    <SegmentedControl v-model="scope" :segments="segments" />
-  </div>
-  <div class="fw-opens">
-    <Button v-for="run in visible" :key="run.id" type="button" variant="secondary" size="sm" @click="showRun(run.number)">
-      {{ run.number }}
-    </Button>
-  </div>
-  <div class="fw-table" @click="onTableClick">
-    <DataTable :columns="columns" :rows="rows" compact striped />
-  </div>
-  <Pagination v-model:page="page" class="fw-pages" :page-count="pageCount" />
+  <Toolbar class="fw-tools">
+    <template #start>
+      <Search v-model="query" label="Find a run" placeholder="Find a run" />
+      <SegmentedControl v-model="scope" :segments="segments" />
+    </template>
+    <template #end>
+      <Kbd :keys="['/']" />
+      <Popover v-model:open="helpOpen" heading="Run numbers" placement="bottom">
+        <template #trigger>
+          <Button type="button" variant="secondary" size="sm">Run numbers</Button>
+        </template>
+        <p>A run number starts with FW-.</p>
+      </Popover>
+      <Tooltip content="Reload the list">
+        <Button type="button" variant="secondary" size="sm" @click="refresh">Refresh</Button>
+      </Tooltip>
+    </template>
+  </Toolbar>
+  <Autocomplete v-model="jump" class="fw-gap" label="Jump to a number" :options="numbers" @update:model-value="onJump" />
+  <Skeleton v-if="loading" variant="rectangular" width="100%" height="160px" />
+  <EmptyState v-else-if="filtered.length === 0" class="fw-gap" title="No runs" description="Nothing matches that search." icon="search" />
+  <template v-else>
+    <div class="fw-opens">
+      <Button v-for="run in visible" :key="run.id" type="button" variant="secondary" size="sm" @click="showRun(run.number)">
+        {{ run.number }}
+      </Button>
+    </div>
+    <div class="fw-table" @click="onTableClick">
+      <DataTable :columns="columns" :rows="rows" compact striped />
+    </div>
+    <Pagination v-model:page="page" class="fw-pages" :page-count="pageCount" />
+  </template>
   <Drawer v-model:open="open" :heading="active?.number ?? 'Run'" size="md">
     <p v-if="active" class="fw-quiet">{{ active.note }}</p>
     <DescriptionList :items="facts" />

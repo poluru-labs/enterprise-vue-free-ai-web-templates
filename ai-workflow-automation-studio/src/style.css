@@ -361,6 +361,21 @@ a {
   font-weight: 400;
 }
 
+.fw-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 480px;
+  margin-top: 16px;
+}
+
+.fw-settings h3,
+.fw-split h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
 @media (max-width: 880px) {
   .fw-shell {
     grid-template-columns: 1fr;

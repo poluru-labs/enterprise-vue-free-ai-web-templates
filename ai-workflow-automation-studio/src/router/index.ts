@@ -3,10 +3,10 @@ import { BASE_PATH } from '@/constants/navigation'
 import { findProcess } from '@/data/studio'
 import FormsView from '@/views/FormsView.vue'
 import OwnersView from '@/views/OwnersView.vue'
-import PlaceholderView from '@/views/PlaceholderView.vue'
 import ProcessView from '@/views/ProcessView.vue'
 import ProcessesView from '@/views/ProcessesView.vue'
 import RunsView from '@/views/RunsView.vue'
+import SettingsView from '@/views/SettingsView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/processes` },
@@ -44,8 +44,7 @@ export const routes = [
   {
     path: `${BASE_PATH}/settings`,
     name: 'settings',
-    component: PlaceholderView,
-    props: { title: 'Settings', lede: 'Process naming and the archive rule.' },
+    component: SettingsView,
     meta: { title: 'Settings' },
   },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/processes` },
