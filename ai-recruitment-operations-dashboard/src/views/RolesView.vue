@@ -54,7 +54,7 @@ function stageIndex(focus: Stage) {
         <h2>{{ role.title }}</h2>
         <p>
           <Tag :label="role.location" />
-          <span class="hw-quiet">{{ candidatesFor(role.id).length }} candidates</span>
+          <span class="hw-quiet">{{ candidatesFor(role.id).length === 1 ? '1 candidate' : `${candidatesFor(role.id).length} candidates` }}</span>
         </p>
         <Button type="button" size="sm" variant="secondary" @click="router.push(`${BASE_PATH}/roles/${role.id}`)">
           Open
