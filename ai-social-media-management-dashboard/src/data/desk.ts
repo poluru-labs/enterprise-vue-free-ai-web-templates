@@ -78,3 +78,64 @@ export function postsOn(day: string, channel: string) {
 export function findPost(id: string) {
   return desk.posts.find((post) => post.id === id)
 }
+
+export const CHANNEL_OWNERS = {
+  Notes: ['Tanvi Poluru', 'Yuvan Poluru', 'Darsh Poluru'],
+  Photos: ['Uday Poluru', 'Brinda Poluru', 'Akarsh Poluru'],
+  Mail: ['Vani Poluru', 'Eesha Poluru'],
+} as const
+
+export const composer = reactive({
+  open: false,
+  id: '',
+  title: '',
+  caption: '',
+  channel: 'Notes' as Channel,
+  day: '2026-11-09',
+  time: '09:00',
+})
+
+export function openComposer(post?: Post) {
+  composer.open = true
+  composer.id = post?.id ?? ''
+  composer.title = post?.title ?? ''
+  composer.caption = post?.caption ?? ''
+  composer.channel = post?.channel ?? desk.defaultChannel
+  composer.day = post?.day || WEEK[0].id
+  composer.time = post?.time ?? '09:00'
+}
+
+export function saveComposer(state: PostState) {
+  const title = composer.title.trim()
+  if (!title) return ''
+  const existing = composer.id ? findPost(composer.id) : undefined
+  if (existing) {
+    existing.title = title
+    existing.caption = composer.caption.trim()
+    existing.channel = composer.channel
+    existing.day = composer.day
+    existing.time = composer.time
+    existing.state = state
+    composer.open = false
+    return existing.title
+  }
+  const post: Post = {
+    id: `post-${desk.posts.length + 1}`,
+    title,
+    caption: composer.caption.trim(),
+    channel: composer.channel,
+    state,
+    day: composer.day,
+    time: composer.time,
+    owner: 'Tanvi Poluru',
+    series: 'Bakery',
+  }
+  desk.posts.unshift(post)
+  composer.open = false
+  return post.title
+}
+
+export function approveFile(id: string) {
+  const file = desk.files.find((item) => item.id === id)
+  if (file && file.state === 'Waiting') file.state = 'Approved'
+}
