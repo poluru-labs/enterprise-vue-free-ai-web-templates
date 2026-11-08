@@ -4,7 +4,7 @@ import { findStudy } from '@/data/shelf'
 import GrantsView from '@/views/GrantsView.vue'
 import LabsView from '@/views/LabsView.vue'
 import PapersView from '@/views/PapersView.vue'
-import PlaceholderView from '@/views/PlaceholderView.vue'
+import SettingsView from '@/views/SettingsView.vue'
 import StudiesView from '@/views/StudiesView.vue'
 import StudyView from '@/views/StudyView.vue'
 
@@ -16,7 +16,7 @@ export const routes = [
   { path: `${BASE_PATH}/papers`, name: 'papers', component: PapersView, meta: { title: 'Papers' } },
   { path: `${BASE_PATH}/grants`, name: 'grants', component: GrantsView, meta: { title: 'Grants' } },
   { path: `${BASE_PATH}/labs`, name: 'labs', component: LabsView, meta: { title: 'Labs' } },
-  { path: `${BASE_PATH}/settings`, name: 'settings', component: PlaceholderView, meta: { title: 'Settings' } },
+  { path: `${BASE_PATH}/settings`, name: 'settings', component: SettingsView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/studies` },
 ]
 

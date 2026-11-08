@@ -67,8 +67,9 @@ export const shelf = reactive({
   boardTime: '09:00',
   boardDate: '2026-11-18',
   pin: '',
-  holdPaused: false,
+  holdPaused: true,
   notify: 'lead',
+  defaultKind: 'Materials' as StudyKind,
   studies: [
     {
       id: 'clay',

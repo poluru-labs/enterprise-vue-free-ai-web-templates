@@ -1,27 +1,44 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import {
+  Alert,
   Button,
   ButtonGroup,
+  Combobox,
+  DatePicker,
   DescriptionList,
   EmptyState,
   FileUpload,
+  Input,
   List,
+  Modal,
+  ProgressBar,
+  Rating,
   Status,
   Stepper,
   Timeline,
   showToast,
 } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
-import { BASE_PATH, BREADCRUMB_ROOT, MILESTONES } from '@/constants/navigation'
-import { fileDocument, findStudy, type StudyStatus } from '@/data/shelf'
+import { BASE_PATH, BREADCRUMB_ROOT, MILESTONES, PEOPLE } from '@/constants/navigation'
+import { fileDocument, fileNote, findStudy, type StudyStatus } from '@/data/shelf'
 
 const route = useRoute()
 const router = useRouter()
+const noteOpen = ref(false)
+const noteTitle = ref('Shelf note')
+const author = ref('Raghav Poluru')
+const day = ref('2026-11-13')
 
 const study = computed(() => findStudy(String(route.params.id ?? '')))
 const steps = MILESTONES.map((step) => ({ id: step.id, label: step.label, description: step.description }))
+const people = PEOPLE.map((name) => ({ value: name, label: name }))
+const progress = computed(() => {
+  const current = study.value
+  if (!current) return 0
+  return Math.round(((current.milestone + 1) / MILESTONES.length) * 100)
+})
 
 const documents = computed(() =>
   (study.value?.documents ?? []).map((document) => ({
@@ -44,6 +61,15 @@ function onFiles(detail: { files: File[] }) {
   fileDocument(current.id, file.name)
   showToast({ title: 'Document filed', description: `${file.name} is on the shelf.`, variant: 'success' })
 }
+
+function saveNote() {
+  const current = study.value
+  if (!current) return
+  const title = noteTitle.value.trim() || 'Shelf note'
+  fileNote(current.id, title, author.value, day.value)
+  noteOpen.value = false
+  showToast({ title: 'Note filed', description: `${author.value} filed ${day.value}.`, variant: 'success' })
+}
 </script>
 
 <template>
@@ -55,6 +81,7 @@ function onFiles(detail: { files: File[] }) {
   />
   <EmptyState v-else title="Study missing" description="That shelf number is not on the desk." icon="search" />
   <div v-if="study" class="sh-record">
+    <Alert v-if="study.status === 'Paused'" variant="warning" title="Paused" message="This study is held." />
     <Status :label="study.status" :tone="tone(study.status)" />
     <DescriptionList
       :items="[
@@ -67,6 +94,8 @@ function onFiles(detail: { files: File[] }) {
     <div class="sh-step">
       <Stepper :steps="steps" :active-index="study.milestone" />
     </div>
+    <ProgressBar label="Through the steps" :value="progress" show-value />
+    <Rating :model-value="study.condition" label="Site condition" read-only />
     <h2>Documents</h2>
     <EmptyState
       v-if="study.documents.length === 0"
@@ -79,7 +108,18 @@ function onFiles(detail: { files: File[] }) {
     <h2>Shelf log</h2>
     <Timeline :items="study.log" />
     <ButtonGroup>
+      <Button type="button" @click="noteOpen = true">File a note</Button>
       <Button type="button" variant="secondary" @click="router.push(`${BASE_PATH}/studies`)">Back to studies</Button>
     </ButtonGroup>
+    <Modal v-model:open="noteOpen" heading="File a shelf note">
+      <div class="sh-modal">
+        <Input v-model="noteTitle" label="Note title" />
+        <Combobox v-model="author" label="Filed by" :options="people" />
+        <DatePicker v-model="day" label="Day" />
+      </div>
+      <template #footer>
+        <Button type="button" @click="saveNote">File</Button>
+      </template>
+    </Modal>
   </div>
 </template>

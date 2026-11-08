@@ -362,6 +362,28 @@ a {
   width: 100%;
 }
 
+.sh-jump {
+  margin-top: 14px;
+}
+
+.sh-stat {
+  max-width: 200px;
+  margin-top: 22px;
+}
+
+.sh-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.sh-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .sh-backdrop {
   display: none;
 }
