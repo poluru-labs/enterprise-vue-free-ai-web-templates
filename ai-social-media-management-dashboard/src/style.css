@@ -354,6 +354,56 @@ a {
   padding-top: 12px;
 }
 
+.po-stat {
+  max-width: 160px;
+  margin-top: 14px;
+}
+
+.po-marks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.po-day h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.po-step ol {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: 0;
+}
+
+.po-step li {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.po-coming {
+  margin: 22px 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.po-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 460px;
+  margin-top: 16px;
+}
+
+.po-settings h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .po-backdrop {
   display: none;
 }

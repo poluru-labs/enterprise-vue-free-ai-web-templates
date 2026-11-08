@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { Avatar, DescriptionList, Divider } from '@poluru-labs/enterprise-design-system-vue'
+import { computed, ref } from 'vue'
+import { Avatar, DescriptionList, Divider, Timeline, TreeView } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
 import { BREADCRUMB_ROOT, CHANNELS } from '@/constants/navigation'
 import { CHANNEL_OWNERS, desk } from '@/data/desk'
@@ -11,6 +11,35 @@ const rows = computed(() =>
     owners: [...CHANNEL_OWNERS[channel]],
     count: desk.posts.filter((post) => post.channel === channel && post.state !== 'Draft').length,
   })),
+)
+
+const picked = ref('')
+const seriesTree = computed(() => {
+  const series = ['Bakery', 'Park'] as const
+  return series.map((name) => ({
+    id: name,
+    label: name,
+    children: desk.posts.filter((post) => post.series === name).map((post) => ({ id: post.id, label: post.title })),
+  }))
+})
+
+function onSelect(id: string) {
+  const post = desk.posts.find((item) => item.id === id)
+  if (post) picked.value = post.title
+}
+
+const coming = computed(() =>
+  desk.posts
+    .filter((post) => post.state === 'Scheduled')
+    .slice()
+    .sort((a, b) => `${a.day}${a.time}`.localeCompare(`${b.day}${b.time}`))
+    .slice(0, 4)
+    .map((post) => ({
+      id: post.id,
+      title: post.title,
+      description: `${post.channel} · ${post.owner}`,
+      time: `${post.day} ${post.time}`,
+    })),
 )
 </script>
 
@@ -34,4 +63,9 @@ const rows = computed(() =>
       />
     </section>
   </div>
+  <h2 class="po-coming">Series</h2>
+  <TreeView :nodes="seriesTree" @select="onSelect" />
+  <p v-if="picked" class="po-quiet">{{ picked }}</p>
+  <h2 class="po-coming">Coming up</h2>
+  <Timeline :items="coming" />
 </template>
