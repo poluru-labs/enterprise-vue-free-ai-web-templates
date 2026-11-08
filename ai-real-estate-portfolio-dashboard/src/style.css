@@ -1,0 +1,269 @@
+:root {
+  --lw-olive: #3f6212;
+  --lw-olive-deep: #365314;
+  --lw-ink: #1c2414;
+  --lw-quiet: #5e6854;
+  --lw-line: #dde3d0;
+  --lw-wash: #eef3e4;
+  --lw-floor: #f4f6ef;
+  --lw-rail: 224px;
+  --eds-font-sans: Roboto, 'Segoe UI', sans-serif;
+  --eds-font-display: Lato, Roboto, sans-serif;
+  --eds-color-brand-900: #1a2e05;
+  --eds-color-brand-800: #365314;
+  --eds-color-brand-700: #3f6212;
+  --eds-color-brand-600: #4d7c0f;
+  --eds-color-brand-500: #3f6212;
+  --eds-color-brand-400: #65a30d;
+  --eds-color-brand-300: #bef264;
+  --eds-color-brand-200: #d9f99d;
+  --eds-color-brand-100: #ecfccb;
+  --eds-color-brand-50: #f7fee7;
+  --eds-color-bg: #f4f6ef;
+  --eds-color-surface: #ffffff;
+  --eds-color-primary: #3f6212;
+  --eds-color-primary-hover: #365314;
+  --eds-color-primary-active: #1a2e05;
+  --eds-color-focus: #3f6212;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--lw-ink);
+  background: var(--lw-floor);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+.lw-brand {
+  font-family: Lato, Roboto, sans-serif;
+  color: var(--lw-ink);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: var(--lw-olive);
+}
+
+.lw-shell {
+  display: grid;
+  grid-template-columns: var(--lw-rail) minmax(0, 1fr);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--lw-floor);
+}
+
+.lw-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  padding: 18px 14px 14px;
+  background: #fff;
+  border-right: 1px solid var(--lw-line);
+}
+
+.lw-brand {
+  margin: 0 6px 18px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.lw-brand span {
+  display: block;
+  margin-top: 4px;
+  color: var(--lw-olive);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lw-nav {
+  flex: 1;
+}
+
+.lw-nav nav {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.lw-sidebar-foot {
+  margin-top: 12px;
+}
+
+.lw-profile {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  padding: 6px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lw-profile strong,
+.lw-profile span span {
+  display: block;
+}
+
+.lw-profile strong {
+  font-size: 13px;
+}
+
+.lw-profile span span {
+  color: var(--lw-quiet);
+  font-size: 12px;
+}
+
+.lw-main {
+  min-width: 0;
+}
+
+.lw-topbar {
+  display: none;
+}
+
+.lw-page {
+  padding: 20px 32px 28px;
+}
+
+.lw-head h1 {
+  margin: 6px 0 0;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.lw-head p {
+  margin: 4px 0 0;
+  max-width: 48ch;
+  color: var(--lw-quiet);
+}
+
+.lw-head-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.lw-head-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 8px;
+  align-items: center;
+}
+
+.lw-footer {
+  margin-top: 28px;
+}
+
+.lw-footer p {
+  margin: 0;
+  color: var(--lw-quiet);
+  font-size: 13px;
+}
+
+.lw-quiet {
+  color: var(--lw-quiet);
+}
+
+.lw-backdrop {
+  display: none;
+}
+
+@media (max-width: 840px) {
+  .lw-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .lw-topbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid var(--lw-line);
+  }
+
+  .lw-topbar p {
+    margin: 0;
+    font-family: Lato, Roboto, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .lw-menu {
+    padding: 6px 10px;
+    border: 1px solid var(--lw-line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--lw-ink);
+  }
+
+  .lw-sidebar {
+    position: fixed;
+    z-index: 30;
+    width: var(--lw-rail);
+    transform: translateX(-105%);
+    transition: transform 160ms ease;
+  }
+
+  .lw-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .lw-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: block;
+    border: 0;
+    background: rgb(28 36 20 / 0.32);
+  }
+
+  .lw-page {
+    padding: 16px 16px 24px;
+  }
+
+  .lw-head-row {
+    flex-wrap: wrap;
+  }
+}
