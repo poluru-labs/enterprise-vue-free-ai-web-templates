@@ -216,6 +216,100 @@ a {
   display: none;
 }
 
+.fw-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  margin-top: 28px;
+}
+
+.fw-gap {
+  margin-top: 20px;
+}
+
+.fw-library {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.fw-folio {
+  padding: 28px 32px 32px;
+  background: var(--fw-sheet);
+  border: 1px solid var(--fw-line);
+}
+
+.fw-folio h2,
+.fw-side h2,
+.fw-form h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.fw-form h2,
+.fw-side h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.fw-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 0 0 12px;
+}
+
+.fw-folio .fw-quiet,
+.fw-form .fw-quiet,
+.fw-side .fw-quiet {
+  margin: 8px 0 16px;
+}
+
+.fw-record {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.fw-step ol {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: 0;
+}
+
+.fw-step li {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.fw-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 36px;
+  align-items: start;
+}
+
+.fw-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 28px 28px;
+  background: var(--fw-sheet);
+  border: 1px solid var(--fw-line);
+}
+
+.fw-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 @media (max-width: 880px) {
   .fw-shell {
     grid-template-columns: 1fr;
@@ -270,5 +364,19 @@ a {
 
   .fw-head-row {
     flex-wrap: wrap;
+  }
+
+  .fw-library,
+  .fw-detail {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .fw-step {
+    overflow-x: auto;
+  }
+
+  .fw-step ol {
+    min-width: 520px;
   }
 }

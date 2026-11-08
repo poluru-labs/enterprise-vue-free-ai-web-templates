@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
+import { findProcess } from '@/data/studio'
 import PlaceholderView from '@/views/PlaceholderView.vue'
+import ProcessView from '@/views/ProcessView.vue'
+import ProcessesView from '@/views/ProcessesView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/processes` },
@@ -8,15 +11,13 @@ export const routes = [
   {
     path: `${BASE_PATH}/processes`,
     name: 'processes',
-    component: PlaceholderView,
-    props: { title: 'Processes', lede: 'Time off, vendor setup, and laptop request.' },
+    component: ProcessesView,
     meta: { title: 'Processes' },
   },
   {
     path: `${BASE_PATH}/processes/:id`,
     name: 'process',
-    component: PlaceholderView,
-    props: { title: 'Process', lede: 'Steps and the form for the current step.' },
+    component: ProcessView,
     meta: { title: 'Process' },
   },
   {
@@ -59,6 +60,11 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
+  if (to.name === 'process') {
+    const process = findProcess(String(to.params.id ?? ''))
+    document.title = `${process?.name ?? 'Process'} · Flowwell`
+    return
+  }
   const title = typeof to.meta.title === 'string' ? to.meta.title : 'Processes'
   document.title = `${title} · Flowwell`
 })
