@@ -1,0 +1,277 @@
+:root {
+  --po-magenta: #db2777;
+  --po-magenta-deep: #be185d;
+  --po-ink: #241820;
+  --po-quiet: #6e5a64;
+  --po-line: #eadfe3;
+  --po-floor: #f7f4f1;
+  --po-sheet: #ffffff;
+  --po-rail: 156px;
+  --eds-font-sans: Roboto, 'Segoe UI', sans-serif;
+  --eds-font-display: Lato, Roboto, sans-serif;
+  --eds-color-brand-900: #831843;
+  --eds-color-brand-800: #9d174d;
+  --eds-color-brand-700: #be185d;
+  --eds-color-brand-600: #db2777;
+  --eds-color-brand-500: #db2777;
+  --eds-color-brand-400: #ec4899;
+  --eds-color-brand-300: #f9a8d4;
+  --eds-color-brand-200: #fbcfe8;
+  --eds-color-brand-100: #fce7f3;
+  --eds-color-brand-50: #fdf2f8;
+  --eds-color-bg: #f7f4f1;
+  --eds-color-surface: #ffffff;
+  --eds-color-primary: #db2777;
+  --eds-color-primary-hover: #be185d;
+  --eds-color-primary-active: #9d174d;
+  --eds-color-focus: #db2777;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--po-ink);
+  background: var(--po-floor);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+h1,
+h2,
+h3,
+.po-brand {
+  font-family: Lato, Roboto, sans-serif;
+  color: var(--po-ink);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: var(--po-magenta);
+}
+
+.po-shell {
+  display: grid;
+  grid-template-columns: var(--po-rail) minmax(0, 1fr);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--po-floor);
+}
+
+.po-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  padding: 18px 10px 12px;
+  background: var(--po-sheet);
+  border-right: 1px solid var(--po-line);
+}
+
+.po-brand {
+  margin: 0 6px 18px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.po-brand::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--po-magenta);
+}
+
+.po-brand span {
+  display: block;
+  margin-top: 4px;
+  margin-left: 14px;
+  color: var(--po-quiet);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.po-nav {
+  flex: 1;
+}
+
+.po-nav nav {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.po-sidebar-foot {
+  margin-top: 12px;
+}
+
+.po-profile {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.po-profile strong,
+.po-profile span span {
+  display: block;
+}
+
+.po-profile strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.po-profile span span {
+  color: var(--po-quiet);
+  font-size: 11px;
+}
+
+.po-main {
+  min-width: 0;
+  background: var(--po-floor);
+}
+
+.po-topbar {
+  display: none;
+}
+
+.po-page {
+  padding: 18px 20px 24px;
+  background: var(--po-floor);
+}
+
+.po-head h1 {
+  margin: 2px 0 0;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.po-head p {
+  margin: 4px 0 0;
+  color: var(--po-quiet);
+}
+
+.po-head-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.po-head-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 8px;
+  align-items: center;
+}
+
+.po-footer {
+  margin-top: 28px;
+  padding-top: 12px;
+  border-top: 1px solid var(--po-line);
+}
+
+.po-footer p {
+  margin: 0;
+  color: var(--po-quiet);
+  font-size: 12px;
+}
+
+.po-quiet {
+  color: var(--po-quiet);
+}
+
+.po-backdrop {
+  display: none;
+}
+
+@media (max-width: 840px) {
+  .po-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .po-topbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--po-sheet);
+    border-bottom: 1px solid var(--po-line);
+  }
+
+  .po-topbar p {
+    margin: 0;
+    font-family: Lato, Roboto, sans-serif;
+    font-weight: 700;
+  }
+
+  .po-menu {
+    padding: 6px 10px;
+    border: 1px solid var(--po-line);
+    background: var(--po-sheet);
+    color: var(--po-ink);
+  }
+
+  .po-sidebar {
+    position: fixed;
+    z-index: 30;
+    width: var(--po-rail);
+    transform: translateX(-105%);
+    transition: transform 160ms ease;
+  }
+
+  .po-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .po-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: block;
+    border: 0;
+    background: rgb(36 24 32 / 0.28);
+  }
+
+  .po-page {
+    padding: 16px;
+  }
+
+  .po-head-row {
+    flex-wrap: wrap;
+  }
+}
