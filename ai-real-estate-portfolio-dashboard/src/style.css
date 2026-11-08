@@ -321,6 +321,42 @@ a {
   margin-top: 16px;
 }
 
+.lw-tools,
+.lw-jump,
+.lw-tabs {
+  margin-top: 16px;
+}
+
+.lw-pages {
+  padding: 12px 14px;
+}
+
+.lw-picks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lw-order-side {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.lw-stat {
+  max-width: 220px;
+  margin-top: 16px;
+}
+
+.lw-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 460px;
+  margin-top: 16px;
+}
+
 .lw-footer {
   margin-top: 28px;
 }
