@@ -3,7 +3,7 @@ import { BASE_PATH } from '@/constants/navigation'
 import { findOrder } from '@/data/tower'
 import OrderView from '@/views/OrderView.vue'
 import OrdersView from '@/views/OrdersView.vue'
-import PlaceholderView from '@/views/PlaceholderView.vue'
+import SettingsView from '@/views/SettingsView.vue'
 import SitesView from '@/views/SitesView.vue'
 import SuppliersView from '@/views/SuppliersView.vue'
 import TowerView from '@/views/TowerView.vue'
@@ -16,7 +16,7 @@ export const routes = [
   { path: `${BASE_PATH}/orders/:id`, name: 'order', component: OrderView, meta: { title: 'Order' } },
   { path: `${BASE_PATH}/suppliers`, name: 'suppliers', component: SuppliersView, meta: { title: 'Suppliers' } },
   { path: `${BASE_PATH}/sites`, name: 'sites', component: SitesView, meta: { title: 'Sites' } },
-  { path: `${BASE_PATH}/settings`, name: 'settings', component: PlaceholderView, meta: { title: 'Settings' } },
+  { path: `${BASE_PATH}/settings`, name: 'settings', component: SettingsView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/tower` },
 ]
 

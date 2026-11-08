@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { DataTable, DescriptionList, Rating, TreeView } from '@poluru-labs/enterprise-design-system-vue'
+import { DataTable, DescriptionList, EmptyState, List, Rating, TreeView } from '@poluru-labs/enterprise-design-system-vue'
 import PageHead from '@/components/layout/PageHead.vue'
 import { BREADCRUMB_ROOT } from '@/constants/navigation'
 import { findSupplier, siteName, tower } from '@/data/tower'
@@ -16,6 +16,11 @@ const tree = computed(() =>
 )
 
 const supplier = computed(() => findSupplier(selected.value))
+const openOrders = computed(() =>
+  tower.orders
+    .filter((order) => order.supplierId === selected.value && order.state !== 'Draft' && order.state !== 'Received')
+    .map((order) => ({ id: order.id, label: order.number, description: `${order.title} · ${order.state}` })),
+)
 
 const columns = [
   { key: 'name', label: 'Supplier' },
@@ -55,6 +60,9 @@ function onSelect(id: string) {
           { term: 'Score', description: String(supplier.score) },
         ]"
       />
+      <h2>Open orders</h2>
+      <List v-if="openOrders.length > 0" :items="openOrders" />
+      <EmptyState v-else title="No open orders" description="Nothing is due from this supplier." icon="check" />
     </div>
   </div>
   <div class="sw-table">

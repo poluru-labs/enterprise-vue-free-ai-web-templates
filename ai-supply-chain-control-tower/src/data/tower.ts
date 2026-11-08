@@ -222,3 +222,10 @@ export function supplierName(id: string) {
 export function ordersByState(state: OrderState) {
   return tower.orders.filter((order) => order.state === state)
 }
+
+export function receiveOrder(id: string) {
+  const order = findOrder(id)
+  if (!order || order.state === 'Received' || order.state === 'Draft') return
+  order.state = 'Received'
+  order.step = 2
+}
