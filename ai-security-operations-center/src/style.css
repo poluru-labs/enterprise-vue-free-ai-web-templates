@@ -301,6 +301,33 @@ a {
   font-weight: 500;
 }
 
+.wl-jump,
+.wl-stat {
+  margin-top: 14px;
+}
+
+.wl-stat {
+  max-width: 180px;
+}
+
+.wl-settings,
+.wl-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wl-settings {
+  max-width: 460px;
+  margin-top: 16px;
+}
+
+.wl-settings h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .wl-backdrop {
   display: none;
 }

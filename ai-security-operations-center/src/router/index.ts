@@ -6,7 +6,7 @@ import AssetsView from '@/views/AssetsView.vue'
 import ChangesView from '@/views/ChangesView.vue'
 import IncidentView from '@/views/IncidentView.vue'
 import IncidentsView from '@/views/IncidentsView.vue'
-import PlaceholderView from '@/views/PlaceholderView.vue'
+import SettingsView from '@/views/SettingsView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/incidents` },
@@ -16,7 +16,7 @@ export const routes = [
   { path: `${BASE_PATH}/assets`, name: 'assets', component: AssetsView, meta: { title: 'Assets' } },
   { path: `${BASE_PATH}/access`, name: 'access', component: AccessView, meta: { title: 'Access' } },
   { path: `${BASE_PATH}/changes`, name: 'changes', component: ChangesView, meta: { title: 'Changes' } },
-  { path: `${BASE_PATH}/settings`, name: 'settings', component: PlaceholderView, meta: { title: 'Settings' } },
+  { path: `${BASE_PATH}/settings`, name: 'settings', component: SettingsView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/incidents` },
 ]
 

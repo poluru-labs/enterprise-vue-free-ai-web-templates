@@ -5,6 +5,7 @@ import {
   Button,
   ButtonGroup,
   DescriptionList,
+  FileUpload,
   List,
   Status,
   Stepper,
@@ -43,6 +44,10 @@ function close() {
   note.value = ''
   showToast({ title: 'Closed', description: `${current.number} is filed.`, variant: 'success' })
 }
+
+function onLog() {
+  showToast({ title: 'Log filed', description: 'The file is on the incident.', variant: 'success' })
+}
 </script>
 
 <template>
@@ -71,6 +76,7 @@ function close() {
     <h2>Watch log</h2>
     <Timeline :items="incident.notes" />
     <Textarea v-if="incident.state === 'Open'" v-model="note" label="Close note" />
+    <FileUpload v-if="incident.state === 'Open'" label="Watch log" accept=".pdf,.txt" @files-change="onLog" />
     <ButtonGroup>
       <Button v-if="incident.state === 'Open'" type="button" @click="close">Close incident</Button>
       <Button type="button" variant="secondary" @click="router.push(`${BASE_PATH}/incidents`)">Back to queue</Button>
