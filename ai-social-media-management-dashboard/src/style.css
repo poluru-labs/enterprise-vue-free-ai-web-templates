@@ -215,6 +215,87 @@ a {
   color: var(--po-quiet);
 }
 
+.po-filters {
+  margin-top: 14px;
+}
+
+.po-board {
+  margin-top: 14px;
+  overflow-x: auto;
+}
+
+.po-week {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+  min-width: 980px;
+}
+
+.po-day {
+  min-width: 0;
+  padding: 8px;
+  background: var(--po-sheet);
+  border: 1px solid var(--po-line);
+}
+
+.po-day h2 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.po-post {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  margin: 0 0 8px;
+  padding: 8px 0 0;
+  border: 0;
+  border-top: 2px solid var(--po-line);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.po-post strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.po-post > span {
+  color: var(--po-quiet);
+  font-size: 12px;
+}
+
+.po-meta {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.po-draft-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.po-table {
+  margin-top: 10px;
+}
+
+.po-table div {
+  border-radius: 0;
+  background: var(--po-sheet);
+}
+
+.po-table table {
+  width: 100%;
+}
+
 .po-backdrop {
   display: none;
 }
