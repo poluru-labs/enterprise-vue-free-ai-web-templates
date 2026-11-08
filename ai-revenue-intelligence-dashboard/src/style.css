@@ -1,0 +1,278 @@
+:root {
+  --ll-leaf: #15803d;
+  --ll-leaf-deep: #166534;
+  --ll-ink: #152218;
+  --ll-quiet: #5c6b60;
+  --ll-line: #d5e0d6;
+  --ll-floor: #f5f7f4;
+  --ll-rail: 208px;
+  --eds-font-sans: Roboto, 'Segoe UI', sans-serif;
+  --eds-font-display: Lato, Roboto, sans-serif;
+  --eds-color-brand-900: #052e16;
+  --eds-color-brand-800: #14532d;
+  --eds-color-brand-700: #166534;
+  --eds-color-brand-600: #15803d;
+  --eds-color-brand-500: #15803d;
+  --eds-color-brand-400: #22c55e;
+  --eds-color-brand-300: #86efac;
+  --eds-color-brand-200: #bbf7d0;
+  --eds-color-brand-100: #dcfce7;
+  --eds-color-brand-50: #f0fdf4;
+  --eds-color-bg: #f5f7f4;
+  --eds-color-surface: #ffffff;
+  --eds-color-primary: #15803d;
+  --eds-color-primary-hover: #166534;
+  --eds-color-primary-active: #14532d;
+  --eds-color-focus: #15803d;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ll-ink);
+  background: var(--ll-floor);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.45;
+}
+
+h1,
+h2,
+h3,
+.ll-brand {
+  font-family: Lato, Roboto, sans-serif;
+  color: var(--ll-ink);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: var(--ll-leaf);
+}
+
+.ll-shell {
+  display: grid;
+  grid-template-columns: var(--ll-rail) minmax(0, 1fr);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--ll-floor);
+}
+
+.ll-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  padding: 16px 12px 12px;
+  background: #fff;
+  border-right: 1px solid var(--ll-line);
+}
+
+.ll-brand {
+  margin: 4px 8px 18px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.ll-mark::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  background: var(--ll-leaf);
+}
+
+.ll-brand span:last-child {
+  display: block;
+  margin-top: 4px;
+  margin-left: 16px;
+  color: var(--ll-quiet);
+  font-family: Roboto, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.ll-nav {
+  flex: 1;
+}
+
+.ll-nav nav {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.ll-sidebar-foot {
+  margin-top: 12px;
+}
+
+.ll-profile {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  padding: 6px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ll-profile strong,
+.ll-profile span span {
+  display: block;
+}
+
+.ll-profile strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ll-profile span span {
+  color: var(--ll-quiet);
+  font-size: 12px;
+}
+
+.ll-main {
+  min-width: 0;
+}
+
+.ll-topbar {
+  display: none;
+}
+
+.ll-page {
+  padding: 16px 24px 28px;
+}
+
+.ll-head h1 {
+  margin: 2px 0 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.ll-head p {
+  margin: 2px 0 0;
+  color: var(--ll-quiet);
+}
+
+.ll-head-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.ll-head-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 8px;
+  align-items: center;
+}
+
+.ll-footer {
+  margin-top: 28px;
+}
+
+.ll-footer p {
+  margin: 0;
+  color: var(--ll-quiet);
+  font-size: 12px;
+}
+
+.ll-quiet {
+  color: var(--ll-quiet);
+}
+
+.ll-num {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.ll-backdrop {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .ll-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .ll-topbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid var(--ll-line);
+  }
+
+  .ll-topbar p {
+    margin: 0;
+    font-family: Lato, Roboto, sans-serif;
+    font-weight: 700;
+  }
+
+  .ll-menu {
+    padding: 6px 10px;
+    border: 1px solid var(--ll-line);
+    background: #fff;
+    color: var(--ll-ink);
+  }
+
+  .ll-sidebar {
+    position: fixed;
+    z-index: 30;
+    width: var(--ll-rail);
+    transform: translateX(-105%);
+    transition: transform 160ms ease;
+  }
+
+  .ll-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .ll-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: block;
+    border: 0;
+    background: rgb(21 34 24 / 0.32);
+  }
+
+  .ll-page {
+    padding: 16px;
+  }
+
+  .ll-head-row {
+    flex-wrap: wrap;
+  }
+}
