@@ -259,6 +259,14 @@ a {
   width: 100%;
 }
 
+.lw-rent div {
+  border: 0;
+}
+
+.lw-rent table {
+  width: 100%;
+}
+
 .lw-detail {
   display: flex;
   flex-direction: column;
