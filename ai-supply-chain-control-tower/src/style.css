@@ -259,6 +259,7 @@ a {
 }
 
 .sw-table div {
+  border: 0;
   border-radius: 0;
   background: var(--sw-sheet);
 }
