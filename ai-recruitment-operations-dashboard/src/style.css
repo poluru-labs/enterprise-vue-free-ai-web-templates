@@ -249,6 +249,61 @@ a {
   border-radius: 10px;
 }
 
+.hw-list {
+  margin-top: 14px;
+  background: #fff;
+  border: 1px solid var(--hw-line);
+  border-radius: 10px;
+}
+
+.hw-person {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  border-bottom: 1px solid var(--hw-line);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.hw-person:last-child {
+  border-bottom: 0;
+}
+
+.hw-person strong,
+.hw-person .hw-quiet {
+  display: block;
+}
+
+.hw-profile-page {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 560px;
+  margin-top: 16px;
+}
+
+.hw-profile-page h2 {
+  margin: 4px 0 0;
+  font-size: 18px;
+}
+
+.hw-who {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.hw-tabs {
+  margin-top: 14px;
+}
+
 .hw-footer {
   margin-top: 28px;
 }
