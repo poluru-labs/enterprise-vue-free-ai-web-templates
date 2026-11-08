@@ -272,6 +272,55 @@ a {
   font-size: 20px;
 }
 
+.lw-leases,
+.lw-orders {
+  margin-top: 16px;
+  background: #fff;
+  border: 1px solid var(--lw-line);
+  border-radius: 10px;
+}
+
+.lw-lease,
+.lw-order {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) 90px 110px;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  border-bottom: 1px solid var(--lw-line);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+.lw-lease {
+  cursor: pointer;
+}
+
+.lw-lease:last-child,
+.lw-order:last-child {
+  border-bottom: 0;
+}
+
+.lw-order {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.lw-order p {
+  margin: 2px 0 0;
+}
+
+.lw-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 460px;
+  margin-top: 16px;
+}
+
 .lw-footer {
   margin-top: 28px;
 }
@@ -351,6 +400,11 @@ a {
 
   .lw-stats,
   .lw-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .lw-lease,
+  .lw-order {
     grid-template-columns: 1fr;
   }
 

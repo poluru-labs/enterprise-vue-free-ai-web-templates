@@ -1,9 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BASE_PATH } from '@/constants/navigation'
 import { findProperty } from '@/data/portfolio'
+import LeasesView from '@/views/LeasesView.vue'
+import MaintenanceView from '@/views/MaintenanceView.vue'
 import PlaceholderView from '@/views/PlaceholderView.vue'
 import PortfolioView from '@/views/PortfolioView.vue'
 import PropertyView from '@/views/PropertyView.vue'
+import WorkOrderView from '@/views/WorkOrderView.vue'
 
 export const routes = [
   { path: '/', redirect: `${BASE_PATH}/portfolio` },
@@ -11,8 +14,9 @@ export const routes = [
   { path: `${BASE_PATH}/portfolio`, name: 'portfolio', component: PortfolioView, meta: { title: 'Portfolio' } },
   { path: `${BASE_PATH}/properties`, name: 'properties', component: PlaceholderView, meta: { title: 'Properties' } },
   { path: `${BASE_PATH}/properties/:id`, name: 'property', component: PropertyView, meta: { title: 'Property' } },
-  { path: `${BASE_PATH}/leases`, name: 'leases', component: PlaceholderView, meta: { title: 'Leases' } },
-  { path: `${BASE_PATH}/maintenance`, name: 'maintenance', component: PlaceholderView, meta: { title: 'Maintenance' } },
+  { path: `${BASE_PATH}/leases`, name: 'leases', component: LeasesView, meta: { title: 'Leases' } },
+  { path: `${BASE_PATH}/maintenance`, name: 'maintenance', component: MaintenanceView, meta: { title: 'Maintenance' } },
+  { path: `${BASE_PATH}/maintenance/new`, name: 'work-order', component: WorkOrderView, meta: { title: 'New work order' } },
   { path: `${BASE_PATH}/settings`, name: 'settings', component: PlaceholderView, meta: { title: 'Settings' } },
   { path: '/:pathMatch(.*)*', redirect: `${BASE_PATH}/portfolio` },
 ]
