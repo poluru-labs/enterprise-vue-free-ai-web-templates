@@ -260,6 +260,47 @@ a {
   min-width: 0;
 }
 
+.wl-tools {
+  margin-top: 14px;
+}
+
+.wl-assets {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  margin-top: 18px;
+}
+
+.wl-schedule {
+  margin-top: 8px;
+}
+
+.wl-change {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  padding: 12px 0;
+  border: 0;
+  border-bottom: 1px solid var(--wl-line);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.wl-change strong,
+.wl-change .wl-quiet {
+  display: block;
+}
+
+.wl-change strong {
+  font-weight: 500;
+}
+
 .wl-backdrop {
   display: none;
 }
@@ -326,5 +367,17 @@ a {
 
   .wl-step ol {
     min-width: 480px;
+  }
+
+  .wl-assets {
+    grid-template-columns: 1fr;
+  }
+
+  .wl-change {
+    grid-template-columns: 1fr auto;
+  }
+
+  .wl-change > span:first-child {
+    grid-column: 1 / -1;
   }
 }
