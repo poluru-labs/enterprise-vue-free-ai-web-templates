@@ -216,6 +216,85 @@ a {
   text-align: right;
 }
 
+.ll-tools {
+  margin-top: 12px;
+}
+
+.ll-section {
+  margin: 22px 0 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.ll-stats,
+.ll-quotas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 12px;
+  background: #fff;
+  border: 1px solid var(--ll-line);
+}
+
+.ll-stats > *,
+.ll-quota {
+  min-width: 0;
+  border-right: 1px solid var(--ll-line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ll-stats > *:last-child,
+.ll-quota:last-child {
+  border-right: 0;
+}
+
+.ll-stats {
+  text-align: right;
+}
+
+.ll-quota {
+  padding: 12px 14px 14px;
+}
+
+.ll-quota-head {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.ll-opens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.ll-table {
+  margin-top: 8px;
+}
+
+.ll-table div {
+  border-radius: 0;
+}
+
+.ll-table table {
+  width: 100%;
+}
+
+.ll-table th:last-child,
+.ll-table td:last-child {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.ll-pages {
+  padding-top: 12px;
+}
+
 .ll-backdrop {
   display: none;
 }
@@ -274,5 +353,20 @@ a {
 
   .ll-head-row {
     flex-wrap: wrap;
+  }
+
+  .ll-stats,
+  .ll-quotas {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ll-stats > *:nth-child(2n),
+  .ll-quota:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .ll-stats > *:nth-child(-n + 2),
+  .ll-quota:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--ll-line);
   }
 }
